@@ -6,46 +6,75 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.yi.rentcar_project.dao.BrandDao;
 import com.yi.rentcar_project.model.Brand;
+import com.yi.rentcar_project.model.StateCar;
 import com.yi.rentcar_project.mvc.MySqlSessionFactory;
 
-public class BrandService {
-	private static final BrandService service = new BrandService();//자기자신 생성
+public class BrandService implements BrandDao {
+	private static final BrandService instance = new BrandService();//자기자신 생성
 	//get,set
 	public static BrandService getInstance() {
-		return service;
+		return instance;
 	}
-	// -1 : 저장실패
-	// -2 : 특수경우
-	//  0 : success
-	public int insertBrand(String brandCode,String name){
-		SqlSession session = null;
-		
-		try {
-			session = MySqlSessionFactory.openSession();
-			BrandDao brandDao = session.getMapper(BrandDao.class);
-			Brand brand = new Brand(brandCode, name);
-			
-			brandDao.insertBrand(brand);
-			String code = brandDao.nextBrandNo();
-			if(code==null){
-				return -1;
-			}
-			session.commit();
-			return 0;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}finally {
-			session.close();
+	
+	private BrandService() {}
+
+	private static final String namespace = "com.yi.rentcar_project.dao.BrandDao";
+
+	@Override
+	public Brand selectBrandByNo(Brand brand) {
+		try (SqlSession sqlSession = MySqlSessionFactory.openSession()) {
+			return sqlSession.selectOne(namespace + ".selectBrandByNo", brand);
 		}
-		return -2;//특수경우
 	}
-	
-	
-	/*public List<Brand> brandList(){
-		SqlSession session = null;
+
+	@Override
+	public List<Brand> selectBrandByAll() {
+		try (SqlSession sqlSession = MySqlSessionFactory.openSession()) {
+			return sqlSession.selectList(namespace + ".selectBrandByAll");
+		}
+	}
+
+	@Override
+	public int insertBrand(Brand brand) {
+		try (SqlSession sqlSession = MySqlSessionFactory.openSession()) {
+			int res = sqlSession.insert(namespace+".insertBrand",brand);
+			sqlSession.commit();
+			return res;
+		}
 		
+	}
+
+	@Override
+	public int updateBrand(Brand brand) {
+		try (SqlSession sqlSession = MySqlSessionFactory.openSession()) {
+			int res = sqlSession.update(namespace+".updateBrand", brand);
+			sqlSession.commit();
+			return res;
+		}
+	}
+
+	@Override
+	public int deleteBrand(Brand brand) {
+		try (SqlSession sqlSession = MySqlSessionFactory.openSession()) {
+			int res = sqlSession.delete(namespace+".deleteBrand", brand);
+			sqlSession.commit();
+			return res;
+		}
+	}
+
+	@Override
+	public List<StateCar> selectCountByBrand() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String nextBrandNo() {
+		try (SqlSession sqlSession = MySqlSessionFactory.openSession()) {
+			return sqlSession.selectOne(namespace+".nextBrandNo");
+		}
 		
-	}*/
+	}
 }
 
 
