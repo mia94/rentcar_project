@@ -4,9 +4,9 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<properties resource="db.properties"/>
-    <settings>
+    <!-- <settings>
     		<setting name="mapUnderscoreToCamelCase" value="true"/>
-    </settings>
+    </settings> -->
     <typeAliases>
     	<package name="com.yi.rentcar_project.model"/>
     </typeAliases>
