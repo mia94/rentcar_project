@@ -27,11 +27,11 @@ public interface CarModelDao {
 	
 	
 	// rent ��� �� �뿩�����κ���
-	@Update("update car_model set is_rent = 1, rent_cnt = rent_cnt + 1 where car_code = #{carCode}")
+	@Update("update car_model set is_rent = 1, rent_cnt = rent_cnt + 1 where car_code = #{car_code}")
 	int updateCarModelRent(CarModel carModel);
 	
 	// rent �ݳ��� �� �뿩�������κ���
-	@Update("update car_model set is_rent = 0 where car_code = #{carCode}")
+	@Update("update car_model set is_rent = 0 where car_code = #{car_code}")
 	int updateCarModelRentReturn(CarModel carModel);
 	///////
 	List<CarModel> selectCarModel();

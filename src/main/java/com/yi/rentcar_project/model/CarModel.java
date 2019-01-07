@@ -1,23 +1,21 @@
 package com.yi.rentcar_project.model;
 
-import java.util.List;
-
 public class CarModel {
-	private String carCode;
+	private String car_code;
 	private String name;
 	private String color;
 	private String gear;
 	private Brand brand;
-	private CarType carType;
-	private int basicCharge;
+	private CarType cartype;
+	private int basic_charge;
 	private int hour6;
 	private int hour10;
 	private int hour12;
-	private int hourElse;
-	private Fuel fuel;
-	private boolean isRent;
-	private int rentCnt;
-	private List<CarOption> carOption;
+	private int hour_else;
+	private Fuel fuel_code;
+	private boolean is_rent;
+	private int rent_cnt;
+//	private List<CarOption> car_option;
 	
 	
 	public CarModel() {
@@ -28,57 +26,57 @@ public class CarModel {
 
 	public CarModel(String carCode, String name, int rentCnt) {
 		super();
-		this.carCode = carCode;
+		this.car_code = carCode;
 		this.name = name;
-		this.rentCnt = rentCnt;
+		this.rent_cnt = rentCnt;
 	}
 
 
 	public CarModel(String carCode, String name, String color, String gear, Brand brand, CarType carType,
 			int basicCharge, int hour6, int hour10, int hour12, int hourElse, Fuel fuel, boolean isRent, int rentCnt) {
 		super();
-		this.carCode = carCode;
+		this.car_code = carCode;
 		this.name = name;
 		this.color = color;
 		this.gear = gear;
 		this.brand = brand;
-		this.carType = carType;
-		this.basicCharge = basicCharge;
+		this.cartype = carType;
+		this.basic_charge = basicCharge;
 		this.hour6 = hour6;
 		this.hour10 = hour10;
 		this.hour12 = hour12;
-		this.hourElse = hourElse;
-		this.fuel = fuel;
-		this.isRent = isRent;
-		this.rentCnt = rentCnt;
+		this.hour_else = hourElse;
+		this.fuel_code = fuel;
+		this.is_rent = isRent;
+		this.rent_cnt = rentCnt;
 	}
 
 
 
 	public CarModel(String carCode) {
 		super();
-		this.carCode = carCode;
+		this.car_code = carCode;
 	}
 	//get, set
 	
 	public String getCarCode() {
-		return carCode;
+		return car_code;
 	}
 	public int getBasicCharge() {
-		return basicCharge;
+		return basic_charge;
 	}
 	public void setBasicCharge(int basicCharge) {
-		this.basicCharge = basicCharge;
+		this.basic_charge = basicCharge;
 	}
 	
-	public List<CarOption> getCarOption() {
-		return carOption;
+	/*public List<CarOption> getCarOption() {
+		return car_option;
 	}
 	public void setCarOption(List<CarOption> carOption) {
-		this.carOption = carOption;
-	}
+		this.car_option = carOption;
+	}*/
 	public void setCarCode(String carCode) {
-		this.carCode = carCode;
+		this.car_code = carCode;
 	}
 	public String getName() {
 		return name;
@@ -107,11 +105,11 @@ public class CarModel {
 
 
 	public CarType getCarType() {
-		return carType;
+		return cartype;
 	}
 
 	public void setCarType(CarType carType) {
-		this.carType = carType;
+		this.cartype = carType;
 	}
 
 	public int getHour6() {
@@ -133,42 +131,42 @@ public class CarModel {
 		this.hour12 = hour12;
 	}
 	public int getHourElse() {
-		return hourElse;
+		return hour_else;
 	}
 	public void setHourElse(int hourElse) {
-		this.hourElse = hourElse;
+		this.hour_else = hourElse;
 	}
 	public Fuel getFuel() {
-		return fuel;
+		return fuel_code;
 	}
 	public void setFuel(Fuel fuel) {
-		this.fuel = fuel;
+		this.fuel_code = fuel;
 	}
 	public boolean isRent() {
-		return isRent;
+		return is_rent;
 	}
 	public void setRent(boolean isRent) {
-		this.isRent = isRent;
+		this.is_rent = isRent;
 	}
 	public int getRentCnt() {
-		return rentCnt;
+		return rent_cnt;
 	}
 	public void setRentCnt(int rentCnt) {
-		this.rentCnt = rentCnt;
+		this.rent_cnt = rentCnt;
 	}
 	@Override
 	public String toString() {
-		return "CarModel [carCode=" + carCode + ", name=" + name + ", color=" + color + ", gear=" + gear + ", brand="
-				+ brand + ", cartype=" + carType + ", basicCharge=" + basicCharge + ", hour6=" + hour6 + ", hour10="
-				+ hour10 + ", hour12=" + hour12 + ", hourElse=" + hourElse + ", fuel=" + fuel + ", isRent=" + isRent
-				+ ", rentCnt=" + rentCnt + ", carOption=" + carOption + "]";
+		return "CarModel [carCode=" + car_code + ", name=" + name + ", color=" + color + ", gear=" + gear + ", brand="
+				+ brand + ", cartype=" + cartype + ", basicCharge=" + basic_charge + ", hour6=" + hour6 + ", hour10="
+				+ hour10 + ", hour12=" + hour12 + ", hourElse=" + hour_else + ", fuel=" + fuel_code + ", isRent=" + is_rent
+				+ ", rentCnt=" + rent_cnt + ", carOption=" + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((carCode == null) ? 0 : carCode.hashCode());
+		result = prime * result + ((car_code == null) ? 0 : car_code.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
@@ -176,7 +174,7 @@ public class CarModel {
 	@Override
 	public boolean equals(Object obj) {
 		CarModel other = (CarModel) obj;
-		if(other.carCode.equals(carCode)) {
+		if(other.car_code.equals(car_code)) {
 			return true;
 		}
 		if(other.name.equals(name)) {

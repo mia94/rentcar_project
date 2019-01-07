@@ -3,8 +3,8 @@ package com.yi.rentcar_project.model;
 public class Grade {
 	private String code; // 등급 코드
 	private String name; // 등급명
-	private int gLosal; // 등급 최소 범위
-	private int gHisal; // 등급 최대범위
+	private int g_losal; // 등급 최소 범위
+	private int g_hisal; // 등급 최대범위
 	private int rate; // 등급별 할인율
 
 
@@ -26,19 +26,19 @@ public class Grade {
 	}
 
 	public int getgLosal() {
-		return gLosal;
+		return g_losal;
 	}
 
 	public void setgLosal(int gLosal) {
-		this.gLosal = gLosal;
+		this.g_losal = gLosal;
 	}
 
 	public int getgHisal() {
-		return gHisal;
+		return g_hisal;
 	}
 
 	public void setgHisal(int gHisal) {
-		this.gHisal = gHisal;
+		this.g_hisal = gHisal;
 	}
 
 	public int getRate() {
@@ -53,8 +53,8 @@ public class Grade {
 		super();
 		this.code = code;
 		this.name = name;
-		this.gLosal = gLosal;
-		this.gHisal = gHisal;
+		this.g_losal = gLosal;
+		this.g_hisal = gHisal;
 		this.rate = rate;
 	}
 

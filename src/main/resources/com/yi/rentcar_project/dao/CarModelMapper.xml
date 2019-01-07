@@ -17,27 +17,27 @@
 	<select id="selectCarModelByNo" parameterType="CarModel" resultType="CarModel">
 		SELECT car_code, name, color, gear, brand, cartype, basic_charge, hour6, hour10, hour12, hour_else, fuel_code as fuel, is_rent, rent_cnt
 		FROM car_model
-		where car_code=#{carCode};
+		where car_code=#{car_code};
 	</select>
 	
 	<resultMap type="CarModel" id="resultCarModel">
-	<id column="car_code" property="carCode"/>
+	<id column="car_code" property="car_code"/>
 		<result column="brand" property="brand.no"/>
 		<result column="bName" property="brand.name"/>
-		<result column="fuel_code" property="fuel.code"/>
+		<result column="fuel_code" property="fuel_code.code"/>
 		<result column="cartype" property="carType.code"/>
 		<result column="tType" property="carType.type"/>
-		<result column="car_code" property="carCode"/>
+		<result column="car_code" property="car_code"/>
 		<result column="name" property="name"/>
 		<result column="color" property="color"/>
 		<result column="gear" property="gear"/>
-		<result column="basic_charge" property="basicCharge"/>
+		<result column="basic_charge" property="basic_charge"/>
 		<result column="hour6" property="hour6"/>
 		<result column="hour10" property="hour10"/>
 		<result column="hour12" property="hour12"/>
-		<result column="hour_else" property="hourElse"/>
-		<result column="is_rent" property="isRent"/>
-		<result column="rent_cnt" property="rentCnt"/>
+		<result column="hour_else" property="hour_else"/>
+		<result column="is_rent" property="is_rent"/>
+		<result column="rent_cnt" property="rent_cnt"/>
 	</resultMap>
 	
 	<select id="selectCarModelByAll" resultType="CarModel" resultMap="resultCarModel">
@@ -48,29 +48,29 @@
 	<insert id="insertCarModel" parameterType="CarModel">
 		INSERT INTO car_model
 		(car_code, name, color, gear, brand, cartype, basic_charge, hour6, hour10, hour12, hour_else, fuel_code, is_rent, rent_cnt)
-		VALUES(#{carCode}, #{name}, #{color}, #{gear},#{brand.no}, #{carType.code}, #{basicCharge}, #{hour6}, #{hour10}, #{hour12}, #{hourElse}, #{fuel.code}, #{isRent}, #{rentCnt});
+		VALUES(#{car_code}, #{name}, #{color}, #{gear},#{brand.no}, #{carType.code}, #{basic_charge}, #{hour6}, #{hour10}, #{hour12}, #{hour_else}, #{fuel_code.code}, #{is_rent}, #{rent_cnt});
 	</insert>
 	
 	<update id="updateCarModel" parameterType="CarModel">
 		UPDATE car_model
-		SET name=#{name}, color=#{color}, gear=#{gear}, brand=#{brand.no}, cartype=#{carType.code}, basic_charge=#{basicCharge}, hour6=#{hour6}, hour10=#{hour10}, hour12=#{hour12}, hour_else=#{hourElse}, fuel_code=#{fuel.code}, is_rent=#{isRent}, rent_cnt=#{rentCnt}
-		WHERE car_code=#{carCode};
+		SET name=#{name}, color=#{color}, gear=#{gear}, brand=#{brand.no}, cartype=#{carType.code}, basic_charge=#{basic_charge}, hour6=#{hour6}, hour10=#{hour10}, hour12=#{hour12}, hour_else=#{hour_else}, fuel_code=#{fuel_code.code}, is_rent=#{is_rent}, rent_cnt=#{rent_cnt}
+		WHERE car_code=#{car_code};
 	</update>
 	
 	<delete id="deleteCarModel" parameterType="CarModel">
 		DELETE FROM car_model
-		WHERE car_code=#{carCode};
+		WHERE car_code=#{car_code};
 	</delete>
 	
 	<resultMap type="CarModel" id="ResultCarModel">
 		<id column="carName" property="name"/>
-		<result column="car_code" property="carCode" />
+		<result column="car_code" property="car_code" />
 		<result column="color" property="color"/>
 		<result column="gear" property="gear"/>
 		<result column="cartype" property="carType.code"/>
 		<result column="brandName" property="brand.name"/>
-		<result column="basic_charge" property="basicCharge"/>
-		<result column="fuel_code" property="fuel.code"/>
+		<result column="basic_charge" property="basic_charge"/>
+		<result column="fuel_code" property="fuel_code.code"/>
 		<!-- <collection property="carOption" resultMap="kr.or.yi.java_web_female.dao.CarOptionMapper.ResultCarOption"/> -->
 	</resultMap>
 	<select id="selectCarModelByCarType" parameterType="CarType" resultMap="ResultCarModel">
@@ -94,7 +94,7 @@
 				AND brand=#{brand}
 			</if>
 			<if test="fuel!=null">
-				AND fuel_code=#{fuel}
+				AND fuel_code=#{fuel_code}
 			</if>
 			<if test="gear!=null">
 				AND gear=#{gear}
