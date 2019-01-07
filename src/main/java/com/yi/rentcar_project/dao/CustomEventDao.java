@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Update;
 
 import com.yi.rentcar_project.model.CustomEvent;
+import com.yi.rentcar_project.model.Rent;
 
 public interface CustomEventDao {
 	int insertCustomEvent(CustomEvent customEvent);
