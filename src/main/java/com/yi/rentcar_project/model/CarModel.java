@@ -1,14 +1,12 @@
 package com.yi.rentcar_project.model;
 
-import java.util.List;
-
 public class CarModel {
 	private String car_code;
 	private String name;
 	private String color;
 	private String gear;
 	private Brand brand;
-	private CarType carType;
+	private CarType cartype;
 	private int basic_charge;
 	private int hour6;
 	private int hour10;
@@ -42,7 +40,7 @@ public class CarModel {
 		this.color = color;
 		this.gear = gear;
 		this.brand = brand;
-		this.carType = carType;
+		this.cartype = carType;
 		this.basic_charge = basicCharge;
 		this.hour6 = hour6;
 		this.hour10 = hour10;
@@ -107,11 +105,11 @@ public class CarModel {
 
 
 	public CarType getCarType() {
-		return carType;
+		return cartype;
 	}
 
 	public void setCarType(CarType carType) {
-		this.carType = carType;
+		this.cartype = carType;
 	}
 
 	public int getHour6() {
@@ -159,7 +157,7 @@ public class CarModel {
 	@Override
 	public String toString() {
 		return "CarModel [carCode=" + car_code + ", name=" + name + ", color=" + color + ", gear=" + gear + ", brand="
-				+ brand + ", cartype=" + carType + ", basicCharge=" + basic_charge + ", hour6=" + hour6 + ", hour10="
+				+ brand + ", cartype=" + cartype + ", basicCharge=" + basic_charge + ", hour6=" + hour6 + ", hour10="
 				+ hour10 + ", hour12=" + hour12 + ", hourElse=" + hour_else + ", fuel=" + fuel_code + ", isRent=" + is_rent
 				+ ", rentCnt=" + rent_cnt + ", carOption=" + "]";
 	}
