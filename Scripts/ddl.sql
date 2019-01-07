@@ -225,7 +225,7 @@ CREATE TABLE proj_rentcar.rent (
 	is_return      TINYINT(4) NOT NULL COMMENT '반납여부', -- 반납여부
 	basic_price    INT(11)    NOT NULL COMMENT '렌트비용', -- 렌트비용
 	car_code       CHAR(4)    NOT NULL COMMENT '차코드', -- 차코드
-	costomer_code  CHAR(4)    NOT NULL COMMENT '고객코드', -- 고객코드
+	customer_code  CHAR(4)    NOT NULL COMMENT '고객코드', -- 고객코드
 	insurance_code CHAR(4)    NOT NULL COMMENT '보험코드', -- 보험코드
 	e_code         CHAR(4)    NULL     COMMENT '이벤트코드', -- 이벤트코드
 	opt_price      INT(11)    NOT NULL COMMENT '옵션비용' -- 옵션비용
@@ -355,13 +355,13 @@ ALTER TABLE proj_rentcar.rent
 ALTER TABLE proj_rentcar.rent
 	ADD CONSTRAINT FK_customer_TO_rent -- FK_customer_TO_rent
 		FOREIGN KEY (
-			costomer_code -- 고객코드
+			customer_code -- 고객코드
 		)
 		REFERENCES proj_rentcar.customer ( -- 고객
 			code -- 고객코드
 		),
 	ADD INDEX FK_customer_TO_rent (
-		costomer_code -- 고객코드
+		customer_code -- 고객코드
 	);
 
 -- 차량대여
@@ -421,7 +421,7 @@ select b.name as brand, ct.`type` as carType,
 round( ( datediff(concat(end_date, ' ', end_time), concat(start_date, ' ', start_time)) * cm.basic_charge ) + i.price + r.opt_price * (100 - if(g.rate > e.rate, g.rate, e.rate)) / 100 ) as totalPrice
 from proj_rentcar.rent r left join proj_rentcar.car_model cm on cm.car_code = r.car_code 
 join proj_rentcar.insurance i on r.insurance_code = i.code
-join proj_rentcar.customer c on r.costomer_code = c.code
+join proj_rentcar.customer c on r.customer_code = c.code
 join proj_rentcar.custom_event ce on c.code = ce.custom_code
 join proj_rentcar.event e on ce.event_code = e.code
 join proj_rentcar.grade g on c.grade_code = g.code

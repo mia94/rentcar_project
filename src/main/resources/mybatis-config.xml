@@ -3,6 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
 	<properties resource="db.properties"/>
     <!-- <settings>
     		<setting name="mapUnderscoreToCamelCase" value="true"/>
@@ -46,8 +47,19 @@
   	<mapper resource="com/yi/rentcar_project/dao/CarModelMapper.xml"/>
   	<mapper resource="com/yi/rentcar_project/dao/FuelMapper.xml"/>
   	<mapper resource="com/yi/rentcar_project/dao/CarTypeMapper.xml"/>
+  	
+  	<!-- rent -->
+  	<mapper resource="com/yi/rentcar_project/dao/RentMapper.xml"/>
+  	
+  	<mapper resource="com/yi/rentcar_project/dao/CustomerMapper.xml" />
+	<mapper resource="com/yi/rentcar_project/dao/CustomEventMapper.xml" />
+	<mapper resource="com/yi/rentcar_project/dao/EmployeeMapper.xml" />
+	<mapper resource="com/yi/rentcar_project/dao/EventMapper.xml" />
+	<mapper resource="com/yi/rentcar_project/dao/GradeMapper.xml" />
+	<mapper resource="com/yi/rentcar_project/dao/PostMapper.xml" />
+
   </mappers>
-  
+
 </configuration>
 
 
