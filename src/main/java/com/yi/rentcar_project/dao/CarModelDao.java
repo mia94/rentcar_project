@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Update;
 import com.yi.rentcar_project.model.CarModel;
 import com.yi.rentcar_project.model.CarType;
 
-public interface CarModelMapper {
+public interface CarModelDao {
 
 	CarModel selectCarModelByNo(CarModel carModel);
 	List<CarModel> selectCarModelByAll();
@@ -26,11 +26,11 @@ public interface CarModelMapper {
 	String nextCarCode();
 	
 	
-	// rent µî·Ï ½Ã ´ë¿©ÁßÀ¸·Îº¯°æ
+	// rent ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ë¿©ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½
 	@Update("update car_model set is_rent = 1, rent_cnt = rent_cnt + 1 where car_code = #{carCode}")
 	int updateCarModelRent(CarModel carModel);
 	
-	// rent ¹Ý³³½Ã ½Ã ´ë¿©°¡´ÉÀ¸·Îº¯°æ
+	// rent ï¿½Ý³ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ë¿©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½
 	@Update("update car_model set is_rent = 0 where car_code = #{carCode}")
 	int updateCarModelRentReturn(CarModel carModel);
 	///////

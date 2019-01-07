@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Select;
 import com.yi.rentcar_project.model.Brand;
 import com.yi.rentcar_project.model.StateCar;
 
-public interface BrandMapper {
+public interface BrandDao {
 	Brand selectBrandByNo(Brand brand);
 	List<Brand> selectBrandByAll();
 	int insertBrand(Brand brand);

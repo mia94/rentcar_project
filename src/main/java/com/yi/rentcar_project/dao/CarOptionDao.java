@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.yi.rentcar_project.model.CarOption;
 
-public interface CarOptionMapper {
+public interface CarOptionDao {
 	CarOption selectCarOptionByNo(CarOption carOption);
 	List<CarOption> selectCarOptionByAll();
 	int insertCarOption(CarOption carOption);

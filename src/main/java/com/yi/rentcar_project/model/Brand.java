@@ -5,12 +5,14 @@ public class Brand {
 	private String name; //브랜드이름
 	
 	public Brand() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Brand(String no) {
-		super();
 		this.no = no;
+	}
+	
+	public Brand(String no, String name) {
+		this.no = no;
+		this.name = name;
 	}
 	//get, set
 	public String getNo() {
