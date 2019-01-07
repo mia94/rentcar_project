@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yi.rentcar_project.dao.BrandMapper">
+
+	<select id="selectBrandByNo" parameterType="Brand" resultType="Brand">
+		select no, name 
+		from brand 
+		where no=#{no};
+	</select>
+	
+	<select id="selectBrandByAll" resultType="Brand">
+		select no, name from brand;
+	</select>
+	
+	<insert id="insertBrand" parameterType="Brand">
+		insert into Brand values(#{no},#{name});
+	</insert>
+	
+	<update id="updateBrand" parameterType="Brand">
+		update Brand
+		set no=#{no}, name=#{name}
+		where no=#{no};
+	</update>
+	
+	<delete id="deleteBrand" parameterType="Brand">
+		delete
+		from Brand
+		where no=#{no};
+	</delete>
+	
+	<select id="nextBrandNo" resultType="String">
+		select max(no) nextto from brand
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
