@@ -9,7 +9,7 @@ create table if not exists post (
 );
 
 
-load data local infile 'D:/workspace_jsp_rentcar/rentcar_project/DataFiles/´ë±¸±¤¿ª½Ã.txt' into table post
+load data local infile 'D:/workspace-proj/java_web_female/DataFiles/ëŒ€êµ¬ê´‘ì—­ì‹œ.txt' into table post
 character set'euckr'
 fields terminated by'|'
 ignore 1 lines
@@ -21,4 +21,4 @@ set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, eupmyeon=@eupmyeon, doro=@do
 create index idx_post_doro on post(doro);*/
 
 
--- load data local infile 'C:/program/workspace_jsp_rentcar/rentcar_project/DataFiles/´ë±¸±¤¿ª½Ã.txt' into table post
+-- load data local infile 'C:/program/workspace-proj/java_web_female/DataFiles/ëŒ€êµ¬ê´‘ì—­ì‹œ.txt' into table post
