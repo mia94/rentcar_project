@@ -6,8 +6,7 @@
 	<properties resource="db.properties"/>
     
     <typeAliases>
-    	<typeAlias type="com.yi.projectManagement.model.Project" alias="Project"/>
-    	<typeAlias type="com.yi.projectManagement.model.ProjectContent" alias="ProjectContent"/>
+    	<package name="com.yi.rentcar_project.model"/>
     </typeAliases>
     
   <environments default="development">
@@ -39,8 +38,7 @@
   </environments>
   
   <mappers>
-  	<mapper resource="mappers/ProjectMapper.xml"/>
-  	<mapper resource="mappers/ProjectContentMapper.xml"/>
+  	<package name="com.yi.rentcar_project.dao"/>
   </mappers>
   
 </configuration>
