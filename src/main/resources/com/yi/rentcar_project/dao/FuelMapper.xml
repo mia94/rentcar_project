@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yi.rentcar_project.dao.FuelMapper">
+	
+	<select id="selectFuelByNo" parameterType="Fuel" resultType="Fuel">
+		select no, code
+		from fuel
+		where code=#{code}
+	</select>
+	
+	<select id="selectFuelByAll" resultType="Fuel">
+		select no, code
+		from fuel
+	</select>
+	
+	<insert id="insertFuel" parameterType="Fuel">
+		insert into fuel values(#{no},#{code});
+	</insert>
+	
+	<update id="updateFuel" parameterType="Fuel">
+		update Fuel
+		set code=#{code}
+		where no=#{no};
+	</update>
+	
+	<delete id="deleteFuel" parameterType="Fuel">
+		delete
+		from fuel
+		where no=#{no};
+	</delete>
+	
+	<select id="nextFuelNo" resultType="int">
+		select max(no) nextto from fuel
+	</select>
+</mapper>
