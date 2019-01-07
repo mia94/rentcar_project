@@ -4,418 +4,418 @@ DROP SCHEMA IF EXISTS proj_rentcar;
 -- proj_rentcar
 CREATE SCHEMA proj_rentcar;
 
--- ºê·£µå
+-- ë¸Œëžœë“œ
 CREATE TABLE proj_rentcar.brand (
-	no   CHAR(2)     NOT NULL COMMENT 'ºê·£µå¹øÈ£', -- ºê·£µå¹øÈ£
-	name VARCHAR(20) NOT NULL COMMENT 'ºê·£µå¸í' -- ºê·£µå¸í
+	no   CHAR(2)     NOT NULL COMMENT 'ë¸Œëžœë“œë²ˆí˜¸', -- ë¸Œëžœë“œë²ˆí˜¸
+	name VARCHAR(20) NOT NULL COMMENT 'ë¸Œëžœë“œëª…' -- ë¸Œëžœë“œëª…
 )
-COMMENT 'ºê·£µå';
+COMMENT 'ë¸Œëžœë“œ';
 
--- ºê·£µå
+-- ë¸Œëžœë“œ
 ALTER TABLE proj_rentcar.brand
 	ADD CONSTRAINT
 		PRIMARY KEY (
-			no -- ºê·£µå¹øÈ£
+			no -- ë¸Œëžœë“œë²ˆí˜¸
 		);
 
--- Â÷(¸ðµ¨)
+-- ì°¨(ëª¨ë¸)
 CREATE TABLE proj_rentcar.car_model (
 	car_code     CHAR(4)     NOT NULL COMMENT 'C001', -- C001
-	name         VARCHAR(20) NOT NULL COMMENT 'ÀÌ¸§', -- ÀÌ¸§
-	color        CHAR(2)     NOT NULL COMMENT '»ö»ó', -- »ö»ó
-	gear         VARCHAR(5)  NOT NULL COMMENT '¿ÀÅä ½ºÆ½', -- ¿ÀÅä ½ºÆ½
-	brand        CHAR(2)     NOT NULL COMMENT 'ºê·£µå', -- ºê·£µå
-	cartype      CHAR(2)     NOT NULL COMMENT 'Â÷Á¾', -- Â÷Á¾
-	basic_charge INT(11)     NOT NULL COMMENT '·»Æ®ÇÒ¶§ µå´Â Â÷Á¾º° ±âº»ºñ¿ë', -- ·»Æ®ÇÒ¶§ µå´Â Â÷Á¾º° ±âº»ºñ¿ë
-	hour6        INT(11)     NOT NULL COMMENT '6½Ã°£¹Ì¸¸ ÃÊ°úºñ¿ë', -- 6½Ã°£¹Ì¸¸ ÃÊ°úºñ¿ë
-	hour10       INT(11)     NOT NULL COMMENT '10½Ã°£¹Ì¸¸ ÃÊ°úºñ¿ë', -- 10½Ã°£¹Ì¸¸ ÃÊ°úºñ¿ë
-	hour12       INT(11)     NOT NULL COMMENT '12½Ã°£ÀÌÇÏ ÃÊ°úºñ¿ë', -- 12½Ã°£ÀÌÇÏ ÃÊ°úºñ¿ë
-	hour_else    INT(11)     NULL     COMMENT '12½Ã°£ÃÊ°ú ÃÊ°úºñ¿ë', -- 12½Ã°£ÃÊ°ú ÃÊ°úºñ¿ë
-	fuel_code    VARCHAR(10) NOT NULL COMMENT '¿¬·áÄÚµå', -- ¿¬·áÄÚµå
-	is_rent      TINYINT(4)  NOT NULL COMMENT '´ë¿©¿©ºÎ', -- ´ë¿©¿©ºÎ
-	rent_cnt     INT(11)     NOT NULL COMMENT '´ë¿©È½¼ö' -- ´ë¿©È½¼ö
+	name         VARCHAR(20) NOT NULL COMMENT 'ì´ë¦„', -- ì´ë¦„
+	color        CHAR(2)     NOT NULL COMMENT 'ìƒ‰ìƒ', -- ìƒ‰ìƒ
+	gear         VARCHAR(5)  NOT NULL COMMENT 'ì˜¤í†  ìŠ¤í‹±', -- ì˜¤í†  ìŠ¤í‹±
+	brand        CHAR(2)     NOT NULL COMMENT 'ë¸Œëžœë“œ', -- ë¸Œëžœë“œ
+	cartype      CHAR(2)     NOT NULL COMMENT 'ì°¨ì¢…', -- ì°¨ì¢…
+	basic_charge INT(11)     NOT NULL COMMENT 'ë ŒíŠ¸í• ë•Œ ë“œëŠ” ì°¨ì¢…ë³„ ê¸°ë³¸ë¹„ìš©', -- ë ŒíŠ¸í• ë•Œ ë“œëŠ” ì°¨ì¢…ë³„ ê¸°ë³¸ë¹„ìš©
+	hour6        INT(11)     NOT NULL COMMENT '6ì‹œê°„ë¯¸ë§Œ ì´ˆê³¼ë¹„ìš©', -- 6ì‹œê°„ë¯¸ë§Œ ì´ˆê³¼ë¹„ìš©
+	hour10       INT(11)     NOT NULL COMMENT '10ì‹œê°„ë¯¸ë§Œ ì´ˆê³¼ë¹„ìš©', -- 10ì‹œê°„ë¯¸ë§Œ ì´ˆê³¼ë¹„ìš©
+	hour12       INT(11)     NOT NULL COMMENT '12ì‹œê°„ì´í•˜ ì´ˆê³¼ë¹„ìš©', -- 12ì‹œê°„ì´í•˜ ì´ˆê³¼ë¹„ìš©
+	hour_else    INT(11)     NULL     COMMENT '12ì‹œê°„ì´ˆê³¼ ì´ˆê³¼ë¹„ìš©', -- 12ì‹œê°„ì´ˆê³¼ ì´ˆê³¼ë¹„ìš©
+	fuel_code    VARCHAR(10) NOT NULL COMMENT 'ì—°ë£Œì½”ë“œ', -- ì—°ë£Œì½”ë“œ
+	is_rent      TINYINT(4)  NOT NULL COMMENT 'ëŒ€ì—¬ì—¬ë¶€', -- ëŒ€ì—¬ì—¬ë¶€
+	rent_cnt     INT(11)     NOT NULL COMMENT 'ëŒ€ì—¬íšŸìˆ˜' -- ëŒ€ì—¬íšŸìˆ˜
 )
-COMMENT 'Â÷(¸ðµ¨)';
+COMMENT 'ì°¨(ëª¨ë¸)';
 
--- Â÷(¸ðµ¨)
+-- ì°¨(ëª¨ë¸)
 ALTER TABLE proj_rentcar.car_model
 	ADD CONSTRAINT
 		PRIMARY KEY (
 			car_code -- C001
 		);
 
--- Â÷·®¿É¼Ç
+-- ì°¨ëŸ‰ì˜µì…˜
 CREATE TABLE proj_rentcar.car_option (
-	no    INT(11)     NOT NULL COMMENT '¿É¼Ç¹øÈ£', -- ¿É¼Ç¹øÈ£
-	name  VARCHAR(50) NOT NULL COMMENT '¿É¼Ç¸í', -- ¿É¼Ç¸í
-	price INT(11)     NOT NULL COMMENT '¿É¼Çºñ¿ë' -- ¿É¼Çºñ¿ë
+	no    INT(11)     NOT NULL COMMENT 'ì˜µì…˜ë²ˆí˜¸', -- ì˜µì…˜ë²ˆí˜¸
+	name  VARCHAR(50) NOT NULL COMMENT 'ì˜µì…˜ëª…', -- ì˜µì…˜ëª…
+	price INT(11)     NOT NULL COMMENT 'ì˜µì…˜ë¹„ìš©' -- ì˜µì…˜ë¹„ìš©
 )
-COMMENT 'Â÷·®¿É¼Ç';
+COMMENT 'ì°¨ëŸ‰ì˜µì…˜';
 
--- Â÷·®¿É¼Ç
+-- ì°¨ëŸ‰ì˜µì…˜
 ALTER TABLE proj_rentcar.car_option
 	ADD CONSTRAINT
 		PRIMARY KEY (
-			no -- ¿É¼Ç¹øÈ£
+			no -- ì˜µì…˜ë²ˆí˜¸
 		);
 
--- Â÷Á¾(¼Ò Áß ´ë)
+-- ì°¨ì¢…(ì†Œ ì¤‘ ëŒ€)
 CREATE TABLE proj_rentcar.car_type (
-	code CHAR(2)     NOT NULL COMMENT 'Â÷Á¾', -- Â÷Á¾
-	type VARCHAR(20) NOT NULL COMMENT 'Â÷·®À¯Çü' -- Â÷·®À¯Çü
+	code CHAR(2)     NOT NULL COMMENT 'ì°¨ì¢…', -- ì°¨ì¢…
+	type VARCHAR(20) NOT NULL COMMENT 'ì°¨ëŸ‰ìœ í˜•' -- ì°¨ëŸ‰ìœ í˜•
 )
-COMMENT 'Â÷Á¾(¼Ò Áß ´ë)';
+COMMENT 'ì°¨ì¢…(ì†Œ ì¤‘ ëŒ€)';
 
--- Â÷Á¾(¼Ò Áß ´ë)
+-- ì°¨ì¢…(ì†Œ ì¤‘ ëŒ€)
 ALTER TABLE proj_rentcar.car_type
 	ADD CONSTRAINT
 		PRIMARY KEY (
-			code -- Â÷Á¾
+			code -- ì°¨ì¢…
 		);
 
--- °í°´
+-- ê³ ê°
 CREATE TABLE proj_rentcar.customer (
-	code       CHAR(4)     NOT NULL COMMENT '°í°´ÄÚµå', -- °í°´ÄÚµå
-	Id         VARCHAR(40) NOT NULL COMMENT '¾ÆÀÌµð', -- ¾ÆÀÌµð
-	passwd     CHAR(42)    NOT NULL COMMENT 'ºñ¹Ð¹øÈ£', -- ºñ¹Ð¹øÈ£
-	Name       VARCHAR(20) NOT NULL COMMENT '°í°´ÀÌ¸§', -- °í°´ÀÌ¸§
-	zip_code   CHAR(5)     NOT NULL COMMENT '¿ìÆí¹øÈ£', -- ¿ìÆí¹øÈ£
-	address    VARCHAR(50) NOT NULL COMMENT 'ÁÖ¼Ò', -- ÁÖ¼Ò
-	phone      VARCHAR(13) NOT NULL COMMENT '¿¬¶ôÃ³', -- ¿¬¶ôÃ³
-	dob        DATE        NOT NULL COMMENT '»ý³â¿ùÀÏ', -- »ý³â¿ùÀÏ
-	email      VARCHAR(30) NOT NULL COMMENT 'ÀÌ¸ÞÀÏ', -- ÀÌ¸ÞÀÏ
-	emp_code   CHAR(4)     NULL     COMMENT 'Á÷¿øÄÚµå', -- Á÷¿øÄÚµå
-	license    VARCHAR(40) NULL     COMMENT '¸éÇãÁ¾·ù', -- ¸éÇãÁ¾·ù
-	grade_code CHAR(4)     NULL     COMMENT 'µî±ÞÄÚµå', -- µî±ÞÄÚµå
-	rent_cnt   INT(11)     NULL     COMMENT '´ë¿©È½¼ö' -- ´ë¿©È½¼ö
+	code       CHAR(4)     NOT NULL COMMENT 'ê³ ê°ì½”ë“œ', -- ê³ ê°ì½”ë“œ
+	Id         VARCHAR(40) NOT NULL COMMENT 'ì•„ì´ë””', -- ì•„ì´ë””
+	passwd     CHAR(42)    NOT NULL COMMENT 'ë¹„ë°€ë²ˆí˜¸', -- ë¹„ë°€ë²ˆí˜¸
+	Name       VARCHAR(20) NOT NULL COMMENT 'ê³ ê°ì´ë¦„', -- ê³ ê°ì´ë¦„
+	zip_code   CHAR(5)     NOT NULL COMMENT 'ìš°íŽ¸ë²ˆí˜¸', -- ìš°íŽ¸ë²ˆí˜¸
+	address    VARCHAR(50) NOT NULL COMMENT 'ì£¼ì†Œ', -- ì£¼ì†Œ
+	phone      VARCHAR(13) NOT NULL COMMENT 'ì—°ë½ì²˜', -- ì—°ë½ì²˜
+	dob        DATE        NOT NULL COMMENT 'ìƒë…„ì›”ì¼', -- ìƒë…„ì›”ì¼
+	email      VARCHAR(30) NOT NULL COMMENT 'ì´ë©”ì¼', -- ì´ë©”ì¼
+	emp_code   CHAR(4)     NULL     COMMENT 'ì§ì›ì½”ë“œ', -- ì§ì›ì½”ë“œ
+	license    VARCHAR(40) NULL     COMMENT 'ë©´í—ˆì¢…ë¥˜', -- ë©´í—ˆì¢…ë¥˜
+	grade_code CHAR(4)     NULL     COMMENT 'ë“±ê¸‰ì½”ë“œ', -- ë“±ê¸‰ì½”ë“œ
+	rent_cnt   INT(11)     NULL     COMMENT 'ëŒ€ì—¬íšŸìˆ˜' -- ëŒ€ì—¬íšŸìˆ˜
 )
-COMMENT '°í°´';
+COMMENT 'ê³ ê°';
 
--- °í°´
+-- ê³ ê°
 ALTER TABLE proj_rentcar.customer
 	ADD CONSTRAINT
 		PRIMARY KEY (
-			code -- °í°´ÄÚµå
+			code -- ê³ ê°ì½”ë“œ
 		);
 
--- °í°´ÀÌº¥Æ®
+-- ê³ ê°ì´ë²¤íŠ¸
 CREATE TABLE proj_rentcar.custom_event (
-	event_code  CHAR(4)    NOT NULL COMMENT 'ÀÌº¥Æ®ÄÚµå', -- ÀÌº¥Æ®ÄÚµå
-	custom_code CHAR(4)    NOT NULL COMMENT '°í°´ÄÚµå', -- °í°´ÄÚµå
-	is_use      TINYINT(1) NULL     COMMENT '»ç¿ëÀ¯¹«' -- »ç¿ëÀ¯¹«
+	event_code  CHAR(4)    NOT NULL COMMENT 'ì´ë²¤íŠ¸ì½”ë“œ', -- ì´ë²¤íŠ¸ì½”ë“œ
+	custom_code CHAR(4)    NOT NULL COMMENT 'ê³ ê°ì½”ë“œ', -- ê³ ê°ì½”ë“œ
+	is_use      TINYINT(1) NULL     COMMENT 'ì‚¬ìš©ìœ ë¬´' -- ì‚¬ìš©ìœ ë¬´
 )
-COMMENT '°í°´ÀÌº¥Æ®';
+COMMENT 'ê³ ê°ì´ë²¤íŠ¸';
 
--- °í°´ÀÌº¥Æ®
+-- ê³ ê°ì´ë²¤íŠ¸
 ALTER TABLE proj_rentcar.custom_event
 	ADD CONSTRAINT
 		PRIMARY KEY (
-			event_code,  -- ÀÌº¥Æ®ÄÚµå
-			custom_code  -- °í°´ÄÚµå
+			event_code,  -- ì´ë²¤íŠ¸ì½”ë“œ
+			custom_code  -- ê³ ê°ì½”ë“œ
 		);
 
--- Á÷¿ø
+-- ì§ì›
 CREATE TABLE proj_rentcar.employee (
-	code   CHAR(4)     NOT NULL COMMENT 'Á÷¿øÄÚµå', -- Á÷¿øÄÚµå
-	name   VARCHAR(40) NOT NULL COMMENT 'Á÷¿ø¸í', -- Á÷¿ø¸í
-	phone  VARCHAR(13) NOT NULL COMMENT '¿¬¶ôÃ³', -- ¿¬¶ôÃ³
-	passwd CHAR(42)    NOT NULL COMMENT 'ºñ¹Ð¹øÈ£' -- ºñ¹Ð¹øÈ£
+	code   CHAR(4)     NOT NULL COMMENT 'ì§ì›ì½”ë“œ', -- ì§ì›ì½”ë“œ
+	name   VARCHAR(40) NOT NULL COMMENT 'ì§ì›ëª…', -- ì§ì›ëª…
+	phone  VARCHAR(13) NOT NULL COMMENT 'ì—°ë½ì²˜', -- ì—°ë½ì²˜
+	passwd CHAR(42)    NOT NULL COMMENT 'ë¹„ë°€ë²ˆí˜¸' -- ë¹„ë°€ë²ˆí˜¸
 )
-COMMENT 'Á÷¿ø';
+COMMENT 'ì§ì›';
 
--- Á÷¿ø
+-- ì§ì›
 ALTER TABLE proj_rentcar.employee
 	ADD CONSTRAINT
 		PRIMARY KEY (
-			code -- Á÷¿øÄÚµå
+			code -- ì§ì›ì½”ë“œ
 		);
 
--- ÀÌº¥Æ®
+-- ì´ë²¤íŠ¸
 CREATE TABLE proj_rentcar.event (
-	code CHAR(4)     NOT NULL COMMENT 'ÀÌº¥Æ®ÄÚµå', -- ÀÌº¥Æ®ÄÚµå
-	name VARCHAR(20) NOT NULL COMMENT 'ÀÌº¥Æ®¸í', -- ÀÌº¥Æ®¸í
-	rate INT(11)     NOT NULL COMMENT 'ÇÒÀÎÀ²' -- ÇÒÀÎÀ²
+	code CHAR(4)     NOT NULL COMMENT 'ì´ë²¤íŠ¸ì½”ë“œ', -- ì´ë²¤íŠ¸ì½”ë“œ
+	name VARCHAR(20) NOT NULL COMMENT 'ì´ë²¤íŠ¸ëª…', -- ì´ë²¤íŠ¸ëª…
+	rate INT(11)     NOT NULL COMMENT 'í• ì¸ìœ¨' -- í• ì¸ìœ¨
 )
-COMMENT 'ÀÌº¥Æ®';
+COMMENT 'ì´ë²¤íŠ¸';
 
--- ÀÌº¥Æ®
+-- ì´ë²¤íŠ¸
 ALTER TABLE proj_rentcar.event
 	ADD CONSTRAINT
 		PRIMARY KEY (
-			code -- ÀÌº¥Æ®ÄÚµå
+			code -- ì´ë²¤íŠ¸ì½”ë“œ
 		);
 
--- ¿¬·á
+-- ì—°ë£Œ
 CREATE TABLE proj_rentcar.fuel (
 	no   INT(11)     NOT NULL COMMENT 'no', -- no
-	code VARCHAR(10) NOT NULL COMMENT '¿¬·áÄÚµå' -- ¿¬·áÄÚµå
+	code VARCHAR(10) NOT NULL COMMENT 'ì—°ë£Œì½”ë“œ' -- ì—°ë£Œì½”ë“œ
 )
-COMMENT '¿¬·á';
+COMMENT 'ì—°ë£Œ';
 
--- ¿¬·á
+-- ì—°ë£Œ
 ALTER TABLE proj_rentcar.fuel
 	ADD CONSTRAINT
 		PRIMARY KEY (
 			no -- no
 		);
 
--- È¸¿øµî±Þ
+-- íšŒì›ë“±ê¸‰
 CREATE TABLE proj_rentcar.grade (
-	code    CHAR(4)     NOT NULL COMMENT 'µî±ÞÄÚµå', -- µî±ÞÄÚµå
-	name    VARCHAR(20) NOT NULL COMMENT 'µî±ÞÀÌ¸§', -- µî±ÞÀÌ¸§
-	g_losal INT(11)     NOT NULL COMMENT 'ÃÖ¼Ò¹üÀ§', -- ÃÖ¼Ò¹üÀ§
-	g_hisal INT(11)     NOT NULL COMMENT 'ÃÖ´ë¹üÀ§', -- ÃÖ´ë¹üÀ§
-	rate    INT(11)     NOT NULL COMMENT 'µî±Þº°ÇÒÀÎÀ²' -- µî±Þº°ÇÒÀÎÀ²
+	code    CHAR(4)     NOT NULL COMMENT 'ë“±ê¸‰ì½”ë“œ', -- ë“±ê¸‰ì½”ë“œ
+	name    VARCHAR(20) NOT NULL COMMENT 'ë“±ê¸‰ì´ë¦„', -- ë“±ê¸‰ì´ë¦„
+	g_losal INT(11)     NOT NULL COMMENT 'ìµœì†Œë²”ìœ„', -- ìµœì†Œë²”ìœ„
+	g_hisal INT(11)     NOT NULL COMMENT 'ìµœëŒ€ë²”ìœ„', -- ìµœëŒ€ë²”ìœ„
+	rate    INT(11)     NOT NULL COMMENT 'ë“±ê¸‰ë³„í• ì¸ìœ¨' -- ë“±ê¸‰ë³„í• ì¸ìœ¨
 )
-COMMENT 'È¸¿øµî±Þ';
+COMMENT 'íšŒì›ë“±ê¸‰';
 
--- È¸¿øµî±Þ
+-- íšŒì›ë“±ê¸‰
 ALTER TABLE proj_rentcar.grade
 	ADD CONSTRAINT
 		PRIMARY KEY (
-			code -- µî±ÞÄÚµå
+			code -- ë“±ê¸‰ì½”ë“œ
 		);
 
--- º¸Çè
+-- ë³´í—˜
 CREATE TABLE proj_rentcar.insurance (
-	code     CHAR(4) NOT NULL COMMENT 'º¸ÇèÄÚµå', -- º¸ÇèÄÚµå
-	car_type CHAR(2) NOT NULL COMMENT 'Â÷Á¾', -- Â÷Á¾
-	price    INT(11) NOT NULL COMMENT 'º¸Çè·á' -- º¸Çè·á
+	code     CHAR(4) NOT NULL COMMENT 'ë³´í—˜ì½”ë“œ', -- ë³´í—˜ì½”ë“œ
+	car_type CHAR(2) NOT NULL COMMENT 'ì°¨ì¢…', -- ì°¨ì¢…
+	price    INT(11) NOT NULL COMMENT 'ë³´í—˜ë£Œ' -- ë³´í—˜ë£Œ
 )
-COMMENT 'º¸Çè';
+COMMENT 'ë³´í—˜';
 
--- º¸Çè
+-- ë³´í—˜
 ALTER TABLE proj_rentcar.insurance
 	ADD CONSTRAINT
 		PRIMARY KEY (
-			code -- º¸ÇèÄÚµå
+			code -- ë³´í—˜ì½”ë“œ
 		);
 
--- ÁÖ¼Ò
+-- ì£¼ì†Œ
 CREATE TABLE proj_rentcar.post (
-	zipcode   CHAR(5)     NULL COMMENT '¿ìÆí¹øÈ£', -- ¿ìÆí¹øÈ£
-	sido      VARCHAR(20) NULL COMMENT '½Ãµµ', -- ½Ãµµ
-	sigungu   VARCHAR(20) NULL COMMENT '½Ã±º±¸', -- ½Ã±º±¸
-	eupmyeon  VARCHAR(20) NULL COMMENT 'À¾¸é', -- À¾¸é
-	doro      VARCHAR(80) NULL COMMENT 'µµ·Î', -- µµ·Î
-	building1 INT(5)      NULL COMMENT '°Ç¹°¸í1', -- °Ç¹°¸í1
-	building2 INT(5)      NULL COMMENT '°Ç¹°¸í2' -- °Ç¹°¸í2
+	zipcode   CHAR(5)     NULL COMMENT 'ìš°íŽ¸ë²ˆí˜¸', -- ìš°íŽ¸ë²ˆí˜¸
+	sido      VARCHAR(20) NULL COMMENT 'ì‹œë„', -- ì‹œë„
+	sigungu   VARCHAR(20) NULL COMMENT 'ì‹œêµ°êµ¬', -- ì‹œêµ°êµ¬
+	eupmyeon  VARCHAR(20) NULL COMMENT 'ìë©´', -- ìë©´
+	doro      VARCHAR(80) NULL COMMENT 'ë„ë¡œ', -- ë„ë¡œ
+	building1 INT(5)      NULL COMMENT 'ê±´ë¬¼ëª…1', -- ê±´ë¬¼ëª…1
+	building2 INT(5)      NULL COMMENT 'ê±´ë¬¼ëª…2' -- ê±´ë¬¼ëª…2
 )
-COMMENT 'ÁÖ¼Ò';
+COMMENT 'ì£¼ì†Œ';
 
 -- idx_post_doro
 CREATE INDEX idx_post_doro
-	ON proj_rentcar.post( -- ÁÖ¼Ò
-		doro -- µµ·Î
+	ON proj_rentcar.post( -- ì£¼ì†Œ
+		doro -- ë„ë¡œ
 	);
 
 -- idx_post_sido
 CREATE INDEX idx_post_sido
-	ON proj_rentcar.post( -- ÁÖ¼Ò
-		sido -- ½Ãµµ
+	ON proj_rentcar.post( -- ì£¼ì†Œ
+		sido -- ì‹œë„
 	);
 
--- Â÷·®´ë¿©
+-- ì°¨ëŸ‰ëŒ€ì—¬
 CREATE TABLE proj_rentcar.rent (
 	code           CHAR(4)    NOT NULL COMMENT 'R0001', -- R0001
-	start_date     DATE       NOT NULL COMMENT '½ÃÀÛ³¯Â¥', -- ½ÃÀÛ³¯Â¥
-	start_time     TIME       NOT NULL COMMENT '½ÃÀÛ½Ã°£', -- ½ÃÀÛ½Ã°£
-	end_date       DATE       NOT NULL COMMENT '¹Ý³³³¯Â¥', -- ¹Ý³³³¯Â¥
-	end_time       TIME       NOT NULL COMMENT '¹Ý³³½Ã°£', -- ¹Ý³³½Ã°£
-	is_return      TINYINT(4) NOT NULL COMMENT '¹Ý³³¿©ºÎ', -- ¹Ý³³¿©ºÎ
-	basic_price    INT(11)    NOT NULL COMMENT '·»Æ®ºñ¿ë', -- ·»Æ®ºñ¿ë
-	car_code       CHAR(4)    NOT NULL COMMENT 'Â÷ÄÚµå', -- Â÷ÄÚµå
-	costomer_code  CHAR(4)    NOT NULL COMMENT '°í°´ÄÚµå', -- °í°´ÄÚµå
-	insurance_code CHAR(4)    NOT NULL COMMENT 'º¸ÇèÄÚµå', -- º¸ÇèÄÚµå
-	e_code         CHAR(4)    NULL     COMMENT 'ÀÌº¥Æ®ÄÚµå', -- ÀÌº¥Æ®ÄÚµå
-	opt_price      INT(11)    NOT NULL COMMENT '¿É¼Çºñ¿ë' -- ¿É¼Çºñ¿ë
+	start_date     DATE       NOT NULL COMMENT 'ì‹œìž‘ë‚ ì§œ', -- ì‹œìž‘ë‚ ì§œ
+	start_time     TIME       NOT NULL COMMENT 'ì‹œìž‘ì‹œê°„', -- ì‹œìž‘ì‹œê°„
+	end_date       DATE       NOT NULL COMMENT 'ë°˜ë‚©ë‚ ì§œ', -- ë°˜ë‚©ë‚ ì§œ
+	end_time       TIME       NOT NULL COMMENT 'ë°˜ë‚©ì‹œê°„', -- ë°˜ë‚©ì‹œê°„
+	is_return      TINYINT(4) NOT NULL COMMENT 'ë°˜ë‚©ì—¬ë¶€', -- ë°˜ë‚©ì—¬ë¶€
+	basic_price    INT(11)    NOT NULL COMMENT 'ë ŒíŠ¸ë¹„ìš©', -- ë ŒíŠ¸ë¹„ìš©
+	car_code       CHAR(4)    NOT NULL COMMENT 'ì°¨ì½”ë“œ', -- ì°¨ì½”ë“œ
+	costomer_code  CHAR(4)    NOT NULL COMMENT 'ê³ ê°ì½”ë“œ', -- ê³ ê°ì½”ë“œ
+	insurance_code CHAR(4)    NOT NULL COMMENT 'ë³´í—˜ì½”ë“œ', -- ë³´í—˜ì½”ë“œ
+	e_code         CHAR(4)    NULL     COMMENT 'ì´ë²¤íŠ¸ì½”ë“œ', -- ì´ë²¤íŠ¸ì½”ë“œ
+	opt_price      INT(11)    NOT NULL COMMENT 'ì˜µì…˜ë¹„ìš©' -- ì˜µì…˜ë¹„ìš©
 )
-COMMENT 'Â÷·®´ë¿©';
+COMMENT 'ì°¨ëŸ‰ëŒ€ì—¬';
 
--- Â÷·®´ë¿©
+-- ì°¨ëŸ‰ëŒ€ì—¬
 ALTER TABLE proj_rentcar.rent
 	ADD CONSTRAINT
 		PRIMARY KEY (
 			code -- R0001
 		);
 
--- Ãß°¡¿É¼Ç
+-- ì¶”ê°€ì˜µì…˜
 CREATE TABLE proj_rentcar.rentcar_options (
-	option_id INT(11) NOT NULL COMMENT '¿É¼Ç¹øÈ£', -- ¿É¼Ç¹øÈ£
-	code      CHAR(4) NULL     COMMENT 'Â÷·®´ë¿©¹øÈ£' -- Â÷·®´ë¿©¹øÈ£
+	option_id INT(11) NOT NULL COMMENT 'ì˜µì…˜ë²ˆí˜¸', -- ì˜µì…˜ë²ˆí˜¸
+	code      CHAR(4) NULL     COMMENT 'ì°¨ëŸ‰ëŒ€ì—¬ë²ˆí˜¸' -- ì°¨ëŸ‰ëŒ€ì—¬ë²ˆí˜¸
 )
-COMMENT 'Ãß°¡¿É¼Ç';
+COMMENT 'ì¶”ê°€ì˜µì…˜';
 
--- »çÁø
+-- ì‚¬ì§„
 CREATE TABLE proj_rentcar.userpic (
 	car_code CHAR(4) NOT NULL COMMENT 'C001', -- C001
-	pic      LONGBLOB    NOT NULL COMMENT '»çÁø' -- »çÁø
+	pic      LONGBLOB    NOT NULL COMMENT 'ì‚¬ì§„' -- ì‚¬ì§„
 )
-COMMENT '»çÁø';
+COMMENT 'ì‚¬ì§„';
 
--- »çÁø
+-- ì‚¬ì§„
 ALTER TABLE proj_rentcar.userpic
 	ADD CONSTRAINT
 		PRIMARY KEY (
 			car_code -- C001
 		);
 
--- Â÷(¸ðµ¨)
+-- ì°¨(ëª¨ë¸)
 ALTER TABLE proj_rentcar.car_model
 	ADD CONSTRAINT FK_brand_TO_car_model -- FK_brand_TO_car_model
 		FOREIGN KEY (
-			brand -- ºê·£µå
+			brand -- ë¸Œëžœë“œ
 		)
-		REFERENCES proj_rentcar.brand ( -- ºê·£µå
-			no -- ºê·£µå¹øÈ£
+		REFERENCES proj_rentcar.brand ( -- ë¸Œëžœë“œ
+			no -- ë¸Œëžœë“œë²ˆí˜¸
 		),
 	ADD INDEX FK_brand_TO_car_model (
-		brand -- ºê·£µå
+		brand -- ë¸Œëžœë“œ
 	);
 
--- Â÷(¸ðµ¨)
+-- ì°¨(ëª¨ë¸)
 ALTER TABLE proj_rentcar.car_model
 	ADD CONSTRAINT FK_car_type_TO_car_model -- FK_car_type_TO_car_model
 		FOREIGN KEY (
-			cartype -- Â÷Á¾
+			cartype -- ì°¨ì¢…
 		)
-		REFERENCES proj_rentcar.car_type ( -- Â÷Á¾(¼Ò Áß ´ë)
-			code -- Â÷Á¾
+		REFERENCES proj_rentcar.car_type ( -- ì°¨ì¢…(ì†Œ ì¤‘ ëŒ€)
+			code -- ì°¨ì¢…
 		),
 	ADD INDEX FK_car_type_TO_car_model (
-		cartype -- Â÷Á¾
+		cartype -- ì°¨ì¢…
 	);
 
--- °í°´
+-- ê³ ê°
 ALTER TABLE proj_rentcar.customer
 	ADD CONSTRAINT FK_employee_TO_customer -- FK_employee_TO_customer
 		FOREIGN KEY (
-			emp_code -- Á÷¿øÄÚµå
+			emp_code -- ì§ì›ì½”ë“œ
 		)
-		REFERENCES proj_rentcar.employee ( -- Á÷¿ø
-			code -- Á÷¿øÄÚµå
+		REFERENCES proj_rentcar.employee ( -- ì§ì›
+			code -- ì§ì›ì½”ë“œ
 		),
 	ADD INDEX FK_employee_TO_customer (
-		emp_code -- Á÷¿øÄÚµå
+		emp_code -- ì§ì›ì½”ë“œ
 	);
 
--- °í°´
+-- ê³ ê°
 ALTER TABLE proj_rentcar.customer
 	ADD CONSTRAINT FK_grade_TO_customer -- FK_grade_TO_customer
 		FOREIGN KEY (
-			grade_code -- µî±ÞÄÚµå
+			grade_code -- ë“±ê¸‰ì½”ë“œ
 		)
-		REFERENCES proj_rentcar.grade ( -- È¸¿øµî±Þ
-			code -- µî±ÞÄÚµå
+		REFERENCES proj_rentcar.grade ( -- íšŒì›ë“±ê¸‰
+			code -- ë“±ê¸‰ì½”ë“œ
 		),
 	ADD INDEX FK_grade_TO_customer (
-		grade_code -- µî±ÞÄÚµå
+		grade_code -- ë“±ê¸‰ì½”ë“œ
 	);
 
--- °í°´ÀÌº¥Æ®
+-- ê³ ê°ì´ë²¤íŠ¸
 ALTER TABLE proj_rentcar.custom_event
 	ADD CONSTRAINT FK_customer_TO_custom_event -- FK_customer_TO_custom_event
 		FOREIGN KEY (
-			custom_code -- °í°´ÄÚµå
+			custom_code -- ê³ ê°ì½”ë“œ
 		)
-		REFERENCES proj_rentcar.customer ( -- °í°´
-			code -- °í°´ÄÚµå
+		REFERENCES proj_rentcar.customer ( -- ê³ ê°
+			code -- ê³ ê°ì½”ë“œ
 		),
 	ADD INDEX FK_customer_TO_custom_event (
-		custom_code -- °í°´ÄÚµå
+		custom_code -- ê³ ê°ì½”ë“œ
 	);
 
--- °í°´ÀÌº¥Æ®
+-- ê³ ê°ì´ë²¤íŠ¸
 ALTER TABLE proj_rentcar.custom_event
 	ADD CONSTRAINT FK_event_TO_custom_event -- FK_event_TO_custom_event
 		FOREIGN KEY (
-			event_code -- ÀÌº¥Æ®ÄÚµå
+			event_code -- ì´ë²¤íŠ¸ì½”ë“œ
 		)
-		REFERENCES proj_rentcar.event ( -- ÀÌº¥Æ®
-			code -- ÀÌº¥Æ®ÄÚµå
+		REFERENCES proj_rentcar.event ( -- ì´ë²¤íŠ¸
+			code -- ì´ë²¤íŠ¸ì½”ë“œ
 		),
 	ADD INDEX FK_event_TO_custom_event (
-		event_code -- ÀÌº¥Æ®ÄÚµå
+		event_code -- ì´ë²¤íŠ¸ì½”ë“œ
 	);
 
--- Â÷·®´ë¿©
+-- ì°¨ëŸ‰ëŒ€ì—¬
 ALTER TABLE proj_rentcar.rent
 	ADD CONSTRAINT FK_car_model_TO_rent -- FK_car_model_TO_rent
 		FOREIGN KEY (
-			car_code -- Â÷ÄÚµå
+			car_code -- ì°¨ì½”ë“œ
 		)
-		REFERENCES proj_rentcar.car_model ( -- Â÷(¸ðµ¨)
+		REFERENCES proj_rentcar.car_model ( -- ì°¨(ëª¨ë¸)
 			car_code -- C001
 		),
 	ADD INDEX FK_car_model_TO_rent (
-		car_code -- Â÷ÄÚµå
+		car_code -- ì°¨ì½”ë“œ
 	);
 
--- Â÷·®´ë¿©
+-- ì°¨ëŸ‰ëŒ€ì—¬
 ALTER TABLE proj_rentcar.rent
 	ADD CONSTRAINT FK_customer_TO_rent -- FK_customer_TO_rent
 		FOREIGN KEY (
-			costomer_code -- °í°´ÄÚµå
+			costomer_code -- ê³ ê°ì½”ë“œ
 		)
-		REFERENCES proj_rentcar.customer ( -- °í°´
-			code -- °í°´ÄÚµå
+		REFERENCES proj_rentcar.customer ( -- ê³ ê°
+			code -- ê³ ê°ì½”ë“œ
 		),
 	ADD INDEX FK_customer_TO_rent (
-		costomer_code -- °í°´ÄÚµå
+		costomer_code -- ê³ ê°ì½”ë“œ
 	);
 
--- Â÷·®´ë¿©
+-- ì°¨ëŸ‰ëŒ€ì—¬
 ALTER TABLE proj_rentcar.rent
 	ADD CONSTRAINT FK_insurance_TO_rent -- FK_insurance_TO_rent
 		FOREIGN KEY (
-			insurance_code -- º¸ÇèÄÚµå
+			insurance_code -- ë³´í—˜ì½”ë“œ
 		)
-		REFERENCES proj_rentcar.insurance ( -- º¸Çè
-			code -- º¸ÇèÄÚµå
+		REFERENCES proj_rentcar.insurance ( -- ë³´í—˜
+			code -- ë³´í—˜ì½”ë“œ
 		),
 	ADD INDEX FK_insurance_TO_rent (
-		insurance_code -- º¸ÇèÄÚµå
+		insurance_code -- ë³´í—˜ì½”ë“œ
 	);
 
--- Ãß°¡¿É¼Ç
+-- ì¶”ê°€ì˜µì…˜
 ALTER TABLE proj_rentcar.rentcar_options
 	ADD CONSTRAINT FK_car_option_TO_add_option -- FK_car_option_TO_add_option
 		FOREIGN KEY (
-			option_id -- ¿É¼Ç¹øÈ£
+			option_id -- ì˜µì…˜ë²ˆí˜¸
 		)
-		REFERENCES proj_rentcar.car_option ( -- Â÷·®¿É¼Ç
-			no -- ¿É¼Ç¹øÈ£
+		REFERENCES proj_rentcar.car_option ( -- ì°¨ëŸ‰ì˜µì…˜
+			no -- ì˜µì…˜ë²ˆí˜¸
 		),
 	ADD INDEX FK_car_option_TO_add_option (
-		option_id -- ¿É¼Ç¹øÈ£
+		option_id -- ì˜µì…˜ë²ˆí˜¸
 	);
 
--- Ãß°¡¿É¼Ç
+-- ì¶”ê°€ì˜µì…˜
 ALTER TABLE proj_rentcar.rentcar_options
 	ADD CONSTRAINT FK_rent_TO_rentCar_options -- FK_rent_TO_rentCar_options
 		FOREIGN KEY (
-			code -- Â÷·®´ë¿©¹øÈ£
+			code -- ì°¨ëŸ‰ëŒ€ì—¬ë²ˆí˜¸
 		)
-		REFERENCES proj_rentcar.rent ( -- Â÷·®´ë¿©
+		REFERENCES proj_rentcar.rent ( -- ì°¨ëŸ‰ëŒ€ì—¬
 			code -- R0001
 		),
 	ADD INDEX FK_rent_TO_rentCar_options (
-		code -- Â÷·®´ë¿©¹øÈ£
+		code -- ì°¨ëŸ‰ëŒ€ì—¬ë²ˆí˜¸
 	);
 
--- »çÁø
+-- ì‚¬ì§„
 ALTER TABLE proj_rentcar.userpic
 	ADD CONSTRAINT FK_car_model_TO_userPic -- FK_car_model_TO_userPic
 		FOREIGN KEY (
 			car_code -- C001
 		)
-		REFERENCES proj_rentcar.car_model ( -- Â÷(¸ðµ¨)
+		REFERENCES proj_rentcar.car_model ( -- ì°¨(ëª¨ë¸)
 			car_code -- C001
 		)
 		ON DELETE cascade
 		ON UPDATE cascade;
 		
--- ¸ÅÃâ¾× Åë°è¸¦ ³»±âÀ§ÇÑ view
+-- ë§¤ì¶œì•¡ í†µê³„ë¥¼ ë‚´ê¸°ìœ„í•œ view
 create view proj_rentcar.vw_price_stat as
 select b.name as brand, ct.`type` as carType,
 round( ( datediff(concat(end_date, ' ', end_time), concat(start_date, ' ', start_time)) * cm.basic_charge ) + i.price + r.opt_price * (100 - if(g.rate > e.rate, g.rate, e.rate)) / 100 ) as totalPrice
