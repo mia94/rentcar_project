@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yi.rentcar_project.dao.CarModelMapper">
+<mapper namespace="com.yi.rentcar_project.dao.CarModelDao">
 	
 	<!-- <select id="selectCarModelWithCarOptionByCode" parameterType="CarModel" resultType="CarModel">
 		SELECT m.car_code, m.name, color, gear, brand, cartype, basic_charge, hour6, hour10, hour12, hour_else, fuel_code as fuel, is_rent, rent_cnt, option_id,co.no ,co.name, co.price

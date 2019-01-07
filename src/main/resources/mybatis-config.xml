@@ -4,11 +4,13 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<properties resource="db.properties"/>
-    
+    <settings>
+    		<setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
     <typeAliases>
     	<package name="com.yi.rentcar_project.model"/>
     </typeAliases>
-    
+   
   <environments default="development">
     <environment id="development">
       <transactionManager type="JDBC"/>
@@ -38,7 +40,10 @@
   </environments>
   
   <mappers>
-  	<package name="com.yi.rentcar_project.dao"/>
+  	<!-- <package name="com.yi.rentcar_project.dao"/> -->
+  	<mapper resource="com/yi/rentcar_project/dao/CarOptionMapper.xml"/>
+  	<mapper resource="com/yi/rentcar_project/dao/BrandMapper.xml"/>
+  	<mapper resource="com/yi/rentcar_project/dao/CarModelMapper.xml"/>
   </mappers>
   
 </configuration>

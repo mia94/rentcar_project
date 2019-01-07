@@ -1,5 +1,7 @@
 package com.yi.rentcar_project.service;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.yi.rentcar_project.dao.BrandDao;
@@ -38,4 +40,36 @@ public class BrandService {
 		return -2;//특수경우
 	}
 	
+	
+	/*public List<Brand> brandList(){
+		SqlSession session = null;
+		
+		
+	}*/
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

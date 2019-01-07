@@ -1,7 +1,7 @@
 package com.yi.rentcar_project.model;
 
 public class CarOption {
-	private int no; //ere¿¡¼­ÀÇ º¯¼ö¸í°ú ¸ğµÎ µ¿ÀÏ
+	private int no; //erdì™€ ë³€ìˆ˜ëª… ë™ì¼
 	private String name;
 	private int price;
 	
