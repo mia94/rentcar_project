@@ -11,9 +11,11 @@ public class BrandUploadHandler implements CommandHandler {
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		if(req.getMethod().equalsIgnoreCase("get")){
 			
-			return "/caroptionlist.do";
+			
+			return "/WEB-INF/view/car/brandupload.jsp";
 		}else if(req.getMethod().equalsIgnoreCase("post")){
 			
+			return "/caroptionlist.do";
 		}
 		return null;
 	}
