@@ -13,12 +13,14 @@
 		border:1px black solid;
 	}
 	section{
-		width:1200px;
+		width:1180px;
 		border:1px black solid;
 		padding:10px;
+		overflow: hidden;
 	}
 	footer{
 		width:100%;
 		background-color: gray;
 		height: 120px;
+		clear:both;
 	}

@@ -14,8 +14,12 @@
       
     }
   },
+<<<<<<< HEAD
   "libs": [
     "browser",
     "jquery"
   ]
+=======
+  "ecmaVersion": 5
+>>>>>>> branch 'master' of https://github.com/mia94/rentcar_project.git
 }

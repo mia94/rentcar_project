@@ -7,6 +7,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<style>
+	#list_wrap{
+		width:1100px;
+		margin: 0 auto;
+		overflow:hidden;
+	}
+	.btn{
+		display: block;
+	}
+	article{
+		width:340px;
+		padding:10px;
+		height:200px;
+		border:1px solid gray;
+		float: left;
+	}
+</style>
 </head>
 <body>
 	<div id="container">
@@ -15,16 +32,22 @@
 		</header>
 		
 		<section>
+		<h1>차량 전체목록</h1>
 			<div id="list_wrap">
-				<a href="index.jsp?section=carlist.do">자동차 추가하기</a>
-			
-				<c:forEach var="item" items="">
+				<a href="uploadcar.do" class="btn">자동차 추가하기</a>
+				<a href="caroptionlist.do" class="btn">차량 옵션 관리창으로 이동</a>
+				<c:forEach var="item" items="${list }">
+				<a href="carread.do?carCode=${item.carCode }">
 					<article data-index='i'>
+						<p>${item.carCode }</p>
 						<p>${item.name }</p>
-						<p>${item.brand }</p>
-						<p>${item.color }</p>
+						<%-- <p>${item.cartype }</p>
+						<p>${item.brand.name }</p>
+						<p>${item.color }</p> --%>	
 					</article>
+				</a>
 				</c:forEach>
+				
 			</div>
 		</section>
 	</div>
