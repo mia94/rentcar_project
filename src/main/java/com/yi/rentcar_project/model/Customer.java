@@ -8,25 +8,21 @@ public class Customer {
 	private String Id;
 	private String passwd;
 	private String name;
-	private String zip_code;
+	private String zipCode;
 	private String address;
 	private String phone;
 	private Date dob;
 	private String email;
-	private Employee emp_code;
+	private Employee empCode;
 	private String license;
-	private Grade grade_code;
-	private int rent_cnt;
+	private Grade gradeCode;
+	private int rentCnt;
 	private List<CustomEvent> events;
-
-	
 
 	public Customer() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-
 
 	public Customer(String id, String passwd) {
 		super();
@@ -34,23 +30,21 @@ public class Customer {
 		this.passwd = passwd;
 	}
 
-
-
 	public Customer(String id, String passwd, String name, String zipCode, String address, String phone, Date dob,
 			String email, Employee empCode, String license, Grade gradeCode, int rentCnt) {
 
 		this.Id = id;
 		this.passwd = passwd;
 		this.name = name;
-		this.zip_code = zipCode;
+		this.zipCode = zipCode;
 		this.address = address;
 		this.phone = phone;
 		this.dob = dob;
 		this.email = email;
-		this.emp_code = empCode;
+		this.empCode = empCode;
 		this.license = license;
-		this.grade_code = gradeCode;
-		this.rent_cnt = rentCnt;
+		this.gradeCode = gradeCode;
+		this.rentCnt = rentCnt;
 	}
 
 	public Customer(String code, String id, String passwd, String name, String address, String phone, Date dob,
@@ -64,10 +58,10 @@ public class Customer {
 		this.phone = phone;
 		this.dob = dob;
 		this.email = email;
-		this.emp_code = empCode;
+		this.empCode = empCode;
 		this.license = license;
-		this.grade_code = gradeCode;
-		this.rent_cnt = rentCnt;
+		this.gradeCode = gradeCode;
+		this.rentCnt = rentCnt;
 		this.events = events;
 	}
 
@@ -102,14 +96,12 @@ public class Customer {
 		this.name = name;
 		this.phone = phone;
 		this.email = email;
-		this.grade_code = gradeCode;
+		this.gradeCode = gradeCode;
 	}
 
 	public Customer(String cusId) {
 		this.Id = cusId;
 	}
-
-
 
 	/*
 	 * @Override public String toString() { return String.format(
@@ -117,6 +109,14 @@ public class Customer {
 	 * , code, id, passwd, name, zipCode, address, phone, dob, email, empCode,
 	 * license, gradeCode, rentCnt, events); }
 	 */
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((code == null) ? 0 : code.hashCode());
+		return result;
+	}
 
 	public String getCode() {
 		return code;
@@ -150,12 +150,12 @@ public class Customer {
 		this.name = name;
 	}
 
-	public String getZip_code() {
-		return zip_code;
+	public String getZipCode() {
+		return zipCode;
 	}
 
-	public void setZip_code(String zip_code) {
-		this.zip_code = zip_code;
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
 	}
 
 	public String getAddress() {
@@ -190,12 +190,12 @@ public class Customer {
 		this.email = email;
 	}
 
-	public Employee getEmp_code() {
-		return emp_code;
+	public Employee getEmpCode() {
+		return empCode;
 	}
 
-	public void setEmp_code(Employee emp_code) {
-		this.emp_code = emp_code;
+	public void setEmpCode(Employee empCode) {
+		this.empCode = empCode;
 	}
 
 	public String getLicense() {
@@ -206,20 +206,20 @@ public class Customer {
 		this.license = license;
 	}
 
-	public Grade getGrade_code() {
-		return grade_code;
+	public Grade getGradeCode() {
+		return gradeCode;
 	}
 
-	public void setGrade_code(Grade grade_code) {
-		this.grade_code = grade_code;
+	public void setGradeCode(Grade gradeCode) {
+		this.gradeCode = gradeCode;
 	}
 
-	public int getRent_cnt() {
-		return rent_cnt;
+	public int getRentCnt() {
+		return rentCnt;
 	}
 
-	public void setRent_cnt(int rent_cnt) {
-		this.rent_cnt = rent_cnt;
+	public void setRentCnt(int rentCnt) {
+		this.rentCnt = rentCnt;
 	}
 
 	public List<CustomEvent> getEvents() {
@@ -231,22 +231,10 @@ public class Customer {
 	}
 
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((code == null) ? 0 : code.hashCode());
-		return result;
-	}
-
-
-
-
-
-	@Override
 	public String toString() {
 		return String.format(
 				"Customer [code=%s, Id=%s, passwd=%s, name=%s, zip_code=%s, address=%s, phone=%s, dob=%s, email=%s, emp_code=%s, license=%s, grade_code=%s, rent_cnt=%s, events=%s]",
-				code, Id, passwd, name, zip_code, address, phone, dob, email, emp_code, license, grade_code, rent_cnt,
+				code, Id, passwd, name, zipCode, address, phone, dob, email, empCode, license, gradeCode, rentCnt,
 				events);
 	}
 
