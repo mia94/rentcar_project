@@ -25,6 +25,10 @@ $(function() {
 
 <a href="">고객관리</a>
 <a href="carlist.do">차량관리</a>
+<<<<<<< HEAD
+<a href="reservation.do">대여관리</a>
+=======
 <a href="">대여관리</a>
 <a href="login.do" id="aaa">로그인</a><a id="bbb"></a>
 <a href="join.do">회원가입</a>
+>>>>>>> branch 'master' of https://github.com/mia94/rentcar_project.git
