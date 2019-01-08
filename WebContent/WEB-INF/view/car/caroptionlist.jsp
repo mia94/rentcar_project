@@ -32,6 +32,9 @@
 						<p>${item.brand.name }</p>
 						<p>${item.color }</p> --%>	
 				</c:forEach>
+				<a href="brandupload.do">[추가]</a>
+				<a href="#">[수정]</a>
+				<a href="#">[삭제]</a>
 			</div>
 			<div class="wrap">
 				<c:forEach var="item" items="${brandList }">
@@ -40,6 +43,9 @@
 						<p>${item.brand.name }</p>
 						<p>${item.color }</p> --%>	
 				</c:forEach>
+				<a href="#">[추가]</a>
+				<a href="#">[수정]</a>
+				<a href="#">[삭제]</a>
 			</div>
 			<div class="wrap">
 				<c:forEach var="item" items="${fuelList }">
@@ -48,6 +54,9 @@
 						<p>${item.brand.name }</p>
 						<p>${item.color }</p> --%>	
 				</c:forEach>
+				<a href="#">[추가]</a>
+				<a href="#">[수정]</a>
+				<a href="#">[삭제]</a>
 			</div>
 			<div class="wrap">
 				<c:forEach var="item" items="${optionList }">
@@ -56,6 +65,9 @@
 						<p>${item.brand.name }</p>
 						<p>${item.color }</p> --%>	
 				</c:forEach>
+				<a href="#">[추가]</a>
+				<a href="#">[수정]</a>
+				<a href="#">[삭제]</a>
 			</div>
 		</section>
 	</div>
