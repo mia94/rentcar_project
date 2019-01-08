@@ -26,7 +26,7 @@
 	ul li a{
 		text-decoration: none;
 		float:left;
-		width:175px;
+		width:150px;
 		height: 60px;
 		line-height: 60px;
 		color:white;
@@ -64,6 +64,7 @@
 				<a href="uploadcar.do" class="btn">자동차 추가하기</a>
 				<a href="caroptionlist.do" class="btn">차량 옵션 관리창으로 이동</a>
 				<ul>
+					<li><a href="carlist.do">전체</a></li>
 					<li><a href="select.do?cartype=S1">경형</a></li>
 					<li><a href="select.do?cartype=S2">소형</a></li>
 					<li><a href="select.do?cartype=S3">중형</a></li>
