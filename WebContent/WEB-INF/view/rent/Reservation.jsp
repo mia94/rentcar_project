@@ -48,15 +48,17 @@
 </script>
 </head>
 <body>
-	<div id="date_container">
-		<h2>기간 선택</h2>
-		<div id="choose_rent_start">
-			<input type="text" id="start_date" placeholder="대여일 선택" readonly>
+		<div id="date_container">
+			<h2>기간 선택</h2>
+			<div id="choose_rent_start">
+				<input type="text" id="start_date" placeholder="대여일 선택" readonly>
+			</div>
+			
+			<!-- 대여 시간 -->
+			
+			
 		</div>
-		
-		<!-- 대여 시간 -->
-		
-		
-	</div>
+
+
 </body>
 </html>
