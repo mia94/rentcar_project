@@ -10,7 +10,6 @@ public class Employee {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
 
 	public String getCode() {
 		return code;
@@ -47,6 +46,7 @@ public class Employee {
 		this.phone = phone;
 		this.passwd = passwd;
 	}
+	
 	public Employee(String code, String name) {
 		super();
 		this.code = code;

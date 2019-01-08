@@ -41,22 +41,22 @@
   </environments>
   
   <mappers>
-  	<!-- <package name="com.yi.rentcar_project.dao"/> -->
-  	<mapper resource="com/yi/rentcar_project/dao/CarOptionMapper.xml"/>
+	<!--   <package name="com.yi.rentcar_project.dao"/> -->
+ <mapper resource="com/yi/rentcar_project/dao/CarOptionMapper.xml"/>
   	<mapper resource="com/yi/rentcar_project/dao/BrandMapper.xml"/>
   	<mapper resource="com/yi/rentcar_project/dao/CarModelMapper.xml"/>
   	<mapper resource="com/yi/rentcar_project/dao/FuelMapper.xml"/>
   	<mapper resource="com/yi/rentcar_project/dao/CarTypeMapper.xml"/>
   	
   	<!-- rent -->
-  	<mapper resource="com/yi/rentcar_project/dao/RentMapper.xml"/>
+  	 <mapper resource="com/yi/rentcar_project/dao/RentMapper.xml"/> 
   	
   	<mapper resource="com/yi/rentcar_project/dao/CustomerMapper.xml" />
 	<mapper resource="com/yi/rentcar_project/dao/CustomEventMapper.xml" />
 	<mapper resource="com/yi/rentcar_project/dao/EmployeeMapper.xml" />
 	<mapper resource="com/yi/rentcar_project/dao/EventMapper.xml" />
 	<mapper resource="com/yi/rentcar_project/dao/GradeMapper.xml" />
-	<mapper resource="com/yi/rentcar_project/dao/PostMapper.xml" />
+	<mapper resource="com/yi/rentcar_project/dao/PostMapper.xml" /> 
 
   </mappers>
 	
