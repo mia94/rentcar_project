@@ -37,7 +37,7 @@ p:LAST-CHILD input {
 				<input type="password" name="password">
 			</p>
 			<p>
-				<input type="checkbox" value="관리자 모드" name="checkManager">
+				<input type="checkbox" value="관리자 모드" name="checkManager">관리자 모드
 				<input type="submit" value="로그인">
 				
 			</p>

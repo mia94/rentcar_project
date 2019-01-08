@@ -18,22 +18,12 @@
    }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- <script>
-   $(function(){
+
+ <script>
+    $(function(){
       $("#f1").submit(function(){
          $(".error").css("display","none");
          $(".error2").css("display","none");
-         
-         var id = $("input[name='memberid']").val();
-         if(id == ""){
-            $("input[name='memberid']").nextAll(".error").css("display","inline");
-            return false;/*submit을 막음*/
-         }
-         var regId = /^[a-z0-9]{6,15}$/i;
-         if(regId.test(id) == false){
-            $("input[name='memberid']").nextAll(".error2").css("display","inline");
-            return false;
-         }
          
          var name = $("input[name='name']").val();
          if(name == ""){
@@ -44,7 +34,19 @@
          if(regName.test(name) == false){
             $("input[name='name']").nextAll(".error2").css("display","inline");
             return false;
-         }         
+         }     
+         
+         var id = $("input[name='id']").val();
+         if(id == ""){
+            $("input[name='id']").nextAll(".error").css("display","inline");
+            return false;/*submit을 막음*/
+         }
+         var regId = /^[a-z0-9]{6,15}$/i;
+         if(regId.test(id) == false){
+            $("input[name='id']").nextAll(".error2").css("display","inline");
+            return false;
+         }
+        
          
          var password = $("input[name='password']").val();
          if(password == ""){
@@ -72,7 +74,7 @@
       });
       
       $("#duplicatedIdBtn").click(function(){
-         var id = $("input[name='memberid']").val();
+         var id = $("input[name='id']").val();
          
          $.ajax({
             url:"duplicatedId.do",
@@ -89,10 +91,15 @@
             }
          })
       })
+      	$(function () {
+		$("#BtnPost").click(function() {
+			location.href="post.do";
+		})
+	})
       
    })
    
-</script> -->
+</script>
 </head>
 <body>
    <form action="join.do" method="post" id="f1">
@@ -125,17 +132,47 @@
       
        <p>
          <label>전화번호</label>
-        <select>
+        <select name="phone">
         	<option>선택하세요</option>
         	<option>010</option>
         	<option>011</option>
         	<option>017</option>
         </select>
+      - <input type="text" name="phone2"> - <input type="text" name="phone3">
         
       </p>
+       <p>
+         <label>이메일</label>
+         <input type="text"> @
+        <select>
+        	<option>선택하세요</option>
+        	<option>naver.com</option>
+        	<option>gmail.com</option>
+        	<option>daum.net</option>
+        	<option>nate.com</option>
+        </select>
+      </p>
       
+      <p>
+       <label>우편번호</label>
+      <input type="text"> <input type="button" value="우편번호 검색" name="post" id="BtnPost">
+      </p>
       
-      <p>         
+      <p>
+       <label>주소</label>   
+      	<input type="text">
+      </p>
+      
+	 <p>
+	  <label>면허종류</label>
+	 	<select>
+	 		<option>선택하세요</option>
+	 		<option>1종보통</option>
+	 		<option>2종보통</option>
+	 	</select>
+	 </p>
+      
+      <p>  
          <input type="submit" value="회원가입"> 
       </p>
    </form>
