@@ -13,7 +13,7 @@
 		margin: 0 auto;
 		overflow:hidden;
 	}
-	#uploadBtn{
+	.btn{
 		display: block;
 	}
 	article{
@@ -34,8 +34,8 @@
 		<section>
 		<h1>차량 전체목록</h1>
 			<div id="list_wrap">
-				<a href="uploadcar.do" id="uploadBtn">자동차 추가하기</a>
-				
+				<a href="uploadcar.do" class="btn">자동차 추가하기</a>
+				<a href="caroptionlist.do" class="btn">차량 옵션 관리창으로 이동</a>
 				<c:forEach var="item" items="${list }">
 				<a href="carread.do?carCode=${item.carCode }">
 					<article data-index='i'>
