@@ -62,6 +62,7 @@
 		</header>
 		
 		<section>
+		<h1>차량 추가</h1>
 			<div id="upload_wrap">
 				<form action="uploadcar.do" method="post">
 					<p>

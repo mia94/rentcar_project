@@ -17,7 +17,8 @@
 		display: block;
 	}
 	article{
-		width:200px;
+		width:340px;
+		padding:10px;
 		height:200px;
 		border:1px solid gray;
 		float: left;
@@ -31,6 +32,7 @@
 		</header>
 		
 		<section>
+		<h1>차량 전체목록</h1>
 			<div id="list_wrap">
 				<a href="uploadcar.do" id="uploadBtn">자동차 추가하기</a>
 				
