@@ -20,10 +20,16 @@ public class JoinHandler implements CommandHandler{
 			
 			String id = req.getParameter("id");
 			String name= req.getParameter("name");
-			String password= req.getParameter("password");
-			
+			String passwd= req.getParameter("password");
+			String dob = req.getParameter("dob");
+			String phone = req.getParameter("phone");
+			String email = req.getParameter("email");
+			String license = req.getParameter("license");
+			String zipcode = req.getParameter("zipcode");
+			String address = req.getParameter("address");
 			
 			Customer customer = new Customer();
+	/*		Customer customer = new Customer(id, name, passwd, dob, phone, email, null, license, null, address, null, 0);*/
 			CustomEvent customEvent = new CustomEvent();
 			
 			 JoinService service = JoinService.getInstance();

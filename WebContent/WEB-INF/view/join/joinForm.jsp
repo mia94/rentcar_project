@@ -4,7 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Insert title here</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <style>
    label{
@@ -17,7 +25,7 @@
       display:none;      
    }
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
  <script>
     $(function(){
@@ -70,6 +78,8 @@
          }
          
          
+         
+         
          return true;
       });
       
@@ -91,17 +101,40 @@
             }
          })
       })
+      
+      
       	$(function () {
 		$("#BtnPost").click(function() {
 			location.href="post.do";
 		})
 	})
+	
+	 $( function() {
+		    $( "#datepicker" ).datepicker({
+		      showOn: "button",
+		      buttonImage: "images/calendar.gif",
+		      buttonImageOnly: true,
+		      buttonText: "Select date",
+		      changeMonth: true,
+		      changeYear: true,
+		      
+		    });
+		    $( "#datepicker" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
+		  
+		  } );
+		 
       
    })
    
 </script>
 </head>
 <body>
+	<div id="container">
+		<header>
+			<jsp:include page="../header.jsp"></jsp:include>
+		</header>
+		
+		<section>
    <form action="join.do" method="post" id="f1">
       <p>
          <label>이름</label>
@@ -131,12 +164,19 @@
       </p>
       
        <p>
+         <label>생년월일</label>
+       	 <input type="text" id="datepicker" name="dob" class="format">
+         <span class="error">생년월일을 입력하세요</span>
+         <span class="error2">생년월일을 입력하세요</span>
+      </p>
+      
+  <p>
          <label>전화번호</label>
         <select name="phone">
-        	<option>선택하세요</option>
-        	<option>010</option>
-        	<option>011</option>
-        	<option>017</option>
+        	<!-- <option selected="selected" value="opt">선택하세요</option> -->
+        	<option value="010">010</option>
+        	<option value="011">011</option>
+        	<option value="017">017</option>
         </select>
       - <input type="text" name="phone2"> - <input type="text" name="phone3">
         
@@ -144,31 +184,32 @@
        <p>
          <label>이메일</label>
          <input type="text"> @
-        <select>
-        	<option>선택하세요</option>
-        	<option>naver.com</option>
-        	<option>gmail.com</option>
-        	<option>daum.net</option>
-        	<option>nate.com</option>
+        <select name="email">
+        	<!-- <option value="a">선택하세요</option> -->
+        	<option value="naver">naver.com</option>
+        	<option value="gmail">gmail.com</option>
+        	<option value="daum">daum.net</option>
+        	<option value="nate">nate.com</option>
         </select>
       </p>
       
       <p>
        <label>우편번호</label>
-      <input type="text"> <input type="button" value="우편번호 검색" name="post" id="BtnPost">
+      <input type="text" name="zipcode">
+      <input type="button" value="우편번호 검색" name="post" id="BtnPost">
       </p>
       
       <p>
        <label>주소</label>   
-      	<input type="text">
+      	<input type="text" name="address">
       </p>
       
 	 <p>
 	  <label>면허종류</label>
-	 	<select>
-	 		<option>선택하세요</option>
-	 		<option>1종보통</option>
-	 		<option>2종보통</option>
+	 	<select name="license">
+	 		<!-- <option>선택하세요</option> -->
+	 		<option value="1종보통">1종보통</option>
+	 		<option value="2종보통">2종보통</option>
 	 	</select>
 	 </p>
       
@@ -176,6 +217,12 @@
          <input type="submit" value="회원가입"> 
       </p>
    </form>
+   </section>
+	</div>
+	
+	<footer>
+		<jsp:include page="../footer.jsp"></jsp:include>
+	</footer>
 </body>
 </html>
 
