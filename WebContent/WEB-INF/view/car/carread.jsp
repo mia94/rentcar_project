@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <style>
 	#read_wrap{
 		width:900px;
@@ -25,6 +25,7 @@
 			<div id="read_wrap">
 				<img src="">
 				<p>상세설명 어쩌구</p>
+				<p> 선택된 차량 : ${carmodel.name}</p>
 			</div>
 		</section>
 	</div>

@@ -35,8 +35,9 @@
 				<a href="uploadcar.do" id="uploadBtn">자동차 추가하기</a>
 				
 				<c:forEach var="item" items="${list }">
-				<a href="carread.do">
+				<a href="carread.do?carCode=${item.carCode }">
 					<article data-index='i'>
+						<p>${item.carCode }</p>
 						<p>${item.name }</p>
 						<%-- <p>${item.cartype }</p>
 						<p>${item.brand.name }</p>
