@@ -48,6 +48,7 @@
 	article .car_img{
 		width:200px;
 		height: 120px;
+		margin-left: 40px; 
 	}
 	article .fuel_img{
 		width:40px;
