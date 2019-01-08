@@ -42,9 +42,16 @@
 		border:1px solid gray;
 		float: left;
 	}
-	article img{
+	article h3{
+		color:gray;
+	}
+	article .car_img{
 		width:200px;
 		height: 120px;
+	}
+	article .fuel_img{
+		width:40px;
+		margin: 30px;
 	}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -79,9 +86,9 @@
 				<c:forEach var="item" items="${list }">
 				<a href="carread.do?carCode=${item.carCode }">
 					<article data-index='i'>
-						<img src="${pageContext.request.contextPath }/images/${item.carCode  }.png">
-						<p>${item.carCode }</p>
-						<p>${item.name }</p>
+					<h3>${item.name }</h3>
+						<img src="${pageContext.request.contextPath }/images/${item.carCode  }.png" class="car_img">
+						<img src="${pageContext.request.contextPath }/images/${item.fuel.code  }.png" class="fuel_img">
 						<%-- <p>${item.cartype }</p>
 						<p>${item.brand.name }</p>
 						<p>${item.color }</p> --%>	
