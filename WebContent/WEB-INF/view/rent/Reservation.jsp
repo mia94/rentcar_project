@@ -26,7 +26,13 @@
 		float: left;
 	}
 	
-	input#start_date{
+	/* 반납일 선택 */
+	div#choose_rent_end{
+		float: left;
+		margin-left: 50px;
+	}
+	
+	input#start_date, input#end_date{
 		width: 140px;
 		height: 31px;
 		padding: 10px;
@@ -93,6 +99,10 @@
 		color: orange;
 	}
 	
+	/* 포커스아웃 */
+	.hide{
+		display: none;
+	}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -101,6 +111,8 @@
 		//날짜선택(Datepicker)
 		$("#start_date").datepicker({minDate: 0, maxDate: "+2M"});
 		$("#start_date").datepicker("option", "dateFormat", "yy-mm-dd");
+		$("#end_date").datepicker({minDate: 1, maxDate: "+2M 15D"});
+		$("#end_date").datepicker("option", "dateFormat", "yy-mm-dd");
 		
 		//셀렉트메뉴1
 		var $default = $(".defaultTitle");
@@ -133,7 +145,7 @@
 		$defaultM.on('click', function(){
 			$currentM.toggle();
 		})
-		
+				
 		if($currentM){
 			if(!$currentMLi.hasClass("selected")){
 				$currentMLi.first().addClass("selected");
@@ -153,6 +165,7 @@
 <body>
 		<div id="date_container">
 			<h2>기간 선택</h2>
+			<!-- 대여일 선택 -->
 			<div id="choose_rent_start">
 				<input type="text" id="start_date" placeholder="대여일 선택" readonly>
 			</div>
@@ -185,6 +198,10 @@
 				</ul>
 			</div>
 			
+			<!-- 대여일 선택 -->
+			<div id="choose_rent_end">
+				<input type="text" id="end_date" placeholder="반납일 선택" readonly>
+			</div>
 		</div>
 
 
