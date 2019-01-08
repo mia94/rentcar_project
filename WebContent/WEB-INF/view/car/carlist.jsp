@@ -42,6 +42,9 @@
 		border:1px solid gray;
 		float: left;
 	}
+	article img{
+		width:200px;
+	}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -75,6 +78,7 @@
 				<c:forEach var="item" items="${list }">
 				<a href="carread.do?carCode=${item.carCode }">
 					<article data-index='i'>
+						<img src="${pageContext.request.contextPath }/images/${item.carCode  }.png">
 						<p>${item.carCode }</p>
 						<p>${item.name }</p>
 						<%-- <p>${item.cartype }</p>

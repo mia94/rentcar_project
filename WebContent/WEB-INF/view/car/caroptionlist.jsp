@@ -24,7 +24,7 @@
 		</header>
 		
 		<section>
-			<h1>차량별 세부정보</h1>
+			<h1>차량옵션 관리</h1>
 			<div class="wrap">
 				<c:forEach var="item" items="${typeList }">
 						<p>${item.type }</p>
@@ -32,6 +32,10 @@
 						<p>${item.brand.name }</p>
 						<p>${item.color }</p> --%>	
 				</c:forEach>
+				<p>
+					<label>차량코드</label>
+					<input type="text" name="carCode">
+				</p>
 				<a href="brandupload.do">[추가]</a>
 				<a href="#">[수정]</a>
 				<a href="#">[삭제]</a>

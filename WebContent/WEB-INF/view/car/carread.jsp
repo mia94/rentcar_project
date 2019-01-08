@@ -13,6 +13,9 @@
 		height: 600px;
 		margin: 0 auto;
 	}
+	img{
+		width:400px;
+	}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -37,7 +40,7 @@
 			<h1>차량별 세부정보</h1>
 			<div id="read_wrap">
 				<img src="">
-				<p>상세설명 어쩌구</p>
+				<img src="${pageContext.request.contextPath }/images/${carmodel.carCode  }.png">
 				<p> 선택된 차량 : ${carmodel.name}</p>
 				<p> 선택된 차량 코드 : ${carmodel.carCode}</p>
 				<a href="carmodify.do?carCode=${carmodel.carCode }">[수정]</a><!-- 수정연결 아직 안됨 -->
