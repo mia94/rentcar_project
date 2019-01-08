@@ -117,7 +117,7 @@ public class CustomerService implements CustomerDao {
 		SqlSession sqlSession = MySqlSessionFactory.openSession();
 		try {
 			sqlSession.insert(namespace + ".insertCustomer", customer);
-			sqlSession.insert("com.yi.rentcar_project.dao.CustomEventMapper.insertCustomEvent", customEvent);
+			sqlSession.insert("com.yi.rentcar_project.dao.CustomEventDao.insertCustomEvent", customEvent);
 			sqlSession.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -134,7 +134,7 @@ public class CustomerService implements CustomerDao {
 	public void deleteCustomerEvent(Customer customer, CustomEvent customEvent) {
 		SqlSession sqlSession = MySqlSessionFactory.openSession();
 		try {
-			sqlSession.delete("com.yi.rentcar_project.dao.CustomEventMapper.deleteCustomEvent", customEvent);
+			sqlSession.delete("com.yi.rentcar_project.dao.CustomEventDao.deleteCustomEvent", customEvent);
 			sqlSession.delete(namespace + ".deleteCustomer", customer);
 			sqlSession.commit();
 		} catch (Exception e) {
