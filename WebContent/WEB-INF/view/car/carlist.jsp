@@ -53,6 +53,10 @@
 		width:40px;
 		margin: 30px;
 	}
+	article .brand_img{
+		width:60px;
+		margin: 30px;
+	}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -89,6 +93,7 @@
 					<h3>${item.name }</h3>
 						<img src="${pageContext.request.contextPath }/images/${item.carCode  }.png" class="car_img">
 						<img src="${pageContext.request.contextPath }/images/${item.fuel.code  }.png" class="fuel_img">
+						<img src="${pageContext.request.contextPath }/images/${item.brand.no  }.png" class="brand_img">
 						<%-- <p>${item.cartype }</p>
 						<p>${item.brand.name }</p>
 						<p>${item.color }</p> --%>	
