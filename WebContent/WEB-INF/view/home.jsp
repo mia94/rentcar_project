@@ -5,30 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <style>
-	*{
-		margin:0;
-		padding: 0;
-	}
-	#container{
-		width:1200px;
-		margin:0 auto;
-	}
-	header{
-		height: 100px;
-		width:1200px;
-		border:1px black solid;
-	}
-	section{
-		width:1200px;
-		border:1px black solid;
-		padding:10px;
-	}
-	footer{
-		width:100%;
-		background-color: gray;
-		height: 120px;
-	}
+
 </style>
 </head>
 <body>
