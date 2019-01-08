@@ -35,12 +35,14 @@
 				<a href="uploadcar.do" id="uploadBtn">자동차 추가하기</a>
 				
 				<c:forEach var="item" items="${list }">
+				<a href="carread.do">
 					<article data-index='i'>
 						<p>${item.name }</p>
 						<%-- <p>${item.cartype }</p>
 						<p>${item.brand.name }</p>
 						<p>${item.color }</p> --%>	
 					</article>
+				</a>
 				</c:forEach>
 				
 			</div>

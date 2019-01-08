@@ -1,4 +1,4 @@
-package com.yi.rentcar_project.handler;
+package com.yi.rentcar_project.handler.car;
 
 import java.util.List;
 
