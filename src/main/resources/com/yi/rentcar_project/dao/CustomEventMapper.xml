@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper
-	namespace="com.yi.rentcar_project.dao.CustomEventDoa">
+	namespace="com.yi.rentcar_project.dao.CustomEventDao">
 	<insert id="insertCustomEvent" parameterType="CustomEvent">
 		insert into
 		custom_event(event_code, custom_code, is_use)
@@ -14,7 +14,7 @@
 		<result column="custom_code" property="customCode" />
 		<result column="is_use" property="isUse" />
 		<collection property="events"
-			resultMap="kr.or.yi.java_web_female.dao.EventMapper.resultEvent" />
+			resultMap="com.yi.rentcar_project.dao.EventDao.resultEvent" />
 	</resultMap>
 
 	<select id="selectCustomEventByCustomCode"

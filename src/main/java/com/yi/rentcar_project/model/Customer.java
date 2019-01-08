@@ -29,6 +29,26 @@ public class Customer {
 		Id = id;
 		this.passwd = passwd;
 	}
+	
+	
+
+	public Customer(String code, String id, String passwd, String name, String zipCode, String address, String phone,
+			Date dob, String email, Employee empCode, String license, Grade gradeCode, int rentCnt) {
+		super();
+		this.code = code;
+		Id = id;
+		this.passwd = passwd;
+		this.name = name;
+		this.zipCode = zipCode;
+		this.address = address;
+		this.phone = phone;
+		this.dob = dob;
+		this.email = email;
+		this.empCode = empCode;
+		this.license = license;
+		this.gradeCode = gradeCode;
+		this.rentCnt = rentCnt;
+	}
 
 	public Customer(String id, String passwd, String name, String zipCode, String address, String phone, Date dob,
 			String email, Employee empCode, String license, Grade gradeCode, int rentCnt) {

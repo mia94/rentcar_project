@@ -28,3 +28,4 @@ $(function() {
 <a href="reservation.do">대여관리</a>
 <a href="login.do" id="aaa">로그인</a><a id="bbb"></a>
 <a href="join.do">회원가입</a>
+<a href="modify.do">개인정보관리</a>

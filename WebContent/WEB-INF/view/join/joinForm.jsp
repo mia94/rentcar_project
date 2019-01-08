@@ -183,8 +183,8 @@
       </p>
        <p>
          <label>이메일</label>
-         <input type="text"> @
-        <select name="email">
+         <input type="text" name="email1"> @
+        <select name="email2">
         	<!-- <option value="a">선택하세요</option> -->
         	<option value="naver">naver.com</option>
         	<option value="gmail">gmail.com</option>
