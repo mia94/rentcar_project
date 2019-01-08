@@ -62,7 +62,7 @@ public class CarUploadHandler implements CommandHandler {
 			CarModelService service = CarModelService.getInstance();
 			service.insertCarModel(carmodel);
 			
-			return "/WEB-INF/view/car/carlist.jsp";
+			return "carlist.do";
 		}
 		return null;
 	}

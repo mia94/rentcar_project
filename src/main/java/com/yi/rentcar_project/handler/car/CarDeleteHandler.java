@@ -19,7 +19,7 @@ public class CarDeleteHandler implements CommandHandler {
 			CarModelService service = CarModelService.getInstance();
 			service.deleteCarModel(carmodel);
 			
-			return "/WEB-INF/view/car/carlist.jsp;";
+			return "carlist.do";
 		}
 		return null;
 	}
