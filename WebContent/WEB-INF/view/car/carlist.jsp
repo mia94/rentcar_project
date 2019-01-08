@@ -36,14 +36,15 @@
 		display: block;
 	}
 	article{
-		width:340px;
+		width:520px;
 		padding:10px;
-		height:200px;
+		height:170px;
 		border:1px solid gray;
 		float: left;
 	}
 	article img{
 		width:200px;
+		height: 120px;
 	}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

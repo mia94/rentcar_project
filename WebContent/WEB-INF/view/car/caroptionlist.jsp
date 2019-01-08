@@ -15,6 +15,10 @@
 		border: 1px solid black;
 		padding: 10px;
 	}
+	.input{
+		width:300px;
+		float: right;
+	}
 </style>
 </head>
 <body>
@@ -32,13 +36,19 @@
 						<p>${item.brand.name }</p>
 						<p>${item.color }</p> --%>	
 				</c:forEach>
-				<p>
-					<label>차량코드</label>
-					<input type="text" name="carCode">
-				</p>
-				<a href="brandupload.do">[추가]</a>
-				<a href="#">[수정]</a>
-				<a href="#">[삭제]</a>
+				<div class="input">
+					<p>
+						<label>차종코드</label>
+						<input type="text" name="cartypeCode">
+					</p>
+					<p>
+						<label>차종 이름</label>
+						<input type="text" name="cartypeName">
+					</p>
+					<a href="brandupload.do">[추가]</a>
+					<a href="#">[수정]</a>
+					<a href="#">[삭제]</a>
+				</div>
 			</div>
 			<div class="wrap">
 				<c:forEach var="item" items="${brandList }">
@@ -47,9 +57,19 @@
 						<p>${item.brand.name }</p>
 						<p>${item.color }</p> --%>	
 				</c:forEach>
-				<a href="#">[추가]</a>
-				<a href="#">[수정]</a>
-				<a href="#">[삭제]</a>
+				<div class="input">
+						<p>
+							<label>브랜드코드</label>
+							<input type="text" name="brandCode">
+						</p>
+						<p>
+							<label>브랜드 이름</label>
+							<input type="text" name="brandname">
+						</p>
+					<a href="#">[추가]</a>
+					<a href="#">[수정]</a>
+					<a href="#">[삭제]</a>
+				</div>
 			</div>
 			<div class="wrap">
 				<c:forEach var="item" items="${fuelList }">
@@ -58,9 +78,19 @@
 						<p>${item.brand.name }</p>
 						<p>${item.color }</p> --%>	
 				</c:forEach>
-				<a href="#">[추가]</a>
-				<a href="#">[수정]</a>
-				<a href="#">[삭제]</a>
+				<div class="input">
+						<p>
+							<label>연료코드</label>
+							<input type="text" name="fuelCode">
+						</p>
+						<p>
+							<label>연료 이름</label>
+							<input type="text" name="fuelName">
+						</p>
+						<a href="#">[추가]</a>
+						<a href="#">[수정]</a>
+						<a href="#">[삭제]</a>
+				</div>
 			</div>
 			<div class="wrap">
 				<c:forEach var="item" items="${optionList }">
@@ -69,9 +99,25 @@
 						<p>${item.brand.name }</p>
 						<p>${item.color }</p> --%>	
 				</c:forEach>
-				<a href="#">[추가]</a>
-				<a href="#">[수정]</a>
-				<a href="#">[삭제]</a>
+				<div class="input">
+					
+						<p>
+							<label>옵션 코드</label>
+							<input type="text" name="optionCode">
+						</p>
+						<p>
+							<label>옵션 이름</label>
+							<input type="text" name="optionName">
+						</p>
+						<p>
+							<label>옵션 가격</label>
+							<input type="text" name="optionPrice">
+						</p>
+						<a href="#">[추가]</a>
+						<a href="#">[수정]</a>
+						<a href="#">[삭제]</a>
+					
+				</div>
 			</div>
 		</section>
 	</div>
