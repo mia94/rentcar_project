@@ -22,7 +22,7 @@
 		<p><a href="caroptionlist.do">전체보기</a></p>
 		<p>차종관리</p>
 		<ul>
-			<li><a href="#">추가</a></li>
+			<li><a href="cartypeupload.do">추가</a></li>
 			<li><a href="#">수정</a></li>
 			<li><a href="#">삭제</a></li>
 		</ul>
@@ -34,7 +34,7 @@
 		</ul>
 		<p>연료관리</p>
 		<ul>
-			<li><a href="#">추가</a></li>
+			<li><a href="fuelupload.do">추가</a></li>
 			<li><a href="#">수정</a></li>
 			<li><a href="#">삭제</a></li>
 		</ul>
