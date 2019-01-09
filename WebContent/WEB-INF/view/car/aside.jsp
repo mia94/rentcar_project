@@ -40,7 +40,7 @@
 		</ul>
 		<p>옵션관리</p>
 		<ul>
-			<li><a href="#">추가</a></li>
+			<li><a href="caroptionupload.do">추가</a></li>
 			<li><a href="#">수정</a></li>
 			<li><a href="#">삭제</a></li>
 		</ul>
