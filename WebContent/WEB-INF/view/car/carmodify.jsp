@@ -54,6 +54,17 @@
 		border:1px solid gray;
 	}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		//받아온 값으로 미리 선택되있도록 설정하기
+		$("#brandSelect").val("${carmodel.brand.no}").prop("selected",true);
+		$("#cartypeSelect").val("${carmodel.carType.code}").prop("selected",true);
+		$("#fuelSelect").val("${carmodel.fuel.code}").prop("selected",true);
+		$("#colorSelect").val("${carmodel.color}").prop("selected",true);
+		$("input:radio[name=gear]").val("${carmodel.gear}").prop("selected",true);//제대로 작동하지 않음ㅠㅠ모두 수동에 체크됨
+	})
+</script>
 </head>
 <body>
 <div id="container">
@@ -62,21 +73,21 @@
 		</header>
 		
 		<section>
-		<h1>차량 추가</h1>
+		<h1>차량 수정</h1>
 			<div id="modify_wrap">
 
-				<form action="modifycar.do" method="post"><!--   enctype="multipart/form-data"  -->
+				<form action="carmodify.do" method="post"><!--   enctype="multipart/form-data"  -->
 					<p>
 						<label>차량번호</label>
-						<input type="text" name="car_code" class="textfield">
+						<input type="text" name="car_code" class="textfield" value="${carmodel.carCode}">
 					</p>
 					<p>
 						<label>모델명</label>
-						<input type="text" name="name"  class="textfield">
+						<input type="text" name="name"  class="textfield" value="${carmodel.name}">
 					</p>
 					<p>
 						<label>브랜드</label>
-						<select name="brand">
+						<select name="brand" id="brandSelect">
 							<option value="B1">현대</option>
 							<option value="B2">기아</option>
 							<option value="B3">BMW</option>
@@ -85,7 +96,7 @@
 					</p>
 					<p>
 						<label>차종</label>
-						<select name="cartype">
+						<select name="cartype" id="cartypeSelect">
 							<option value="S1">경형</option>
 							<option value="S2">소형</option>
 							<option value="S3">중형</option>
@@ -96,7 +107,7 @@
 					</p>
 					<p>
 						<label>연료</label>
-						<select name="fuel_code">
+						<select name="fuel_code" id="fuelSelect">
 							<option value="gasolin">가솔린</option>
 							<option value="diesel">디젤</option>
 							<option value="lpg">LPG</option>
@@ -106,7 +117,7 @@
 					</p>
 					<p>
 						<label>색상</label>
-						<select name="color">
+						<select name="color" id="colorSelect">
 							<option value="wh">하양</option>
 							<option value="bk">검정</option>
 							<option value="bl">파랑</option>
@@ -117,19 +128,19 @@
 					</p>
 					<p>
 						<label>변속기</label>
-						<input type="radio" name="gear">자동
-						<input type="radio" name="gear">수동
+						<input type="radio" name="gear" value="auto">자동
+						<input type="radio" name="gear" value="stick">수동
 					</p>
 					<p>
 						<label id="charge">요금표</label>
 						<br><br><br>
 						<table>
 							<tr>
-								<td><input type="text" name="basic_charge" class="charge"></td>
-								<td><input type="text" name="hour6" class="charge"></td>
-								<td><input type="text" name="hour10" class="charge"></td>
-								<td><input type="text" name="hour12" class="charge"></td>
-								<td><input type="text" name="hour_else" class="charge"></td>
+								<td><input type="text" name="basic_charge" class="charge" value="${carmodel.basicCharge }"></td>
+								<td><input type="text" name="hour6" class="charge" value="${carmodel.hour6 }"></td>
+								<td><input type="text" name="hour10" class="charge" value="${carmodel.hour10 }"></td>
+								<td><input type="text" name="hour12" class="charge" value="${carmodel.hour12 }"></td>
+								<td><input type="text" name="hour_else" class="charge" value="${carmodel.hourElse }"></td>
 							</tr>
 						</table>
 					</p>

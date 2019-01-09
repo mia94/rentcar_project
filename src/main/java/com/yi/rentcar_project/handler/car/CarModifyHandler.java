@@ -14,7 +14,6 @@ public class CarModifyHandler implements CommandHandler {
 		if(req.getMethod().equalsIgnoreCase("get")){
 			String code = req.getParameter("carCode");
 			
-			
 			CarModel carmodel = new CarModel();
 			carmodel.setCarCode(code);
 			

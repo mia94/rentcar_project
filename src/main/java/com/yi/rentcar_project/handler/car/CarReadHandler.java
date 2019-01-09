@@ -19,8 +19,6 @@ public class CarReadHandler implements CommandHandler {
 			CarModelService service = CarModelService.getInstance();
 			carmodel = service.selectCarModelByNo(carmodel);
 			
-			System.out.println(carmodel);//브랜드, 차종, 연료 null 출력
-			
 			req.setAttribute("carmodel", carmodel);
 			return "/WEB-INF/view/car/carread.jsp";
 		}else if(req.getMethod().equalsIgnoreCase("post")){
