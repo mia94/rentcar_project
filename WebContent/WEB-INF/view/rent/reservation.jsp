@@ -95,6 +95,16 @@
 				
 			</div>
 			
+			<!-- 차량 유형 선택 -->
+			<div id="cartype_container">
+				<h2>차량 유형 선택</h2>
+				<div id="carType_tap_menu">
+					<ul>
+						<li><a href="#"></a>
+					</ul>
+				</div>
+			</div>
+			
 		</section>
 		
 	</div>

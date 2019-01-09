@@ -6,8 +6,15 @@
 		font-family: 'Noto Sans KR', sans-serif;
 	}
 	
-	/* 전체를 감싸는 div */
+	/* 기간 선택 전체를 감싸는 div */
 	div#date_container{
+		margin: 20px auto;
+		width: 1000px;
+		overflow: hidden;
+	}
+	
+	/* 차량 유형 선택 전체를 감싸는 div */
+	div#cartype_container{
 		margin: 20px auto;
 		width: 1000px;
 		overflow: hidden;
