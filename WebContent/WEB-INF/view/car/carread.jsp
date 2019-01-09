@@ -20,7 +20,7 @@
 	}
 	#info_wrap{
 		width:350px;
-		height: 200px;
+		height: 210px;
 		position:absolute;
 		right:50px;
 		top:0;
@@ -61,6 +61,14 @@
 					<p> 선택된 차량 : ${carmodel.name}</p>
 					<p> 차량 색상 : ${carmodel.color }</p>
 					<p> 선택된 차량 코드 : ${carmodel.carCode}</p>
+					<p> 브랜드 : ${carmodel.brand.name }</p>
+					<p> 차종 : ${carmodel.carType.type }</p>
+					<p> 기본요금 : ${carmodel.basicCharge }</p>
+					<p> 6시간 : ${carmodel.hour6 }</p>
+					<p> 10시간 : ${carmodel.hour10 }</p>
+					<p> 12시간 : ${carmodel.hour12 }</p>
+					<p> 12시간 이상 : ${carmodel.hourElse }</p>
+
 				</div>
 				<div id="btn_wrap">
 					<a href="carmodify.do?carCode=${carmodel.carCode }">[수정]</a><!-- 수정연결 아직 안됨 -->

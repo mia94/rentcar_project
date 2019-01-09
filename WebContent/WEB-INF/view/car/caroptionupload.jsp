@@ -61,7 +61,6 @@
 						<label>옵션 가격</label>
 						<input type="text" name="price" class="textfield">
 					</p>
-					
 
 					<div id="btn_wrap">
 						<input type="submit" value="저장">
