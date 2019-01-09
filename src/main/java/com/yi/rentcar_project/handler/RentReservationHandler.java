@@ -12,7 +12,7 @@ public class RentReservationHandler implements CommandHandler {
 		// TODO Auto-generated method stub
 		if(req.getMethod().equalsIgnoreCase("get")){
 			
-			return "/WEB-INF/view/rent/Reservation.jsp";
+			return "/WEB-INF/view/rent/reservation.jsp";
 		}
 		return null;
 	}
