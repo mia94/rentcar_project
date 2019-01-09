@@ -16,7 +16,6 @@ public class CarListHandler implements CommandHandler {
 
 			CarModelService service = CarModelService.getInstance();
 			List<CarModel> list = service.selectCarModelByAll();
-			System.out.println(list);
 			req.setAttribute("list", list);
 			return "/WEB-INF/view/car/carlist.jsp";
 		
