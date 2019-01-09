@@ -43,23 +43,19 @@
 		</header>
 		
 		<section>
-		<h1>브랜드 추가 창</h1>
+		<h1>차종추가 창</h1>
 			<aside>
 					<jsp:include page="aside.jsp"></jsp:include>
 			</aside>
 			<div id="upload_wrap">
-				<form action="brandupload.do" method="post">
+				<form action="cartypeupload.do" method="post">
 					<p>
-						<label>브랜드 코드</label>
-						<input type="text" name="no" class="textfield">
+						<label>차종 코드</label>
+						<input type="text" name="code" class="textfield">
 					</p>
 					<p>
-						<label>브랜드 이름</label>
-						<input type="text" name="name" class="textfield">
-					</p>
-					<p>
-						<label>브랜드 로고</label>
-						<input type="file" name="brandImg">
+						<label>차종 이름</label>
+						<input type="text" name="type" class="textfield">
 					</p>
 
 					<div id="btn_wrap">

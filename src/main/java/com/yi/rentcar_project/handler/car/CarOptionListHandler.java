@@ -19,7 +19,6 @@ public class CarOptionListHandler implements CommandHandler {
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		if(req.getMethod().equalsIgnoreCase("get")){
 			BrandService brandService = BrandService.getInstance();
 			CarOptionService optionservice = CarOptionService.getInstance();
 			FuelService fuelService = FuelService.getInstance();
@@ -36,11 +35,7 @@ public class CarOptionListHandler implements CommandHandler {
 			req.setAttribute("typeList", typeList);
 			
 			return "/WEB-INF/view/car/caroptionlist.jsp";
-			
-		}else if(req.getMethod().equalsIgnoreCase("post")){
-			
-		}
-		return null;
+
 	}
 
 }

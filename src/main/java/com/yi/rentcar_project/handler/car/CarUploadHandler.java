@@ -1,8 +1,12 @@
 package com.yi.rentcar_project.handler.car;
 
+import java.io.File;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.yi.rentcar_project.model.Brand;
 import com.yi.rentcar_project.model.CarModel;
 import com.yi.rentcar_project.model.CarType;
@@ -61,6 +65,29 @@ public class CarUploadHandler implements CommandHandler {
 			CarModel carmodel = new CarModel(car_code, name, color, gear, brand, type, basic_charge, hour6, hour10, hour12, hour_else, fuel, is_rent, rent_cnt);
 			CarModelService service = CarModelService.getInstance();
 			service.insertCarModel(carmodel);
+			
+			//사진추가
+/*			String uploadPath = req.getRealPath("upload");
+			
+			File dir = new File(uploadPath);
+			if(dir.exists()==false){//업로드 폴더가 없을때 만들어지도록
+				dir.mkdirs();
+			}
+			
+			try {
+				MultipartRequest multi = new MultipartRequest(req,
+															uploadPath,//서버측 업로드
+															1024*1024*10,//10M
+															new DefaultFileRenamePolicy()
+															);
+				
+				String file = multi.getFilesystemName("carImg");//file1의 키의 파일의 이름을 받아옴
+				req.setAttribute("carImg", file);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}*/
+
 			
 			return "carlist.do";
 		}
