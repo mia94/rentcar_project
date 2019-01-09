@@ -105,7 +105,9 @@
       
       	$(function () {
 		$("#BtnPost").click(function() {
-			location.href="post.do";
+		
+			window.open('post.do', '_blank', 'width=500, height=350');
+			//location.href="post.do";
 		})
 	})
 	
@@ -129,12 +131,8 @@
 </script>
 </head>
 <body>
-	<div id="container">
-		<header>
-			<jsp:include page="../header.jsp"></jsp:include>
-		</header>
+
 		
-		<section>
    <form action="join.do" method="post" id="f1">
       <p>
          <label>이름</label>
@@ -186,10 +184,10 @@
          <input type="text" name="email1"> @
         <select name="email2">
         	<!-- <option value="a">선택하세요</option> -->
-        	<option value="naver">naver.com</option>
-        	<option value="gmail">gmail.com</option>
-        	<option value="daum">daum.net</option>
-        	<option value="nate">nate.com</option>
+        	<option value="naver.com">naver.com</option>
+        	<option value="gmail.com">gmail.com</option>
+        	<option value="daum.net">daum.net</option>
+        	<option value="nate.com">nate.com</option>
         </select>
       </p>
       
@@ -217,12 +215,10 @@
          <input type="submit" value="회원가입"> 
       </p>
    </form>
-   </section>
-	</div>
+
+
 	
-	<footer>
-		<jsp:include page="../footer.jsp"></jsp:include>
-	</footer>
+	
 </body>
 </html>
 

@@ -3,8 +3,10 @@
 <mapper namespace="com.yi.rentcar_project.dao.PostDao">
 
 	<select id="selectPostByName" parameterType="Post" resultType="Post">
-		select zipcode, sido, sigungu, eupmyeon, doro, building1 , building2 from post
-		where sido=#{sido} and doro=#{doro} order by building1, building2;
+		select zipcode, sido, sigungu, eupmyeon, doro, building1 , if(building2=0,'',building2) as building2
+		from post
+		where sido=#{sido} and doro=#{doro} 
+		order by building1, (if(building2=0,'',building2))
 	</select>
 
 </mapper>

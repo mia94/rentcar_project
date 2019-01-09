@@ -8,11 +8,6 @@ public class Post {
 	private String doro;
 	private int building1;
 	private int building2;
-	
-/*	오타
-	private int buliding1;
-	private int buliding2;
-*/
 
 	public String getZipcode() {
 		return zipcode;
@@ -53,7 +48,7 @@ public class Post {
 	public void setDoro(String doro) {
 		this.doro = doro;
 	}
-	
+
 	public int getBuilding1() {
 		return building1;
 	}
@@ -70,28 +65,21 @@ public class Post {
 		this.building2 = building2;
 	}
 
-	/*
-	public int getBuliding1() {
-		return buliding1;
-	}
-
-	public void setBuliding1(int buliding1) {
-		this.buliding1 = buliding1;
-	}
-
-	public int getBuliding2() {
-		return buliding2;
-	}
-
-	public void setBuliding2(int buliding2) {
-		this.buliding2 = buliding2;
-	}
-*/
-	
 	@Override
 	public String toString() {
-		return String.format("%s %s %s %s %s %s", sido, sigungu, eupmyeon, doro, building1, 
-				(building2==0)? "" : "- " + building2);
+		return String.format("%s %s %s %s %s %s", sido, sigungu, eupmyeon, doro, building1,
+				(building2 == 0) ? "" : "- " + building2);
+	}
+
+	public Post() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Post(String sido, String doro) {
+		super();
+		this.sido = sido;
+		this.doro = doro;
 	}
 
 }
