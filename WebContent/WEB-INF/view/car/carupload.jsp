@@ -64,13 +64,12 @@
 		<section>
 		<h1>차량 추가</h1>
 			<div id="upload_wrap">
-				<!-- <form action="" enctype="multipart/form-data" method="post">
-					<p>
+
+				<form action="uploadcar.do" method="post"><!--   enctype="multipart/form-data"  -->
+					<!-- <p>
 						<label>PHOTH</label>
 						<input type="file" name="carImg">
-					</p>
-				</form> -->
-				<form action="uploadcar.do" method="post">
+					</p> -->
 					<p>
 						<label>차량번호</label>
 						<input type="text" name="car_code" class="textfield">

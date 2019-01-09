@@ -45,7 +45,7 @@
 				<p> 선택된 차량 코드 : ${carmodel.carCode}</p>
 				<a href="carmodify.do?carCode=${carmodel.carCode }">[수정]</a><!-- 수정연결 아직 안됨 -->
 				<a href="cardelete.do?carCode=${carmodel.carCode }" id="delBtn">[삭제]</a>
-				<a href="#">[목록]</a>
+				<a href="carlist.do">[목록]</a>
 			</div>
 		</section>
 	</div>
