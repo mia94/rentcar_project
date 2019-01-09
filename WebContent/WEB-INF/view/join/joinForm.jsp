@@ -193,13 +193,17 @@
       
       <p>
        <label>우편번호</label>
-      <input type="text" name="zipcode">
+      <input type="text" name="zipcode" id="zipcode">
       <input type="button" value="우편번호 검색" name="post" id="BtnPost">
       </p>
       
       <p>
        <label>주소</label>   
-      	<input type="text" name="address">
+      	<input type="text" name="address" id="address">
+      </p>
+      <p>
+       <label>상세주소</label>   
+      	<input type="text" name="address" id="address">
       </p>
       
 	 <p>
