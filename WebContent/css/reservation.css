@@ -1,0 +1,110 @@
+@CHARSET "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+	
+	*{
+		font-family: 'Noto Sans KR', sans-serif;
+	}
+	
+	/* 전체를 감싸는 div */
+	div#date_container{
+		margin: 20px auto;
+		width: 1000px;
+		overflow: hidden;
+	}
+	
+	/* 대여일 선택 */
+	div#choose_rent_start{
+		float: left;
+	}
+	
+	/* 반납일 선택 */
+	div#choose_rent_end{
+		float: left;
+		margin-left: 50px;
+	}
+	
+	input#start_date, input#end_date{
+		width: 140px;
+		height: 31px;
+		padding: 10px;
+		font-family: inherit;
+		font-size: 16px;
+	}
+	
+	/* 셀렉트 메뉴 */
+	div.selectWrap, div.selectWrapMinute, div.selectWrap2, div.selectWrapMinute2{
+		width: 100px;
+		overflow: hidden;
+		border: 1px solid #ccc;
+		padding: 0px;
+		margin: 0px;
+		float: left;
+	}
+	
+	div.defaultTitle, div.defaultTitleMinute, div.defaultTitle2, div.defaultTitleMinute2{
+		width: 90px;
+		float: left;
+		height: 53px;
+		line-height: 53px;
+		padding-left: 10px;
+	}
+	
+	div.selectWrap ul, div.selectWrap2 ul{
+		margin: 0;
+		padding: 5px;
+		width: 90px;
+		height: 140px;
+		list-style: none;
+		overflow: auto;
+		border-top: 1px solid #ccc;
+		display: none;
+	}
+	
+	div.selectWrapMinute ul, div.selectWrapMinute2 ul{
+		margin: 0;
+		padding: 5px;
+		width: 90px;
+		height: 75px;
+		list-style: none;
+		overflow: auto;
+		border-top: 1px solid #ccc;
+		display: none;
+	}
+	
+	div.selectWrap ul li, div.selectWrapMinute ul li, div.selectWrap2 ul li, div.selectWrapMinute2 ul li{
+		background-color: none;
+		width: 50%;
+		padding: 5px 3px 8px 5px;
+	}
+	
+	div.selectWrap ul li a, div.selectWrapMinute ul li a, div.selectWrap2 ul li a, div.selectWrapMinute2 ul li a{
+		text-decoration: none;
+		color: black;
+	}
+		
+	div.selectWrap ul li a:hover, div.selectWrapMinute ul li a:hover, div.selectWrap2 ul li a:hover, div.selectWrapMinute2 ul li a:hover{
+		color: red;
+	}
+	
+	/* 총 대여시간 */
+	div.dateTotalTimeWrap{
+		width: 150px;
+		height: 43px;
+		line-height: 43px;
+		padding: 5px 5px 5px 10px;
+		margin-left: 40px;
+		border: 1px solid #ccc;
+		display: inline-block;
+	}
+	
+	div.dateTotalTimeWrap span#diff{
+		color: red;
+		font-weight: bold;
+	}
+	
+	button#calRentDate{
+		display: block;
+		margin: 10px 0;
+		padding: 5px;
+	}
