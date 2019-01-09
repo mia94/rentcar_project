@@ -13,15 +13,12 @@ public class CarListHandler implements CommandHandler {
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		if(req.getMethod().equalsIgnoreCase("get")){
+
 			CarModelService service = CarModelService.getInstance();
 			List<CarModel> list = service.selectCarModelByAll();
 			req.setAttribute("list", list);
 			return "/WEB-INF/view/car/carlist.jsp";
-		}else if(req.getMethod().equalsIgnoreCase("post")){
-			
-		}
-		return null;
+		
 	}
 
 }

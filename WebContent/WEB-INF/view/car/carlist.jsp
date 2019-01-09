@@ -92,9 +92,9 @@
 				<a href="carread.do?carCode=${item.carCode }">
 					<article data-index='i'>
 					<h3>${item.name }</h3>
-						<img src="${pageContext.request.contextPath }/images/${item.carCode  }.png" class="car_img">
-						<img src="${pageContext.request.contextPath }/images/${item.fuel.code  }.png" class="fuel_img">
-						<img src="${pageContext.request.contextPath }/images/${item.brand.no  }.png" class="brand_img">
+						<img src="${pageContext.request.contextPath }/upload/${item.carCode  }.png" class="car_img">
+						<img src="${pageContext.request.contextPath }/upload/${item.fuel.code  }.png" class="fuel_img">
+						<img src="${pageContext.request.contextPath }/upload/${item.brand.no  }.png" class="brand_img">
 						<%-- <p>${item.cartype }</p>
 						<p>${item.brand.name }</p>
 						<p>${item.color }</p> --%>	

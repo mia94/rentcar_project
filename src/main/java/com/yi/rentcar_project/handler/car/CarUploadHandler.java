@@ -61,10 +61,11 @@ public class CarUploadHandler implements CommandHandler {
 			CarModel carmodel = new CarModel(car_code, name, color, gear, brand, type, basic_charge, hour6, hour10, hour12, hour_else, fuel, is_rent, rent_cnt);
 			CarModelService service = CarModelService.getInstance();
 			service.insertCarModel(carmodel);
+
 			
 			return "carlist.do";
 		}
-		return null;
+		return "carlist.do";
 	}
 
 }

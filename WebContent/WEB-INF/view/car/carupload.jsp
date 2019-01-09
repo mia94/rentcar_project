@@ -64,6 +64,12 @@
 		<section>
 		<h1>차량 추가</h1>
 			<div id="upload_wrap">
+				<!-- <form action="" enctype="multipart/form-data" method="post">
+					<p>
+						<label>PHOTH</label>
+						<input type="file" name="carImg">
+					</p>
+				</form> -->
 				<form action="uploadcar.do" method="post">
 					<p>
 						<label>차량번호</label>
@@ -137,9 +143,11 @@
 							</tr>
 						</table>
 					</p>
+					
 					<!-- isRent, rentCnt 0으로 자동입력되게 하기 -->
 					<input type="submit" value="등록">
 					<input type="reset" value="취소">
+					
 				</form>
 			</div>
 		</section>

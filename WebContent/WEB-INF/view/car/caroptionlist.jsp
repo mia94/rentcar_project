@@ -31,13 +31,10 @@
 	}
 	.wrap{
 		width:450px;
-		height:300px;
+		height:288px; 
 		float: left;
 		border: 1px solid black;
 		padding: 10px;
-	}
-	.input{
-		text-align: center;
 	}
 	.list_p{
 		height: 40px;
@@ -68,7 +65,7 @@
 			</ul>
 			<p>브랜드관리</p>
 			<ul>
-				<li><a href="#">추가</a></li>
+				<li><a href="brandupload.do">추가</a></li>
 				<li><a href="#">수정</a></li>
 				<li><a href="#">삭제</a></li>
 			</ul>
@@ -94,11 +91,6 @@
 							<span>${item.type }</span>
 						</p>
 				</c:forEach>
-				<div class="input">
-					<a href="brandupload.do">[추가]</a>
-					<a href="#">[수정]</a>
-					<a href="#">[삭제]</a>
-				</div>
 			</div>
 			<div class="wrap">
 				<h3>브랜드 관리</h3>
@@ -108,11 +100,6 @@
 							<span>${item.name }</span>
 						</p>
 				</c:forEach>
-				<div class="input">
-					<a href="#">[추가]</a>
-					<a href="#">[수정]</a>
-					<a href="#">[삭제]</a>
-				</div>
 			</div>
 			<div class="wrap">
 			<h3>연료 관리</h3>
@@ -122,11 +109,6 @@
 							<span>${item.code }</span>
 						</p>
 				</c:forEach>
-				<div class="input">
-						<a href="#">[추가]</a>
-						<a href="#">[수정]</a>
-						<a href="#">[삭제]</a>
-				</div>
 			</div>
 			<div class="wrap">
 				<h3>옵션 관리</h3>
@@ -137,11 +119,6 @@
 							<span>${item.price }</span>
 						</p>	
 				</c:forEach>
-				<div class="input">
-					<a href="#">[추가]</a>
-					<a href="#">[수정]</a>
-					<a href="#">[삭제]</a>
-				</div>
 			</div>
 			</div>
 		</section>
