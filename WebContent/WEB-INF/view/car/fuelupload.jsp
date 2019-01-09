@@ -37,30 +37,30 @@
 </style>
 </head>
 <body>
-	<div id="container">
+<div id="container">
 		<header>
 			<jsp:include page="../header.jsp"></jsp:include>
 		</header>
 		
 		<section>
-		<h1>브랜드 추가 창</h1>
+		<h1>연료 추가 창</h1>
 			<aside>
 					<jsp:include page="aside.jsp"></jsp:include>
 			</aside>
 			<div id="upload_wrap">
-				<form action="brandupload.do" method="post">
+				<form action="fuelupload.do" method="post">
 					<p>
-						<label>브랜드 코드</label>
+						<label>연료 코드</label>
 						<input type="text" name="no" class="textfield">
 					</p>
 					<p>
-						<label>브랜드 이름</label>
-						<input type="text" name="name" class="textfield">
+						<label>연료 이름</label>
+						<input type="text" name="code" class="textfield">
 					</p>
-					<p>
-						<label>브랜드 로고</label>
-						<input type="file" name="brandImg">
-					</p>
+					<!-- <p>
+						<label>연료 표기</label>
+						<input type="file" name="fuelImg">
+					</p> -->
 
 					<div id="btn_wrap">
 						<input type="submit" value="저장">

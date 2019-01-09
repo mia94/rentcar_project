@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <style>
-	#upload_wrap{
+	#modify_wrap{
 		width:1100px;
 		margin: 0 auto;
 	}
@@ -56,20 +56,16 @@
 </style>
 </head>
 <body>
-	<div id="container">
+<div id="container">
 		<header>
 			<jsp:include page="../header.jsp"></jsp:include>
 		</header>
 		
 		<section>
 		<h1>차량 추가</h1>
-			<div id="upload_wrap">
+			<div id="modify_wrap">
 
-				<form action="uploadcar.do" method="post"><!--   enctype="multipart/form-data"  -->
-					<!-- <p>
-						<label>PHOTH</label>
-						<input type="file" name="carImg">
-					</p> -->
+				<form action="modifycar.do" method="post"><!--   enctype="multipart/form-data"  -->
 					<p>
 						<label>차량번호</label>
 						<input type="text" name="car_code" class="textfield">
@@ -127,11 +123,6 @@
 					<p>
 						<label id="charge">요금표</label>
 						<br><br><br>
-						<!-- <input type="text" name="basic_charge" class="charge">
-						<input type="text" name="hour6" class="charge">
-						<input type="text" name="hour10" class="charge">
-						<input type="text" name="hour12" class="charge">
-						<input type="text" name="hour_else" class="charge"> -->
 						<table>
 							<tr>
 								<td><input type="text" name="basic_charge" class="charge"></td>
