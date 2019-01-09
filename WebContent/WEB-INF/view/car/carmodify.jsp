@@ -54,6 +54,13 @@
 		border:1px solid gray;
 	}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		var brand = ${carmodel.brand.no};
+			
+	})
+</script>
 </head>
 <body>
 <div id="container">
@@ -62,17 +69,17 @@
 		</header>
 		
 		<section>
-		<h1>차량 추가</h1>
+		<h1>차량 수정</h1>
 			<div id="modify_wrap">
 
-				<form action="modifycar.do" method="post"><!--   enctype="multipart/form-data"  -->
+				<form action="carmodify.do" method="post"><!--   enctype="multipart/form-data"  -->
 					<p>
 						<label>차량번호</label>
-						<input type="text" name="car_code" class="textfield">
+						<input type="text" name="car_code" class="textfield" value="${carmodel.carCode}">
 					</p>
 					<p>
 						<label>모델명</label>
-						<input type="text" name="name"  class="textfield">
+						<input type="text" name="name"  class="textfield" value="${carmodel.name}">
 					</p>
 					<p>
 						<label>브랜드</label>
@@ -125,11 +132,11 @@
 						<br><br><br>
 						<table>
 							<tr>
-								<td><input type="text" name="basic_charge" class="charge"></td>
-								<td><input type="text" name="hour6" class="charge"></td>
-								<td><input type="text" name="hour10" class="charge"></td>
-								<td><input type="text" name="hour12" class="charge"></td>
-								<td><input type="text" name="hour_else" class="charge"></td>
+								<td><input type="text" name="basic_charge" class="charge" value="${carmodel.basicCharge }"></td>
+								<td><input type="text" name="hour6" class="charge" value="${carmodel.hour6 }"></td>
+								<td><input type="text" name="hour10" class="charge" value="${carmodel.hour10 }"></td>
+								<td><input type="text" name="hour12" class="charge" value="${carmodel.hour12 }"></td>
+								<td><input type="text" name="hour_else" class="charge" value="${carmodel.hourElse }"></td>
 							</tr>
 						</table>
 					</p>
