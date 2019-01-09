@@ -58,7 +58,7 @@
 				<img src="">
 				<img src="${pageContext.request.contextPath }/upload/${carmodel.carCode  }.png">
 				<div id="info_wrap">
-					<p> 선택된 차량 : ${carmodel.name}</p>
+					<p> 선택된 차량 : ${carmodel.name},${carmodel.gear }</p>
 					<p> 차량 색상 : ${carmodel.color }</p>
 					<p> 선택된 차량 코드 : ${carmodel.carCode}</p>
 					<p> 브랜드 : ${carmodel.brand.name }</p>
