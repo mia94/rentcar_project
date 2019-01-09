@@ -3,5 +3,8 @@
 	<data-source id="mysql5-168266c49ac-7381e5aa7f48e1b2" provider="mysql" driver="mysql5" name="MySQL - localhost" save-password="true" show-system-objects="true" show-util-objects="true" read-only="false">
 		<connection host="localhost" port="3306" server="" database="" url="jdbc:mysql://localhost:3306/" user="root" password="AQsJNFNMSwJl8w==" home="C:\Program Files\MySQL\MySQL Server 5.7" type="dev"/>
 	</data-source>
+	<data-source id="mysql5-168306bf1cc-795b0b11e85493e8" provider="mysql" driver="mysql5" name="MySQL - proj_rentcar" save-password="true" show-system-objects="true" show-util-objects="true" read-only="false">
+		<connection host="localhost" port="3306" server="" database="proj_rentcar" url="jdbc:mysql://localhost:3306/proj_rentcar" user="root" password="AQsJNFNMSwJl8w==" home="C:\Program Files\MySQL\MySQL Server 5.7" type="dev"/>
+	</data-source>
 	<filters/>
 </data-sources>
