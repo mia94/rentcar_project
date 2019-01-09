@@ -10,11 +10,27 @@
 <style>
 	#read_wrap{
 		width:900px;
-		height: 600px;
-		margin: 0 auto;
+		height: 500px;
+		margin: 20px auto;
+		margin-top:100px;
+		position: relative;
 	}
 	img{
 		width:400px;
+	}
+	#info_wrap{
+		width:350px;
+		height: 200px;
+		position:absolute;
+		right:50px;
+		top:0;
+		background-color: lightgray;
+		padding: 10px;
+	}
+	#btn_wrap{ 
+		clear: both;
+		margin-top:100px;
+		text-align: center;
 	}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -40,12 +56,17 @@
 			<h1>차량별 세부정보</h1>
 			<div id="read_wrap">
 				<img src="">
-				<img src="${pageContext.request.contextPath }/images/${carmodel.carCode  }.png">
-				<p> 선택된 차량 : ${carmodel.name}</p>
-				<p> 선택된 차량 코드 : ${carmodel.carCode}</p>
-				<a href="carmodify.do?carCode=${carmodel.carCode }">[수정]</a><!-- 수정연결 아직 안됨 -->
-				<a href="cardelete.do?carCode=${carmodel.carCode }" id="delBtn">[삭제]</a>
-				<a href="carlist.do">[목록]</a>
+				<img src="${pageContext.request.contextPath }/upload/${carmodel.carCode  }.png">
+				<div id="info_wrap">
+					<p> 선택된 차량 : ${carmodel.name}</p>
+					<p> 차량 색상 : ${carmodel.color }</p>
+					<p> 선택된 차량 코드 : ${carmodel.carCode}</p>
+				</div>
+				<div id="btn_wrap">
+					<a href="carmodify.do?carCode=${carmodel.carCode }">[수정]</a><!-- 수정연결 아직 안됨 -->
+					<a href="cardelete.do?carCode=${carmodel.carCode }" id="delBtn">[삭제]</a>
+					<a href="carlist.do">[목록]</a>
+				</div>
 			</div>
 		</section>
 	</div>
