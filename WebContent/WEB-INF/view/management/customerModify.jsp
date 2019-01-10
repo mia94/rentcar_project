@@ -75,11 +75,6 @@
 	 		<option value="2종보통">2종보통</option>
 		</select>
 		 
-		 <p>
-         <label>현재 비밀번호</label>
-         <input type="password" name="password"> 
-       
-      </p>
       <p>
          <label>새비밀번호</label>
          <input type="password" name="password"> 
