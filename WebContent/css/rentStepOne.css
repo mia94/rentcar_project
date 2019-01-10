@@ -5,3 +5,9 @@
 	*{
 		font-family: 'Noto Sans KR', sans-serif;
 	}
+	
+	div#rentStepOne_container{
+		width: 1000px;
+		margin: 20px auto;
+		border: 2px solid pink;
+	}

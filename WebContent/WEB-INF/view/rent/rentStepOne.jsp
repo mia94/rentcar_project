@@ -19,23 +19,27 @@
 		
 		<!-- section -->
 		<section>
-			대여일 : ${start }<br>
-			대여시간 : ${startH }<br>
-			대여 분 : ${startM }<br>
-			반납일 : ${end }<br>
-			반납시간 : ${endH }<br>
-			반납 분 : ${endM } <br>
-			총 대여일 : ${rentDate }<br>
+			<div id="rentStepOne_container">
 			
-			<c:forEach var="car" items="${list }">
-				<p><img src="${pageContext.request.contextPath }/upload/${car.carCode }.png"></p>
-				<p>${car.name }</p>
-				<p><img src="${pageContext.request.contextPath }/upload/${car.fuel.code }.png"></p>
-				<p><img src="${pageContext.request.contextPath }/upload/${car.brand.name }.png"></p>
-				<p>${car.basicCharge }</p>
-			</c:forEach>
+				
+				대여일 : ${start }<br>
+				대여시간 : ${startH }<br>
+				대여 분 : ${startM }<br>
+				반납일 : ${end }<br>
+				반납시간 : ${endH }<br>
+				반납 분 : ${endM } <br>
+				총 대여일 : ${rentDate }<br>
+				차량 유형 : ${carType }<br>
+				
+				<c:forEach var="car" items="${list }">
+					<p><img src="${pageContext.request.contextPath }/upload/${car.carCode }.png"></p>
+					<p>${car.name }</p>
+					<p><img src="${pageContext.request.contextPath }/upload/${car.fuel.code }.png"></p>
+					<p><img src="${pageContext.request.contextPath }/upload/${car.brand.name }.png"></p>
+					<p>${car.basicCharge }</p>
+				</c:forEach>
 			
-			
+			</div>
 		</section>
 		
 	</div>
