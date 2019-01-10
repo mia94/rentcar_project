@@ -25,6 +25,7 @@ $(function() {
 
 <a href="">고객관리</a>
 <a href="carlist.do">차량관리</a>
+<a href="carlistcustomer.do">차량관리(고객용)</a>
 <a href="reservation.do">대여관리</a>
 <a href="login.do" id="aaa">로그인</a><a id="bbb"></a>
 <a href="join.do">회원가입</a>
