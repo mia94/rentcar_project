@@ -1,17 +1,45 @@
 package com.yi.rentcar_project.service;
 
-public class RentService {
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.yi.rentcar_project.dao.RentDao;
+import com.yi.rentcar_project.model.CarModel;
+import com.yi.rentcar_project.model.CarType;
+import com.yi.rentcar_project.mvc.MySqlSessionFactory;
+
+public class RentService implements RentDao{
 	//Singleton Pattern
-	private static final RentService service = new RentService();
+	private static final RentService instance = new RentService();
 	
 	public static RentService getInstance(){
-		return service;
+		return instance;
 	}
 	
-	//Insert
-	//  0 : 추가 성공
-	// -1 : id에 해당하는 Member가 없는 경우
-	// -2 : rent 테이블에 저장 실패한 경우
-	// -3 : 그 외
+	public RentService() {
+		// TODO Auto-generated constructor stub
+	}
 	
+	//Select
+	//차량유형 선택해서 해당 차량에 속하는 모든 차량 이름, 브랜드, 연료종류 가지고오기
+	public List<CarModel> selectByCarType(String name){
+		SqlSession session = null;
+		
+		try {
+			session = MySqlSessionFactory.openSession();
+			
+			RentDao dao = session.getMapper(RentDao.class);
+			
+			return dao.selectByCarType(name);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			
+		} finally {
+			session.close();
+		}
+		return null;
+	}
 }

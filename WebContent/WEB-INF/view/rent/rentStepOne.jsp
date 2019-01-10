@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentStepOne.css?ab" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentStepOne.css?bcd" rel="stylesheet"  type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -25,7 +26,16 @@
 			반납시간 : ${endH }<br>
 			반납 분 : ${endM } <br>
 			총 대여일 : ${rentDate }<br>
-			차량 유형 : ${carType }<br>
+			
+			<c:forEach var="car" items="${list }">
+				<p><img src="${pageContext.request.contextPath }/upload/${car.carCode }.png"></p>
+				<p>${car.name }</p>
+				<p><img src="${pageContext.request.contextPath }/upload/${car.fuel.code }.png"></p>
+				<p><img src="${pageContext.request.contextPath }/upload/${car.brand.name }.png"></p>
+				<p>${car.basicCharge }</p>
+			</c:forEach>
+			
+			
 		</section>
 		
 	</div>
