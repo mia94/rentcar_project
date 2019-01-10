@@ -207,7 +207,7 @@ $(function() {
 		$("#totalRentDate").val(totalDate);
 			
 		//form에 있는 내용들 전송하기
-		if($("#startDate").val() != null && $("#startHour").val() != "시간 선택" && $("#startMin").val() != "분 선택" && $("#endDate").val() != null && $("#endHour").val() != "시간 선택" && $("#endMin").val() != null && $("#selectCarType").val() != null && $("#totalRentDate").val() != null){
+		if($("#startDate").val() != null && $("#startHour").val() != "시간 선택" && $("#startMin").val() != "분 선택" && $("#endDate").val() != null && $("#endHour").val() != "시간 선택" && $("#endMin").val() != "분 선택" && $("#selectCarType").val() != "" && $("#totalRentDate").val() != 0){
 			$("#reserve").submit();
 		} else{
 			alert("차량대여에 필요한 내용들을 선택해주세요.");
