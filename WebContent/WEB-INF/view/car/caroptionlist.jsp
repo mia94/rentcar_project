@@ -50,10 +50,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(function(){
-	$("#typeDel").click(function(){
+	$(".typeDel").click(function(){
 		var del = confirm("정말 삭제하시겠습니까?");
 		if(del==true){
-			location.href="${pageContext.request.contextPath }/cartypedelete.do?code=${item.code }";
+			var code = $(this).parent(".list_p").children("span").first().text();
+			location.href="${pageContext.request.contextPath }/cartypedelete.do?code="+code;
+		}
+		return false;
+	})
+	$(".brandDel").click(function(){
+		var del = confirm("정말 삭제하시겠습니까?");
+		if(del==true){
+			var no = $(this).parent(".list_p").children("span").first().text();
+			location.href="${pageContext.request.contextPath }/branddelete.do?no="+no;
 		}
 		return false;
 	})
@@ -76,7 +85,7 @@ $(function(){
 							<span>${item.code }</span> 
 							<span>${item.type }</span>
 							<a href="cartypemodify.do?code=${item.code }">수정</a>
-							<a href="cartypedelete.do?code=${item.code }" id="typeDel">삭제</a>
+							<a href="cartypedelete.do?code=${item.code }" class="typeDel">삭제</a>
 						</p>
 				</c:forEach>
 				<p><a href="cartypeupload.do" class="btnAdd">추가</a></p>
@@ -88,7 +97,7 @@ $(function(){
 							<span>${item.no }</span>
 							<span>${item.name }</span>
 							<a href="brandmodify.do?no=${item.no }">수정</a>
-							<a href="#" id="brandDel">삭제</a>
+							<a href="branddelete.do?no=${item.no }" class="brandDel">삭제</a>
 						</p>
 				</c:forEach>
 				<p><a href="brandupload.do" class="btnAdd">추가</a></p>
@@ -100,7 +109,7 @@ $(function(){
 							<span>${item.no }</span>
 							<span>${item.code }</span>
 							<a href="#">수정</a>
-							<a href="#" id="fuelDel">삭제</a>
+							<a href="#" class="fuelDel">삭제</a>
 						</p>
 				</c:forEach>
 				<p><a href="fuelupload.do" class="btnAdd">추가</a></p>
@@ -113,7 +122,7 @@ $(function(){
 							<span>${item.name }</span>
 							<span>${item.price }</span>
 							<a href="#">수정</a>
-							<a href="#" id="optionDel">삭제</a>
+							<a href="#" class="optionDel">삭제</a>
 						</p>	
 				</c:forEach>
 				<p><a href="caroptionupload.do" class="btnAdd">추가</a></p>

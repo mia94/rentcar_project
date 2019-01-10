@@ -13,10 +13,8 @@ public class CarTypeDeleteHandler implements CommandHandler {
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		
 		String code = req.getParameter("code");
-		System.out.println(code);
 		CarType cartype = new CarType();
 		cartype.setCode(code);
-		System.out.println(cartype);
 		
 		CarTypeService service = CarTypeService.getInstance();
 		service.deleteCarType(cartype);
