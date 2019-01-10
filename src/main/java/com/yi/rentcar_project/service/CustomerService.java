@@ -2,6 +2,8 @@ package com.yi.rentcar_project.service;
 
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import org.apache.ibatis.session.ResultContext;
 import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.SqlSession;
@@ -127,7 +129,7 @@ public class CustomerService implements CustomerDao {
 		} finally {
 			sqlSession.close();
 		}
-
+		
 	}
 
 	@Override

@@ -35,6 +35,7 @@ public class JoinHandler implements CommandHandler {
 			String license = req.getParameter("license");
 			String zipcode = req.getParameter("zipcode");
 			String address = req.getParameter("address");
+			String detailAddr = req.getParameter("detailAddr");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Date dobs = sdf.parse(dob);
@@ -44,7 +45,7 @@ public class JoinHandler implements CommandHandler {
 			JoinService service = JoinService.getInstance();
 			Employee employee = new Employee("E001");
 			Grade grade = new Grade("G001");
-			Customer customer = new Customer(id, passwd, name, zipcode, address,
+			Customer customer = new Customer(id, passwd, name, zipcode, (address+" "+detailAddr),
 					(phone + "-" + phone2 + "-" + phone3), dobs, (email1 + "@" + email2), employee, license, grade, 0);
 			customer.setCode(service.getNextCustomerCode());
 			CustomEvent customEvent = new CustomEvent("EVT1", customer.getCode(), false);
