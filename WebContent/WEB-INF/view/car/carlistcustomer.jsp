@@ -30,6 +30,9 @@
 		position: relative;
 		color:black;
 	}
+	#list_wrap ul li a:hover{
+		background-color: #D9E5FF;
+	}
 	#list_wrap ul li #total{
 		line-height: 65px;
 	}
@@ -52,9 +55,12 @@
 		width:520px;
 		padding:10px;
 		height:170px;
-		border:1px solid gray;
+		border:0.5px solid #E7E7E7;
 		float: left;
 		position: relative; 
+	}
+	article:hover{
+		background-color: #EBF7FF;
 	}
 	article h3{
 		color:gray;
@@ -98,9 +104,8 @@
 		</header>
 		
 		<section>
-		<h1>차량 목록</h1>
-		
 			<div id="list_wrap">
+			<h1>차량 목록</h1>
 				<ul>
 					<li><a href="carlist.do" id="total">전체</a></li>
 					<li>

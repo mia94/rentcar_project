@@ -35,8 +35,11 @@
 		width:154px; 
 		height: 70px;
 		color:white;
-		background-color: #232323;
+		background-color: #4C4C4C;
 		position: relative;
+	}
+	#list_wrap ul li a:hover{
+		background-color: #6799FF;
 	}
 	#list_wrap ul li #total{
 		line-height: 65px;
@@ -68,9 +71,12 @@
 		width:520px;
 		padding:10px;
 		height:170px;
-		border:1px solid gray;
+		border:0.5px solid #EAEAEA;
 		float: left;
 		position: relative;
+	}
+	article:hover{
+		background-color:#F6F6F6; 
 	}
 	article h3{
 		color:gray;
