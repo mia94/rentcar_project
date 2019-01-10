@@ -39,6 +39,7 @@ public class RentStepOneHandler implements CommandHandler {
 			req.setAttribute("endM", endM);
 			req.setAttribute("list", list);
 			req.setAttribute("rentDate", rentDate);
+			req.setAttribute("carType", carType);
 			
 			return "/WEB-INF/view/rent/rentStepOne.jsp";
 		}

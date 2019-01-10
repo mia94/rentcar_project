@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/reservation.css?b" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/reservation.css?bcdfs" rel="stylesheet"  type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -101,12 +101,12 @@
 				<h2>차량 유형 선택</h2><hr>
 				<nav id="tapMenu">
 					<ul>
-						<li><a href="#"><img src="${pageContext.request.contextPath }/images/경차b.png" class="carImg"><span class='carType'>경차</span></a></li>
+						<li><a href="#"><img src="${pageContext.request.contextPath }/images/경형b.png" class="carImg"><span class='carType'>경형</span></a></li>
 						<li><a href="#"><img src="${pageContext.request.contextPath }/images/소형b.png" class="carImg"><span class='carType'>소형</span></a></li>
 						<li><a href="#"><img src="${pageContext.request.contextPath }/images/중형b.png" class="carImg"><span class='carType'>중형</span></a></li>
 						<li><a href="#"><img src="${pageContext.request.contextPath }/images/대형b.png" class="carImg"><span class='carType'>대형</span></a></li>
 						<li><a href="#"><img src="${pageContext.request.contextPath }/images/승합b.png" class="carImg"><span class='carType'>승합</span></a></li>
-						<li><a href="#"><img src="${pageContext.request.contextPath }/images/SUVb.png" class="carImg"><span class='carType'>SUV</span></a></li>
+						<li><a href="#"><img src="${pageContext.request.contextPath }/images/suvbk.png" class="carImg"><span class='carType'>SUV</span></a></li>
 					</ul>
 				</nav>
 			</div>
