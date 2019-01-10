@@ -29,6 +29,7 @@ $(function() {
 </c:if>
 
 <c:if test="${AUTH !=null}">
+<a id="bbb"></a><a href="login.do" id="aaa">로그인</a>
 <a href="">고객관리</a>
 <a href="carlist.do">차량관리</a>
 <a href="carlistcustomer.do">차량관리(고객용)</a>
