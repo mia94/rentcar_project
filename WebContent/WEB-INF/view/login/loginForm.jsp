@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
@@ -38,24 +38,25 @@ p:LAST-CHILD input {
 	<form action="login.do" method="post">
 		<fieldset>
 			<p>
-				<label>¾ÆÀÌµð</label> 
+				<label>ì•„ì´ë””</label> 
 				<input type="text" name="id">
-					<input type="submit" value="·Î±×ÀÎ">
+					<input type="submit" value="ë¡œê·¸ì¸">
 				
 			</p>
 			<p>
-				<label>ºñ¹Ð¹øÈ£</label> 
+				<label>ë¹„ë°€ë²ˆí˜¸</label> 
 				<input type="password" name="password">
-			<input type="checkbox" value="°ü¸®ÀÚ ¸ðµå" name="checkManager">°ü¸®ÀÚ ¸ðµå
+			<input type="checkbox" value="ê´€ë¦¬ìž ëª¨ë“œ" name="checkManager">ê´€ë¦¬ìž ëª¨ë“œ
 			</p>
 			 
 			<p>
-				<input type="button" value="È¸¿ø°¡ÀÔ" name="join">
-				<input type="button" value="ID/PWÃ£±â" name="search">
+				<input type="button" value="íšŒì›ê°€ìž…" name="join">
+				<input type="button" value="ID/PWì°¾ê¸°" name="search">
 				
 			</p>
 		</fieldset>
 	</form>
+	
 	<c:if test="${error!=null }">
 		<script type="text/javascript">
 			alert("${error}");

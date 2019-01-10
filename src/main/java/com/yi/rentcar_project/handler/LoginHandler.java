@@ -5,10 +5,28 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.model.Employee;
+import com.yi.rentcar_project.model.Grade;
 import com.yi.rentcar_project.mvc.CommandHandler;
 import com.yi.rentcar_project.service.LoginService;
 
 public class LoginHandler implements CommandHandler {
+	public static Customer loginCusotmer;
+	public static Employee loginEmployee;
+	public static Grade loginGrade;
+	
+	public static LoginHandler login;
+	
+	
+
+	public static LoginHandler getLogin() {
+		return login;
+	}
+
+
+
+
+
+
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {

@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
@@ -19,40 +19,36 @@
 		
 		<section>
 		<form action=".do" method="post" id="f1">
-      <p>
-         <label>ÀÌ¸§</label>
-         <input type="text" name="name"> 
-        
-      </p>
-      <p>
-         <label>¾ÆÀÌµð</label>
-         <input type="text" name="id" > 
-       
-      </p>
-     
+	      <p>
+	         <label>ì´ë¦„</label>
+	         <input type="text" name="name"> 
+	      </p>
+	      <p>
+	         <label>ì•„ì´ë””</label>
+	         <input type="text" name="id" > 
+	      </p>
       
-       <p>
-         <label>»ý³â¿ùÀÏ</label>
-       	 <input type="text" id="datepicker" name="dob" class="format">
-       
-      </p>
+	       <p>
+	         <label>ìƒë…„ì›”ì¼</label>
+	       	 <input type="text" id="datepicker" name="dob" class="format"> 
+	      </p>
       
-  <p>
-         <label>ÀüÈ­¹øÈ£</label>
-        <select name="phone">
-        	<!-- <option selected="selected" value="opt">¼±ÅÃÇÏ¼¼¿ä</option> -->
-        	<option value="010">010</option>
-        	<option value="011">011</option>
-        	<option value="017">017</option>
-        </select>
-      - <input type="text" name="phone2"> - <input type="text" name="phone3">
-        
-      </p>
+  		<p>
+         <label>ì „í™”ë²ˆí˜¸</label>
+	        <select name="phone">
+	        	<!-- <option selected="selected" value="opt">ì„ íƒí•˜ì„¸ìš”</option> -->
+	        	<option value="010">010</option>
+	        	<option value="011">011</option>
+	        	<option value="017">017</option>
+	        </select>
+	      - <input type="text" name="phone2"> - <input type="text" name="phone3">
+     	 </p>
+     	 
        <p>
-         <label>ÀÌ¸ÞÀÏ</label>
+         <label>ì´ë©”ì¼</label>
          <input type="text"> @
         <select name="email">
-        	<!-- <option value="a">¼±ÅÃÇÏ¼¼¿ä</option> -->
+        	<!-- <option value="a">ì„ íƒí•˜ì„¸ìš”</option> -->
         	<option value="naver">naver.com</option>
         	<option value="gmail">gmail.com</option>
         	<option value="daum">daum.net</option>
@@ -61,44 +57,45 @@
       </p>
       
       <p>
-       <label>¿ìÆí¹øÈ£</label>
-      <input type="text" name="zipcode">
-      <input type="button" value="¿ìÆí¹øÈ£ °Ë»ö" name="post" id="BtnPost">
+       <label>ìš°íŽ¸ë²ˆí˜¸</label>
+	      <input type="text" name="zipcode">
+	      <input type="button" value="ìš°íŽ¸ë²ˆí˜¸ ê²€ìƒ‰" name="post" id="BtnPost">
       </p>
       
       <p>
-       <label>ÁÖ¼Ò</label>   
+       <label>ì£¼ì†Œ</label>   
       	<input type="text" name="address">
       </p>
       
 	 <p>
-	  <label>¸éÇãÁ¾·ù</label>
+	  <label>ë©´í—ˆì¢…ë¥˜</label>
 	 	<select name="license">
-	 		<!-- <option>¼±ÅÃÇÏ¼¼¿ä</option> -->
-	 		<option value="1Á¾º¸Åë">1Á¾º¸Åë</option>
-	 		<option value="2Á¾º¸Åë">2Á¾º¸Åë</option>
-		 </section>
+	 		<!-- <option>ì„ íƒí•˜ì„¸ìš”</option> -->
+	 		<option value="1ì¢…ë³´í†µ">1ì¢…ë³´í†µ</option>
+	 		<option value="2ì¢…ë³´í†µ">2ì¢…ë³´í†µ</option>
+		</select>
 		 
 		 <p>
-         <label>ÇöÀç ºñ¹Ð¹øÈ£</label>
+         <label>í˜„ìž¬ ë¹„ë°€ë²ˆí˜¸</label>
          <input type="password" name="password"> 
        
       </p>
       <p>
-         <label>»õºñ¹Ð¹øÈ£</label>
+         <label>ìƒˆë¹„ë°€ë²ˆí˜¸</label>
          <input type="password" name="password"> 
        
       </p>
       <p>
-         <label>ºñ¹Ð¹øÈ£ È®ÀÎ</label>
+         <label>ë¹„ë°€ë²ˆí˜¸ í™•ì¸</label>
          <input type="password" name="confirmPassword"> 
          
       </p>
         <p>  
-         <input type="submit" value="È¸¿øÁ¤º¸¼öÀå"> 
+         <input type="submit" value="íšŒì›ì •ë³´ìˆ˜ìž¥"> 
       </p>
    </form>
-		 
+		
+	</section> 
 	</div>
 	
 	<footer>
