@@ -164,7 +164,7 @@ $(function() {
 
 		//대여일자, 반납일자 모두 값이 있으면
 		if (end != "" && start != "" && divStartHour != "시간 선택" && divStartMin != "분 선택" && divStartHour != "시간 선택" && divStartMin != "분 선택") {
-			console.log(resultDay);
+			console.log(resultDay);+
 			$("#diff").text(resultDay);
 		}
 		
@@ -172,6 +172,38 @@ $(function() {
 			alert("대여기간은 최소 1일입니다.");
 		}
 	
+	})
+	
+	//차량 유형 선택
+	$("#tapMenu li").click(function(){
+		$("#tapMenu li").css({"width":"158px", "height":"75px", "background-color":"white"});   
+		$("#tapMenu li").removeClass("test");
+		$(this).css({"width":"158px", "height":"75px", "background-color":"#efefef"});
+		$(this).addClass("test");
+		
+		var car = $(this).text();
+		alert(car);
+		$("#selectCarType").val(car);
+	})
+	
+	//다음버튼
+	$("#btnNext").click(function(){
+		var startDate = $("#start_date").val();	
+		var startH = $(".defaultTitle").text();
+		var startM = $(".defaultTitleMinute").text();
+		var endDate = $("#end_date").val();
+		var endH = $(".defaultTitle2").text();
+		var endM = $(".defaultTitleMinute2").text();
+		
+		//input에 값 넣기
+		$("#startDate").val(startDate);
+		$("#startHour").val(startH);
+		$("#startMin").val(startM);
+		$("#endDate").val(endDate);
+		$("#endHour").val(endH);
+		$("#endMin").val(endM);
+			
+		$("#reserve").submit();
 	})
 
 })

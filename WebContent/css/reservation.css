@@ -13,13 +13,6 @@
 		overflow: hidden;
 	}
 	
-	/* 차량 유형 선택 전체를 감싸는 div */
-	div#cartype_container{
-		margin: 20px auto;
-		width: 1000px;
-		overflow: hidden;
-	}
-	
 	/* 대여일 선택 */
 	div#choose_rent_start{
 		float: left;
@@ -114,4 +107,94 @@
 		display: block;
 		margin: 10px 0;
 		padding: 5px;
+	}
+
+	/* 차량 유형 선택 전체를 감싸는 div */
+	div#cartype_container{
+		margin: 20px auto;                   
+		width: 1000px;    
+		overflow: hidden;
+	}
+	
+	/* 차량 유형 선택 탭 메뉴 */
+	nav#tapMenu{
+		width: 960px;
+		height: 75px;    
+		margin: 20px auto;                
+	}
+	
+	nav#tapMenu ul{
+		list-style: none;
+	}
+	
+	nav#tapMenu ul li{
+		display: inline;
+		float: left;
+		width: 158px;
+		border: 1px solid #ccc;
+		text-align: center;
+		line-height: 75px;
+		height: 75px;
+	}
+	
+	nav#tapMenu ul li a{
+		text-decoration: none;
+		color: #353535;
+		float: left;
+		width: 158px;
+		text-align: center;
+		line-height: 75px;
+		height: 75px;
+		font-size: 14px;
+		font-weight: bold;
+		position: relative;
+	}
+	
+	.carImg{
+		width: 60px;
+	}
+	
+	span.carType{
+		position: absolute;
+		top: 20px;
+		left: 65px;
+	}
+	
+	/* 버튼 영역 감싸는 부분 */
+	div#btn_wrap{
+		margin: 20px auto;
+		padding: 5px;
+		width: 1000px;
+		overflow: hidden;
+		text-align: center;
+	}
+	
+	div#btn_wrap a#cancel{
+		text-decoration: none;
+		color: #353535;
+		font-size: 18px;
+		font-weight: bold;
+		width: 150px;
+		height: 50px;
+		line-height: 50px;
+	}
+	
+	div#cancelWrap{
+		width: 150px;
+		height: 50px;
+		line-height: 50px;
+		border: 1px solid #353535;
+		display: inline-block;
+	}
+	
+	#btnNext{
+		width: 152px;
+		height: 52px;
+		background-color: #353535;
+		color: white;
+		font-weight: bold;
+		font-size: 18px;
+		line-height: 50px;
+		border: none;
+		margin-left: 10px;
 	}
