@@ -74,6 +74,14 @@ $(function(){
 		}
 		return false;
 	})
+	$(".optionDel").click(function(){
+		var del = confirm("정말 삭제하시겠습니까?");
+		if(del==true){
+			var no = $(this).parent(".list_p").children("span").first().text();
+			location.href="${pageContext.request.contextPath }/optiondelete.do?no="+no;
+		}
+		return false;
+	})
 })
 </script>
 </head>
