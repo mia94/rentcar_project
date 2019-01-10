@@ -56,7 +56,10 @@
 					<p> 10시간 : ${carmodel.hour10 }</p>
 					<p> 12시간 : ${carmodel.hour12 }</p>
 					<p> 12시간 이상 : ${carmodel.hourElse }</p>
-
+				</div>
+				<div id="btn_wrap">
+					<a href="carmodify.do?carCode=${carmodel.carCode }"></a><!-- 이전차량 보이기 -->
+					<a href="cardelete.do?carCode=${carmodel.carCode }"></a><!-- 이후차량 보이기 -->
 				</div>
 			</div>
 		</section>
