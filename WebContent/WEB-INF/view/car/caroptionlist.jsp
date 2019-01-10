@@ -132,7 +132,10 @@ $(function(){
 				<c:forEach var="item" items="${brandList }">
 						<p class="list_p">
 							<span>${item.no }</span>
-							<span>${item.name }</span>
+							<span>
+								<img src="${pageContext.request.contextPath }/upload/${item.no }.png">
+								${item.name }
+							</span>
 							<span class="btn_span">
 								<a href="brandmodify.do?no=${item.no }">수정</a>
 								<a href="branddelete.do?no=${item.no }" class="brandDel">삭제</a>
@@ -146,7 +149,10 @@ $(function(){
 				<c:forEach var="item" items="${fuelList }">
 						<p class="list_p">
 							<span>${item.no }</span>
-							<span>${item.code }</span>
+							<span>
+								<img src="${pageContext.request.contextPath }/upload/${item.code }.png">
+								${item.code }
+							</span>
 							<span class="btn_span">
 								<a href="fuelmodify.do?code=${item.code }">수정</a>
 								<a href="fueldelete.do?no=${item.no }" class="fuelDel">삭제</a>
