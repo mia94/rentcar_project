@@ -5,8 +5,35 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+<%-- $(function() {
+	<%
+		if(session.getAttribute("AUTH") !=null){
+			String id = (String)session.getAttribute("AUTH");
+		}
+	%>
+}) --%>
+
+</script>
+
 </head>
 <body>
+	<div id="container">
+		<header>
+			<jsp:include page="../header.jsp"></jsp:include>
+		</header>
+		
+		<section>
+		<form action="modify.do">
+		현재 비밀번호<input type="password" name="password">
+		<input type="submit" value="회원정보 수정">
+		</form>
+			</section>
+	</div>
 	
+	<footer>
+		<jsp:include page="../footer.jsp"></jsp:include>
+	</footer>
 </body>
 </html>

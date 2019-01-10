@@ -32,6 +32,11 @@ public class Customer {
 	
 	
 
+	public Customer(String passwd) {
+		super();
+		this.passwd = passwd;
+	}
+
 	public Customer(String code, String id, String passwd, String name, String zipCode, String address, String phone,
 			Date dob, String email, Employee empCode, String license, Grade gradeCode, int rentCnt) {
 		super();
@@ -119,9 +124,9 @@ public class Customer {
 		this.gradeCode = gradeCode;
 	}
 
-	public Customer(String cusId) {
+/*	public Customer(String cusId) {
 		this.Id = cusId;
-	}
+	}*/
 
 	/*
 	 * @Override public String toString() { return String.format(
