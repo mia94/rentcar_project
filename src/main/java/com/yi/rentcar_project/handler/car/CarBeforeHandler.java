@@ -24,7 +24,6 @@ public class CarBeforeHandler implements CommandHandler {
 			return "carreadcustomer.do?carCode="+code;
 		}
 		model = service.selectCarModelByNo(model);
-		//해당 모델이 없으면 원래창으로 돌아가야함
 		
 		return "carreadcustomer.do?carCode="+beforeCode;
 	}
