@@ -18,7 +18,7 @@
 		height:298px; 
 		margin-left:100px;
 		border:1px solid black;
-		position: relative;
+		position: relative; 
 	}
 	.wrap h1{
 		width:500px; 
@@ -30,7 +30,7 @@
 	}
 	.list_p{
 		height: 40px;
-		width:340px;
+		width:380px;
 		line-height:40px;
 		overflow: hidden;
 		position: relative;
@@ -47,8 +47,8 @@
 		text-decoration: none;
 		text-align: right;
 		position: absolute;
-		bottom: 10px;
-		right: 20px;
+		bottom: 20px;
+		right: 190px;
 	}
 	.wrap .btn_span{
 		width:130px; 
@@ -59,8 +59,6 @@
 	.wrap .btn_span a{
 		text-decoration: none;
 		color:gray;
-		padding: 5px;
-		border:1px solid gray;
 	}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -69,7 +67,7 @@ $(function(){
 	$(".typeDel").click(function(){
 		var del = confirm("정말 삭제하시겠습니까?");
 		if(del==true){
-			var code = $(this).parents(".list_p").children("span").first().text();
+			var code = $(this).parent("span").prev().text();
 			location.href="${pageContext.request.contextPath }/cartypedelete.do?code="+code;
 		}
 		return false;
@@ -77,7 +75,7 @@ $(function(){
 	$(".brandDel").click(function(){
 		var del = confirm("정말 삭제하시겠습니까?");
 		if(del==true){
-			var no = $(this).parents(".list_p").children("span").first().text();
+			var no = $(this).parent("span").prev().text();
 			location.href="${pageContext.request.contextPath }/branddelete.do?no="+no;
 		}
 		return false;
@@ -85,7 +83,7 @@ $(function(){
 	$(".fuelDel").click(function(){
 		var del = confirm("정말 삭제하시겠습니까?");
 		if(del==true){
-			var no = $(this).parents(".list_p").children("span").first().text();
+			var no = $(this).parent("span").prev().text();
 			location.href="${pageContext.request.contextPath }/fueldelete.do?no="+no;
 		}
 		return false;
@@ -114,52 +112,52 @@ $(function(){
 				<h1>차종</h1>
 				<c:forEach var="item" items="${typeList }">
 						<p class="list_p">
-							<span>${item.code }</span> 
 							<span>
 								<img src="${pageContext.request.contextPath }/images/${item.type }b.png">
-								${item.type }
 							</span>
+							<span>${item.type }</span>
+							<span>${item.code }</span> 
 							<span class="btn_span">
 								<a href="cartypemodify.do?code=${item.code }">수정</a>
 								<a href="cartypedelete.do?code=${item.code }" class="typeDel">삭제</a>
 							</span>
 						</p>
 				</c:forEach>
-				<p><a href="cartypeupload.do" class="btnAdd">추가</a></p>
+				<p><a href="cartypeupload.do" class="btnAdd">[ 추가  ]</a></p>
 			</div>
 			<div class="wrap">
 				<h1>브랜드</h1>
 				<c:forEach var="item" items="${brandList }">
 						<p class="list_p">
-							<span>${item.no }</span>
 							<span>
 								<img src="${pageContext.request.contextPath }/upload/${item.no }.png">
-								${item.name }
 							</span>
+							<span>${item.name }</span>
+							<span>${item.no }</span>
 							<span class="btn_span">
 								<a href="brandmodify.do?no=${item.no }">수정</a>
 								<a href="branddelete.do?no=${item.no }" class="brandDel">삭제</a>
 							</span>
 						</p>
 				</c:forEach>
-				<p><a href="brandupload.do" class="btnAdd">추가</a></p>
+				<p><a href="brandupload.do" class="btnAdd">[ 추가  ]</a></p>
 			</div>
 			<div class="wrap">
 			<h1>연료</h1>
 				<c:forEach var="item" items="${fuelList }">
 						<p class="list_p">
-							<span>${item.no }</span>
 							<span>
 								<img src="${pageContext.request.contextPath }/upload/${item.code }.png">
-								${item.code }
 							</span>
+							<span>${item.code }</span>
+							<span>${item.no }</span>
 							<span class="btn_span">
 								<a href="fuelmodify.do?code=${item.code }">수정</a>
 								<a href="fueldelete.do?no=${item.no }" class="fuelDel">삭제</a>
 							</span>
 						</p>
 				</c:forEach>
-				<p><a href="fuelupload.do" class="btnAdd">추가</a></p>
+				<p><a href="fuelupload.do" class="btnAdd">[ 추가  ]</a></p>
 			</div>
 			<div class="wrap">
 				<h1>옵션</h1>
@@ -174,7 +172,7 @@ $(function(){
 							</span>
 						</p>	
 				</c:forEach>
-				<p><a href="caroptionupload.do" class="btnAdd">추가</a></p>
+				<p><a href="caroptionupload.do" class="btnAdd">[ 추가  ]</a></p>
 			</div>
 			</div>
 		</section>

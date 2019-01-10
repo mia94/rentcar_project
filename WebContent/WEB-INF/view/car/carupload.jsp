@@ -9,8 +9,9 @@
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <style>
 	#upload_wrap{
-		width:1100px;
-		margin: 0 auto;
+		width:1000px;
+		height:600px;
+		margin: 47px auto;
 	}
 	label{
 		width:150px;
@@ -62,9 +63,9 @@
 		</header>
 		
 		<section>
-		<h1>차량 추가</h1>
+		
 			<div id="upload_wrap">
-
+			<h1>차량 추가</h1>
 				<form action="uploadcar.do" method="post"><!--   enctype="multipart/form-data"  -->
 					<!-- <p>
 						<label>PHOTH</label>

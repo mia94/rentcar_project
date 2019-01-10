@@ -9,7 +9,7 @@
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <style>
 	#modify_wrap{
-		width:800px; 
+		width:1000px; 
 		height: 600px;
 		margin:30px 80px;
 		border:1px solid black;
@@ -43,8 +43,9 @@
 		</header>
 		
 		<section>
-		<h1>브랜드 추가 창</h1>
+		
 			<div id="modify_wrap">
+			<h1>브랜드 수정 창</h1>
 				<form action="brandmodify.do" method="post">
 					<p>
 						<label>브랜드 코드</label>

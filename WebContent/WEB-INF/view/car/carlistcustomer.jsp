@@ -110,7 +110,7 @@
 					<li><a href="carlist.do" id="total">전체</a></li>
 					<li>
 						<a href="selectcustomer.do?cartype=S1">
-							<img src="${pageContext.request.contextPath }/images/경차b.png">
+							<img src="${pageContext.request.contextPath }/images/경형b.png">
 							<span>경형</span>
 						</a>
 					</li>
@@ -140,7 +140,7 @@
 					</li>
 					<li>
 						<a href="selectcustomer.do?cartype=S6">
-							<img src="${pageContext.request.contextPath }/images/SUVb.png">
+							<img src="${pageContext.request.contextPath }/images/suvbk.png">
 							<span>suv</span>
 						</a>
 					</li>

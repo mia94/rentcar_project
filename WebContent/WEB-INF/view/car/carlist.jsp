@@ -137,7 +137,7 @@
 					<li><a href="carlist.do" id="total">전체</a></li>
 					<li>
 						<a href="select.do?cartype=S1">
-							<img src="${pageContext.request.contextPath }/images/경차w.png">
+							<img src="${pageContext.request.contextPath }/images/경형w.png">
 							<span>경형</span>
 						</a>
 					</li>
@@ -167,7 +167,7 @@
 					</li>
 					<li>
 						<a href="select.do?cartype=S6">
-							<img src="${pageContext.request.contextPath }/images/SUVw.png">
+							<img src="${pageContext.request.contextPath }/images/suvw.png">
 							<span>suv</span>
 						</a>
 					</li>
