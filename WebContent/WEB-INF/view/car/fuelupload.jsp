@@ -37,16 +37,13 @@
 </style>
 </head>
 <body>
-<div id="container">
+	<div id="container">
 		<header>
 			<jsp:include page="../header.jsp"></jsp:include>
 		</header>
 		
 		<section>
 		<h1>연료 추가 창</h1>
-			<aside>
-					<jsp:include page="aside.jsp"></jsp:include>
-			</aside>
 			<div id="upload_wrap">
 				<form action="fuelupload.do" method="post">
 					<p>

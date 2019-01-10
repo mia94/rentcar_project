@@ -6,9 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/reservation.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/reservation.css?ab" rel="stylesheet"  type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -97,15 +96,35 @@
 			
 			<!-- 차량 유형 선택 -->
 			<div id="cartype_container">
-				<h2>차량 유형 선택</h2>
-				<div id="carType_tap_menu">
+				<h2>차량 유형 선택</h2><hr>
+				<nav id="tapMenu">
 					<ul>
-						<li><a href="#"></a>
+						<li><a href="#"><img src="${pageContext.request.contextPath }/images/경차b.png" class="carImg"><span class='carType'>경차</span></a></li>
+						<li><a href="#"><img src="${pageContext.request.contextPath }/images/소형b.png" class="carImg"><span class='carType'>소형</span></a></li>
+						<li><a href="#"><img src="${pageContext.request.contextPath }/images/중형b.png" class="carImg"><span class='carType'>중형</span></a></li>
+						<li><a href="#"><img src="${pageContext.request.contextPath }/images/대형b.png" class="carImg"><span class='carType'>대형</span></a></li>
+						<li><a href="#"><img src="${pageContext.request.contextPath }/images/승합b.png" class="carImg"><span class='carType'>승합</span></a></li>
+						<li><a href="#"><img src="${pageContext.request.contextPath }/images/SUVb.png" class="carImg"><span class='carType'>SUV</span></a></li>
 					</ul>
-				</div>
+				</nav>
+			</div>
+			
+			<div id="btn_wrap">
+				<div id="cancelWrap"><a href="#" id="cancel">취소</a></div>
+				<button type="button" id="btnNext">다음</button>
 			</div>
 			
 		</section>
+		
+		<form id="reserve" action="${pageContext.request.contextPath }/rentStepOne.do" method="post">
+			<input type="hidden" name="startDate" id="startDate">
+			<input type="hidden" name="startHour" id="startHour">
+			<input type="hidden" name="startMin" id="startMin">
+			<input type="hidden" name="endDate" id="endDate">
+			<input type="hidden" name="endHour" id="endHour">
+			<input type="hidden" name="endMin" id="endMin">
+			<input type="hidden" name="selectCarType" id="selectCarType">
+		</form>
 		
 	</div>
 	
@@ -116,6 +135,6 @@
 
 	<!-- 스크립트 부분(위에 스크립트 있으면 datepicker 실행이 안됨) -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="${pageContext.request.contextPath }/js/reservation.js"></script>
+	<script src="${pageContext.request.contextPath }/js/reservation.js?ca"></script>
 </body>
 </html>

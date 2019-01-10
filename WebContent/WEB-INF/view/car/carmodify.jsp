@@ -79,7 +79,7 @@
 				<form action="carmodify.do" method="post"><!--   enctype="multipart/form-data"  -->
 					<p>
 						<label>차량번호</label>
-						<input type="text" name="car_code" class="textfield" value="${carmodel.carCode}">
+						<input type="text" name="car_code" class="textfield" value="${carmodel.carCode}" readonly>
 					</p>
 					<p>
 						<label>모델명</label>
@@ -143,6 +143,15 @@
 								<td><input type="text" name="hour_else" class="charge" value="${carmodel.hourElse }"></td>
 							</tr>
 						</table>
+					</p>
+					<p>
+						<label>렌트 중</label>
+						<input type="radio" name="isRent" value="true">렌트 중
+						<input type="radio" name="isRent" value="false">보유 중
+					</p>
+					<p>
+						<label>렌트 회수</label>
+						<input type="text" name="rentCnt"  class="textfield" value="${carmodel.rentCnt }">
 					</p>
 					
 					<!-- isRent, rentCnt 0으로 자동입력되게 하기 -->

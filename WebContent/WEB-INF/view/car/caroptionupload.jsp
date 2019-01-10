@@ -44,9 +44,6 @@
 		
 		<section>
 		<h1>차 옵션 추가 창</h1>
-			<aside>
-					<jsp:include page="aside.jsp"></jsp:include>
-			</aside>
 			<div id="upload_wrap">
 				<form action="caroptionupload.do" method="post">
 					<p>

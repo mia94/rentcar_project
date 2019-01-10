@@ -8,13 +8,13 @@
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <style>
-	#upload_wrap{
+	#modify_wrap{
 		width:800px; 
 		height: 600px;
 		margin:30px 80px;
 		border:1px solid black;
 	}
-	#upload_wrap label{
+	#modify_wrap label{
 		width:150px;
 		height: 50px;
 		line-height: 50px;
@@ -24,7 +24,7 @@
 		text-align: center;
 		float: left;
 	}
-	#upload_wrap .textfield{
+	#modify_wrap .textfield{
 		width:295px;
 		height: 46px;
 		line-height: 46px;
@@ -43,20 +43,16 @@
 		</header>
 		
 		<section>
-		<h1>브랜드 추가 창</h1>
-			<div id="upload_wrap">
-				<form action="brandupload.do" method="post">
+		 <h1>차종 수정 창</h1>
+			<div id="modify_wrap">
+				<form action="cartypemodify.do" method="post">
 					<p>
-						<label>브랜드 코드</label>
-						<input type="text" name="no" class="textfield">
+						<label>차종 코드</label>
+						<input type="text" name="code" class="textfield" value="${cartype.code}" readonly>
 					</p>
 					<p>
-						<label>브랜드 이름</label>
-						<input type="text" name="name" class="textfield">
-					</p>
-					<p>
-						<label>브랜드 로고</label>
-						<input type="file" name="brandImg">
+						<label>차종 이름</label>
+						<input type="text" name="type" class="textfield" value="${cartype.type}">
 					</p>
 
 					<div id="btn_wrap">
