@@ -36,7 +36,7 @@
 	}
 	.list_p span{
 		float: left;
-		width:100px;
+		width:80px;
 		text-align: center;
 	}
 	.wrap .btnAdd{
@@ -129,8 +129,8 @@ $(function(){
 							<span>${item.no }</span>
 							<span>${item.name }</span>
 							<span>${item.price }</span>
-							<a href="#">수정</a>
-							<a href="#" class="optionDel">삭제</a>
+							<a href="optionmodify.do?no=${item.no }">수정</a>
+							<a href="optiondelete.do?no=${item.no }" class="optionDel">삭제</a>
 						</p>	
 				</c:forEach>
 				<p><a href="caroptionupload.do" class="btnAdd">추가</a></p>
