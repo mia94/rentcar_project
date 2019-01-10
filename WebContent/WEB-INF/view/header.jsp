@@ -26,6 +26,8 @@ $(function() {
 <c:if test="${AUTH ==null}">
 <a href="login.do" id="aaa">로그인</a><a id="bbb"></a>
 <a href="join.do">회원가입</a>
+<a href="searchId.do">아이디</a>
+<a href="searchPw.do">비밀번호 찾기</a>
 </c:if>
 
 <c:if test="${AUTH !=null}">

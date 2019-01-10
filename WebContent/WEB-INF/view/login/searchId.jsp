@@ -1,0 +1,47 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+   
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	 $(function() {
+		$("#searchId").click(function() {
+			var id = ${id };
+		
+			$("#id").html(id);
+		
+			
+		})
+	}) 
+</script>
+</head>
+<body>
+<form action="searchId.do" method="post">
+	<p>
+		<label>이름</label>
+		<input type="text" name="name">
+	</p>
+	 <p>
+         <label>이메일</label>
+         <input type="text" name="email1"> @
+        <select name="email2">
+        	<!-- <option value="a">선택하세요</option> -->
+        	<option value="naver.com">naver.com</option>
+        	<option value="gmail.com">gmail.com</option>
+        	<option value="daum.net">daum.net</option>
+        	<option value="nate.com">nate.com</option>
+        </select>
+      </p>
+      <p>
+      	<input type="button" value="아이디 찾기" id="searchId">
+      </p>
+      
+      <div id="id">${id }</div>      
+      
+</form>
+</body>
+</html>

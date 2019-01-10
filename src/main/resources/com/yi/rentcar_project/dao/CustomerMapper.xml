@@ -82,7 +82,7 @@
 		email=#{email}, emp_code=#{empCode.code}, license=#{license},
 		grade_code=#{gradeCode.code},
 		rent_cnt=#{rentCnt}
-		where code=#{code}
+		where Id = #{id}
 	</update>
 
 
@@ -99,7 +99,7 @@
 	<select id="searchId" parameterType="Customer" resultType="Customer">
 		SELECT Id as id
 		FROM proj_rentcar.customer
-		where phone = #{phone}
+		where name = #{name}
 		and email =	#{email}
 	</select>
 </mapper>

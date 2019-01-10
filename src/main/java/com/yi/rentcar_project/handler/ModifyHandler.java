@@ -6,7 +6,11 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.yi.rentcar_project.model.Customer;
+import com.yi.rentcar_project.model.Employee;
+import com.yi.rentcar_project.model.Grade;
 import com.yi.rentcar_project.mvc.CommandHandler;
+import com.yi.rentcar_project.service.CustomerService;
 
 public class ModifyHandler implements CommandHandler {
 
@@ -32,6 +36,24 @@ public class ModifyHandler implements CommandHandler {
 			
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Date dobs = sdf.parse(dob);
+			
+			
+			try {
+				if(password==confirmPassword){
+					CustomerService service = CustomerService.getInstance();
+					Employee employee = new Employee("E001");
+					Grade grade = new Grade("G001");
+					
+					Customer customer = new Customer( id, password, name, zipcode, (address+" "+detailAddr),
+							(phone + "-" + phone2 + "-" + phone3), dobs, (email1 + "@" + email2), employee, license, grade, 0);
+					
+				  service.updateCustomer(customer);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			
 			
 			
 		}

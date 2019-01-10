@@ -25,7 +25,7 @@
 		</header>
 		
 		<section>
-		<form action="modify.do">
+		<form action="modify.do" method="post">
 		현재 비밀번호<input type="password" name="password">
 		<input type="submit" value="회원정보 수정">
 		</form>
