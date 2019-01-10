@@ -13,24 +13,37 @@
 		margin: 0 auto;
 		overflow:hidden;
 	}
-	ul{
+	#list_wrap ul{
 		height: 60px;
 		list-style: none;
-		margin: 10px; 
 	}
-	ul li{
+	#list_wrap ul li{
 		float:left;
-		border:1px solid white;	
+		border:0.5px solid #bbbbbb; 
 		text-align: center;
 	}
-	ul li a{
+	#list_wrap ul li a{
 		text-decoration: none;
 		float:left;
-		width:150px;
-		height: 60px;
-		line-height: 60px;
-		color:white;
-		background-color: gray;
+		width:154px;
+		height: 70px;
+		position: relative;
+		color:black;
+	}
+	#list_wrap ul li #total{
+		line-height: 65px;
+	}
+	#list_wrap ul li a img{
+		position: absolute;
+		top: 13px;
+		left: 45px;
+		width:60px;
+	}
+	#list_wrap ul li a span{
+		position: absolute;
+		bottom: 5px;
+		left: 65px;
+		font-size: 12px;
 	}
 	.btn{
 		display: block;
@@ -41,6 +54,7 @@
 		height:170px;
 		border:1px solid gray;
 		float: left;
+		position: relative; 
 	}
 	article h3{
 		color:gray;
@@ -51,12 +65,29 @@
 		margin-left: 40px; 
 	}
 	article .fuel_img{
-		width:40px;
-		margin: 30px;
+		width:35px;
+		position: absolute;
+		left: 270px;
+		bottom: 55px;
 	}
 	article .brand_img{
-		width:60px;
-		margin: 30px;
+		width:45px;
+		position: absolute;
+		left: 260px;
+		top: 30px;
+	}
+	article .info_wrap{
+		position:absolute;
+		right:10px;
+		top:10px;
+		width:180px;
+	}
+	article .info_wrap h3{
+		color:black;
+	}
+	article .info_wrap p{
+		color:gray;
+		font-size: 12px;
 	}
 </style>
 </head>
@@ -71,32 +102,62 @@
 		
 			<div id="list_wrap">
 				<ul>
-					<li><a href="carlistcustomer.do">전체</a></li>
-					<li><a href="selectcustomer.do?cartype=S1">경형</a></li>
-					<li><a href="selectcustomer.do?cartype=S2">소형</a></li>
-					<li><a href="selectcustomer.do?cartype=S3">중형</a></li>
-					<li><a href="selectcustomer.do?cartype=S4">대형</a></li>
-					<li><a href="selectcustomer.do?cartype=S5">승합</a></li>
-					<li><a href="selectcustomer.do?cartype=S6">suv</a></li>
+					<li><a href="carlist.do" id="total">전체</a></li>
+					<li>
+						<a href="selectcustomer.do?cartype=S1">
+							<img src="${pageContext.request.contextPath }/images/경차b.png">
+							<span>경형</span>
+						</a>
+					</li>
+					<li>
+						<a href="selectcustomer.do?cartype=S2">
+							<img src="${pageContext.request.contextPath }/images/소형b.png">
+							<span>소형</span>
+						</a>
+					</li>
+					<li>
+						<a href="selectcustomer.do?cartype=S3">
+							<img src="${pageContext.request.contextPath }/images/중형b.png">
+							<span>중형</span>
+						</a>
+					</li>
+					<li>
+						<a href="selectcustomer.do?cartype=S4">
+							<img src="${pageContext.request.contextPath }/images/대형b.png">
+							<span>대형</span>
+						</a>
+					</li>
+					<li>
+						<a href="selectcustomer.do?cartype=S5">
+							<img src="${pageContext.request.contextPath }/images/승합b.png">
+							<span>승합</span>
+						</a>
+					</li>
+					<li>
+						<a href="selectcustomer.do?cartype=S6">
+							<img src="${pageContext.request.contextPath }/images/SUVb.png">
+							<span>suv</span>
+						</a>
+					</li>
+				
 				</ul>
 				<c:forEach var="item" items="${list }">
 				<a href="carreadcustomer.do?carCode=${item.carCode }">
 					<article data-index='i'>
 					<h3>${item.name }</h3>
 						<img src="${pageContext.request.contextPath }/upload/${item.carCode  }.png" class="car_img">
-						<img src="${pageContext.request.contextPath }/upload/${item.fuel.code  }.png" class="fuel_img">
 						<img src="${pageContext.request.contextPath }/upload/${item.brand.no  }.png" class="brand_img">
-						<p>
-							${item.color },
-							${item.brand.name },
-							${item.carType.type },
-							${item.basicCharge },
-							${item.hour6 },
-							${item.hour10 },
-							${item.hour12 },
-							${item.hourElse },
-							<!-- isRent와 rentCnt실패ㅠㅡㅜ  -->
-						</p>
+						<img src="${pageContext.request.contextPath }/upload/${item.fuel.code  }.png" class="fuel_img">
+						<div class="info_wrap">
+							<h3>1일 대여비 : ${item.basicCharge } </h3>
+							<p>차종 : ${item.carType.type }</p>
+							<p>6시간 이하 : ${item.hour6 }</p>
+							<p>10시간 이하 : ${item.hour10 }</p>
+							<p>12시간 이하 : ${item.hour12 }</p>
+							<p>12시간 이상 : ${item.hourElse }</p>
+							<p>isRent : </p>
+							<p>rentCnt : </p>
+						</div>
 					</article>
 				</a>
 				</c:forEach>
