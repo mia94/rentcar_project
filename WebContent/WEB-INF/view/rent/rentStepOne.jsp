@@ -24,7 +24,8 @@
 			반납일 : ${end }<br>
 			반납시간 : ${endH }<br>
 			반납 분 : ${endM } <br>
-			차량 유형 : <br>
+			총 대여일 : ${rentDate }<br>
+			차량 유형 : ${carType }<br>
 		</section>
 		
 	</div>

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/reservation.css?ab" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/reservation.css?abss" rel="stylesheet"  type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -124,6 +124,7 @@
 			<input type="hidden" name="endHour" id="endHour">
 			<input type="hidden" name="endMin" id="endMin">
 			<input type="hidden" name="selectCarType" id="selectCarType">
+			<input type="hidden" name="totalRentDate" id="totalRentDate">
 		</form>
 		
 	</div>
@@ -135,6 +136,6 @@
 
 	<!-- 스크립트 부분(위에 스크립트 있으면 datepicker 실행이 안됨) -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="${pageContext.request.contextPath }/js/reservation.js?ca"></script>
+	<script src="${pageContext.request.contextPath }/js/reservation.js?ccdaa"></script>
 </body>
 </html>

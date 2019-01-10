@@ -20,6 +20,8 @@ public class RentStepOneHandler implements CommandHandler {
 			String end = req.getParameter("endDate");
 			String endH = req.getParameter("endHour");
 			String endM = req.getParameter("endMin");
+			String carType = req.getParameter("selectCarType");
+			String rentDate = req.getParameter("totalRentDate");
 					
 			req.setAttribute("start", start);
 			req.setAttribute("startH", startH);
@@ -27,6 +29,8 @@ public class RentStepOneHandler implements CommandHandler {
 			req.setAttribute("end", end);
 			req.setAttribute("endH", endH);
 			req.setAttribute("endM", endM);
+			req.setAttribute("carType", carType);
+			req.setAttribute("rentDate", rentDate);
 			
 			return "/WEB-INF/view/rent/rentStepOne.jsp";
 		}
