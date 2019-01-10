@@ -1,0 +1,70 @@
+@CHARSET "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+	
+	*{
+		font-family: 'Noto Sans KR', sans-serif;
+	}
+	
+	div#rentStepOne_container{
+		width: 1000px;
+		margin: 30px auto;
+		padding: 10px;
+		border: 2px solid pink;
+		overflow: hidden;
+	}
+	
+	div#rentInfo{
+		width: 330px;
+		height: 500px;
+		float: left;
+		background-color: #efefef;
+		margin: 10px 5px 5px 5px;
+	}
+	
+	div#rentInfoTitle{
+		width: 320px;
+		display: inline-block;    
+		margin: 5px;
+		padding: 5px;
+		border-bottom: 1px solid gray; 
+	}
+	
+	div#rentInfoTitle h3{
+		display: inline;
+	}
+	
+	div#searchCarTitle{
+		display: inline-block;
+		margin: 10px;
+		padding: 5px;
+		position: absolute;
+		top: 150px;
+		left: 460px;
+		width: 620px;
+		border-bottom: 1px solid gray; 
+	}
+	
+	div#searchCarTitle h3{
+		display: inline;
+	}
+	
+	div#searchCar{
+		width: 610px;
+		height: 700px;
+		overflow: auto;
+		float: left;
+		background-color: lightblue;
+		padding: 10px;
+		margin-left: 20px;
+		margin-top: 10px;
+	}
+	
+	img.carImg{
+		width: 250px;
+		border: 1px solid #ccc;
+	}
+	
+	img.carBrand{
+		width: 85px;
+	}

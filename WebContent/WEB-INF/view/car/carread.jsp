@@ -32,6 +32,11 @@
 		margin-top:100px;
 		text-align: center;
 	}
+	#next_wrap{
+		clear: both;
+		margin-top:10px;
+		text-align: center;
+	}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -74,6 +79,10 @@
 					<a href="carmodify.do?carCode=${carmodel.carCode }">[수정]</a><!-- 수정연결 아직 안됨 -->
 					<a href="cardelete.do?carCode=${carmodel.carCode }" id="delBtn">[삭제]</a>
 					<a href="carlist.do">[목록]</a>
+				</div>
+				<div id="next_wrap">
+					<a href="carbeforeforemp.do?carCode=${carmodel.carCode }">이전 차량</a><!-- 이전차량 보이기 -->
+					<a href="carafterforemp.do?carCode=${carmodel.carCode }">다음 차량</a><!-- 이후차량 보이기 -->
 				</div>
 			</div>
 		</section>
