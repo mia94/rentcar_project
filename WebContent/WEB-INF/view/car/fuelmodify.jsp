@@ -8,13 +8,13 @@
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <style>
-	#upload_wrap{
+	#modify_wrap{
 		width:800px; 
 		height: 600px;
 		margin:30px 80px;
 		border:1px solid black;
 	}
-	#upload_wrap label{
+	#modify_wrap label{
 		width:150px;
 		height: 50px;
 		line-height: 50px;
@@ -24,7 +24,7 @@
 		text-align: center;
 		float: left;
 	}
-	#upload_wrap .textfield{
+	#modify_wrap .textfield{
 		width:295px;
 		height: 46px;
 		line-height: 46px;
@@ -44,15 +44,15 @@
 		
 		<section>
 		<h1>연료 추가 창</h1>
-			<div id="upload_wrap">
-				<form action="fuelupload.do" method="post">
+			<div id="modify_wrap">
+				<form action="fuelmodify.do" method="post">
 					<p>
 						<label>연료 코드</label>
-						<input type="text" name="no" class="textfield">
+						<input type="text" name="no" class="textfield" readonly value="${fuel.no }">
 					</p>
 					<p>
 						<label>연료 이름</label>
-						<input type="text" name="code" class="textfield">
+						<input type="text" name="code" class="textfield" value="${fuel.code }">
 					</p>
 					<!-- <p>
 						<label>연료 표기</label>

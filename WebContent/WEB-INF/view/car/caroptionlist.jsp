@@ -66,6 +66,14 @@ $(function(){
 		}
 		return false;
 	})
+	$(".fuelDel").click(function(){
+		var del = confirm("정말 삭제하시겠습니까?");
+		if(del==true){
+			var no = $(this).parent(".list_p").children("span").first().text();
+			location.href="${pageContext.request.contextPath }/fueldelete.do?no="+no;
+		}
+		return false;
+	})
 })
 </script>
 </head>
@@ -108,8 +116,8 @@ $(function(){
 						<p class="list_p">
 							<span>${item.no }</span>
 							<span>${item.code }</span>
-							<a href="#">수정</a>
-							<a href="#" class="fuelDel">삭제</a>
+							<a href="fuelmodify.do?code=${item.code }">수정</a>
+							<a href="fueldelete.do?no=${item.no }" class="fuelDel">삭제</a>
 						</p>
 				</c:forEach>
 				<p><a href="fuelupload.do" class="btnAdd">추가</a></p>
