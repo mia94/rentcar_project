@@ -11,7 +11,7 @@ public class CarReadHandler implements CommandHandler {
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		if(req.getMethod().equalsIgnoreCase("get")){
+
 			String code = req.getParameter("carCode");
 			
 			CarModel carmodel = new CarModel();
@@ -21,10 +21,6 @@ public class CarReadHandler implements CommandHandler {
 			
 			req.setAttribute("carmodel", carmodel);
 			return "/WEB-INF/view/car/carread.jsp";
-		}else if(req.getMethod().equalsIgnoreCase("post")){
-			
-		}
-		return null;
 	}
 
 }
