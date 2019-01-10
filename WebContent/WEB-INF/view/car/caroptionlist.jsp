@@ -87,7 +87,7 @@ $(function(){
 						<p class="list_p">
 							<span>${item.no }</span>
 							<span>${item.name }</span>
-							<a href="#">수정</a>
+							<a href="brandmodify.do?no=${item.no }">수정</a>
 							<a href="#" id="brandDel">삭제</a>
 						</p>
 				</c:forEach>
