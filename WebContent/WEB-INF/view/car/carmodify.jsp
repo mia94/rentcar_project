@@ -79,7 +79,7 @@
 				<form action="carmodify.do" method="post"><!--   enctype="multipart/form-data"  -->
 					<p>
 						<label>차량번호</label>
-						<input type="text" name="car_code" class="textfield" value="${carmodel.carCode}">
+						<input type="text" name="car_code" class="textfield" value="${carmodel.carCode}" readonly>
 					</p>
 					<p>
 						<label>모델명</label>

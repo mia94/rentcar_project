@@ -14,13 +14,14 @@
 		padding-right: 100px;
 	}
 	.wrap{
-		width:800px;
+		width:900px;
 		height:298px; 
 		margin-left:100px;
 		border:1px solid black;
+		position: relative;
 	}
 	.wrap h1{
-		width:470px; 
+		width:500px; 
 		height: 297px;
 		line-height:297px;
 		text-align:center;
@@ -29,7 +30,7 @@
 	}
 	.list_p{
 		height: 40px;
-		width:280px;
+		width:300px;
 		line-height:40px;
 		overflow: hidden;
 	}
@@ -37,6 +38,13 @@
 		float: left;
 		width:100px;
 		text-align: center;
+	}
+	.wrap .btnAdd{
+		text-decoration: none;
+		text-align: right;
+		position: absolute;
+		bottom: 10px;
+		right: 20px;
 	}
 </style>
 </head>
@@ -48,18 +56,18 @@
 		
 		<section>
 			<h1>차량옵션 관리</h1>
-		<aside>
-			<jsp:include page="aside.jsp"></jsp:include>
-		</aside>
 			<div id="wrap_wrap">
 			<div class="wrap">
 				<h1>차종</h1>
 				<c:forEach var="item" items="${typeList }">
 						<p class="list_p">
-							<span>${item.code }</span>
+							<span>${item.code }</span> 
 							<span>${item.type }</span>
+							<a href="cartypemodify.do?code=${item.code }">수정</a>
+							<a href="#">삭제</a>
 						</p>
 				</c:forEach>
+				<p><a href="cartypeupload.do" class="btnAdd">추가</a></p>
 			</div>
 			<div class="wrap">
 				<h1>브랜드</h1>
@@ -67,8 +75,11 @@
 						<p class="list_p">
 							<span>${item.no }</span>
 							<span>${item.name }</span>
+							<a href="#">수정</a>
+							<a href="#">삭제</a>
 						</p>
 				</c:forEach>
+				<p><a href="brandupload.do" class="btnAdd">추가</a></p>
 			</div>
 			<div class="wrap">
 			<h1>연료</h1>
@@ -76,8 +87,11 @@
 						<p class="list_p">
 							<span>${item.no }</span>
 							<span>${item.code }</span>
+							<a href="#">수정</a>
+							<a href="#">삭제</a>
 						</p>
 				</c:forEach>
+				<p><a href="fuelupload.do" class="btnAdd">추가</a></p>
 			</div>
 			<div class="wrap">
 				<h1>옵션</h1>
@@ -86,8 +100,11 @@
 							<span>${item.no }</span>
 							<span>${item.name }</span>
 							<span>${item.price }</span>
+							<a href="#">수정</a>
+							<a href="#">삭제</a>
 						</p>	
 				</c:forEach>
+				<p><a href="caroptionupload.do" class="btnAdd">추가</a></p>
 			</div>
 			</div>
 		</section>
