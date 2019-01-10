@@ -144,6 +144,15 @@
 							</tr>
 						</table>
 					</p>
+					<p>
+						<label>렌트 중</label>
+						<input type="radio" name="isRent" value="true">렌트 중
+						<input type="radio" name="isRent" value="false">보유 중
+					</p>
+					<p>
+						<label>렌트 회수</label>
+						<input type="text" name="rentCnt"  class="textfield" value="${carmodel.rentCnt }">
+					</p>
 					
 					<!-- isRent, rentCnt 0으로 자동입력되게 하기 -->
 					<input type="submit" value="등록">

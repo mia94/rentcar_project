@@ -41,6 +41,8 @@ public class CarModifyHandler implements CommandHandler {
 			String h10 = req.getParameter("hour10");
 			String h12 = req.getParameter("hour12");
 			String hElse = req.getParameter("hour_else");
+			String is_rent = req.getParameter("isRent");
+			String rent_cnt = req.getParameter("rentCnt");
 			//브랜드, 차종, 연료
 			Brand brand = new Brand();
 			brand.setNo(sBrand);
@@ -57,16 +59,19 @@ public class CarModifyHandler implements CommandHandler {
 			FuelService fuelService = FuelService.getInstance();
 			fuel = fuelService.selectFuelByNo(fuel);
 			
-			//가격 String int로 변환
+			//가격, rentCnt String int로 변환
 			int basic_charge = Integer.parseInt(sBasic);
 			int hour6 = Integer.parseInt(h6);
 			int hour10 = Integer.parseInt(h10);
 			int hour12 = Integer.parseInt(h12);
 			int hourElse = Integer.parseInt(hElse);
+			int rentCnt = Integer.parseInt(rent_cnt);
+			//String boolean으로 변환
+			boolean isRent = Boolean.valueOf(is_rent).booleanValue(); 
 			
 			CarModelService service = CarModelService.getInstance();
 			//carModel 수정, isrent, rentCnt처리 미완성
-			CarModel model = new CarModel(code, name, color, gear, brand, cartype, basic_charge, hour6, hour10, hour12, hourElse, fuel, false, 0);
+			CarModel model = new CarModel(code, name, color, gear, brand, cartype, basic_charge, hour6, hour10, hour12, hourElse, fuel, isRent, rentCnt);
 			
 			service.updateCarModel(model);
 			
