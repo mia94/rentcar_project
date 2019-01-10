@@ -29,6 +29,16 @@
 		height: 46px;
 		line-height: 46px;
 	}
+	#img_wrap{
+		width:445px;
+		height: 200px;
+		border:1px solid black;
+		margin-top: 80px;
+	}
+	#input_wrap{
+		width:500px;
+		margin: 0px auto;
+	}
 	#btn_wrap{
 		clear:both;
 		width:450px;
@@ -46,6 +56,8 @@
 		
 			<div id="modify_wrap">
 			<h1>브랜드 수정 창</h1>
+				<div id="input_wrap">
+					<div id="img_wrap">img</div>
 				<form action="brandmodify.do" method="post">
 					<p>
 						<label>브랜드 코드</label>
@@ -65,6 +77,7 @@
 						<input type="reset" value="취소">
 					</div>
 				</form>	
+				</div>
 			</div>
 		</section>
 	</div>
