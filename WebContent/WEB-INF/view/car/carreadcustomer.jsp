@@ -58,8 +58,8 @@
 					<p> 12시간 이상 : ${carmodel.hourElse }</p>
 				</div>
 				<div id="btn_wrap">
-					<a href="carbefore.do?carCode=${carmodel.carCode }"></a><!-- 이전차량 보이기 -->
-					<a href="carafter.do?carCode=${carmodel.carCode }"></a><!-- 이후차량 보이기 -->
+					<a href="carbefore.do?carCode=${carmodel.carCode }">이전 차량</a><!-- 이전차량 보이기 -->
+					<a href="carafter.do?carCode=${carmodel.carCode }">다음 차량</a><!-- 이후차량 보이기 -->
 				</div>
 			</div>
 		</section>
