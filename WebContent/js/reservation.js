@@ -166,6 +166,8 @@ $(function() {
 		if (end != "" && start != "" && divStartHour != "시간 선택" && divStartMin != "분 선택" && divStartHour != "시간 선택" && divStartMin != "분 선택") {
 			console.log(resultDay);+
 			$("#diff").text(resultDay);
+		} else{
+			
 		}
 		
 		if(resultDay <= 0){
@@ -177,13 +179,10 @@ $(function() {
 	//차량 유형 선택
 	$("#tapMenu li").click(function(){
 		$("#tapMenu li").css({"width":"158px", "height":"75px", "background-color":"white"});   
-		$("#tapMenu li").removeClass("test");
+		$("#tapMenu li").removeClass("selectedCarType");
 		$(this).css({"width":"158px", "height":"75px", "background-color":"#efefef"});
-		$(this).addClass("test");
+		$(this).addClass("selectedCarType");
 		
-		var car = $(this).text();
-		alert(car);
-		$("#selectCarType").val(car);
 	})
 	
 	//다음버튼
@@ -194,6 +193,8 @@ $(function() {
 		var endDate = $("#end_date").val();
 		var endH = $(".defaultTitle2").text();
 		var endM = $(".defaultTitleMinute2").text();
+		var carType = $("#tapMenu li.selectedCarType").text();
+		var totalDate = $("#diff").text();
 		
 		//input에 값 넣기
 		$("#startDate").val(startDate);
@@ -202,8 +203,16 @@ $(function() {
 		$("#endDate").val(endDate);
 		$("#endHour").val(endH);
 		$("#endMin").val(endM);
+		$("#selectCarType").val(carType);
+		$("#totalRentDate").val(totalDate);
 			
-		$("#reserve").submit();
+		//form에 있는 내용들 전송하기
+		if($("#startDate").val() != null && $("#startHour").val() != "시간 선택" && $("#startMin").val() != "분 선택" && $("#endDate").val() != null && $("#endHour").val() != "시간 선택" && $("#endMin").val() != "분 선택" && $("#selectCarType").val() != "" && $("#totalRentDate").val() != 0){
+			$("#reserve").submit();
+		} else{
+			alert("차량대여에 필요한 내용들을 선택해주세요.");
+		}
+		
 	})
 
 })

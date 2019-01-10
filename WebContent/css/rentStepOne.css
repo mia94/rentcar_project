@@ -1,0 +1,7 @@
+@CHARSET "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+	
+	*{
+		font-family: 'Noto Sans KR', sans-serif;
+	}

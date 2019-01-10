@@ -1,9 +1,13 @@
-package com.yi.rentcar_project.handler;
+package com.yi.rentcar_project.handler.rent;
+
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.yi.rentcar_project.model.CarModel;
 import com.yi.rentcar_project.mvc.CommandHandler;
+import com.yi.rentcar_project.service.RentService;
 
 public class RentStepOneHandler implements CommandHandler {
 
@@ -20,6 +24,12 @@ public class RentStepOneHandler implements CommandHandler {
 			String end = req.getParameter("endDate");
 			String endH = req.getParameter("endHour");
 			String endM = req.getParameter("endMin");
+			String carType = req.getParameter("selectCarType");
+			String rentDate = req.getParameter("totalRentDate");
+			
+			//차량유형 선택
+			RentService service = RentService.getInstance();
+			List<CarModel> list = service.selectByCarType(carType);
 					
 			req.setAttribute("start", start);
 			req.setAttribute("startH", startH);
@@ -27,6 +37,8 @@ public class RentStepOneHandler implements CommandHandler {
 			req.setAttribute("end", end);
 			req.setAttribute("endH", endH);
 			req.setAttribute("endM", endM);
+			req.setAttribute("list", list);
+			req.setAttribute("rentDate", rentDate);
 			
 			return "/WEB-INF/view/rent/rentStepOne.jsp";
 		}

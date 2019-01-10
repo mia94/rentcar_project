@@ -3,10 +3,20 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yi.rentcar_project.dao.RentDao">
-	<!-- 추가하기 -->
-	<insert id="insert" parameterType="Rent">
-		insert into rent 
-		values (#{code}, #{start_date}, #{start_time}, #{end_date}, #{end_time}, #{is_return}, #{basic_price}, #{car_code.carCode}, #{customer_code.code}, #{insurance_code.code}, #{e_code}, #{opt_price})
-	</insert>
+	<!-- 조건에 소형 입력해서 소형에 해당하는 차량들의 이름, 브랜드, 연료종류 가지고오기 -->
+	<resultMap type="CarModel" id="resultCarModel">
+		<id column="carCode" property="car_code" />
+		<result column="carName" property="name" />
+		<result column="fuel" property="fuel_code.code"/>
+		<result column="brandName" property="brand.name"/>
+		<result column="ct.`type`" property="cartype.type"/>
+		<result column="basic" property="basic_charge"/>
+	</resultMap>
 	
+	<select id="selectByCarType" resultMap="resultCarModel">
+		select cm.car_code as carCode, cm.name as carName, cm.fuel_code as fuel, b.name as brandName, cm.basic_charge as basic  
+		from car_type ct join car_model cm
+		on ct.code = cm.cartype join brand b on cm.brand = b.no
+		where ct.`type` = #{carType};
+	</select>
 </mapper>
