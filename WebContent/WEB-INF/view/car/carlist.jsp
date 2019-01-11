@@ -131,7 +131,7 @@
 			<h1>차량 목록</h1>
 				<div id="btn_wrap">
 					<a href="uploadcar.do">자동차 추가</a>
-					<a href="caroptionlist.do">차량 옵션 관리창</a>
+					<a href="totaloptionlist.do">차량 옵션 관리창</a>
 				</div>
 				<ul>
 					<li><a href="carlist.do" id="total">전체</a></li>
