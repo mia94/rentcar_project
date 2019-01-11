@@ -13,8 +13,7 @@
 		<result column="event_code" property="eventCode" />
 		<result column="custom_code" property="customCode" />
 		<result column="is_use" property="isUse" />
-		<collection property="events"
-			resultMap="com.yi.rentcar_project.dao.EventDao.resultEvent" />
+		<collection property="events" resultMap="com.yi.rentcar_project.dao.EventDao.resultEvent" />
 	</resultMap>
 
 	<select id="selectCustomEventByCustomCode"

@@ -26,7 +26,7 @@ public class Event {
 	
 	@Override
 	public String toString() {
-		return String.format("%s", name);
+		return String.format("Event [code=%s, name=%s, rate=%s]", code, name, rate);
 	}
 	
 	@Override

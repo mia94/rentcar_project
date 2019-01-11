@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -127,6 +128,25 @@
 					<a href="#">이전</a>
 					<a href="#">다음</a>
 				</div>
+				
+				테스트
+				<hr>
+				
+				고객코드 : ${list[0].code } <br>
+				아이디 : ${list[0].id } <br>
+				고객이름 : ${list[0].name } <br>
+				우편번호 : ${list[0].zipCode } <br>
+				주소 : ${list[0].address } <br>
+				연락처 : ${list[0].phone } <br>
+				이메일 : ${list[0].email } <br>
+				등급코드 : ${list[0].gradeCode.code } <br>
+				등급이름 : ${list[0].gradeCode.name } <br>
+				등급할인율 : ${list[0].gradeCode.rate }% <br>
+				운전면허 : ${list[0].license } <br>
+				<c:forEach var="customer" items="${list }">
+					이벤트 : <p>${customer }</p>
+				</c:forEach>
+				
 			</div>
 		</section>
 		
