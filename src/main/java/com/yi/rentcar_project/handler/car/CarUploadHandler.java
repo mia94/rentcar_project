@@ -22,52 +22,19 @@ public class CarUploadHandler implements CommandHandler {
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		if(req.getMethod().equalsIgnoreCase("get")){
+			
+			CarModelService service = CarModelService.getInstance();
+			String maxCode = service.nextCarCode();
+			String sCode = maxCode.substring(1);
+			int num = Integer.parseInt(sCode) + 1;//숫자로 출력 앞에 0 사라짐
+			String nextCode = String.format("V%03d", num);
+			
+			req.setAttribute("nextCode", nextCode);
+			
 			return "/WEB-INF/view/car/carupload.jsp";
 		}else if(req.getMethod().equalsIgnoreCase("post")){
-			String car_code = req.getParameter("car_code");
-			String name = req.getParameter("name");
-			String brandCode = req.getParameter("brand");
-			String cartypeCode = req.getParameter("cartype");
-			String fuelCode = req.getParameter("fuel_code");
-			String color = req.getParameter("color");
-			String gear = req.getParameter("gear");
-			String basic = req.getParameter("basic_charge");
-			String h6 = req.getParameter("hour6");
-			String h10 = req.getParameter("hour10");
-			String h12 = req.getParameter("hour12");
-			String helse = req.getParameter("hour_else");
-			//가격 int로 변환하기
-			int basic_charge = Integer.parseInt(basic);
-			int hour6 = Integer.parseInt(h6);
-			int hour10 = Integer.parseInt(h10);
-			int hour12 = Integer.parseInt(h12);
-			int hour_else = Integer.parseInt(helse);
-			//isRent, rentCnt 0으로 자동입력
-			boolean is_rent = false;
-			int rent_cnt = 0;
-			//Brand, CarType, fuel selectByCode하기
-			BrandService brandService = BrandService.getInstance();
-			Brand brand = new Brand();
-			brand.setNo(brandCode);
-			brand = brandService.selectBrandByNo(brand);
-			
-			CarTypeService typeService = CarTypeService.getInstance();
-			CarType type = new CarType();
-			type.setCode(cartypeCode);
-			type = typeService.selectCarTypeByNo(type);
-			
-			FuelService fuelService = FuelService.getInstance();
-			Fuel fuel = new Fuel();
-			fuel.setCode(fuelCode);
-			fuel = fuelService.selectFuelByNo(fuel);
-			
-			//carModel생성하여 set
-			CarModel carmodel = new CarModel(car_code, name, color, gear, brand, type, basic_charge, hour6, hour10, hour12, hour_else, fuel, is_rent, rent_cnt);
-			CarModelService service = CarModelService.getInstance();
-			service.insertCarModel(carmodel);
-			
 			//사진추가
-/*			String uploadPath = req.getRealPath("upload");
+			String uploadPath = req.getRealPath("upload");
 			
 			File dir = new File(uploadPath);
 			if(dir.exists()==false){//업로드 폴더가 없을때 만들어지도록
@@ -84,11 +51,54 @@ public class CarUploadHandler implements CommandHandler {
 				String file = multi.getFilesystemName("carImg");//file1의 키의 파일의 이름을 받아옴
 				req.setAttribute("carImg", file);
 				
+				String car_code = multi.getParameter("car_code");
+				String name = multi.getParameter("name");
+				String brandCode = multi.getParameter("brand");
+				String cartypeCode = multi.getParameter("cartype");
+				String fuelCode = multi.getParameter("fuel_code");
+				String color = multi.getParameter("color");
+				String gear = multi.getParameter("gear");
+				String basic = multi.getParameter("basic_charge").trim();
+				String h6 = multi.getParameter("hour6").trim();
+				String h10 = multi.getParameter("hour10").trim();
+				String h12 = multi.getParameter("hour12").trim();
+				String helse = multi.getParameter("hour_else").trim();
+				
+				//가격 int로 변환하기
+				int basic_charge = Integer.parseInt(basic);
+				int hour6 = Integer.parseInt(h6);
+				int hour10 = Integer.parseInt(h10);
+				int hour12 = Integer.parseInt(h12);
+				int hour_else = Integer.parseInt(helse);
+				//isRent, rentCnt 0으로 자동입력
+				boolean is_rent = false;
+				int rent_cnt = 0;
+				//Brand, CarType, fuel selectByCode하기
+				BrandService brandService = BrandService.getInstance();
+				Brand brand = new Brand();
+				brand.setNo(brandCode);
+				brand = brandService.selectBrandByNo(brand);
+				
+				CarTypeService typeService = CarTypeService.getInstance();
+				CarType type = new CarType();
+				type.setCode(cartypeCode);
+				type = typeService.selectCarTypeByNo(type);
+				
+				FuelService fuelService = FuelService.getInstance();
+				Fuel fuel = new Fuel();
+				fuel.setCode(fuelCode);
+				fuel = fuelService.selectFuelByNo(fuel);
+				
+				//carModel생성하여 set
+				CarModel carmodel = new CarModel(car_code, name, color, gear, brand, type, basic_charge, hour6, hour10, hour12, hour_else, fuel, is_rent, rent_cnt);
+				CarModelService service = CarModelService.getInstance();
+				service.insertCarModel(carmodel);
+				
+				
 			} catch (Exception e) {
 				e.printStackTrace();
-			}*/
+			}			
 
-			
 			return "carlist.do";
 		}
 		return null;

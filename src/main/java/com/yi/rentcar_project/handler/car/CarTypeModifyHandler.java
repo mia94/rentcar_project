@@ -31,7 +31,7 @@ public class CarTypeModifyHandler implements CommandHandler {
 			CarTypeService service = CarTypeService.getInstance();
 			service.updateCarType(cartype);
 			
-			return "caroptionlist.do";
+			return "cartypelist.do";
 		}
 		return null;
 	}

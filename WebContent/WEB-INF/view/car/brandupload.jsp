@@ -57,10 +57,10 @@
 			<h1>브랜드 추가 창</h1>
 				<div id="input_wrap">
 					<div id="img_wrap">img</div>
-					<form action="brandupload.do" method="post">
+					<form action="brandupload.do" enctype="multipart/form-data" method="post">
 						<p>
 							<label>브랜드 코드</label>
-							<input type="text" name="no" class="textfield">
+							<input type="text" name="no" class="textfield" value="${nextCode }" readonly>
 						</p>
 						<p>
 							<label>브랜드 이름</label>

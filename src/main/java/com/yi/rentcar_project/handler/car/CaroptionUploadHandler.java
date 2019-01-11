@@ -11,7 +11,14 @@ public class CaroptionUploadHandler implements CommandHandler {
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		CarOptionService service = CarOptionService.getInstance();
 		if(req.getMethod().equalsIgnoreCase("get")){
+			
+			int maxCode = service.nextOptionNo();
+			int nextCode = maxCode + 1;
+			
+			req.setAttribute("nextCode", nextCode);
+			
 			return "/WEB-INF/view/car/caroptionupload.jsp";
 		}else if(req.getMethod().equalsIgnoreCase("post")){
 			String sCode = req.getParameter("code");
@@ -26,7 +33,6 @@ public class CaroptionUploadHandler implements CommandHandler {
 			option.setName(name);
 			option.setPrice(price);
 			
-			CarOptionService service = CarOptionService.getInstance();
 			service.insertCarOption(option);
 			
 			return "caroptionlist.do";

@@ -19,20 +19,10 @@ public class CarOptionListHandler implements CommandHandler {
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
-			BrandService brandService = BrandService.getInstance();
+
 			CarOptionService optionservice = CarOptionService.getInstance();
-			FuelService fuelService = FuelService.getInstance();
-			CarTypeService typeService = CarTypeService.getInstance();
-			
-			List<Brand> brandList = brandService.selectBrandByAll();
 			List<CarOption> optionList = optionservice.selectCarOptionByAll();
-			List<Fuel> fuelList = fuelService.selectFuelByAll();
-			List<CarType> typeList = typeService.selectCarTypeByAll();
-			
-			req.setAttribute("brandList", brandList);
 			req.setAttribute("optionList", optionList);
-			req.setAttribute("fuelList", fuelList);
-			req.setAttribute("typeList", typeList);
 			
 			return "/WEB-INF/view/car/caroptionlist.jsp";
 

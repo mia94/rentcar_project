@@ -13,14 +13,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(function(){
-	$(".optionDel").click(function(){
+
+	$(".fuelDel").click(function(){
 		var del = confirm("정말 삭제하시겠습니까?");
 		if(del==true){
-			var no = $(this).parents(".list_p").children("span").first().text();
-			location.href="${pageContext.request.contextPath }/optiondelete.do?no="+no;
+			var no = $(this).parent("span").prev().text();
+			location.href="${pageContext.request.contextPath }/fueldelete.do?no="+no;
 		}
 		return false;
 	})
+	
 })
 </script>
 </head>
@@ -36,20 +38,22 @@ $(function(){
 			<a href="brandlist.do">브랜드</a>
 			<a href="fuellist.do">연료</a>
 			<a href="caroptionlist.do">옵션</a>
-			<h1>OPTION</h1>
+			<h1>FUEL</h1>
 			<div class="wrap">
-				<c:forEach var="item" items="${optionList }">
+				<c:forEach var="item" items="${fuelList }">
 						<p class="list_p">
-							<span>${item.no }</span>
-							<span>${item.name }</span>
-							<span>${item.price }</span>
-							<span class="btn_span">
-								<a href="optionmodify.do?no=${item.no }">수정</a>
-								<a href="optiondelete.do?no=${item.no }" class="optionDel">삭제</a>
+							<span>
+								<img src="${pageContext.request.contextPath }/upload/${item.code }.png">
 							</span>
-						</p>	
+							<span>${item.code }</span>
+							<span>${item.no }</span>
+							<span class="btn_span">
+								<a href="fuelmodify.do?code=${item.code }">수정</a>
+								<a href="fueldelete.do?no=${item.no }" class="fuelDel">삭제</a>
+							</span>
+						</p>
 				</c:forEach>
-				<p><a href="caroptionupload.do" class="btnAdd">[ 추가  ]</a></p>
+				<p><a href="fuelupload.do" class="btnAdd">[ 추가  ]</a></p>
 			</div>
 			</div>
 		</section>

@@ -34,6 +34,7 @@ $(function() {
 <a id="bbb"></a><a href="login.do" id="aaa">로그인</a>
 <a href="">고객관리</a>
 <a href="carlist.do">차량관리</a>
+<a href="totaloptionlist.do">차량옵션관리</a>
 <a href="carlistcustomer.do">차량관리(고객용)</a>
 <a href="reservation.do">대여관리</a>
 <a href="password.do">개인정보관리</a>

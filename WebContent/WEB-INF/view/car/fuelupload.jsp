@@ -60,16 +60,16 @@
 					<form action="fuelupload.do" method="post">
 						<p>
 							<label>연료 코드</label>
-							<input type="text" name="no" class="textfield">
+							<input type="text" name="no" class="textfield" value="${nextCode }" readonly>
 						</p>
 						<p>
 							<label>연료 이름</label>
 							<input type="text" name="code" class="textfield">
 						</p>
-						<!-- <p>
+						<p>
 							<label>연료 표기</label>
 							<input type="file" name="fuelImg">
-						</p> -->
+						</p>
 	
 						<div id="btn_wrap">
 							<input type="submit" value="저장">

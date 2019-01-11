@@ -10,11 +10,44 @@
 <style>
 	#upload_wrap{
 		width:1000px;
-		height:600px;
-		margin: 47px auto;
+		height:500px;
+		margin: 70px auto;
+		position: relative;
+	}
+	#img_wrap{
+		width:500px;
+		height: 370px; 
+		border:1px solid black;
+		float: left;
+		position: relative;
+	}
+	#img_wrap img{
+		width:330px;
+		position: absolute;
+		top:80px;
+		left: 90px;
+	}
+	#img_wrap input{
+		position: absolute;
+		bottom: 20px;
+		left: 170px;
+	}
+	#wrap_1, #wrap_2{
+		width:250px;
+		border:1px solid black;
+	}
+	#wrap_1{
+		position: absolute;
+		top:32px;
+		left: 520px;
+	}
+	#wrap_2{
+		position: absolute;
+		top:32px;
+		left: 780px;
 	}
 	label{
-		width:150px;
+		width:126px;
 		float:left;
 		height: 50px;
 		line-height: 50px;
@@ -24,17 +57,18 @@
 		text-align: center;
 	}
 	.textfield{
-		width:295px;
+		width:120px;
 		height: 46px;
 		line-height: 46px;
 	}
 	select{
-		width:300px;
+		width:124px;
 		height: 50px;
 		line-height: 50px;
 	}
 	input[type=radio]{
-		margin: 19px;
+		margin-left: 10px;
+		margin-top: 19px;
 	}
 	#charge {
 		width:450px;
@@ -47,14 +81,38 @@
 		height: 50px;
 		line-height: 50px;
 	}
-	tabel{
-		border-collapse: collapse;
-		width:450px;
+	#btn_wrap{
+		position: absolute;
+		bottom: 100px;
+		right: 120px;
 	}
-	td{
-		border:1px solid gray;
+	#btn_wrap input{
+		width:100px;
+		height:30px;
+		line-height:30px;
+		background-color: pink;
+		border: 2px solid gray;
 	}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		 $("#imgInp").on('change', function(){
+             readURL(this);
+         });
+	})
+	
+	function readURL(input) {
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                    $('#preview').attr('src', e.target.result);
+                }
+              reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
 </head>
 <body>
 	<div id="container">
@@ -66,88 +124,106 @@
 		
 			<div id="upload_wrap">
 			<h1>차량 추가</h1>
-				<form action="uploadcar.do" method="post"><!--   enctype="multipart/form-data"  -->
-					<!-- <p>
+				<form action="uploadcar.do" enctype="multipart/form-data" method="post"><!--   enctype="multipart/form-data"  -->
+					<div id="img_wrap">
 						<label>PHOTH</label>
-						<input type="file" name="carImg">
-					</p> -->
+						<img id="preview" src="#" alt="car_img">
+						<input type="file" name="carImg" id="imgInp">
+					</div>
+					<div id="wrap_1">
+						<p>
+							<label>차량번호</label>
+							<input type="text" name="car_code" class="textfield" value="${nextCode }" readonly>
+						</p>
+						<p>
+							<label>모델명</label>
+							<input type="text" name="name"  class="textfield">
+						</p>
+						<p>
+							<label>브랜드</label>
+							<select name="brand">
+								<option value="B1">현대</option>
+								<option value="B2">기아</option>
+								<option value="B3">BMW</option>
+								<option value="B4">FORD</option>
+							</select>
+						</p>
+						<p>
+							<label>차종</label>
+							<select name="cartype">
+								<option value="S1">경형</option>
+								<option value="S2">소형</option>
+								<option value="S3">중형</option>
+								<option value="S4">대형</option>
+								<option value="S5">승합</option>
+								<option value="S6">SUV</option>
+							</select>
+						</p>
+						<p>
+							<label>연료</label>
+							<select name="fuel_code">
+								<option value="gasolin">가솔린</option>
+								<option value="diesel">디젤</option>
+								<option value="lpg">LPG</option>
+								<option value="hybrid">하이브리드</option>
+								<option value="electric">전기차</option>
+							</select>
+						</p>
+						<p>
+							<label>색상</label>
+							<select name="color">
+								<option value="wh">하양</option>
+								<option value="bk">검정</option>
+								<option value="bl">파랑</option>
+								<option value="gr">회색</option>
+								<option value="re">빨강</option>
+								<option value="mt">민트</option>
+							</select>
+						</p>
+					</div>
+					<div id="wrap_2">
 					<p>
-						<label>차량번호</label>
-						<input type="text" name="car_code" class="textfield">
+						<label>기본요금</label>
+						<input type="text" name="basic_charge"  class="textfield">
 					</p>
 					<p>
-						<label>모델명</label>
-						<input type="text" name="name"  class="textfield">
+						<label>6시간 이하</label>
+						<input type="text" name="hour6"  class="textfield">
 					</p>
 					<p>
-						<label>브랜드</label>
-						<select name="brand">
-							<option value="B1">현대</option>
-							<option value="B2">기아</option>
-							<option value="B3">BMW</option>
-							<option value="B4">FORD</option>
-						</select>
+						<label>10시간 이하</label>
+						<input type="text" name="hour6"  class="textfield">
 					</p>
 					<p>
-						<label>차종</label>
-						<select name="cartype">
-							<option value="S1">경형</option>
-							<option value="S2">소형</option>
-							<option value="S3">중형</option>
-							<option value="S4">대형</option>
-							<option value="S5">승합</option>
-							<option value="S6">SUV</option>
-						</select>
+						<label>12시간 이하</label>
+						<input type="text" name="hour12"  class="textfield">
 					</p>
 					<p>
-						<label>연료</label>
-						<select name="fuel_code">
-							<option value="gasolin">가솔린</option>
-							<option value="diesel">디젤</option>
-							<option value="lpg">LPG</option>
-							<option value="hybrid">하이브리드</option>
-							<option value="electric">전기차</option>
-						</select>
-					</p>
-					<p>
-						<label>색상</label>
-						<select name="color">
-							<option value="wh">하양</option>
-							<option value="bk">검정</option>
-							<option value="bl">파랑</option>
-							<option value="gr">회색</option>
-							<option value="re">빨강</option>
-							<option value="mt">민트</option>
-						</select>
+						<label>12시간 초과</label>
+						<input type="text" name="hour_else"  class="textfield">
 					</p>
 					<p>
 						<label>변속기</label>
 						<input type="radio" name="gear">자동
 						<input type="radio" name="gear">수동
 					</p>
-					<p>
-						<label id="charge">요금표</label>
-						<br><br><br>
-						<!-- <input type="text" name="basic_charge" class="charge">
-						<input type="text" name="hour6" class="charge">
-						<input type="text" name="hour10" class="charge">
-						<input type="text" name="hour12" class="charge">
-						<input type="text" name="hour_else" class="charge"> -->
-						<table>
+					</div>
+
+					<!-- <table>
 							<tr>
 								<td><input type="text" name="basic_charge" class="charge"></td>
 								<td><input type="text" name="hour6" class="charge"></td>
-								<td><input type="text" name="hour10" class="charge"></td>
+								<td><input type="text" name="hour6" class="charge"></td>
 								<td><input type="text" name="hour12" class="charge"></td>
 								<td><input type="text" name="hour_else" class="charge"></td>
 							</tr>
-						</table>
-					</p>
+					</table> -->
 					
-					<!-- isRent, rentCnt 0으로 자동입력되게 하기 -->
-					<input type="submit" value="등록">
-					<input type="reset" value="취소">
-					
+					<!-- isRent, rentCnt 0으로 자동입력되게 하기 --> 
+					<div id="btn_wrap">
+						<input type="submit" value="등록">
+						<input type="reset" value="취소">
+					</div>
 				</form>
 			</div>
 		</section>

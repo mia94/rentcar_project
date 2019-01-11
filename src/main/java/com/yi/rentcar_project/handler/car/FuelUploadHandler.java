@@ -11,7 +11,13 @@ public class FuelUploadHandler implements CommandHandler {
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		FuelService service = FuelService.getInstance();
 		if(req.getMethod().equalsIgnoreCase("get")){
+			
+			int maxCode = service.nextFuelNo();
+			int nextCode = maxCode + 1;//숫자로 출력 앞에 0 사라짐
+			
+			req.setAttribute("nextCode", nextCode);
 			
 			return "/WEB-INF/view/car/fuelupload.jsp";
 		}else if(req.getMethod().equalsIgnoreCase("post")){
@@ -23,10 +29,9 @@ public class FuelUploadHandler implements CommandHandler {
 			fuel.setNo(no);
 			fuel.setCode(code);
 			
-			FuelService service = FuelService.getInstance();
 			service.insertFuel(fuel);
 			
-			return "caroptionlist.do";
+			return "fuellist.do";
 		}
 		return null;
 	}
