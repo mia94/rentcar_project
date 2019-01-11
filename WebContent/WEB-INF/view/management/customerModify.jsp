@@ -22,13 +22,13 @@
  <script>
     $(function(){
       $("#f1").submit(function(){
-         $(".error").css("display","none");
+/*          $(".error").css("display","none");
          $(".error2").css("display","none");
          
          var name = $("input[name='name']").val();
          if(name == ""){
             $("input[name='name']").next().css("display","inline");
-            return false;/*submit을 막음*/
+            return false;
          }
          var regName = /^[가-힣]{2,5}$/;
          if(regName.test(name) == false){
@@ -39,7 +39,7 @@
          var id = $("input[name='id']").val();
          if(id == ""){
             $("input[name='id']").nextAll(".error").css("display","inline");
-            return false;/*submit을 막음*/
+            return false;
          }
          var regId = /^[a-z0-9]{6,15}$/i;
          if(regId.test(id) == false){
@@ -51,7 +51,7 @@
          var password = $("input[name='password']").val();
          if(password == ""){
             $("input[name='password']").next().css("display","inline");
-            return false;/*submit을 막음*/
+            return false;
          }
          var regPassword = /^[a-z0-9!@#$%]{6,20}$/i;
          if(regPassword.test(password) == false){
@@ -62,16 +62,13 @@
          var confirmPassword = $("input[name='confirmPassword']").val();
          if(confirmPassword == ""){
             $("input[name='confirmPassword']").next().css("display","inline");
-            return false;/*submit을 막음*/
+            return false;
          }
          if(password != confirmPassword){
             $("input[name='confirmPassword']").nextAll(".error2").css("display","inline");
             return false;
          }
-         
-         
-         
-         
+             */   
          return true;
       });
       
