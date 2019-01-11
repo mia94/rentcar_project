@@ -33,17 +33,13 @@ $(function(){
 		</header>
 		
 		<section>
-		<a href="cartypelist.do">차종옵션</a>
-		<a href="brandlist.do">브랜드</a>
-		<a href="fuellist.do">연료</a>
-		<a href="caroptionlist.do">옵션</a>
 			<div id="wrap_wrap">
-			<h1>연료 관리</h1>
+			<a href="cartypelist.do">차종옵션</a>
+			<a href="brandlist.do">브랜드</a>
+			<a href="fuellist.do">연료</a>
+			<a href="caroptionlist.do">옵션</a>
+			<h1>FUEL</h1>
 			<div class="wrap">
-			<div>
-				연료
-				<%-- <img alt="fuel" src="${pageContext.request.contextPath }/images/fuel.png"> --%>
-			</div>
 				<c:forEach var="item" items="${fuelList }">
 						<p class="list_p">
 							<span>

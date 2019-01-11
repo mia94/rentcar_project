@@ -31,14 +31,13 @@ $(function(){
 		</header>
 		
 		<section>
-		<a href="cartypelist.do">차종옵션</a>
-		<a href="brandlist.do">브랜드</a>
-		<a href="fuellist.do">연료</a>
-		<a href="caroptionlist.do">옵션</a>
 			<div id="wrap_wrap">
-			<h1>브랜드 관리</h1>
+			<a href="cartypelist.do">차종옵션</a>
+			<a href="brandlist.do">브랜드</a>
+			<a href="fuellist.do">연료</a>
+			<a href="caroptionlist.do">옵션</a>
+			<h1>BRAND</h1>
 				<div class="wrap">
-					<div>브랜드</div>
 					<c:forEach var="item" items="${brandList }">
 							<p class="list_p">
 								<span>

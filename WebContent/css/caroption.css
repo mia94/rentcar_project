@@ -25,13 +25,16 @@
 		clear:both;
 	}
 	#wrap_wrap{
-		width:1000px;
-		margin: 30px auto;
+		width:500px;
+		margin: 145px auto;
+	}
+	#wrap_wrap h1{
+		text-align: center;
 	}
 	.wrap{
 		width:500px;
 		height:350px; 
-		margin:130px auto;
+		margin:0 auto;
 		border:1px solid black;
 		position: relative; 
 	}

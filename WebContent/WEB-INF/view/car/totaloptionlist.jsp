@@ -13,6 +13,9 @@
 		height:400px; 
 		margin: 147px auto;
 	}
+	#wrap h1{
+		text-align: center;
+	}
 	#wrap a{
 		width:350px;
 		height: 200px;
@@ -55,6 +58,7 @@ $(function(){
 		
 		<section>
 			<div id="wrap">
+			<h1>CAROPTION MANAGEMENT</h1>
 				<a href="cartypelist.do" class="menu">
 					<img src="${pageContext.request.contextPath }/upload/car1.jpg" alt="type">
 					<h3>CARTYPE</h3>
