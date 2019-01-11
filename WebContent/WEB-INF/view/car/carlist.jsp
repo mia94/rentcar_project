@@ -186,8 +186,8 @@
 							<p>10시간 이하 : ${item.hour10 }</p>
 							<p>12시간 이하 : ${item.hour12 }</p>
 							<p>12시간 이상 : ${item.hourElse }</p>
-							<p>isRent : </p>
-							<p>rentCnt : </p>
+							<p>isRent : ${item.rent } </p>
+							<p>rentCnt : ${item.rentCnt }</p>
 						</div>
 					</article>
 				</a>

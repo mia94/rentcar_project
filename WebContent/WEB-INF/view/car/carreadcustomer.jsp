@@ -9,27 +9,30 @@
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <style>
 	#read_wrap{
-		width:900px;
-		height: 500px;
+		width:800px;
+		height: 400px;
 		margin: 20px auto;
 		margin-top:100px;
 		position: relative;
+		border:1px solid black;
 	}
 	img{
-		width:400px;
+		width:350px;
 	}
 	#info_wrap{
 		width:350px;
 		height: 210px;
 		position:absolute;
 		right:50px;
-		top:0;
+		top:30px;
 		background-color: lightgray;
 		padding: 10px;
 	}
 	#btn_wrap{ 
 		clear: both;
-		margin-top:100px;
+		position:absolute;
+		left:330px;
+		bottom:50px;
 		text-align: center;
 	}
 </style>
@@ -43,7 +46,6 @@
 		<section>
 			<h1>차량별 세부정보</h1>
 			<div id="read_wrap">
-				<img src="">
 				<img src="${pageContext.request.contextPath }/upload/${carmodel.carCode  }.png">
 				<div id="info_wrap">
 					<p> 선택된 차량 : ${carmodel.name},${carmodel.gear }</p>

@@ -155,13 +155,8 @@
 						<img src="${pageContext.request.contextPath }/upload/${item.fuel.code  }.png" class="fuel_img">
 						<div class="info_wrap">
 							<h3>1일 대여비 : ${item.basicCharge } </h3>
-							<p>차종 : ${item.carType.type }</p>
-							<p>6시간 이하 : ${item.hour6 }</p>
-							<p>10시간 이하 : ${item.hour10 }</p>
-							<p>12시간 이하 : ${item.hour12 }</p>
-							<p>12시간 이상 : ${item.hourElse }</p>
-							<p>isRent : </p>
-							<p>rentCnt : </p>
+							<p>차종 : ${item.carType.type }</p> 
+							<p>렌트중 :${item.rent } </p>
 						</div>
 					</article>
 				</a>

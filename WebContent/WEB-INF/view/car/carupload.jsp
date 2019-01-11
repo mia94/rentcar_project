@@ -13,6 +13,12 @@
 		height:600px;
 		margin: 47px auto;
 	}
+	#img_wrap{
+		width:500px;
+		height: 470px;
+		border:1px solid black;
+		float: right;
+	}
 	label{
 		width:150px;
 		float:left;
@@ -66,11 +72,11 @@
 		
 			<div id="upload_wrap">
 			<h1>차량 추가</h1>
-				<form action="uploadcar.do" method="post"><!--   enctype="multipart/form-data"  -->
-					<!-- <p>
+				<form action="uploadcar.do" enctype="multipart/form-data" method="post"><!--   enctype="multipart/form-data"  -->
+					<div id="img_wrap">
 						<label>PHOTH</label>
 						<input type="file" name="carImg">
-					</p> -->
+					</div>
 					<p>
 						<label>차량번호</label>
 						<input type="text" name="car_code" class="textfield">
