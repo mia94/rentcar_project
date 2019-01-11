@@ -49,7 +49,7 @@ public class RentService implements RentDao{
 	//Select
 	//고객 id 검색해서 id에 해당하는 고객 정보들 가지고오기
 	@Override
-	public Customer selectById(String id) throws SQLException {
+	public List<Customer> selectById(String id) throws SQLException {
 		// TODO Auto-generated method stub
 		SqlSession session = null;
 		

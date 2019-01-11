@@ -11,5 +11,5 @@ public interface RentDao {
 	public List<CarModel> selectByCarType(String name) throws SQLException;
 	
 	//고객 id 검색해서 고객정보 들고오기
-	public Customer selectById(String id) throws SQLException;
+	public List<Customer> selectById(String id) throws SQLException;
 }

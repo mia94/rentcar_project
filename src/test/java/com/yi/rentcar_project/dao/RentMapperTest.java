@@ -33,11 +33,12 @@ public class RentMapperTest {
 	
 	@Test
 	public void test02SelectById() throws SQLException{
-		Customer customer = dao.selectById("twrstn156");
+		List<Customer> list = dao.selectById("twrstn156");
 		
-		System.out.println(customer);
-		
-		Assert.assertNotNull(customer);
+		for(Customer c : list){
+			System.out.println(c);
+		}
+		Assert.assertNotNull(list);
 	}
 
 }
