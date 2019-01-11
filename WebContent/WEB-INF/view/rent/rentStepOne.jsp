@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentStepOne.css?abdd" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css?bds" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentStepOne.css?cdas" rel="stylesheet"  type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -26,14 +26,24 @@
 				
 				<br>
 				<div id="rentInfo">
-					대여일 : ${start }<br>
-					대여시간 : ${startH }<br>
-					대여 분 : ${startM }<br>
-					반납일 : ${end }<br>
-					반납시간 : ${endH }<br>
-					반납 분 : ${endM } <br>
-					총 대여일 : ${rentDate }<br>
-					차량 유형 : ${carType }<br>
+					<ul>
+						<li>
+							<span class="tit">대여일</span>
+							<span class="res">${start } ${startH } ${startM }</span>
+						</li>
+						<li>
+							<span class="tit">반납일</span>
+							<span class="res">${end } ${endH } ${endM }</span>
+						</li>
+						<li>
+							<span class="tit">대여기간</span>
+							<span class="res"><strong>${rentDate }</strong>일</span>
+						</li>
+						<li>
+							<span class="tit">차량 유형</span>
+							<span class="res">${carType }</span>
+						</li>
+					</ul>
 				</div>
 				
 				
@@ -49,15 +59,15 @@
 									<div class="info">
 										<span class="title">${car.name }</span>
 										<span class="rentPrice">${car.basicCharge }원</span><br>
-	
+		
 										<div id="temp">
 											<img src="${pageContext.request.contextPath }/upload/${car.fuel.code }.png" class='fuel'>
 											<img src="${pageContext.request.contextPath }/upload/${car.brand.name }.png" class='carBrand'>
-											<button type="button" class="btnRentBook">예약</button>
+											<button type="button" class="btnRentBook" data-carCode="${car.carCode }" data-basicPrice="${car.basicCharge }" data-carName="${car.name }">예약</button>
 										</div>
-
+	
 									</div>
-									
+					
 								</dd>
 							</dl>
 						</li>
@@ -68,6 +78,19 @@
 			</div>
 		</section>
 		
+		<form id="stepOne" action="${pageContext.request.contextPath }/rentStepTwo.do" method="post">
+			<input type="hidden" name="sDate" id="sDate" value="${start }">
+			<input type="hidden" name="sHour" id="sHour" value="${startH }">
+			<input type="hidden" name="sMin" id="sMin" value="${startM }">
+			<input type="hidden" name="eDate" id="eDate" value="${end }">
+			<input type="hidden" name="eHour" id="eHour" value="${endH }">
+			<input type="hidden" name="eMin" id="eMin" value="${endM }">
+			<input type="hidden" name="rDate" id="rDate" value="${rentDate }">
+			<input type="hidden" name="carName" id="carName">
+			<input type="hidden" name="carCode" id="carCode">
+			<input type="hidden" name="basicPrice" id="basicPrice">
+		</form>
+		
 	</div>
 	
 	<!-- footer -->
@@ -77,6 +100,6 @@
 
 	<!-- 스크립트 부분(위에 스크립트 있으면 datepicker 실행이 안됨) -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="${pageContext.request.contextPath }/js/rentStepOne.js?cas"></script>
+	<script src="${pageContext.request.contextPath }/js/rentStep.js?cassdfs"></script>
 </body>
 </html>
