@@ -11,6 +11,7 @@ import org.junit.runners.MethodSorters;
 
 import com.yi.rentcar_project.model.CarModel;
 import com.yi.rentcar_project.model.CarType;
+import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.mvc.MySqlSessionFactory;
 import com.yi.rentcar_project.service.RentService;
 
@@ -18,7 +19,7 @@ import com.yi.rentcar_project.service.RentService;
 public class RentMapperTest {
 	private RentDao dao = RentService.getInstance();
 	
-	@Test
+/*	@Test
 	public void test01SelectByCarType() throws SQLException {
 	
 		List<CarModel> list = dao.selectByCarType("승합");
@@ -28,6 +29,16 @@ public class RentMapperTest {
 		}
 		Assert.assertNotNull(list);
 		
+	}*/
+	
+	@Test
+	public void test02SelectById() throws SQLException{
+		List<Customer> list = dao.selectById("twrstn156");
+		
+		for(Customer c : list){
+			System.out.println(c);
+		}
+		Assert.assertNotNull(list);
 	}
 
 }

@@ -78,8 +78,8 @@ public class Grade {
 
 	@Override
 	public String toString() {
-		return String.format("%s", name);
-//		return String.format("%s, %s", name, rate);
+		return String.format("Grade [code=%s, name=%s, g_losal=%s, g_hisal=%s, rate=%s]", code, name, g_losal, g_hisal,
+				rate);
 	}
 
 	@Override
