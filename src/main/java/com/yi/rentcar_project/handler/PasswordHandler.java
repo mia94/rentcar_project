@@ -26,8 +26,8 @@ public class PasswordHandler implements CommandHandler {
 			CustomerService service = CustomerService.getInstance();
 			int sameResult = service.samePwd(customer);
 			
-			if(sameResult==1){
-				return "/WEB-INF/view/management/customerModify.jsp";
+			if(sameResult==1){ 
+				res.sendRedirect("modify.do");
 			}
 			
 		}

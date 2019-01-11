@@ -29,7 +29,6 @@ p:LAST-CHILD input {
 </head>
 <body>
 
-${id }
 <div id="container">
 		<header>
 			<jsp:include page="../header.jsp"></jsp:include>

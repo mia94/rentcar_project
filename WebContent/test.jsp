@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <title>Insert title here</title>
-<script>
-	location.href="home.do";
-</script>
-
+</head>
+<body>
+	${name }
+</body>
+</html>

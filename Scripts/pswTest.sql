@@ -38,3 +38,7 @@ update customer
 		
 		
 update customer set passwd=password('root') where name = #{name} and email = #{email} and id = #{id}
+
+
+select * from customer
+where id='asd132';
