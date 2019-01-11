@@ -35,7 +35,6 @@
 		width:500px;
 		height:350px; 
 		margin:0 auto;
-		border:1px solid black;
 		position: relative; 
 	}
 	.list_p{
@@ -44,6 +43,7 @@
 		line-height:40px;
 		overflow: hidden;
 		position: relative;
+		border-bottom: 1px solid black; 
 	}
 	.list_p img{
 		width:25px;
@@ -69,4 +69,5 @@
 	.wrap .btn_span a{
 		text-decoration: none;
 		color:gray;
+		font-size: 14px;
 	}
