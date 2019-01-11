@@ -22,6 +22,15 @@ public class CarUploadHandler implements CommandHandler {
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		if(req.getMethod().equalsIgnoreCase("get")){
+			
+			CarModelService service = CarModelService.getInstance();
+			String maxCode = service.nextCarCode();
+			String sCode = maxCode.substring(1);
+			int num = Integer.parseInt(sCode) + 1;//숫자로 출력 앞에 0 사라짐
+			String nextCode = String.format("V%03d", num);
+			
+			req.setAttribute("nextCode", nextCode);
+			
 			return "/WEB-INF/view/car/carupload.jsp";
 		}else if(req.getMethod().equalsIgnoreCase("post")){
 			//사진추가

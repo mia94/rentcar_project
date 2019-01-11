@@ -51,7 +51,6 @@
 		<header>
 			<jsp:include page="../header.jsp"></jsp:include>
 		</header>
-		
 		<section>
 			<div id="upload_wrap">
 			<h1>차종추가 창</h1>
@@ -60,7 +59,7 @@
 					<form action="cartypeupload.do" method="post">
 						<p>
 							<label>차종 코드</label>
-							<input type="text" name="code" class="textfield">
+							<input type="text" name="code" class="textfield" value="${nextCode }" readonly>
 						</p>
 						<p>
 							<label>차종 이름</label>

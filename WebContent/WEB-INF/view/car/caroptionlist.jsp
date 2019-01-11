@@ -9,7 +9,7 @@
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <style>
 	#wrap_wrap{
-		width:1100px;
+		width:1000px;
 		margin: 30px auto;
 		padding-right: 100px;
 	}
@@ -106,8 +106,8 @@ $(function(){
 		</header>
 		
 		<section>
-			<h1>차량옵션 관리</h1>
 			<div id="wrap_wrap">
+			<h1>차량옵션 관리</h1>
 			<div class="wrap">
 				<h1>차종</h1>
 				<c:forEach var="item" items="${typeList }">

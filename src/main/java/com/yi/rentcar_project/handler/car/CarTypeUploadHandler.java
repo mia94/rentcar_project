@@ -11,7 +11,17 @@ public class CarTypeUploadHandler implements CommandHandler {
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		CarTypeService service = CarTypeService.getInstance();
+		
 		if(req.getMethod().equalsIgnoreCase("get")){
+
+			String maxCode = service.nextTypeCode();
+			String sCode = maxCode.substring(1);
+			int num = Integer.parseInt(sCode) + 1;//숫자로 출력 앞에 0 사라짐
+			String nextCode = "S"+num;
+			
+			req.setAttribute("nextCode", nextCode);
+			
 			return "/WEB-INF/view/car/cartypeupload.jsp";
 		}else if(req.getMethod().equalsIgnoreCase("post")){
 			String code = req.getParameter("code");
@@ -20,8 +30,7 @@ public class CarTypeUploadHandler implements CommandHandler {
 			CarType cartype = new CarType();
 			cartype.setCode(code);
 			cartype.setType(type);
-			
-			CarTypeService service = CarTypeService.getInstance();
+
 			service.insertCarType(cartype);
 			
 			return "caroptionlist.do";

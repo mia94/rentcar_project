@@ -79,7 +79,7 @@
 					</div>
 					<p>
 						<label>차량번호</label>
-						<input type="text" name="car_code" class="textfield">
+						<input type="text" name="car_code" class="textfield" value="${nextCode }" readonly>
 					</p>
 					<p>
 						<label>모델명</label>

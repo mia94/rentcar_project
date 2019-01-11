@@ -60,7 +60,7 @@
 					<form action="caroptionupload.do" method="post">
 						<p>
 							<label>옵션 코드</label>
-							<input type="text" name="code" class="textfield">
+							<input type="text" name="code" class="textfield" value="${nextCode }" readonly>
 						</p>
 						<p>
 							<label>옵션 이름</label>
