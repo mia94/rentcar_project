@@ -37,7 +37,10 @@ update customer
 		where Id=#{id}
 		
 		
-update customer set passwd=password('root') where name = #{name} and email = #{email} and id = #{id}
+update customer 
+set passwd=password('root') 
+where name = '김재영'
+and email ='xbmhw325@daum.com' and id = 'xbmhw325';
 
 
 select * from customer

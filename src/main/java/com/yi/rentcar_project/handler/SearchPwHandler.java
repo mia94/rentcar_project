@@ -13,30 +13,36 @@ public class SearchPwHandler implements CommandHandler {
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		// TODO Auto-generated method stub
 		if (req.getMethod().equalsIgnoreCase("get")) {
+			/*String name = req.getParameter("name");
+			String id= req.getParameter("id");
+			String email1 = req.getParameter("email1");
+			String email2 = req.getParameter("email2");
+			
+			Customer customer = new Customer();
+			customer.setName(name);
+			customer.setId(id);
+			customer.setEmail(email1+"@"+email2);*/
 			return "/WEB-INF/view/login/searchPw.jsp";
 		} else if (req.getMethod().equalsIgnoreCase("post")) {
 			String name = req.getParameter("name");
 			String id =req.getParameter("id");
 			String email1 = req.getParameter("email1");
 			String email2 = req.getParameter("email2");
-				
+			
+			SearchIdPwService searchService = SearchIdPwService.getInstance();
+			
 			Customer customer = new Customer();
 			customer.setName(name);
 			customer.setId(id);
 			customer.setEmail(email1 + "@" + email2);
 			
-			try {
-				SearchIdPwService searchService = SearchIdPwService.getInstance();
-				String newPwd = searchService.getRandPw();
-				customer.setPasswd(newPwd);
-				searchService.changePw(customer);
-	
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			String newPwd = searchService.getRandPw();
+			customer.setPasswd(newPwd);
 			
-			String newPwd = customer.getPasswd();
-			req.setAttribute("newPwd", newPwd);
+			searchService.changePw(customer);
+			
+			String newPw = customer.getPasswd();
+			req.setAttribute("newPwd", newPw);
 
 		}
 		return "/WEB-INF/view/login/resultPw.jsp"; 

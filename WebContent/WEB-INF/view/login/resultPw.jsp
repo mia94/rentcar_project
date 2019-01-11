@@ -8,6 +8,7 @@
 </head>
 <body>
 <div>고객님의 임시 비밀번호는${newPwd } 입니다. 개인정보관리에서 비밀번호를 재설정 하주세요</div>
- 	<a href="password.do">개인정보 설정하기</a>
+ 	<a href="login.do">로그인</a>
+ 	
 </body>
 </html>

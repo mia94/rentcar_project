@@ -192,7 +192,7 @@ public class CustomerService implements CustomerDao {
 	@Override
 	public int changePw(Customer customer) {
 		try (SqlSession sqlSession = MySqlSessionFactory.openSession();) {
-			int res = sqlSession.delete(namespace + ".changePw", customer);
+			int res = sqlSession.update(namespace + ".changePw", customer);
 			sqlSession.commit();
 			return res;
 		}
