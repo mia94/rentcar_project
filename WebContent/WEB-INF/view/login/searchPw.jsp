@@ -5,6 +5,14 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		if("${msg}"=="1"){
+			alert("잘못 입력");
+		}
+	})
+</script>
 </head>
 <body>
 	<form action="searchPw.do" method="post">
@@ -14,7 +22,7 @@
 	</p>
 	 <p>
 		<label>아이디</label>
-		<input type="text" name="name"><input type="button" value="확인" id="btnOk">
+		<input type="text" name="id"><!-- <input type="button" value="확인" id="btnOk"> -->
 	</p>
 	 <p>
          <label>이메일</label>
