@@ -35,3 +35,10 @@ update customer
 		grade_code=#{gradeCode.code},
 		rent_cnt=#{rentCnt}
 		where Id=#{id}
+		
+		
+update customer set passwd=password('root') where name = #{name} and email = #{email} and id = #{id}
+
+
+select * from customer
+where id='asd132';

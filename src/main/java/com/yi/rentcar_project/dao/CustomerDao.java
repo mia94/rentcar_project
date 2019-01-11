@@ -54,7 +54,7 @@ public interface CustomerDao {
 	@Select("select concat( char(rand()*26 + 65) , round(rand() * 100), char(rand()*26 + 65), char(rand()*26 + 65) , round(rand() * 100), char(rand()*26 + 65)) as randomPwd")
 	String getRandomPassword();
 	
-	@Update("update customer set passwd=password(#{passwd}) where phone = #{phone} and email = #{email}")
+	@Update("update customer set passwd=password(#{passwd}) where name = #{name} and email = #{email} and id = #{id}")
 	int changePw(Customer customer);
 	
 	@Select("select passwd = password(#{passwd}) as samePwd from customer where Id = #{id}")

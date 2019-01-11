@@ -12,9 +12,9 @@
 		<label>이름</label>
 		<input type="text" name="name">
 	</p>
-	<p>
+	 <p>
 		<label>아이디</label>
-		<input type="text" name="name">
+		<input type="text" name="name"><input type="button" value="확인" id="btnOk">
 	</p>
 	 <p>
          <label>이메일</label>

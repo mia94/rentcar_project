@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -181,50 +183,52 @@
 		<form action="modify.do" id="f1" method="post">
 	      <p>
 	         <label>이름</label>
-	         <input type="text" name="name" value="${name }"> 
+	         <input type="text" name="name" value="${custom.name }"> 
 	      </p>
 	      <p>
 	         <label>아이디</label>
-	         <input type="text" name="id" value="${id }" > 
+	         <input type="text" name="id" value="${custom.id }" readonly="readonly"> 
 	      </p>
       
 	       <p>
 	         <label>생년월일</label>
-	       	 <input type="text" id="datepicker" name="dob" class="format" value="${dob }"> 
+	       	 <input type="text" id="datepicker" name="dob" class="format" value="${custom.dob }" > 
 	      </p>
       
   		<p>
          <label>전화번호</label>
+          <c:set var='phone1' value="${fn:substring(custom.phone,0, 3) }"></c:set>
 	        <select name="phone">
-	        	<!-- <option selected="selected" value="opt">선택하세요</option> -->
-	        	<option value="010">010</option>
-	        	<option value="011">011</option>
-	        	<option value="017">017</option>
+	        	<!-- <option value="opt">선택하세요</option> -->
+	        	
+	        	<option value="010" ${phone1 == '010'? 'selected' :'' }>010</option>
+	        	<option value="011" ${phone1 == '011'? 'selected' :'' }>011</option>
+	        	<option value="017" ${phone1 == '017'? 'selected' :'' }>017</option>
 	        </select>
-	      - <input type="text" name="phone2"> - <input type="text" name="phone3">
+	      - <input type="text" name="phone2" value="${fn:substring(custom.phone,4,4+fn:indexOf(fn:substringAfter(custom.phone,'-'),'-')) }"> - <input type="text" name="phone3" value="${fn:substring(custom.phone,9,13) }">
      	 </p>
      	 
        <p>
          <label>이메일</label>
-         <input type="text"> @
-        <select name="email">
+         <input type="text" name="email1" value="${fn:substring(custom.email,0, fn:indexOf(custom.email,'@')) }"> @
+        <select name="email2">
         	<!-- <option value="a">선택하세요</option> -->
-        	<option value="naver">naver.com</option>
-        	<option value="gmail">gmail.com</option>
-        	<option value="daum">daum.net</option>
-        	<option value="nate">nate.com</option>
+        	<option value="naver.com">naver.com</option>
+        	<option value="gmail.com">gmail.com</option>
+        	<option value="daum.net">daum.net</option>
+        	<option value="nate.com">nate.com</option>
         </select>
       </p>
       
          <p>
        <label>우편번호</label>
-      <input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode" value="${zipcode }">
+      <input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode" value="${custom.zipCode }">
      <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" ><br>
       </p>
       
       <p>
        <label>주소</label>   
-      	<input type="text" id="sample6_address" placeholder="주소" name="address" value="${address }"><br>
+      	<input type="text" id="sample6_address" placeholder="주소" name="address" value="${custom.address }"><br>
       </p>
       
       <p>
@@ -244,7 +248,7 @@
 		 
       <p>
          <label>새비밀번호</label>
-         <input type="password" name="password"> 
+         <input type="text" name="password"> 
        
       </p>
       <p>
@@ -253,7 +257,7 @@
          
       </p>
         <p>  
-         <input type="submit" value="회원정보수장"> 
+         <input type="submit" value="개인정보수정"> 
       </p>
    </form>
 		
