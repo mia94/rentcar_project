@@ -8,40 +8,37 @@
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <style>
-	#wrap_wrap{
-		width:1000px;
-		margin: 30px auto;
-		padding-right: 100px;
+	#wrap{
+		width:720px;
+		height:400px; 
+		margin: 147px auto;
 	}
-	.wrap{
-		width:900px;
-		height:298px; 
-		margin-left:100px;
-		border:1px solid black;
-		position: relative; 
-	}
-	.wrap div{
-		width:500px; 
-		height: 297px;
+	#wrap a{
+		width:350px;
+		height: 200px;
+		margin:2px;
 		float: left;
-	}
-	.wrap .btnAdd{
+		border:1px solid gray;
+		color:white;
 		text-decoration: none;
-		text-align: right;
+		overflow: hidden;
+		position: relative;
+	}#wrap a h3{
 		position: absolute;
-		bottom: 20px;
-		right: 190px;
+		top:90px;
+		left: 145px;
+		color:white;
 	}
-	.wrap .btn_span{
-		width:130px; 
-		position: absolute;
-		right: 10px;
-		top:0;
+	#wrap .menu img{
+		width:350px;
+		height:200px;
+		transform-origin:center;
+		transition:all 1s;
 	}
-	.wrap .btn_span a{
-		text-decoration: none;
-		color:gray;
+	#wrap .menu img:hover{
+		transform:scale(1.1);
 	}
+	#wrap #type img,#wrap #brand img,#wrap #fuel img,#wrap #option img
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -57,13 +54,23 @@ $(function(){
 		</header>
 		
 		<section>
-		<a href="cartypelist.do">차종옵션</a>
-		<a href="brandlist.do">브랜드</a>
-		<a href="fuellist.do">연료</a>
-		<a href="caroptionlist.do">옵션</a>
-			<div id="wrap_wrap">
-			<h1>차량옵션 메뉴</h1>
-			
+			<div id="wrap">
+				<a href="cartypelist.do" class="menu">
+					<img src="${pageContext.request.contextPath }/upload/car1.jpg" alt="type">
+					<h3>CARTYPE</h3>
+				</a>
+				<a href="brandlist.do" class="menu">
+					<img src="${pageContext.request.contextPath }/upload/car2.jpg" alt="brand">
+					<h3>BRAND</h3>
+				</a>
+				<a href="fuellist.do" class="menu">
+					<img src="${pageContext.request.contextPath }/upload/car3.jpg" alt="fuel">
+					<h3>FUEL</h3>
+				</a>
+				<a href="caroptionlist.do" class="menu">
+					<img src="${pageContext.request.contextPath }/upload/car4.jpg" alt="option">
+					<h3>OPTION</h3>
+				</a>
 			</div>
 		</section>
 	</div>
