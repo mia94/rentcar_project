@@ -8,15 +8,7 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-	 $(function() {
-		$("#searchId").click(function() {
-			var id = ${id };
-		
-			$("#id").html(id);
-		
-			
-		})
-	}) 
+
 </script>
 </head>
 <body>
@@ -37,11 +29,9 @@
         </select>
       </p>
       <p>
-      	<input type="button" value="아이디 찾기" id="searchId">
+      	<input type="submit" value="아이디 찾기" id="searchId">
       </p>
-      
-      <div id="id">${id }</div>      
-      
+
 </form>
 </body>
 </html>
