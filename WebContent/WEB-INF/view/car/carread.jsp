@@ -9,33 +9,66 @@
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <style>
 	#read_wrap{
-		width:900px;
-		height: 500px;
-		margin: 20px auto;
-		margin-top:100px;
+		width:800px;
+		height: 400px;
+		margin: 120px auto;
 		position: relative;
 	}
+	#read_wrap > h1{
+		position: absolute;
+		left: 30px;
+		top:45px;
+		color:gray;
+	}
 	img{
-		width:400px;
+		width:350px;
+		position: absolute;
+		left: 20px;
+		top:100px;
 	}
 	#info_wrap{
-		width:350px;
-		height: 210px;
+		width:320px;
+		height: 260px;
 		position:absolute;
 		right:50px;
-		top:0;
-		background-color: lightgray;
+		top:30px;
 		padding: 10px;
+		font-size: 14px;
 	}
-	#btn_wrap{ 
-		clear: both;
-		margin-top:100px;
+	#info_wrap table{
+		border-collapse: collapse;
+		width:320px;
+	}
+	#info_wrap table tr td{
+		border:1px solid black;
+		padding: 5px;
+	}
+	#info_wrap table tr td:FIRST-CHILD{
 		text-align: center;
+	}
+	#info_wrap table tr .charge{
+		text-align: right;
+	}
+	#info_wrap table #title_charge,#info_wrap table #title{
+		background-color: gray;
+		text-align: center;
+	}
+	#btn_wrap, #next_wrap{
+		clear: both;
+		text-align: center;
+	}
+	#btn_wrap a, #next_wrap a{
+		text-decoration: none;
+	}
+	#btn_wrap{ 	
+		position:absolute;
+		left:333px;
+		bottom:60px;
 	}
 	#next_wrap{
-		clear: both;
-		margin-top:10px;
-		text-align: center;
+		position:absolute;
+		left:330px;
+		bottom:30px;
 	}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -58,22 +91,51 @@
 		</header>
 		
 		<section>
-			<h1>차량별 세부정보</h1>
+			<h1>차량관리</h1>
 			<div id="read_wrap">
-				<img src="">
+				<h1> ${carmodel.name} </h1>
 				<img src="${pageContext.request.contextPath }/upload/${carmodel.carCode  }.png">
 				<div id="info_wrap">
-					<p> 선택된 차량 : ${carmodel.name},${carmodel.gear }</p>
-					<p> 차량 색상 : ${carmodel.color }</p>
-					<p> 선택된 차량 코드 : ${carmodel.carCode}</p>
-					<p> 브랜드 : ${carmodel.brand.name }</p>
-					<p> 차종 : ${carmodel.carType.type }</p>
-					<p> 기본요금 : ${carmodel.basicCharge }</p>
-					<p> 6시간 : ${carmodel.hour6 }</p>
-					<p> 10시간 : ${carmodel.hour10 }</p>
-					<p> 12시간 : ${carmodel.hour12 }</p>
-					<p> 12시간 이상 : ${carmodel.hourElse }</p>
-
+					<table>
+						<tr>
+							<td colspan="4" id="title">차량 정보</td>
+						</tr>
+						<tr>
+							<td>차종</td>
+							<td>${carmodel.carType.type }</td>
+							<td>브랜드</td>
+							<td>${carmodel.brand.name }</td>
+						</tr>
+						<tr>
+							<td>색상</td>
+							<td> ${carmodel.color }</td>
+							<td>변속기</td>
+							<td>${carmodel.gear }</td>
+						</tr>
+						<tr>
+							<td colspan="4" id="title_charge">요금표</td>
+						</tr>
+						<tr>
+							<td colspan="3">기본요금</td>
+							<td class="charge">${carmodel.basicCharge }</td>
+						</tr>
+						<tr>
+							<td colspan="3">6시간 이하 연체요금</td>
+							<td class="charge">${carmodel.hour6 }</td>
+						</tr>
+						<tr>
+							<td colspan="3">10시간 이하 연체요금</td>
+							<td class="charge">${carmodel.hour10 }</td>
+						</tr>
+						<tr>
+							<td colspan="3">12시간 이하 연체요금</td>
+							<td class="charge">${carmodel.hour12 }</td>
+						</tr>
+						<tr>
+							<td colspan="3">12시간 초과 연체요금</td>
+							<td class="charge">${carmodel.hourElse }</td>
+						</tr>
+					</table>
 				</div>
 				<div id="btn_wrap">
 					<a href="carmodify.do?carCode=${carmodel.carCode }">[수정]</a><!-- 수정연결 아직 안됨 -->
