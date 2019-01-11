@@ -79,8 +79,12 @@ $(function(){
 		</header>
 		
 		<section>
+		<a href="cartypelist.do">차종옵션</a>
+		<a href="brandlist.do">브랜드</a>
+		<a href="fuellist.do">연료</a>
+		<a href="caroptionlist.do">옵션</a>
 			<div id="wrap_wrap">
-			<h1>차량옵션 관리</h1>
+			<h1>차종 관리</h1>
 			<div class="wrap">
 				<div>
 					차종
