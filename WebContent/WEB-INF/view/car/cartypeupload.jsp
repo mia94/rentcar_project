@@ -56,7 +56,7 @@
 			<h1>차종추가 창</h1>
 				<div id="input_wrap">
 					<div id="img_wrap">img</div>
-					<form action="cartypeupload.do" method="post">
+					<form action="cartypeupload.do" enctype="multipart/form-data" method="post">
 						<p>
 							<label>차종 코드</label>
 							<input type="text" name="code" class="textfield" value="${nextCode }" readonly>
@@ -65,7 +65,10 @@
 							<label>차종 이름</label>
 							<input type="text" name="type" class="textfield">
 						</p>
-	
+						<p>
+							<label>차종 아이콘</label>
+							<input type="file" name="icon">
+						</p>
 						<div id="btn_wrap">
 							<input type="submit" value="저장">
 							<input type="reset" value="취소">

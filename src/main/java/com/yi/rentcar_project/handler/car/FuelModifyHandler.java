@@ -35,7 +35,7 @@ public class FuelModifyHandler implements CommandHandler {
 			FuelService service = FuelService.getInstance();
 			service.updateFuel(fuel);
 			
-			return "caroptionlist.do";
+			return "fuellist.do";
 		}
 		return null;
 	}

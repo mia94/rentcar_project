@@ -61,11 +61,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(function(){
-	$(".optionDel").click(function(){
+	$(".typeDel").click(function(){
 		var del = confirm("정말 삭제하시겠습니까?");
 		if(del==true){
-			var no = $(this).parents(".list_p").children("span").first().text();
-			location.href="${pageContext.request.contextPath }/optiondelete.do?no="+no;
+			var code = $(this).parent("span").prev().text();
+			location.href="${pageContext.request.contextPath }/cartypedelete.do?code="+code;
 		}
 		return false;
 	})
@@ -79,26 +79,26 @@ $(function(){
 		</header>
 		
 		<section>
-		<a href="cartypelist.do">차종옵션</a>
-		<a href="brandlist.do">브랜드</a>
-		<a href="fuellist.do">연료</a>
-		<a>옵션</a>
 			<div id="wrap_wrap">
 			<h1>차량옵션 관리</h1>
 			<div class="wrap">
-				<div>옵션</div>
-				<c:forEach var="item" items="${optionList }">
+				<div>
+					차종
+				</div>
+				<c:forEach var="item" items="${typeList }">
 						<p class="list_p">
-							<span>${item.no }</span>
-							<span>${item.name }</span>
-							<span>${item.price }</span>
-							<span class="btn_span">
-								<a href="optionmodify.do?no=${item.no }">수정</a>
-								<a href="optiondelete.do?no=${item.no }" class="optionDel">삭제</a>
+							<span>
+								<img src="${pageContext.request.contextPath }/images/${item.type }b.png">
 							</span>
-						</p>	
+							<span>${item.type }</span>
+							<span>${item.code }</span> 
+							<span class="btn_span">
+								<a href="cartypemodify.do?code=${item.code }">수정</a>
+								<a href="cartypedelete.do?code=${item.code }" class="typeDel">삭제</a>
+							</span>
+						</p>
 				</c:forEach>
-				<p><a href="caroptionupload.do" class="btnAdd">[ 추가  ]</a></p>
+				<p><a href="cartypeupload.do" class="btnAdd">[ 추가  ]</a></p>
 			</div>
 			</div>
 		</section>

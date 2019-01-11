@@ -31,7 +31,7 @@ public class FuelUploadHandler implements CommandHandler {
 			
 			service.insertFuel(fuel);
 			
-			return "caroptionlist.do";
+			return "fuellist.do";
 		}
 		return null;
 	}

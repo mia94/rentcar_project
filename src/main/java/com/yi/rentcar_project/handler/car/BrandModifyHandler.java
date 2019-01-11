@@ -35,7 +35,7 @@ public class BrandModifyHandler implements CommandHandler {
 			
 			service.updateBrand(brand);
 			
-			return "caroptionlist.do";
+			return "brandlist.do";
 		}
 		return null;
 	}

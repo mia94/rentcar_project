@@ -53,15 +53,13 @@ public class BrandUploadHandler implements CommandHandler {
 				Brand brand = new Brand(no, name);
 				service.insertBrand(brand);
 				
-				return "caroptionlist.do";
+				return "brandlist.do";
 			
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			
-			
-			
-			return "caroptionlist.do";
+
+			return "brandlist.do";
 			
 			
 			

@@ -25,21 +25,6 @@
 		height: 297px;
 		float: left;
 	}
-	.list_p{
-		height: 40px;
-		width:380px;
-		line-height:40px;
-		overflow: hidden;
-		position: relative;
-	}
-	.list_p img{
-		width:25px;
-	}
-	.list_p span{
-		float: left;
-		width:80px;
-		text-align: center;
-	}
 	.wrap .btnAdd{
 		text-decoration: none;
 		text-align: right;
@@ -61,14 +46,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(function(){
-	$(".optionDel").click(function(){
-		var del = confirm("정말 삭제하시겠습니까?");
-		if(del==true){
-			var no = $(this).parents(".list_p").children("span").first().text();
-			location.href="${pageContext.request.contextPath }/optiondelete.do?no="+no;
-		}
-		return false;
-	})
+	
 })
 </script>
 </head>
@@ -84,22 +62,8 @@ $(function(){
 		<a href="fuellist.do">연료</a>
 		<a>옵션</a>
 			<div id="wrap_wrap">
-			<h1>차량옵션 관리</h1>
-			<div class="wrap">
-				<div>옵션</div>
-				<c:forEach var="item" items="${optionList }">
-						<p class="list_p">
-							<span>${item.no }</span>
-							<span>${item.name }</span>
-							<span>${item.price }</span>
-							<span class="btn_span">
-								<a href="optionmodify.do?no=${item.no }">수정</a>
-								<a href="optiondelete.do?no=${item.no }" class="optionDel">삭제</a>
-							</span>
-						</p>	
-				</c:forEach>
-				<p><a href="caroptionupload.do" class="btnAdd">[ 추가  ]</a></p>
-			</div>
+			<h1>차량옵션 메뉴</h1>
+			
 			</div>
 		</section>
 	</div>
