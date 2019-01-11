@@ -26,7 +26,7 @@
 	</select>
 
 	<resultMap type="Customer" id="ResultCustomExtend" 	extends="ResultCustom">
-		<collection property="events" resultMap="kr.or.yi.java_web_female.dao.CustomEventMapper.resultCustomEvent" />
+		<collection property="events" resultMap="com.yi.rentcar_project.dao.CustomEventMapper.resultCustomEvent" />
 	</resultMap>
 
 	<select id="selectCustomerByPw" resultType="Customer">

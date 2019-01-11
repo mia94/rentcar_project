@@ -1,9 +1,13 @@
 package com.yi.rentcar_project.handler.rent;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.mvc.CommandHandler;
+import com.yi.rentcar_project.service.RentService;
 
 public class RentStepTwoHandler implements CommandHandler {
 
@@ -25,6 +29,12 @@ public class RentStepTwoHandler implements CommandHandler {
 			String carCode = req.getParameter("carCode");
 			String basicPrice = req.getParameter("basicPrice");
 			
+			//아이디
+			String id = (String) req.getSession().getAttribute("AUTH");
+			
+			RentService service = RentService.getInstance();
+			List<Customer> list = service.selectById(id);
+			
 			req.setAttribute("sDate", sDate);
 			req.setAttribute("sHour", sHour);
 			req.setAttribute("sMin", sMin);
@@ -37,6 +47,9 @@ public class RentStepTwoHandler implements CommandHandler {
 			req.setAttribute("carName", carName);
 			req.setAttribute("carCode", carCode);
 			req.setAttribute("basicPrice", basicPrice);
+			
+			req.setAttribute("id", id);
+			req.setAttribute("list", list);
 			
 			return "/WEB-INF/view/rent/rentStepTwo.jsp";
 		}

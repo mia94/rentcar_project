@@ -36,14 +36,13 @@
 		<result column="gradeRate" property="gradeCode.rate" />
 	</resultMap>
 	
-	<resultMap type="Customer" id="resultCustomerExtend" extends="resultCustomer">
-		<collection property="events" resultMap="com.yi.rentcar_project.dao.EventDao.resultEvent" />
+	<resultMap type="Customer" id="ResultCustomExtend" extends="resultCustomer">
+		<collection property="events" resultMap="com.yi.rentcar_project.dao.CustomEventDao.resultCustomEvent" />
 	</resultMap>
 	
-	
-	<select id="selectById" resultMap="resultCustomer" resultType="Customer">
+	<select id="selectById" resultMap="ResultCustomExtend" resultType="Customer">
 		select c.code as customerCode, id, c.name as customerName, zip_code as zipCode, address, phone, email, grade_code as gradeCode, license, rent_cnt, ce.event_code as eventCode, e.name as eventName, e.rate as eventRate, g.name as gradeName, g.rate as gradeRate
-		from customer c join custom_event ce on c.code = ce.custom_code join event e on ce.event_code = e.code join grade g on c.grade_code = g.code
+		from customer c join custom_event ce on c.code = ce.custom_code left join event e on ce.event_code = e.code join grade g on c.grade_code = g.code
 		where id = #{id};
 	</select>
 	
