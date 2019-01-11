@@ -19,4 +19,24 @@
 		on ct.code = cm.cartype join brand b on cm.brand = b.no
 		where ct.`type` = #{carType};
 	</select>
+	
+	<!-- 고객 아이디 검색해서 id에 해당하는 고객 정보 가지고오기 -->
+	<resultMap type="Customer" id="resultCustomer">
+		<id column="code" property="code" />
+		<result column="id" property="Id" />
+		<result column="name" property="name" />
+		<result column="zip_code" property="zipCode" />
+		<result column="address" property="address" />
+		<result column="phone" property="phone" />
+		<result column="email" property="email" />
+		<result column="grade_code" property="gradeCode.code" />
+		<result column="license" property="license" />
+		<result column="rent_cnt" property="rentCnt" />
+	</resultMap>
+	
+	<select id="selectById" resultMap="resultCustomer" resultType="Customer">
+		select code, id, name, zip_code, address, phone, email, license, rent_cnt, grade_code
+		from customer
+		where id = #{id};
+	</select>
 </mapper>
