@@ -53,7 +53,7 @@
 	<select id="selectCustomerById" resultMap="ResultCustom">
 		select code, Id, password(#{passwd}), Name, zip_code ,address, phone, dob, email, emp_code, license, grade_code, rent_cnt
 		from customer
-		where Id = #{id}
+		where Id = #{id} and email = #{email}
 	</select>
 
 	<insert id="insertCustomer" parameterType="Customer">

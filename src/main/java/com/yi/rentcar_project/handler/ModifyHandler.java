@@ -22,7 +22,7 @@ public class ModifyHandler implements CommandHandler {
 			Customer customer = new Customer();
 			customer.setId(id);
 			Customer customId = service.selectCustomerById(customer);
-			System.out.println("확인");
+			
 			// System.out.println(customId);
 			
 			/*
@@ -56,7 +56,7 @@ public class ModifyHandler implements CommandHandler {
 			String detailAddr = req.getParameter("detailAddr");
 			String password = req.getParameter("password");
 			String confirmPassword = req.getParameter("confirmPassword");
-
+			System.out.println("name==========>"+name);
 
 			req.setAttribute("name", name);
 			
@@ -65,9 +65,8 @@ public class ModifyHandler implements CommandHandler {
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 				Date dobs = sdf.parse(dob);
 				CustomerService service = CustomerService.getInstance();
-				Employee employee = new Employee("E001");
-				Grade grade = new Grade("G001");
-				System.out.println("==========>"+grade);
+				Employee employee = new Employee();
+				Grade grade = new Grade();
 				Customer customer = new Customer();
 				customer.setName(name);
 				customer.setId(id);
@@ -85,8 +84,8 @@ public class ModifyHandler implements CommandHandler {
 				service.updateCustomer(customer);
 
 			}
-			return "test.jsp";
-			//return "login.do";
+			return "/WEB-INF/view/management/modifyResult.jsp";
+			
 		}
 		
 		/*

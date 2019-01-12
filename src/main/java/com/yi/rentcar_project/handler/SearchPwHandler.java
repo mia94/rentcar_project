@@ -20,13 +20,9 @@ public class SearchPwHandler implements CommandHandler {
 
 			try {
 				String name = req.getParameter("name");
-			
 				String id = req.getParameter("id");
-			
 				String email1 = req.getParameter("email1");
-				
 				String email2 = req.getParameter("email2");
-				
 
 				CustomerService service = CustomerService.getInstance();
 				SearchIdPwService searchService = SearchIdPwService.getInstance();
@@ -37,6 +33,7 @@ public class SearchPwHandler implements CommandHandler {
 				customer.setId(id);
 				customer.setEmail(email1 + "@" + email2);
 				Customer custome = service.selectCustomerById(customer);
+				System.out.println(customer.getEmail());
 				System.out.println(custome);
 				if (custome.getName().equals(name) || custome.getEmail().equals(email1 + "@" + email2)) {
 
@@ -56,7 +53,7 @@ public class SearchPwHandler implements CommandHandler {
 			}
 			return "/WEB-INF/view/login/resultPw.jsp";
 		}
-		/*return "/WEB-INF/view/login/resultPw.jsp";*/
+
 		return null;
 	}
 

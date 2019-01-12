@@ -8,4 +8,3 @@
 <script>
 	location.href="home.do";
 </script>
-

@@ -245,7 +245,7 @@
 		 
       <p>
          <label>새비밀번호</label>
-         <input type="text" name="password"> 
+         <input type="password" name="password"> 
        
       </p>
       <p>

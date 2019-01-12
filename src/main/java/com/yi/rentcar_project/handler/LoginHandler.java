@@ -23,11 +23,6 @@ public class LoginHandler implements CommandHandler {
 	}
 
 
-
-
-
-
-
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		if (req.getMethod().equalsIgnoreCase("get")) {

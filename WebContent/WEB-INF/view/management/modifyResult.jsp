@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	${name }
+	회원님의 정보가 수정 되었습니다.
+	<a href="home.do">홈화면으로</a>
 </body>
 </html>
