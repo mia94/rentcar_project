@@ -41,7 +41,7 @@ public class SearchPwHandler implements CommandHandler {
 				System.out.println();
 				customer.setId(id);
 				customer.setEmail(email1 + "@" + email2);
-				Customer custome = service.selectCustomerById(customer);
+				Customer custome = service.selectCustomerByIdEmail(customer);
 
 				System.out.println(custome);
 				if (custome.getName().equals(name) || custome.getEmail().equals(email1 + "@" + email2)) {

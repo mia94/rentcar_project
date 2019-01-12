@@ -229,4 +229,11 @@ public class CustomerService implements CustomerDao {
 		}
 	}
 
+	@Override
+	public Customer selectCustomerByIdEmail(Customer customer) {
+		try (SqlSession sqlSession = MySqlSessionFactory.openSession();) {
+			return sqlSession.selectOne(namespace + ".selectCustomerByIdEmail", customer);
+		}
+	}
+
 }

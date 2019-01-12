@@ -198,9 +198,9 @@
 	        <select name="phone">
 	        	<!-- <option value="opt">선택하세요</option> -->
 	        	
-	        	<option value="010" ${phone1 == '010'? 'selected' :'' }>010</option>
-	        	<option value="011" ${phone1 == '011'? 'selected' :'' }>011</option>
-	        	<option value="017" ${phone1 == '017'? 'selected' :'' }>017</option>
+	        	<option value="010" >010</option>
+	        	<option value="011" >011</option>
+	        	<option value="017" >017</option>
 	        </select>
 	      - <input type="text" name="phone2" value="${fn:substring(custom.phone,4,4+fn:indexOf(fn:substringAfter(custom.phone,'-'),'-')) }"> - <input type="text" name="phone3" value="${fn:substring(custom.phone,9,13) }">
      	 </p>

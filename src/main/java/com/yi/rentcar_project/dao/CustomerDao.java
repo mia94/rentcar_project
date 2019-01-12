@@ -69,4 +69,7 @@ public interface CustomerDao {
 	@Select("select g.name as title , count(g.name) as count from customer c left join grade g on c.grade_code = g.code where grade_code is not null group by grade_code")
 	List<StateCar> chartGrade();
 	
+	@Select("select code, Id, password(#{passwd}), Name, zip_code ,address, phone, dob, email, emp_code, license, grade_code, rent_cnt from customer where Id = #{id} and email = #{email}")
+	Customer selectCustomerByIdEmail(Customer customer);
+	
 }
