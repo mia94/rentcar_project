@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div>고객님의 임시 비밀번호는${newPwd } 입니다. 개인정보관리에서 비밀번호를 재설정 하주세요</div>
+<div>임시 비밀번호를 고객님의 이메일로 발송했습니다. 개인정보관리에서 비밀번호를 재설정 하주세요</div>
  	<a href="login.do">로그인</a>
  	
 </body>

@@ -37,7 +37,6 @@ public class ModifyHandler implements CommandHandler {
 			 * req.setAttribute("address", address);
 			 * req.setAttribute("detailAddr", detailAddr);
 			 */
-
 			req.setAttribute("custom", customId);
 
 			return "/WEB-INF/view/management/customerModify.jsp";
@@ -56,7 +55,6 @@ public class ModifyHandler implements CommandHandler {
 			String detailAddr = req.getParameter("detailAddr");
 			String password = req.getParameter("password");
 			String confirmPassword = req.getParameter("confirmPassword");
-			System.out.println("name==========>"+name);
 
 			req.setAttribute("name", name);
 			
@@ -76,6 +74,7 @@ public class ModifyHandler implements CommandHandler {
 				customer.setLicense(license);
 				customer.setZipCode(zipcode);
 				customer.setAddress(address + " " + detailAddr);
+				customer.setPasswd(password);
 				customer.setEmpCode(employee);
 				customer.setGradeCode(grade);
 
