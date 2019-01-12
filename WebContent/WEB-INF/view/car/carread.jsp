@@ -6,70 +6,33 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/carread.css" rel="stylesheet"  type="text/css">
 <style>
-	#read_wrap{
-		width:800px;
-		height: 400px;
-		margin: 120px auto;
-		position: relative;
-	}
-	#read_wrap > h1{
-		position: absolute;
-		left: 30px;
-		top:45px;
-		color:gray;
-	}
-	img{
-		width:350px;
-		position: absolute;
-		left: 20px;
-		top:100px;
-	}
-	#info_wrap{
-		width:320px;
-		height: 260px;
-		position:absolute;
-		right:50px;
-		top:30px;
-		padding: 10px;
-		font-size: 14px;
-	}
-	#info_wrap table{
-		border-collapse: collapse;
-		width:320px;
-	}
-	#info_wrap table tr td{
-		border:1px solid black;
-		padding: 5px;
-	}
-	#info_wrap table tr td:FIRST-CHILD{
-		text-align: center;
-	}
-	#info_wrap table tr .charge{
-		text-align: right;
-	}
-	#info_wrap table #title_charge,#info_wrap table #title{
-		background-color: gray;
-		text-align: center;
-	}
 	#btn_wrap, #next_wrap{
 		clear: both;
 		text-align: center;
 	}
-	#btn_wrap a, #next_wrap a{
-		text-decoration: none;
-	}
 	#btn_wrap{ 	
 		position:absolute;
-		left:333px;
+		left:320px;
 		bottom:60px;
 	}
 	#next_wrap{
 		position:absolute;
-		left:330px;
+		left:340px;
 		bottom:30px;
 	}
+	#btn_wrap a, #next_wrap a{
+		margin: 5px;
+	}
+	#btn_wrap a{
+		background-color: #eeeeee;
+		border:2px solid gray;
+		padding: 5px;
+		width:25px;
+		text-decoration: none;
+	}
+	
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -138,13 +101,13 @@
 					</table>
 				</div>
 				<div id="btn_wrap">
-					<a href="carmodify.do?carCode=${carmodel.carCode }">[수정]</a><!-- 수정연결 아직 안됨 -->
-					<a href="cardelete.do?carCode=${carmodel.carCode }" id="delBtn">[삭제]</a>
-					<a href="carlist.do">[목록]</a>
+					<a href="carmodify.do?carCode=${carmodel.carCode }">수정</a>
+					<a href="cardelete.do?carCode=${carmodel.carCode }" id="delBtn">삭제</a>
+					<a href="carlist.do">목록</a>
 				</div>
 				<div id="next_wrap">
-					<a href="carbeforeforemp.do?carCode=${carmodel.carCode }">이전 차량</a><!-- 이전차량 보이기 -->
-					<a href="carafterforemp.do?carCode=${carmodel.carCode }">다음 차량</a><!-- 이후차량 보이기 -->
+					<a href="carbeforeforemp.do?carCode=${carmodel.carCode }">BACK</a><!-- 이전차량 보이기 -->
+					<a href="carafterforemp.do?carCode=${carmodel.carCode }">NEXT</a><!-- 이후차량 보이기 -->
 				</div>
 			</div>
 		</section>

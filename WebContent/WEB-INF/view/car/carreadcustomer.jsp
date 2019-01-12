@@ -6,62 +6,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/carread.css" rel="stylesheet"  type="text/css">
 <style>
-	#read_wrap{
-		width:800px;
-		height: 400px;
-		margin: 120px auto;
-		position: relative;
-	}
-	#read_wrap > h1{
-		position: absolute;
-		left: 30px;
-		top:45px;
-		color:gray;
-	}
-	img{
-		width:350px;
-		position: absolute;
-		left: 20px;
-		top:100px;
-	}
-	#info_wrap{
-		width:320px;
-		height: 260px;
-		position:absolute;
-		right:50px;
-		top:30px;
-		padding: 10px;
-		font-size: 14px;
-	}
-	#info_wrap table{
-		border-collapse: collapse;
-		width:320px;
-	}
-	#info_wrap table tr td{
-		border:1px solid black;
-		padding: 5px;
-	}
-	#info_wrap table tr td:FIRST-CHILD{
-		text-align: center;
-	}
-	#info_wrap table tr .charge{
-		text-align: right;
-	}
-	#info_wrap table #title_charge,#info_wrap table #title{
-		background-color: gray;
-		text-align: center;
-	}
-	#btn_wrap{ 
+	#next_wrap{ 
 		clear: both;
 		position:absolute;
 		left:330px;
 		bottom:30px;
 		text-align: center;
-	}
-	#btn_wrap a{
-		text-decoration: none;
 	}
 </style>
 </head>
@@ -118,9 +70,9 @@
 						</tr>
 					</table>
 				</div>
-				<div id="btn_wrap">
-					<a href="carbefore.do?carCode=${carmodel.carCode }">이전 차량</a><!-- 이전차량 보이기 -->
-					<a href="carafter.do?carCode=${carmodel.carCode }">다음 차량</a><!-- 이후차량 보이기 -->
+				<div id="next_wrap">
+					<a href="carbefore.do?carCode=${carmodel.carCode }">BACK</a><!-- 이전차량 보이기 -->
+					<a href="carafter.do?carCode=${carmodel.carCode }">NEXT</a><!-- 이후차량 보이기 -->
 				</div>
 			</div>
 		</section>

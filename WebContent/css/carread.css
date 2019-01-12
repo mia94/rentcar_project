@@ -1,0 +1,118 @@
+@CHARSET "UTF-8";
+	*{
+		margin:0;
+		padding: 0;
+	}
+	#container{
+		width:1200px;
+		margin:0 auto;
+	}
+	header{
+		height: 100px;
+		width:1200px;
+		border:1px black solid;
+	}
+	section{
+		width:1180px;
+		border:1px black solid;
+		padding:10px;
+		overflow: hidden;
+	}
+	footer{
+		width:100%;
+		background-color: gray;
+		height: 120px;
+		clear:both;
+	}
+	
+	/* 스크롤바 */
+	html {
+		scrollbar-3dLight-Color: #efefef;
+		scrollbar-arrow-color: #dfdfdf;
+		scrollbar-base-color: #efefef;
+		scrollbar-Face-Color: #dfdfdf;
+		scrollbar-Track-Color: #efefef;
+		scrollbar-DarkShadow-Color: #efefef;
+		scrollbar-Highlight-Color: #efefef;
+		scrollbar-Shadow-Color: #efefef
+	}
+	
+	/* Chrome, Safari용 스크롤 바 */
+	::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+		border: 3px solid #fff;
+	}
+	
+	::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment{
+		display: block;
+		height: 10px;
+		background: url('./images/bg.png') #efefef
+	}
+	
+	::-webkit-scrollbar-track {
+		background: #efefef;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+		-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, .2)
+	}
+	
+	::-webkit-scrollbar-thumb {
+		height: 50px;
+		width: 50px;
+		background: rgba(0, 0, 0, .2);
+		-webkit-border-radius: 8px;
+		border-radius: 8px;
+		-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, .1)
+	}
+	/* 스크롤바 끝, carread& carreadcustomer 공통 css*/
+	#read_wrap{
+		width:800px;
+		height: 400px;
+		margin: 120px auto;
+		position: relative;
+	}
+	#read_wrap > h1{
+		position: absolute;
+		left: 30px;
+		top:45px;
+		color:gray;
+	}
+	img{
+		width:350px;
+		position: absolute;
+		left: 20px;
+		top:100px;
+	}
+	#info_wrap{
+		width:320px;
+		height: 260px;
+		position:absolute;
+		right:50px;
+		top:30px;
+		padding: 10px;
+		font-size: 14px;
+	}
+	#info_wrap table{
+		border-collapse: collapse;
+		width:320px;
+	}
+	#info_wrap table tr td{
+		border:1px solid black;
+		padding: 5px;
+	}
+	#info_wrap table tr td:FIRST-CHILD{
+		text-align: center;
+	}
+	#info_wrap table tr .charge{
+		text-align: right;
+	}
+	#info_wrap table #title_charge,#info_wrap table #title{
+		background-color: gray;
+		text-align: center;
+	}
+	#next_wrap a{
+		font-style: italic;
+		font-weight: bold;
+		color: black;	
+	}
