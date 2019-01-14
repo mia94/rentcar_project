@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css?bds" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentStepTwo.css?cdasdas" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentStepTwo.css?abb" rel="stylesheet"  type="text/css">
 </head>
 <body>
 
@@ -25,6 +25,7 @@
 				<div id="leftWrap">
 					<div id="dateInfo">
 						<span id="rentDate">${sDate } ${sHour } ${sMin }</span>
+						<span id="and">▶</span>
 						<span id="returnDate">${eDate } ${eHour } ${eMin }</span>
 					</div>
 					<div id="carInfo">

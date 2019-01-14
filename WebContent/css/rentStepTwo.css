@@ -19,10 +19,23 @@
 	}
 	
 	div#leftWrap{
-		width: 380px;
+		width: 350px;
 		height: 600px;
 		float: left;
 		border: 1px solid red;
 		margin: 10px 10px 5px 5px;
 		display: inline-block;
+	}
+	
+	div#rightWrap{
+		display: inline-block;
+		width: 580px;
+		height: 600px;
+		border: 1px solid blue;
+		padding: 10px;
+		margin: 10px 5px 5px 5px;
+	}
+	
+	div#dateInfo{
+		border-top: 1px solid #ccc;
 	}
