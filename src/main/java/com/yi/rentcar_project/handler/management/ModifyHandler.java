@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yi.rentcar_project.model.Customer;
-import com.yi.rentcar_project.model.Employee;
-import com.yi.rentcar_project.model.Grade;
 import com.yi.rentcar_project.mvc.CommandHandler;
 import com.yi.rentcar_project.service.CustomerService;
 

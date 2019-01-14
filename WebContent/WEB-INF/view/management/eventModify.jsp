@@ -5,6 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 </head>
 <body>
 <div id="container">
@@ -17,7 +18,7 @@
 			<h1>이벤트 수정 창</h1>
 				<div id="input_wrap">
 					<div id="img_wrap">img</div>
-					<form action="fuelmodify.do" method="post">
+					<form action="eventModify.do" method="post">
 						<p>
 							<label>이벤트 코드</label>
 							<input type="text" name="code" class="textfield" readonly value="${event.code }">

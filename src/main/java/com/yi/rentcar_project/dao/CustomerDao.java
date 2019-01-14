@@ -22,7 +22,7 @@ public interface CustomerDao {
 	@Delete("delete from customer where code=#{code}")
 	int deleteCustomer(Customer customer);
 
-	int nextCustomerCode();
+	String nextCustomerCode();
 	String nextCode();
 
 	Customer selectCustomerByPw(Customer customer);

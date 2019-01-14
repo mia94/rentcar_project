@@ -8,18 +8,17 @@ import com.yi.rentcar_project.dao.GradeDao;
 import com.yi.rentcar_project.model.Grade;
 import com.yi.rentcar_project.mvc.MySqlSessionFactory;
 
-public class GradeService implements GradeDao{
-private static final GradeService instance = new GradeService();
-	
+public class GradeService implements GradeDao {
+	private static final GradeService instance = new GradeService();
+
 	public static GradeService getInstance() {
 		return instance;
 	}
 
-	
-	private GradeService() {}
-	
-	private static final String namespace = "com.yi.rentcar_project.dao.GradeDao";
+	private GradeService() {
+	}
 
+	private static final String namespace = "com.yi.rentcar_project.dao.GradeDao";
 
 	@Override
 	public Grade selectGradeByNo(Grade grade) {
@@ -73,6 +72,14 @@ private static final GradeService instance = new GradeService();
 	public int chartGrade(Grade grade) {
 		try (SqlSession sqlSession = MySqlSessionFactory.openSession();) {
 			return sqlSession.selectOne(namespace + ".chartGrade", grade);
+		}
+	}
+
+	@Override
+	public String nextCode() {
+
+		try (SqlSession sqlSession = MySqlSessionFactory.openSession();) {
+			return sqlSession.selectOne(namespace + ".nextCode");
 		}
 	}
 

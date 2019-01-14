@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,30 +15,31 @@
 		
 		<section>
 			<div id="upload_wrap">
-			<h1>등급 추가 창</h1>
+			<h1>직원 추가 창</h1>
 			<div id="input_wrap">
-					
-					<form action="gradeUpload.do" method="post">
+					<div id="img_wrap">img</div>
+					<form action="employeeUpload.do" method="post">
 						<p>
-							<label>등급 코드</label>
+							<label>직원 코드</label>
 							<input type="text" name="code" class="textfield" value="${nextCode }" readonly>
 						</p>
 						<p>
-							<label>등급 이름</label>
+							<label>직원 이름</label>
 							<input type="text" name="name" class="textfield">
 						</p>
 						<p>
-							<label>최소 범위</label>
-						<input type="text" name="gLosal" class="textfield">
+							<label>직원 연락처</label>
+						        <select name="phone">
+						        	<!-- <option selected="selected" value="opt">선택하세요</option> -->
+						        	<option value="010">010</option>
+						        	<option value="011">011</option>
+						        	<option value="017">017</option>
+						        </select>
+						      - <input type="text" name="phone2"> - <input type="text" name="phone3">
 						</p>
 						<p>
-							<label>최대 범위</label>
-							<input type="text" name="gHisal" class="textfield">
-						</p>
-						
-						<p>
-							<label>등급별 할인율</label>
-						<input type="text" name="rate" class="textfield">
+							<label>직원 비밀번호</label>
+							<input type="password" name="password" class="textfield">
 						</p>
 	
 						<div id="btn_wrap">

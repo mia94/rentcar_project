@@ -2,15 +2,11 @@ package com.yi.rentcar_project.handler.management;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.websocket.Session;
 
 import com.yi.rentcar_project.model.Customer;
-import com.yi.rentcar_project.model.Employee;
-import com.yi.rentcar_project.model.Grade;
 import com.yi.rentcar_project.mvc.CommandHandler;
 import com.yi.rentcar_project.service.CustomerService;
 
-import jdk.nashorn.internal.runtime.options.LoggingOption;
 
 public class PasswordHandler implements CommandHandler {
 

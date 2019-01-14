@@ -11,8 +11,8 @@ public class GradeDeleteHandler implements CommandHandler {
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		String sCode = req.getParameter("code");
-		String code = sCode;
+		String code = req.getParameter("code");
+
 
 		Grade grade = new Grade();
 		grade.setCode(code);

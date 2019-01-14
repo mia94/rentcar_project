@@ -31,9 +31,6 @@ public class JoinService {
 		return cusDao.selectCustomerByAll();
 	}
 	
-	public int nextCustomerCode() {
-		return cusDao.nextCustomerCode();
-	}
 	
 	public String getNextCustomerCode() {
 		return cusDao.nextCode();

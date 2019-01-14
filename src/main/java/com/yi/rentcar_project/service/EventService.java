@@ -8,19 +8,18 @@ import com.yi.rentcar_project.dao.EventDao;
 import com.yi.rentcar_project.model.Event;
 import com.yi.rentcar_project.mvc.MySqlSessionFactory;
 
-public class EventService implements EventDao{
-	
+public class EventService implements EventDao {
+
 	private static final EventService instance = new EventService();
-	
+
 	public static EventService getInstance() {
 		return instance;
 	}
 
-	
-	private EventService() {}
-	
-	private static final String namespace = "com.yi.rentcar_project.dao.EventDao";
+	private EventService() {
+	}
 
+	private static final String namespace = "com.yi.rentcar_project.dao.EventDao";
 
 	@Override
 	public Event selectEventByNo(Event event) {
@@ -60,6 +59,13 @@ public class EventService implements EventDao{
 			int res = sqlSession.delete(namespace + ".deleteEvent", event);
 			sqlSession.commit();
 			return res;
+		}
+	}
+
+	@Override
+	public String nextCode() {
+		try (SqlSession sqlSession = MySqlSessionFactory.openSession();) {
+			return sqlSession.selectOne(namespace + ".nextCode");
 		}
 	}
 

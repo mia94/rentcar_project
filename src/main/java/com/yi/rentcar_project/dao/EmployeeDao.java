@@ -14,4 +14,6 @@ public interface EmployeeDao {
 	
 	int selectEmployeeById(Employee employee);
 	Employee selectEmployeeByPw(Employee employee);
+	
+	String nextCode();
 }

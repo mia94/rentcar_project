@@ -3,10 +3,8 @@ package com.yi.rentcar_project.handler.management;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.yi.rentcar_project.model.Fuel;
 import com.yi.rentcar_project.model.Grade;
 import com.yi.rentcar_project.mvc.CommandHandler;
-import com.yi.rentcar_project.service.FuelService;
 import com.yi.rentcar_project.service.GradeService;
 
 public class GradeModifyHandler implements CommandHandler {
@@ -14,10 +12,10 @@ public class GradeModifyHandler implements CommandHandler {
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		if(req.getMethod().equalsIgnoreCase("get")){
-			String sNo = req.getParameter("code");
+			String code = req.getParameter("code");
 			
 			Grade grade = new Grade();
-			grade.setCode(sNo);
+			grade.setCode(code);
 			
 			GradeService service = GradeService.getInstance();
 			grade = service.selectGradeByNo(grade);
@@ -28,8 +26,8 @@ public class GradeModifyHandler implements CommandHandler {
 			
 			String code = req.getParameter("code");
 			String name = req.getParameter("name");
-			String hisal = req.getParameter("gHisal");
 			String losal = req.getParameter("gLosal");
+			String hisal = req.getParameter("gHisal");
 			String sRate = req.getParameter("rate");
 			
 			int gHisal = Integer.parseInt(hisal);
