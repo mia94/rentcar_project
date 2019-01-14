@@ -14,9 +14,9 @@ public class GradeUploadHandler implements CommandHandler {
 		GradeService service = GradeService.getInstance();
 		if(req.getMethod().equalsIgnoreCase("get")){
 			
-			String maxCode = service.nextCode();
-			String nextCode = maxCode + 1;//숫자로 출력 앞에 0 사라짐
-			
+			String nextCode = service.nextCode();
+			/*String nextCode = maxCode + 1;//숫자로 출력 앞에 0 사라짐
+*/			
 			req.setAttribute("nextCode", nextCode);
 			
 			return "/WEB-INF/view/management/gradeUpload.jsp";

@@ -28,13 +28,14 @@
 							<input type="text" name="name" class="textfield" value="${grade.name }">
 						</p>
 						<p>
-							<label>최대 등급</label>
-							<input type="text" name="gHisal" class="textfield" value="${grade.gHisal }">
-						</p>
-						<p>
-							<label>최소 등급</label>
+							<label>최소 범위</label>
 							<input type="text" name="gLosal" class="textfield" value="${grade.gLosal }">
 						</p>
+						<p>
+							<label>최대 범위</label>
+							<input type="text" name="gHisal" class="textfield" value="${grade.gHisal }">
+						</p>
+						
 						<p>
 							<label>등급별 할인율</label>
 							<input type="text" name="rate" class="textfield" value="${grade.rate }">

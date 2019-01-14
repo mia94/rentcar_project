@@ -46,8 +46,8 @@ $(function(){
 							</span>
 							<span>${item.code }</span>
 							<span>${item.name }</span>
-							<span>${item.gHisal }</span>
 							<span>${item.gLosal }</span>	
+							<span>${item.gHisal }</span>
 							<span>${item.rate }</span>
 							<span class="btn_span">
 								<a href="gradeModify.do?code=${item.code }">수정</a>

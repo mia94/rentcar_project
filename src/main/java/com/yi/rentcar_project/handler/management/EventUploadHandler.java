@@ -14,8 +14,7 @@ public class EventUploadHandler implements CommandHandler {
 		EventService service = EventService.getInstance();
 		if(req.getMethod().equalsIgnoreCase("get")){
 			
-			String maxCode = service.nextCode();
-			String nextCode = maxCode + 1;//숫자로 출력 앞에 0 사라짐
+			String nextCode = service.nextCode();
 			
 			req.setAttribute("nextCode", nextCode);
 			

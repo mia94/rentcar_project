@@ -26,8 +26,8 @@ public class GradeModifyHandler implements CommandHandler {
 			
 			String code = req.getParameter("code");
 			String name = req.getParameter("name");
-			String hisal = req.getParameter("gHisal");
 			String losal = req.getParameter("gLosal");
+			String hisal = req.getParameter("gHisal");
 			String sRate = req.getParameter("rate");
 			
 			int gHisal = Integer.parseInt(hisal);

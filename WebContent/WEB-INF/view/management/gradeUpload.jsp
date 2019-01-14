@@ -29,16 +29,17 @@
 							<input type="text" name="name" class="textfield">
 						</p>
 						<p>
-							<label>최대 등급</label>
-							<input type="file" name="fuelImg">
+							<label>최소 범위</label>
+						<input type="text" name="gLosal" class="textfield">
 						</p>
 						<p>
-							<label>최소 등급</label>
-							<input type="file" name="fuelImg">
+							<label>최대 범위</label>
+							<input type="text" name="gHisal" class="textfield">
 						</p>
+						
 						<p>
 							<label>등급별 할인율</label>
-							<input type="file" name="fuelImg">
+						<input type="text" name="rate" class="textfield">
 						</p>
 	
 						<div id="btn_wrap">

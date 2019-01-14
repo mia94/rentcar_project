@@ -10,19 +10,18 @@ import com.yi.rentcar_project.dao.EventDao;
 import com.yi.rentcar_project.model.Event;
 import com.yi.rentcar_project.mvc.MySqlSessionFactory;
 
-public class EventService implements EventDao{
-	
+public class EventService implements EventDao {
+
 	private static final EventService instance = new EventService();
-	
+
 	public static EventService getInstance() {
 		return instance;
 	}
 
-	
-	private EventService() {}
-	
-	private static final String namespace = "com.yi.rentcar_project.dao.EventDao";
+	private EventService() {
+	}
 
+	private static final String namespace = "com.yi.rentcar_project.dao.EventDao";
 
 	@Override
 	public Event selectEventByNo(Event event) {
@@ -65,20 +64,10 @@ public class EventService implements EventDao{
 		}
 	}
 
-
 	@Override
 	public String nextCode() {
-		StringBuilder sb = new StringBuilder();
-		ResultHandler<Integer> resultHandler = new ResultHandler<Integer>() {
-			@Override
-			public void handleResult(ResultContext<? extends Integer> resultContext) {
-				sb.append(String.format("C%03d", resultContext.getResultObject()));
-			}
-		};
-
 		try (SqlSession sqlSession = MySqlSessionFactory.openSession();) {
-			sqlSession.select(namespace + ".nextCode", resultHandler);
-			return sb.toString();
+			return sqlSession.selectOne(namespace + ".nextCode");
 		}
 	}
 

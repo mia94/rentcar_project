@@ -16,7 +16,7 @@
 		
 		<section>
 			<div id="upload_wrap">
-			<h1>연료 추가 창</h1>
+			<h1>이벤트 추가 창</h1>
 			<div id="input_wrap">
 					<div id="img_wrap">img</div>
 					<form action="eventUpload.do" method="post">

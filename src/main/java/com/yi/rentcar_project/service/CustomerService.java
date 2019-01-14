@@ -78,7 +78,7 @@ public class CustomerService implements CustomerDao {
 	}
 
 	@Override
-	public int nextCustomerCode() {
+	public String nextCustomerCode() {
 		try (SqlSession sqlSession = MySqlSessionFactory.openSession();) {
 			return sqlSession.selectOne(namespace + ".nextCustomerCode");
 		}
@@ -86,17 +86,9 @@ public class CustomerService implements CustomerDao {
 
 	@Override
 	public String nextCode() {
-		StringBuilder sb = new StringBuilder();
-		ResultHandler<Integer> resultHandler = new ResultHandler<Integer>() {
-			@Override
-			public void handleResult(ResultContext<? extends Integer> resultContext) {
-				sb.append(String.format("C%03d", resultContext.getResultObject()));
-			}
-		};
 
 		try (SqlSession sqlSession = MySqlSessionFactory.openSession();) {
-			sqlSession.select(namespace + ".nextCode", resultHandler);
-			return sb.toString();
+			return sqlSession.selectOne(namespace + ".nextCode");
 		}
 	}
 
