@@ -16,6 +16,7 @@ import com.yi.rentcar_project.model.CarType;
 import com.yi.rentcar_project.model.CustomEvent;
 import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.model.Event;
+import com.yi.rentcar_project.model.Insurance;
 import com.yi.rentcar_project.mvc.MySqlSessionFactory;
 import com.yi.rentcar_project.service.RentService;
 
@@ -35,20 +36,25 @@ public class RentMapperTest {
 		
 	}*/
 	
-	@Test
+/*	@Test
 	public void test02SelectById() throws SQLException{
 		List<Customer> list = dao.selectById("asd132");
 		
 		for(Customer c : list){
 			System.out.println(c);
-			for(CustomEvent event : c.getEvents()){
-				for(Event event2 : event.getEvents()){
-					JOptionPane.showConfirmDialog(null, event2);
-					System.out.println(event2.getName());
-				}
-			}
 		}
 		Assert.assertNotNull(list);
 	}
+*/
 
+	@Test
+	public void test03selectInsuranceByCarType() throws SQLException{
+		CarType ct = new CarType();
+		ct.setCode("S1");
+		ct.setType("경형");
+		Insurance i = new Insurance("I001", ct, 6500);
+		
+		i = dao.selectInsuranceByCarType("경형");
+		System.out.println(i);
+	}
 }

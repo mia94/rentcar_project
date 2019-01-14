@@ -150,8 +150,8 @@ insert into customer values ('C000', 'C000', password('rootroot'), '탈퇴계정
 							
 
 -- event insert
-insert into event values('EVT1', '첫가입할인', 3),
-						('EVT2', '생일축하할인', 5);
+insert into event values('EVT1', '첫 가입', 3),
+						('EVT2', '생일 축하', 5);
 					
 insert into custom_event values
 ('EVT1','C001',0),
