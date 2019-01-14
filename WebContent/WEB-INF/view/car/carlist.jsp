@@ -57,15 +57,23 @@
 		font-size: 12px;
 	}
 	#btn_wrap{
-		width:300px;
+		width:1050px;
 		height:40px;
 		display: block;
 		margin: 5px;
+		text-align: right;
 	}
 	#btn_wrap a{
 		padding: 10px;
-		line-height:45px;
+		line-height:40px;
 		text-decoration: none;
+		font-size: 14px;
+		color:#4C4C4C;
+		font-weight: bold;
+	}
+	#btn_wrap a:hover{
+		color:#6799FF;
+		font-weight: bold;
 	}
 	article{
 		width:520px;
