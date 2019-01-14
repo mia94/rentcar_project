@@ -12,4 +12,6 @@ public interface EventDao {
 	int insertEvent(Event event);
 	int updateEvent(Event event);
 	int deleteEvent(Event event);
+	
+	String nextCode();
 }

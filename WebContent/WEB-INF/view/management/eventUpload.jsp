@@ -6,6 +6,7 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 </head>
 <body>
 <div id="container">
@@ -15,21 +16,21 @@
 		
 		<section>
 			<div id="upload_wrap">
-			<h1>연료 추가 창</h1>
+			<h1>이벤트 추가 창</h1>
 			<div id="input_wrap">
 					<div id="img_wrap">img</div>
-					<form action="fuelupload.do" method="post">
+					<form action="eventUpload.do" method="post">
 						<p>
-							<label>연료 코드</label>
-							<input type="text" name="no" class="textfield" value="${nextCode }" readonly>
+							<label>이벤트 코드</label>
+							<input type="text" name="code" class="textfield" value="${nextCode }" readonly>
 						</p>
 						<p>
-							<label>연료 이름</label>
-							<input type="text" name="code" class="textfield">
+							<label>이벤트 이름</label>
+							<input type="text" name="name" class="textfield">
 						</p>
 						<p>
-							<label>연료 표기</label>
-							<input type="file" name="fuelImg">
+							<label>이벤트별 할인율</label>
+							<input type="text" name="rate" class="textfield">
 						</p>
 	
 						<div id="btn_wrap">

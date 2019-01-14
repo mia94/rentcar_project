@@ -3,23 +3,23 @@ package com.yi.rentcar_project.handler.management;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.yi.rentcar_project.model.Event;
+import com.yi.rentcar_project.model.Employee;
 import com.yi.rentcar_project.mvc.CommandHandler;
-import com.yi.rentcar_project.service.EventService;
+import com.yi.rentcar_project.service.EmployeeService;
 
-public class EventDeleteHandler implements CommandHandler {
+public class EmployeeDeleteHandler implements CommandHandler {
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		String code = req.getParameter("code");
 
-		Event event = new Event();
-		event.setCode(code);
+		Employee employee = new Employee();
+		employee.setCode(code);
 
-		EventService service = EventService.getInstance();
-		service.deleteEvent(event);
+		EmployeeService service = EmployeeService.getInstance();
+		service.deleteEmployee(employee);
 
-		return "eventList.do";
+		return "employeeList.do";
 	}
 
 }

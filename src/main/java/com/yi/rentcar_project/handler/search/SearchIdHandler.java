@@ -2,7 +2,6 @@ package com.yi.rentcar_project.handler.search;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 
 import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.mvc.CommandHandler;

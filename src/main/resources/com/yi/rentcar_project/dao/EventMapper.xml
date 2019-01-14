@@ -40,4 +40,9 @@
 		where code=#{code}
 	</delete>
 	
+	<select id="nextCode" resultType="String">
+		select concat('EVT',lpad(max(right(code,1)+1),1,'0'))  from event;
+	</select>
+
+	
 </mapper>

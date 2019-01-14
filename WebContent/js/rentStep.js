@@ -14,4 +14,6 @@ $(function(){
 		
 	})
 	
+	//rentStepTwp.jsp
+	$("input:radio[name='discount']").prop('checked', true);
 })
