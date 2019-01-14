@@ -31,6 +31,7 @@
 		width: 590px;
 		height: 600px;
 		margin: 10px 5px 5px 5px;
+		border-bottom: 1px solid #ccc;
 	}
 	
 	div#dateInfo{
@@ -84,7 +85,7 @@
 	div#priceInfo{
 		margin-top: 15px;
 		padding: 10px;
-		height: 220px;
+		height: 280px;
 		background-color: #313131;
 		color: white;
 		font-size: 17px;
@@ -92,6 +93,11 @@
 	
 	span.price{
 		font-size: 25px;
+		font-weight: bold;
+	}
+	
+	span#optionPrice, span#insurancePrice, span#discountPrice{
+		font-size: 25px;      
 		font-weight: bold;
 	}
 	
@@ -203,4 +209,36 @@
 	
 	a{
 		text-decoration: none;
+	}
+	
+	a#btnPrev, a#btnNext{
+		color: white;
+		font-size: 14px;
+	}
+	
+	div#btnWrap{
+		margin-top: 10px;
+		margin-bottom: 20px;
+		overflow: hidden;
+		padding-left: 100px;
+		display: inline-block;
+		width: 590px;
+		padding-left: 570px;
+	}
+	
+	div#nextWrap{
+		background-color: #f04040;
+	}
+	
+	div#prevWrap{
+		background-color: #747474;
+	}
+	
+	div#prevWrap, div#nextWrap{
+		width: 100px;
+		height: 35px;
+		line-height: 35px;
+		text-align: center;
+		margin-left: 10px;
+		display: inline-block;
 	}

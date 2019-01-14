@@ -35,7 +35,7 @@ $(function() {
 <a href="">고객관리</a>
 <a href="carlist.do">차량관리</a>
 <a href="totaloptionlist.do">차량옵션관리</a>
-<a href="carchart.do">차량통계</a>
+<a href="carmainchart.do">차량통계</a>
 <a href="carlistcustomer.do">차량관리(고객용)</a>
 <a href="employeeList.do">직원관리</a>
 <a href="gradeList.do">등급관리</a>

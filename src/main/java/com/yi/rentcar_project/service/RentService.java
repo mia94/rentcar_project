@@ -10,9 +10,12 @@ import com.yi.rentcar_project.model.CarModel;
 import com.yi.rentcar_project.model.CarType;
 import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.model.Insurance;
+import com.yi.rentcar_project.model.StateCar;
 import com.yi.rentcar_project.mvc.MySqlSessionFactory;
 
 public class RentService implements RentDao{
+	//namespace
+	private static final String namespace = "com.yi.rentcar_project.dao.RentDao";
 	//Singleton Pattern
 	private static final RentService instance = new RentService();
 	
@@ -91,4 +94,12 @@ public class RentService implements RentDao{
 		}
 		return null;
 	}
+
+	@Override
+	public List<StateCar> selectCountRentByMonthWithBrand(String brand) {
+		try(SqlSession sqlSession = MySqlSessionFactory.openSession()){
+			return sqlSession.selectList(namespace+".selectCountRentByMonthWithBrand", brand);
+		}
+	}
+	
 }

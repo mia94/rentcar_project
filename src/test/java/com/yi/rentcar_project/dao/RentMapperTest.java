@@ -17,6 +17,7 @@ import com.yi.rentcar_project.model.CustomEvent;
 import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.model.Event;
 import com.yi.rentcar_project.model.Insurance;
+import com.yi.rentcar_project.model.StateCar;
 import com.yi.rentcar_project.mvc.MySqlSessionFactory;
 import com.yi.rentcar_project.service.RentService;
 
@@ -56,5 +57,12 @@ public class RentMapperTest {
 		
 		i = dao.selectInsuranceByCarType("경형");
 		System.out.println(i);
+	}
+	
+	@Test
+	public void test08selectCountRentByMonthWithBrand() {
+		
+		List<StateCar> list = dao.selectCountRentByMonthWithBrand("kia");
+		Assert.assertNotNull(list);
 	}
 }
