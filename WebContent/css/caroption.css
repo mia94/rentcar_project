@@ -26,7 +26,36 @@
 	}
 	#wrap_wrap{
 		width:500px;
-		margin: 145px auto;
+		margin: 130px auto;
+	}
+	#wrap_wrap > a{
+		width:120px;
+		height: 35px;
+		line-height:35px;
+		text-align:center; 
+		margin:1px;
+		margin-bottom:15px;
+		float: left;
+		text-decoration: none;
+		color:white;
+		font-size: 12px;
+		font-weight: bold; 
+	}
+	#wrap_wrap > a[href*=type]{
+		background: url('../upload/menu1.png') no-repeat;
+		background-size: cover;
+	}
+	#wrap_wrap > a[href*=brand]{
+		background: url('../upload/menu2.png') no-repeat;
+		background-size: cover;
+	}
+	#wrap_wrap > a[href*=fuel]{
+		background: url('../upload/menu3.png') no-repeat;
+		background-size: cover;
+	}
+	#wrap_wrap > a[href*=option]{
+		background: url('../upload/menu4.png') no-repeat;
+		background-size: cover;
 	}
 	#wrap_wrap h1{
 		text-align: center;
@@ -57,13 +86,13 @@
 		text-decoration: none;
 		text-align: right;
 		position: absolute;
-		bottom: 20px;
+		bottom: 40px;
 		left: 225px;
 	}
 	.wrap .btn_span{
 		width:130px; 
 		position: absolute;
-		right: 10px;
+		right: -10px;
 		top:0;
 	}
 	.wrap .btn_span a{
