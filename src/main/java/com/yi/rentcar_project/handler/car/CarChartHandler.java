@@ -16,11 +16,13 @@ public class CarChartHandler implements CommandHandler {
 		
 		CarModelService service = CarModelService.getInstance();
 		List<CarModel> list = service.selectCarModelByAll();
+
 		int[] line = new int[list.size()];
 		for(int i =0;i<list.size();i++){
 			int a = list.get(i).getRentCnt();
 			line[i] = a;
 		}
+		
 		req.setAttribute("list", list);
 		req.setAttribute("line", line);
 		
