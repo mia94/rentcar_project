@@ -15,7 +15,7 @@ $(function(){
 		var del = confirm("정말 삭제하시겠습니까?");
 		if(del==true){
 			var no = $(this).parent("span").prev().text();
-			location.href="${pageContext.request.contextPath }/gradeDelete.do?no="+no;
+			location.href="${pageContext.request.contextPath }/gradeDelete.do?code="+code;
 		}
 		return false;
 	})
@@ -38,18 +38,19 @@ $(function(){
 			<div class="wrap">
 				<c:forEach var="item" items="${gradeList }">
 						<p class="list_p">
-							<span>
-								<img src="${pageContext.request.contextPath }/upload/${item.code }.png">
-							</span>
+						
 							<span>${item.code }</span>
-							<span>${item.no }</span>
+							<span>${item.name }</span>
+							<span>${item.gHisal }</span>
+							<span>${item.gLosal }</span>	
+							<span>${item.rate }</span>
 							<span class="btn_span">
 								<a href="gradeModify.do?code=${item.code }">수정</a>
-								<a href="gradeDelete.do?no=${item.no }" class="gradeDel">삭제</a>
+								<a href="gradeDelete.do?code=${item.code }" class="gradeDel">삭제</a>
 							</span>
 						</p>
 				</c:forEach>
-				<p><a href="fuelupload.do" class="btnAdd">[ 추가  ]</a></p>
+				<p><a href="gradeUpload.do" class="btnAdd">[ 추가  ]</a></p>
 			</div>
 			</div>
 		</section>
