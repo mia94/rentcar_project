@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css?bds" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentStepTwo.css?abb" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentStepTwo.css?bsds" rel="stylesheet"  type="text/css">
 </head>
 <body>
 
@@ -24,48 +24,56 @@
 			<div id="rentStepTwo_container">
 				<div id="leftWrap">
 					<div id="dateInfo">
-						<span id="rentDate">${sDate } ${sHour } ${sMin }</span>
-						<span id="and">▶</span>
-						<span id="returnDate">${eDate } ${eHour } ${eMin }</span>
+						<span id="rentDate">${sDate } &nbsp;${sHour } ${sMin }</span>
+						<span id="and">&nbsp;▶&nbsp;</span>
+						<span id="returnDate">${eDate } &nbsp;${eHour } ${eMin }</span>
 					</div>
 					<div id="carInfo">
 						<h3>${carName }</h3>
 						<div id="carImg">
-							<img src="${pageContext.request.contextPath }/upload/${carCode }.png">	
+							<img src="${pageContext.request.contextPath }/upload/${carCode }.png" class='carImg'>	
 						</div>
 						<p class="notice">
-							실제 대여하는 차량과 외관, 색상, 옵션 등에서 차이가 있을 수 있습니다.
+							※ 실제 대여하는 차량과 외관, 색상, 옵션 등에서 차이가 있을 수 있습니다.
 						</p>
 					</div>
 					<div id="priceInfo">
 						<ul>
 							<li>
-								<span class='tit'>대여금액</span>
-								<span class='price'>
-									<fmt:formatNumber value="${basicPrice * rDate }" type="number"></fmt:formatNumber>
+								<span class='tit'>·&nbsp;대여금액</span>
+								<div class="resPrice">
+									<span class='price'>
+										<fmt:formatNumber value="${basicPrice * rDate }" type="number"></fmt:formatNumber>
+									</span>
 									<span class='won'>원</span>
-								</span>
+								</div>
 							</li>
 							<li>
-								<span class='tit'>할인금액</span>
-								<span class='price'>
-									
+								<span class='tit'>·&nbsp;할인금액</span>
+								<div class="resPrice">
+									<span class='price'>
+										
+									</span>
 									<span class='won'>원</span>
-								</span>
+								</div>
 							</li>
 							<li>
-								<span class='tit'>보험 및 차량 옵션</span>
-								<span class='price'>
-									
+								<span class='tit'>·&nbsp;보험 및 차량 옵션</span>
+								<div class="resPrice">
+									<span class='price'>
+										
+									</span>
 									<span class='won'>원</span>
-								</span>
+								</div>
 							</li>
-							<li class="total">
-								<span class='tit'>금액</span>
-								<span class='price'>
-									
-									<span class='won'>원</span>
-								</span>
+							<li>
+								<div id="temp">
+									<span id='totalTit'>금액</span>
+									<div id="tResult">
+										<span id='totalPrice'>0</span>
+										<span id='totalWon'>원</span>
+									</div>
+								</div>
 							</li>
 						</ul>
 					</div>
