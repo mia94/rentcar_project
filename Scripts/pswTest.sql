@@ -70,3 +70,5 @@ select concat('E',lpad(max(right(code,3)+1),3,'0'))  from employee;
 
 select * from grade;
 
+select * from employee;
+

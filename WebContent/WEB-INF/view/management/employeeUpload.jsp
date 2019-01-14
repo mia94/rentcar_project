@@ -29,7 +29,13 @@
 						</p>
 						<p>
 							<label>직원 연락처</label>
-							<input type="text" name="phone" class="textfield">
+						        <select name="phone">
+						        	<!-- <option selected="selected" value="opt">선택하세요</option> -->
+						        	<option value="010">010</option>
+						        	<option value="011">011</option>
+						        	<option value="017">017</option>
+						        </select>
+						      - <input type="text" name="phone2"> - <input type="text" name="phone3">
 						</p>
 						<p>
 							<label>직원 비밀번호</label>

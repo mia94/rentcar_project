@@ -50,7 +50,7 @@
 	<!-- update -->
 	  <update id="updateEmployee" parameterType="Employee">
 		update employee 
-		set code=#{code}, name=#{name},	phone=#{phone}
+		set code=#{code}, name=#{name},	phone=#{phone}, passwd = password(#{passwd})
 		where code=#{code}
 	</update>
 	

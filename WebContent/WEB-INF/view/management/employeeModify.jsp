@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,12 +30,22 @@
 							<input type="text" name="name" class="textfield" value="${employee.name }">
 						</p>
 						<p>
-							<label>직원 연락처</label>
-							<input type="text" name="phone" class="textfield" value="${employee.phone }">
-						</p>
+							<label>직원연락처</label>
+       
+         <c:set var='phone1' value="${fn:substring(employee.phone,0, 3) }"></c:set>
+	        <select name="phone">
+	        	<!-- <option value="opt">선택하세요</option> -->
+	        	
+	        	<option value="010" ${phone1=='010'?'selected':''}>010</option>
+	        	<option value="011" ${phone1=='011'?'selected':''}>011</option>
+	        	<option value="017" ${phone1=='017'?'selected':''}>017</option>
+	        </select>
+	      - <input type="text" name="phone2" value="${fn:substring(employee.phone,4,4+fn:indexOf(fn:substringAfter(employee.phone,'-'),'-')) }"> - <input type="text" name="phone3" value="${fn:substring(employee.phone,9,13) }">
+     	 </p>
+				
 						<p>
 							<label>직원 비밀번호</label>
-							<input type="password" name="password" class="textfield" value="${employee.password }">
+							<input type="password" name="password" class="textfield" value="${employee.passwd }">
 						</p>
 	
 						<div id="btn_wrap">

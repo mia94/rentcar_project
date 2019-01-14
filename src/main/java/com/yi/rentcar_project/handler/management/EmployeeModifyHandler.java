@@ -21,18 +21,20 @@ public class EmployeeModifyHandler implements CommandHandler {
 			employee = service.selectEmployeeByNo(employee);
 
 			req.setAttribute("employee", employee);
-			return "/WEB-INF/view/car/employeeModify.jsp";
+			return "/WEB-INF/view/management/employeeModify.jsp";
 		} else if (req.getMethod().equalsIgnoreCase("post")) {
 
 			String code = req.getParameter("code");
 			String name = req.getParameter("name");
 			String phone = req.getParameter("phone");
+			String phone2 = req.getParameter("phone2");
+			String phone3 = req.getParameter("phone3");
 			String password = req.getParameter("password");
 
 			Employee employee = new Employee();
 			employee.setCode(code);
 			employee.setName(name);
-			employee.setPhone(phone);
+			employee.setPhone((phone + "-" + phone2 + "-" + phone3));
 			employee.setPasswd(password);
 			
 			EmployeeService service = EmployeeService.getInstance();
