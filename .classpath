@@ -12,6 +12,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/workspace_jsp_rentcar/rentcar_project/WebContent/WEB-INF/lib/mail-1.4.7.jar"/>
+	<classpathentry kind="lib" path="C:/program/workspace-jsp-rentcar/rentcar_project/WebContent/WEB-INF/lib/mail-1.4.7.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
