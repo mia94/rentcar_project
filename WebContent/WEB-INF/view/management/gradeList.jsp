@@ -6,7 +6,10 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/caroption.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/grade.css" rel="stylesheet"  type="text/css">
+<style type="text/css">
+	
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(function(){
@@ -38,7 +41,9 @@ $(function(){
 			<div class="wrap">
 				<c:forEach var="item" items="${gradeList }">
 						<p class="list_p">
-						
+							<span>
+								<img src="${pageContext.request.contextPath }/upload/${item.code }.png">
+							</span>
 							<span>${item.code }</span>
 							<span>${item.name }</span>
 							<span>${item.gHisal }</span>

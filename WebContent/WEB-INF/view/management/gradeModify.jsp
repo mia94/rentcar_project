@@ -5,6 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 </head>
 <body>
 <div id="container">
@@ -17,7 +18,7 @@
 			<h1>등급 수정 창</h1>
 				<div id="input_wrap">
 					<div id="img_wrap">img</div>
-					<form action="fuelmodify.do" method="post">
+					<form action="gradeModify.do" method="post">
 						<p>
 							<label>등급 코드</label>
 							<input type="text" name="code" class="textfield" readonly value="${grade.code }">
@@ -35,7 +36,7 @@
 							<input type="text" name="gLosal" class="textfield" value="${grade.gLosal }">
 						</p>
 						<p>
-							<label>등급 할인율</label>
+							<label>등급별 할인율</label>
 							<input type="text" name="rate" class="textfield" value="${grade.rate }">
 						</p>
 	

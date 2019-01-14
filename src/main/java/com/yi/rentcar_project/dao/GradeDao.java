@@ -14,6 +14,8 @@ public interface GradeDao {
 	int updateGrade(Grade grade);
 	int deleteGrade(Grade grade);
 	
+	String nextCode();
+	
 	@Select("select g.name, count(g.name) from customer c left join grade g on c.grade_code = g.code where grade_code is not null group by grade_code")
 	int chartGrade(Grade grade);
 }

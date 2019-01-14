@@ -45,3 +45,8 @@ and email ='xbmhw325@daum.com' and id = 'xbmhw325';
 
 select * from customer
 where id='asd132';
+
+select count(*)+1 from
+		event;
+		
+	

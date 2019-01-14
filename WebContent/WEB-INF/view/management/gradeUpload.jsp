@@ -19,17 +19,25 @@
 			<h1>등급 추가 창</h1>
 			<div id="input_wrap">
 					
-					<form action="fuelupload.do" method="post">
+					<form action="gradeUpload.do" method="post">
 						<p>
-							<label>연료 코드</label>
-							<input type="text" name="no" class="textfield" value="${nextCode }" readonly>
+							<label>등급 코드</label>
+							<input type="text" name="code" class="textfield" value="${nextCode }" readonly>
 						</p>
 						<p>
-							<label>연료 이름</label>
-							<input type="text" name="code" class="textfield">
+							<label>등급 이름</label>
+							<input type="text" name="name" class="textfield">
 						</p>
 						<p>
-							<label>연료 표기</label>
+							<label>최대 등급</label>
+							<input type="file" name="fuelImg">
+						</p>
+						<p>
+							<label>최소 등급</label>
+							<input type="file" name="fuelImg">
+						</p>
+						<p>
+							<label>등급별 할인율</label>
 							<input type="file" name="fuelImg">
 						</p>
 	

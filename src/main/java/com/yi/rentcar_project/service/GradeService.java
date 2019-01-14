@@ -2,6 +2,8 @@ package com.yi.rentcar_project.service;
 
 import java.util.List;
 
+import org.apache.ibatis.session.ResultContext;
+import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.SqlSession;
 
 import com.yi.rentcar_project.dao.GradeDao;
@@ -73,6 +75,23 @@ private static final GradeService instance = new GradeService();
 	public int chartGrade(Grade grade) {
 		try (SqlSession sqlSession = MySqlSessionFactory.openSession();) {
 			return sqlSession.selectOne(namespace + ".chartGrade", grade);
+		}
+	}
+
+
+	@Override
+	public String nextCode() {
+		StringBuilder sb = new StringBuilder();
+		ResultHandler<Integer> resultHandler = new ResultHandler<Integer>() {
+			@Override
+			public void handleResult(ResultContext<? extends Integer> resultContext) {
+				sb.append(String.format("C%03d", resultContext.getResultObject()));
+			}
+		};
+
+		try (SqlSession sqlSession = MySqlSessionFactory.openSession();) {
+			sqlSession.select(namespace + ".nextCode", resultHandler);
+			return sb.toString();
 		}
 	}
 

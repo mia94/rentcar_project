@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/caroption.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/event.css" rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(function(){
@@ -36,11 +36,9 @@ $(function(){
 			
 			<h1>EVENT</h1>
 			<div class="wrap">
-				<c:forEach var="item" items="${fuelList }">
+				<c:forEach var="item" items="${eventList }">
 						<p class="list_p">
-							<span>
-								<img src="${pageContext.request.contextPath }/upload/${item.code }.png">
-							</span>
+							
 							<span>${item.code }</span>
 							<span>${item.name }</span>
 							<span>${item.rate }</span>

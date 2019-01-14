@@ -39,4 +39,9 @@
 		delete from grade
 		where code=#{code}
 	</delete>
+	
+	<select id="nextCode" resultType="int">
+		select count(*)+1 from
+		customer;
+	</select>
 </mapper>
