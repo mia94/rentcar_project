@@ -1,4 +1,4 @@
-package com.yi.rentcar_project.handler;
+package com.yi.rentcar_project.handler.management;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
