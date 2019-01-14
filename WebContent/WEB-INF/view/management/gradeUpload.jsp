@@ -18,7 +18,7 @@
 			<div id="upload_wrap">
 			<h1>등급 추가 창</h1>
 			<div id="input_wrap">
-					<div id="img_wrap">img</div>
+					
 					<form action="fuelupload.do" method="post">
 						<p>
 							<label>연료 코드</label>

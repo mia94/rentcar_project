@@ -15,7 +15,7 @@ $(function(){
 		var del = confirm("정말 삭제하시겠습니까?");
 		if(del==true){
 			var no = $(this).parent("span").prev().text();
-			location.href="${pageContext.request.contextPath }/eventDelete.do?no="+no;
+			location.href="${pageContext.request.contextPath }/eventDelete.do?code="+code;
 		}
 		return false;
 	})
@@ -42,14 +42,15 @@ $(function(){
 								<img src="${pageContext.request.contextPath }/upload/${item.code }.png">
 							</span>
 							<span>${item.code }</span>
-							<span>${item.no }</span>
+							<span>${item.name }</span>
+							<span>${item.rate }</span>
 							<span class="btn_span">
 								<a href="eventModify.do?code=${item.code }">수정</a>
-								<a href="eventDelete.do?no=${item.no }" class="eventDel">삭제</a>
+								<a href="eventDelete.do?code=${item.code }" class="eventDel">삭제</a>
 							</span>
 						</p>
 				</c:forEach>
-				<p><a href="fuelupload.do" class="btnAdd">[ 추가  ]</a></p>
+				<p><a href="eventUpload.do" class="btnAdd">[ 추가  ]</a></p>
 			</div>
 			</div>
 		</section>
