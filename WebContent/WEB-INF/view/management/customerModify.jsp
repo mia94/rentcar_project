@@ -100,6 +100,9 @@
 	})
 	
 	 $( function() {
+		 	var defaultDate = new Date();
+		 	defaultDate.setTime(${custom.dob.time});
+		 
 		    $( "#datepicker" ).datepicker({
 		      showOn: "button",
 		      buttonImage: "images/calendar.gif",
@@ -107,9 +110,12 @@
 		      buttonText: "Select date",
 		      changeMonth: true,
 		      changeYear: true,
-		      
+		      dateFormat: 'yy-mm-dd'
 		    });
-		    $( "#datepicker" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
+		    $("#datepicker").datepicker( "setDate" , defaultDate);
+
+		 
+		  //  $( "#datepicker" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
 		  
 		  } );
 		 
@@ -186,10 +192,9 @@
 	         <label>아이디</label>
 	         <input type="text" name="id" value="${custom.id }" readonly="readonly"> 
 	      </p>
-      
 	       <p>
 	         <label>생년월일</label>
-	       	 <input type="text" id="datepicker" name="dob" class="format" value="${custom.dob }" > 
+	       	 <input type="text" id="datepicker" name="dob" class="format" > 
 	      </p>
       
   		<p>
@@ -198,9 +203,9 @@
 	        <select name="phone">
 	        	<!-- <option value="opt">선택하세요</option> -->
 	        	
-	        	<option value="010" >010</option>
-	        	<option value="011" >011</option>
-	        	<option value="017" >017</option>
+	        	<option value="010" ${phone1=='010'?'selected':''}>010</option>
+	        	<option value="011" ${phone1=='011'?'selected':''}>011</option>
+	        	<option value="017" ${phone1=='017'?'selected':''}>017</option>
 	        </select>
 	      - <input type="text" name="phone2" value="${fn:substring(custom.phone,4,4+fn:indexOf(fn:substringAfter(custom.phone,'-'),'-')) }"> - <input type="text" name="phone3" value="${fn:substring(custom.phone,9,13) }">
      	 </p>
@@ -208,12 +213,14 @@
        <p>
          <label>이메일</label>
          <input type="text" name="email1" value="${fn:substring(custom.email,0, fn:indexOf(custom.email,'@')) }"> @
-        <select name="email2">
+         <c:set var="index" value="${fn:indexOf(custom.email,'@') }" ></c:set>
+         <c:set var="domain" value="${fn:substring(custom.email,index+1,-1)}"></c:set>
+         <select name="email2"> 		    
         	<!-- <option value="a">선택하세요</option> -->
-        	<option value="naver.com">naver.com</option>
-        	<option value="gmail.com">gmail.com</option>
-        	<option value="daum.net">daum.net</option>
-        	<option value="nate.com">nate.com</option>
+        	<option value="naver.com" ${domain=='naver.com'?'selected':'' }>naver.com</option>
+        	<option value="gmail.com" ${domain=='gmail.com'?'selected':'' }>gmail.com</option>
+        	<option value="daum.net" ${domain=='daum.net'?'selected':'' }>daum.net</option>
+        	<option value="nate.com" ${domain=='nate.com'?'selected':'' }>nate.com</option>
         </select>
       </p>
       

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,8 +59,8 @@
 									</div>
 									<div class="info">
 										<span class="title">${car.name }</span>
-										<span class="rentPrice">${car.basicCharge }원</span><br>
-		
+										<span class="rentPrice"><fmt:formatNumber value="${car.basicCharge }" type="number"></fmt:formatNumber>원</span><br>
+										
 										<div id="temp">
 											<img src="${pageContext.request.contextPath }/upload/${car.fuel.code }.png" class='fuel'>
 											<img src="${pageContext.request.contextPath }/upload/${car.brand.name }.png" class='carBrand'>
@@ -89,6 +90,7 @@
 			<input type="hidden" name="carName" id="carName">
 			<input type="hidden" name="carCode" id="carCode">
 			<input type="hidden" name="basicPrice" id="basicPrice">
+			<input type="hidden" name="selectCarType" id="selectCarType" value="${carType }">
 		</form>
 		
 	</div>

@@ -41,9 +41,22 @@
 	</resultMap>
 	
 	<select id="selectById" resultMap="ResultCustomExtend" resultType="Customer">
-		select c.code as customerCode, id, c.name as customerName, zip_code as zipCode, address, phone, email, grade_code as gradeCode, license, rent_cnt, ce.event_code as eventCode, e.name as eventName, e.rate as eventRate, g.name as gradeName, g.rate as gradeRate
+		select c.code as customerCode, id, c.name as customerName, zip_code as zipCode, address, phone, email, grade_code as gradeCode, license, rent_cnt, ce.event_code, e.name as eName, e.rate as eRate, g.name as gradeName, g.rate as gradeRate
 		from customer c join custom_event ce on c.code = ce.custom_code left join event e on ce.event_code = e.code join grade g on c.grade_code = g.code
 		where id = #{id};
 	</select>
 	
+	<!-- 보험 -->	
+	<resultMap type="Insurance" id="resultInsurance">
+		<id column="iCode" property="code" />
+		<result column="ctCode" property="car_type.code" />
+		<result column="price" property="price" />
+		<result column="carType" property="car_type.type" />
+	</resultMap>
+	
+	<select id="selectInsuranceByCarType" resultMap="resultInsurance">
+		select i.code as iCode, i.car_type as ctCode, price, ct.type as carType
+		from insurance i join car_type ct on i.car_type = ct.code
+		where ct.type = #{carType};
+	</select>
 </mapper>

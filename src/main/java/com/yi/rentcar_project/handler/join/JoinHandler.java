@@ -1,4 +1,4 @@
-package com.yi.rentcar_project.handler;
+package com.yi.rentcar_project.handler.join;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

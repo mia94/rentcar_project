@@ -9,6 +9,7 @@ import com.yi.rentcar_project.dao.RentDao;
 import com.yi.rentcar_project.model.CarModel;
 import com.yi.rentcar_project.model.CarType;
 import com.yi.rentcar_project.model.Customer;
+import com.yi.rentcar_project.model.Insurance;
 import com.yi.rentcar_project.mvc.MySqlSessionFactory;
 
 public class RentService implements RentDao{
@@ -59,6 +60,28 @@ public class RentService implements RentDao{
 			RentDao dao = session.getMapper(RentDao.class);
 			
 			return dao.selectById(id);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			
+		} finally {
+			session.close();
+		}
+		return null;
+	}
+
+	@Override
+	public Insurance selectInsuranceByCarType(String carType) throws SQLException {
+		// TODO Auto-generated method stub
+		SqlSession session = null;
+		
+		try {
+			session = MySqlSessionFactory.openSession();
+			
+			RentDao dao = session.getMapper(RentDao.class);
+			
+			return dao.selectInsuranceByCarType(carType);
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

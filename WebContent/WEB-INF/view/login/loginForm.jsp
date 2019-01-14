@@ -35,7 +35,10 @@ p:LAST-CHILD input {
 		</header>
 		
 		<section>
-
+	<div id="login">
+		<h1>Login 로그인</h1>
+		로그인 하시면 더욱 다양한 서비스를 즐길수 있습니다
+	</div>
 	<form action="login.do" method="post">
 		<fieldset>
 			<p>
