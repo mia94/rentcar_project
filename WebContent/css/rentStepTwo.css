@@ -146,3 +146,61 @@
 		padding-bottom: 5px;
 		border-bottom: 1px solid gray;
 	}
+	
+	div#event ul{
+		padding: 10px 0;
+	}
+	
+	div#event ul li{
+		margin: 5px 0;
+	}
+	
+	li#evtNotice{
+		font-size: 13px;
+		color: #f04040;
+		padding: 5px 0;
+	}
+	
+	div#insurance ul{
+		padding: 10px 0;
+	}
+	
+	div#insurance ul li{
+		margin: 5px 0;
+	}
+	
+	div#option ul{
+		padding: 10px 0;
+	}
+	
+	div#option ul li{
+		margin: 5px 0;
+	}
+	
+	label.titList{
+		font-size: 15px;
+		margin-left: 10px;
+	}
+	
+	label.discountList{
+		font-size: 15px;
+		padding-right: 70px;
+		margin-left: 10px;
+	}
+	
+	select#selEvt{
+		width: 150px;
+		height: 30px;
+		line-height: 30px;
+	}
+	
+	h3#cdw, h3#opt{
+		margin-top: 25px;
+		color: #353535;
+		padding-bottom: 5px;
+		border-bottom: 1px solid gray;
+	}
+	
+	a{
+		text-decoration: none;
+	}

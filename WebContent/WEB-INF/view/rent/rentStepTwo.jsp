@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css?bds" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentStepTwo.css?bsds" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentStepTwo.css?ddsd" rel="stylesheet"  type="text/css">
 </head>
 <body>
 
@@ -84,7 +84,7 @@
 						<h3>이벤트/할인</h3>
 						<ul>
 							<li>
-								<input type="radio" name="discount" value="회원 할인">
+								<input type="radio" name="discount" value="${list[0].gradeCode.rate }">
 								<label class='titList'>회원 할인 (${list[0].gradeCode.rate }%)</label>
 							</li>
 							<li>
@@ -104,11 +104,14 @@
 									</select>
 								</span>
 							</li>
+							<li id="evtNotice">
+								·&nbsp;할인은 회원 할인, 이벤트 할인 중 하나만 적용 가능하며 할인율은 대여요금에서만 적용됩니다.
+							</li>
 						</ul>
 					</div>
 					
 					<div id="insurance">
-						<h3>자차손해 면책 제도(CDW)</h3>
+						<h3 id="cdw">자차손해 면책 제도(CDW)</h3>
 						<ul>
 							<li>
 								<input type="radio" name="rdIns">
@@ -122,7 +125,7 @@
 					</div>
 					
 					<div id="option">
-						<h3>차량 옵션</h3>
+						<h3 id="opt">차량 옵션</h3>
 						<ul class='optChk'>
 							<li>
 								<input type="checkbox">
@@ -158,6 +161,6 @@
 
 	<!-- 스크립트 부분(위에 스크립트 있으면 datepicker 실행이 안됨) -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="${pageContext.request.contextPath }/js/rentStep.js?cassdfs"></script>
+	<script src="${pageContext.request.contextPath }/js/rentStep.js?cd"></script>
 </body>
 </html>
