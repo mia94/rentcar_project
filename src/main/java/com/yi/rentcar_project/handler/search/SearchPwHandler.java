@@ -1,4 +1,4 @@
-package com.yi.rentcar_project.handler;
+package com.yi.rentcar_project.handler.search;
 
 import java.util.Properties;
 

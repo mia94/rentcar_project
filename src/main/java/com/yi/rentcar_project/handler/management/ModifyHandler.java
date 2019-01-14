@@ -1,4 +1,4 @@
-package com.yi.rentcar_project.handler;
+package com.yi.rentcar_project.handler.management;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -53,17 +53,19 @@ public class ModifyHandler implements CommandHandler {
 				CustomerService service = CustomerService.getInstance();
 				/*Employee employee = new Employee();
 				Grade grade = new Grade();*/
+				Customer custome = new Customer();
+				custome.setId(id);
 				
-				Customer customer = new Customer();
+				Customer customer = service.selectCustomerById(custome);
 				/*Grade grade = new Grade();
 				Employee employee = new Employee();*/
 				/*service.selectCustomerById(customer);*/
 				customer.setId(id);
 				customer.setName(name);
 				
-				customer.setCode(customer.getCode());
+				/*customer.setCode(customer.getCode());
 				customer.setEmpCode(customer.getEmpCode());
-				customer.setGradeCode(customer.getGradeCode());
+				customer.setGradeCode(customer.getGradeCode());*/
 				customer.setDob(dobs);
 				customer.setPhone((phone + "-" + phone2 + "-" + phone3));
 				customer.setEmail((email1 + "@" + email2));
