@@ -36,7 +36,7 @@
 		margin-bottom:15px;
 		float: left;
 		text-decoration: none;
-		color:white;
+		
 		font-size: 12px;
 		font-weight: bold; 
 	}
@@ -64,6 +64,21 @@
 		float: left;
 		width:50px;
 		text-align: center;
+	}
+	#wrap_wrap{
+		width:500px;
+		margin: 130px auto;
+	}
+	#wrap_wrap > a{
+		width:123px;
+		height: 35px;
+		line-height:35px;
+		text-align:center; 
+		margin-bottom:15px;
+		float: left;
+		text-decoration: none;
+ 		font-size: 12px;
+		font-weight: bold; 
 	}
 	.wrap .btnAdd{
 		text-decoration: none;

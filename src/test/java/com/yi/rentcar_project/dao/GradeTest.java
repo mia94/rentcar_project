@@ -1,6 +1,5 @@
 package com.yi.rentcar_project.dao;
 
-import static org.junit.Assert.*;
 
 import java.util.List;
 

@@ -66,5 +66,7 @@ select concat('G',lpad(max(right(code,3)+1),3,'0'))  from grade;
 -- 오른쪽에서 몇번째인가 right(code,1)
 select concat('EVT',lpad(max(right(code,1)+1),1,'0'))  from event;
 
+select concat('E',lpad(max(right(code,3)+1),3,'0'))  from employee;
+
 select * from grade;
 

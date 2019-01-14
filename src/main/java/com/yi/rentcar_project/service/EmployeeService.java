@@ -81,4 +81,12 @@ public class EmployeeService implements EmployeeDao{
 		}
 	}
 
+
+	@Override
+	public String nextCode() {
+		try (SqlSession sqlSession = MySqlSessionFactory.openSession();) {
+			return sqlSession.selectOne(namespace + ".nextCode");
+		}
+	}
+
 }

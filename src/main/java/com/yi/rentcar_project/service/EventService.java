@@ -2,8 +2,6 @@ package com.yi.rentcar_project.service;
 
 import java.util.List;
 
-import org.apache.ibatis.session.ResultContext;
-import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.SqlSession;
 
 import com.yi.rentcar_project.dao.EventDao;
