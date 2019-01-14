@@ -8,6 +8,11 @@
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css?a" rel="stylesheet"  type="text/css">
 <style>
+	#chart_wrap{
+		width:1000px;
+		margin: 50px auto; 
+		height: 600px;
+	}
 	#chart{
 		width:900px;
 		height: 400px;
@@ -22,10 +27,11 @@
 		</header>
 		
 		<section>
-			<h1>차트</h1>
-			<span id="info">차량 별 렌트 수</span>
-			<div id="chart"></div>
-
+			<div id="chart_wrap">
+				<h1>차트</h1>
+				<span id="info">차량 별 렌트 수</span>
+				<div id="chart"></div>
+			</div>
 		</section>
 	</div>
 	
@@ -103,7 +109,7 @@
 		  });
 		  $('#chart').bind('jqplotDataClick', 
 		    function (ev, seriesIndex, pointIndex, data) {
-		      $('#info').html('series: '+seriesIndex+', point: '+pointIndex+', data: '+data);
+		     // $('#info').html('series: '+seriesIndex+', point: '+pointIndex+', data: '+data);
 		    }
 		  ); 
 	})

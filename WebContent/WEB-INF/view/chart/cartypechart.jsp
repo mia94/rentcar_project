@@ -8,6 +8,11 @@
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <style>
+	#chart_wrap{
+		width:1000px;
+		margin: 50px auto; 
+		height: 600px;
+	}
 	#chart{
 		width:500px;
 		height: 400px;
@@ -22,10 +27,11 @@
 		</header>
 		
 		<section>
-			<h1>차트</h1>
-			<span id="info">차종별 보유 수</span>
-			<div id="chart"></div>
-
+			<div id="chart_wrap">
+				<h1>차트</h1>
+				<span id="info">차종별 보유 수</span>
+				<div id="chart"></div>
+			</div>
 		</section>
 	</div>
 	
@@ -36,9 +42,10 @@
 <script class="include" language="javascript" type="text/javascript" src="${pageContext.request.contextPath }/js/jqplot.barRenderer.min.js"></script>
 <script class="include" language="javascript" type="text/javascript" src="${pageContext.request.contextPath }/js/jqplot.categoryAxisRenderer.min.js"></script>
 <script class="include" language="javascript" type="text/javascript" src="${pageContext.request.contextPath }/js/jqplot.pointLabels.min.js"></script>
+<script class="include" language="javascript" type="text/javascript" src="${pageContext.request.contextPath }/js/jqplot.pieRenderer.min.js"></script>
 <script>
 	$(function(){
-	  
+		
 	})
 </script>
 </body>

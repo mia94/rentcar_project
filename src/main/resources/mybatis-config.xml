@@ -47,6 +47,7 @@
   	<mapper resource="com/yi/rentcar_project/dao/CarModelMapper.xml"/>
   	<mapper resource="com/yi/rentcar_project/dao/FuelMapper.xml"/>
   	<mapper resource="com/yi/rentcar_project/dao/CarTypeMapper.xml"/>
+  	<mapper resource="com/yi/rentcar_project/dao/StateCarMapper.xml"/>
   	
   	<!-- rent -->
   	 <mapper resource="com/yi/rentcar_project/dao/RentMapper.xml"/> 
