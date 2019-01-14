@@ -144,8 +144,8 @@
 				</div>
 				
 				<div id="btnWrap">
-					<a href="#">이전</a>
-					<a href="#">다음</a>
+					<div id="prevWrap"><a href="#" id="btnPrev">이전</a></div>
+					<div id="nextWrap"><a href="#" id="btnNext">다음</a></div>
 				</div>				
 				
 			</div>
