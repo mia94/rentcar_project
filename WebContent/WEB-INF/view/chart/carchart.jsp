@@ -10,7 +10,8 @@
 <style>
 	#chart{
 		width:900px;
-		height: 300px;
+		height: 400px;
+		margin: 50px auto;
 	}
 </style>
 </head>
@@ -24,9 +25,7 @@
 			<h1>차트</h1>
 			<span id="info">차량 별 렌트 수</span>
 			<div id="chart"></div>
-			
-			<span id="info3">예제.</span>
-			<div id="chart3" style="width:400px; height:300px;"></div>
+
 		</section>
 	</div>
 	
@@ -39,46 +38,45 @@
 <script class="include" language="javascript" type="text/javascript" src="${pageContext.request.contextPath }/js/jqplot.pointLabels.min.js"></script>
 <script>
 	$(function(){
-		var s1 = [2, 6, 7, 10];
-		  var s2 = [7, 5, 3, 4];
-		  var s3 = [14, 9, 3, 8];
-		  plot3 = $.jqplot('chart3', [s1, s2, s3], {
-		    stackSeries: true,
-		    captureRightClick: true,
-		    seriesDefaults:{
-		      renderer:$.jqplot.BarRenderer,
-		      rendererOptions: {
-		          barMargin: 30,
-		          highlightMouseDown: true    
-		      },
-		      pointLabels: {show: true}
-		    },
-		    axes: {
-		      xaxis: {
-		          renderer: $.jqplot.CategoryAxisRenderer
-		      },
-		      yaxis: {
-		        padMin: 0
-		      }
-		    },
-		    legend: {
-		      show: true,
-		      location: 'e',
-		      placement: 'outside'
-		    }      
-		  });
-		  $('#chart3').bind('jqplotDataClick', 
-		    function (ev, seriesIndex, pointIndex, data) {
-		      $('#info3').html('series: '+seriesIndex+', point: '+pointIndex+', data: '+data);
-		    }
-		  ); 
-	  
-		  var line = new Array;
-		  for(var i=0;i<"${list.size()}";i++){
-			  line[i] = "${list.get(i).rentCnt}"
-		  }
-		  
-		  plot = $.jqplot('chart', ["${line}"], {
+	  /*반복문으로 바꿔야함ㅠㅠ*/
+		var line = new Array;
+		line[0] = "${list.get(0).rentCnt}"
+		line[1] = "${list.get(1).rentCnt}"
+		line[2] = "${list.get(2).rentCnt}"
+		line[3] = "${list.get(3).rentCnt}"
+		line[4] = "${list.get(4).rentCnt}"	
+		line[5] = "${list.get(5).rentCnt}"
+		line[6] = "${list.get(6).rentCnt}"
+		line[7] = "${list.get(7).rentCnt}"
+		line[8] = "${list.get(8).rentCnt}"
+		line[9] = "${list.get(9).rentCnt}"
+		line[10] = "${list.get(10).rentCnt}"
+		line[11] = "${list.get(11).rentCnt}"
+		line[12] = "${list.get(12).rentCnt}"
+		line[13] = "${list.get(13).rentCnt}"
+		line[14] = "${list.get(14).rentCnt}"	
+		line[15] = "${list.get(15).rentCnt}"
+		line[16] = "${list.get(16).rentCnt}"
+		line[17] = "${list.get(17).rentCnt}"
+		line[18] = "${list.get(18).rentCnt}"
+		line[19] = "${list.get(19).rentCnt}"
+		line[20] = "${list.get(20).rentCnt}"
+		line[21] = "${list.get(21).rentCnt}"
+		line[22] = "${list.get(22).rentCnt}"
+		line[23] = "${list.get(23).rentCnt}"
+		line[24] = "${list.get(24).rentCnt}"	
+		line[25] = "${list.get(25).rentCnt}"
+		line[26] = "${list.get(26).rentCnt}"
+		line[27] = "${list.get(27).rentCnt}"
+		line[28] = "${list.get(28).rentCnt}"
+		line[29] = "${list.get(29).rentCnt}"
+		line[30] = "${list.get(30).rentCnt}"
+		line[31] = "${list.get(31).rentCnt}"
+		line[32] = "${list.get(32).rentCnt}"
+		line[33] = "${list.get(33).rentCnt}"
+		line[34] = "${list.get(34).rentCnt}"	
+
+		  plot = $.jqplot('chart', [line], {
 		    stackSeries: true,
 		    captureRightClick: true,
 		    seriesDefaults:{

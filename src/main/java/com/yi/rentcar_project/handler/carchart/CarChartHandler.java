@@ -1,4 +1,4 @@
-package com.yi.rentcar_project.handler.car;
+package com.yi.rentcar_project.handler.carchart;
 
 import java.util.List;
 
@@ -19,14 +19,13 @@ public class CarChartHandler implements CommandHandler {
 
 		int[] line = new int[list.size()];
 		for(int i =0;i<list.size();i++){
-			int a = list.get(i).getRentCnt();
-			line[i] = a;
+			line[i] = list.get(i).getRentCnt();
 		}
 		
 		req.setAttribute("list", list);
 		req.setAttribute("line", line);
 		
-		return "/WEB-INF/view/car/carchart.jsp";
+		return "/WEB-INF/view/chart/carchart.jsp";
 	}
 
 }
