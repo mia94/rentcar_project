@@ -57,15 +57,23 @@
 		font-size: 12px;
 	}
 	#btn_wrap{
-		width:300px;
+		width:1050px;
 		height:40px;
 		display: block;
 		margin: 5px;
+		text-align: right;
 	}
 	#btn_wrap a{
 		padding: 10px;
-		line-height:45px;
+		line-height:40px;
 		text-decoration: none;
+		font-size: 14px;
+		color:#4C4C4C;
+		font-weight: bold;
+	}
+	#btn_wrap a:hover{
+		color:#6799FF;
+		font-weight: bold;
 	}
 	article{
 		width:520px;
@@ -131,7 +139,6 @@
 			<h1>차량 목록</h1>
 				<div id="btn_wrap">
 					<a href="uploadcar.do">자동차 추가</a>
-					<a href="totaloptionlist.do">차량 옵션 관리창</a>
 				</div>
 				<ul>
 					<li><a href="carlist.do" id="total">전체</a></li>

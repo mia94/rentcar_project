@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css?bds" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentStepTwo.css?cdas" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentStepTwo.css?abb" rel="stylesheet"  type="text/css">
 </head>
 <body>
 
@@ -24,6 +25,7 @@
 				<div id="leftWrap">
 					<div id="dateInfo">
 						<span id="rentDate">${sDate } ${sHour } ${sMin }</span>
+						<span id="and">▶</span>
 						<span id="returnDate">${eDate } ${eHour } ${eMin }</span>
 					</div>
 					<div id="carInfo">
@@ -40,7 +42,7 @@
 							<li>
 								<span class='tit'>대여금액</span>
 								<span class='price'>
-									${basicPrice * rDate }
+									<fmt:formatNumber value="${basicPrice * rDate }" type="number"></fmt:formatNumber>
 									<span class='won'>원</span>
 								</span>
 							</li>
@@ -75,7 +77,7 @@
 						<ul>
 							<li>
 								<input type="radio" name="discount" value="회원 할인">
-								<label class='titList'>회원 할인</label>
+								<label class='titList'>회원 할인 (${list[0].gradeCode.rate }%)</label>
 							</li>
 							<li>
 								<input type="radio" name="discount" value="이벤트">
@@ -83,8 +85,14 @@
 								<span id='selected'>
 									<select id='selEvt' name='selEvt'>
 										<option value="선택">선택</option>
-										<option value="evt1">첫 가입</option>
-										<option value="evt2">생일 축하</option>
+										<c:forEach var="customer" items="${list }">
+											<c:forEach var="events" items="${customer.events }">
+												<c:forEach var="event" items="${events.events }">
+													<option>${event.name} (${event.rate}% 할인)</option>
+												</c:forEach>												
+											</c:forEach>
+											
+										</c:forEach>
 									</select>
 								</span>
 							</li>
@@ -100,7 +108,7 @@
 							</li>
 							<li>
 								<input type="radio" name="rdIns">
-								<label class='titList'>완전자차</label>
+								<label class='titList'>완전자차 (<fmt:formatNumber value="${i.price }" type="number"></fmt:formatNumber>원)</label>
 							</li>
 						</ul>
 					</div>
@@ -127,25 +135,7 @@
 				<div id="btnWrap">
 					<a href="#">이전</a>
 					<a href="#">다음</a>
-				</div>
-				
-				테스트
-				<hr>
-				
-				고객코드 : ${list[0].code } <br>
-				아이디 : ${list[0].id } <br>
-				고객이름 : ${list[0].name } <br>
-				우편번호 : ${list[0].zipCode } <br>
-				주소 : ${list[0].address } <br>
-				연락처 : ${list[0].phone } <br>
-				이메일 : ${list[0].email } <br>
-				등급코드 : ${list[0].gradeCode.code } <br>
-				등급이름 : ${list[0].gradeCode.name } <br>
-				등급할인율 : ${list[0].gradeCode.rate }% <br>
-				운전면허 : ${list[0].license } <br>
-				<c:forEach var="customer" items="${list }">
-					이벤트 : <p>${customer }</p>
-				</c:forEach>
+				</div>				
 				
 			</div>
 		</section>

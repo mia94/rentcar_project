@@ -6,10 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/caroption.css" rel="stylesheet"  type="text/css">
-<style>
-	
-</style>
+<link href="${pageContext.request.contextPath }/css/caroption.css?b" rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(function(){
@@ -32,10 +29,10 @@ $(function(){
 		
 		<section>
 			<div id="wrap_wrap">
-			<a href="cartypelist.do">차종옵션</a>
-			<a href="brandlist.do">브랜드</a>
-			<a href="fuellist.do">연료</a>
-			<a href="caroptionlist.do">옵션</a>
+			<a href="cartypelist.do">CARTYPE</a>
+			<a href="brandlist.do">BRAND</a>
+			<a href="fuellist.do">FUEL</a>
+			<a href="caroptionlist.do">OPTION</a>
 			<h1>CARTYPE</h1>
 			<div class="wrap">
 				<c:forEach var="item" items="${typeList }">

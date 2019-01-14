@@ -16,6 +16,26 @@
 		text-align: center;
 	}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		var color = $("#color").text().trim();
+		switch(color){
+			case 'wh': $("#color").html('WHITE');
+			break;
+			case 'bk': $("#color").html('BLACK');
+			break;
+			case 'bl': $("#color").html('BLUE');
+			break;
+			case 'gr': $("#color").html('GRAY');
+			break;
+			case 'mt': $("#color").html('MINT');
+			break;
+			case 're': $("#color").html('RED');
+			break;
+		}
+	})
+</script>
 </head>
 <body>
 	<div id="container">
@@ -41,7 +61,7 @@
 						</tr>
 						<tr>
 							<td>색상</td>
-							<td> ${carmodel.color }</td>
+							<td id="color"> ${carmodel.color }</td>
 							<td>변속기</td>
 							<td>${carmodel.gear }</td>
 						</tr>

@@ -14,12 +14,20 @@
 		margin: 70px auto;
 		position: relative;
 	}
+	#upload_wrap > h1{
+		text-align: right;
+	}
 	#img_wrap{
 		width:500px;
 		height: 370px; 
-		border:1px solid black;
 		float: left;
 		position: relative;
+	}
+	#img_wrap label{
+		width:500px;
+		background-color: white;
+		color:#4C4C4C;
+		border-bottom: 3px solid #4C4C4C;
 	}
 	#img_wrap img{
 		width:330px;
@@ -55,6 +63,7 @@
 		color:#F6F6F6;
 		font-weight: bold;
 		text-align: center;
+		font-size: 14px;
 	}
 	.textfield{
 		width:120px;
@@ -90,8 +99,7 @@
 		width:100px;
 		height:30px;
 		line-height:30px;
-		background-color: pink;
-		border: 2px solid gray;
+		border: 2px solid #aaaaaa;
 	}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -127,7 +135,7 @@
 				<form action="uploadcar.do" enctype="multipart/form-data" method="post"><!--   enctype="multipart/form-data"  -->
 					<div id="img_wrap">
 						<label>PHOTH</label>
-						<img id="preview" src="#" alt="car_img">
+						<img id="preview" src="${pageContext.request.contextPath }/upload/V000.png" alt="car_img">
 						<input type="file" name="carImg" id="imgInp">
 					</div>
 					<div id="wrap_1">
@@ -208,16 +216,6 @@
 						<input type="radio" name="gear">수동
 					</p>
 					</div>
-
-					<!-- <table>
-							<tr>
-								<td><input type="text" name="basic_charge" class="charge"></td>
-								<td><input type="text" name="hour6" class="charge"></td>
-								<td><input type="text" name="hour6" class="charge"></td>
-								<td><input type="text" name="hour12" class="charge"></td>
-								<td><input type="text" name="hour_else" class="charge"></td>
-							</tr>
-					</table> -->
 					
 					<!-- isRent, rentCnt 0으로 자동입력되게 하기 --> 
 					<div id="btn_wrap">

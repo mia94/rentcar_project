@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yi.rentcar_project.model.Customer;
+import com.yi.rentcar_project.model.Insurance;
 import com.yi.rentcar_project.mvc.CommandHandler;
 import com.yi.rentcar_project.service.RentService;
 
@@ -35,6 +36,10 @@ public class RentStepTwoHandler implements CommandHandler {
 			RentService service = RentService.getInstance();
 			List<Customer> list = service.selectById(id);
 			
+			//보험
+			String selectCarType = req.getParameter("selectCarType");
+			Insurance i = service.selectInsuranceByCarType(selectCarType);
+			
 			req.setAttribute("sDate", sDate);
 			req.setAttribute("sHour", sHour);
 			req.setAttribute("sMin", sMin);
@@ -50,6 +55,7 @@ public class RentStepTwoHandler implements CommandHandler {
 			
 			req.setAttribute("id", id);
 			req.setAttribute("list", list);
+			req.setAttribute("i", i);
 			
 			return "/WEB-INF/view/rent/rentStepTwo.jsp";
 		}
