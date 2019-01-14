@@ -9,17 +9,17 @@ import com.yi.rentcar_project.model.StateCar;
 import com.yi.rentcar_project.mvc.CommandHandler;
 import com.yi.rentcar_project.service.StateCarService;
 
-public class CarTypeChartHandler implements CommandHandler {
+public class BrandChartHandler implements CommandHandler {
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		// TODO Auto-generated method stub
 		StateCarService service = StateCarService.getInstance();
-		List<StateCar> list = service.selectCountByCarType();
+		List<StateCar> list = service.selectCountByBrand();
 		
 		req.setAttribute("list", list);
 		
-		return "/WEB-INF/view/chart/cartypechart.jsp";
+		return "/WEB-INF/view/chart/brandchart.jsp";
 	}
 
 }

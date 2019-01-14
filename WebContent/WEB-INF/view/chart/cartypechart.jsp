@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/js/jquery.jqplot.css" />
 <style>
 	#chart_wrap{
 		width:1000px;
@@ -14,9 +15,10 @@
 		height: 600px;
 	}
 	#chart{
-		width:500px;
-		height: 400px;
-		margin: 50px auto;
+		width:650px;
+		height: 500px;
+		margin: 0 auto;
+		padding-left: 50px;
 	}
 </style>
 </head>
@@ -38,15 +40,30 @@
 	<footer>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</footer>
-<script class="include" type="text/javascript" src="${pageContext.request.contextPath }/js/jquery.jqplot.min.js"></script>
-<script class="include" language="javascript" type="text/javascript" src="${pageContext.request.contextPath }/js/jqplot.barRenderer.min.js"></script>
-<script class="include" language="javascript" type="text/javascript" src="${pageContext.request.contextPath }/js/jqplot.categoryAxisRenderer.min.js"></script>
-<script class="include" language="javascript" type="text/javascript" src="${pageContext.request.contextPath }/js/jqplot.pointLabels.min.js"></script>
-<script class="include" language="javascript" type="text/javascript" src="${pageContext.request.contextPath }/js/jqplot.pieRenderer.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
-	$(function(){
-		
-	})
+$(document).ready(function(){
+	google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['제목', 'total'],
+          ['${list.get(0).title}', ${list.get(0).count}],['${list.get(1).title}', ${list.get(1).count}], 
+  	      ['${list.get(2).title}', ${list.get(2).count}], ['${list.get(3).title}', ${list.get(3).count}],
+  	   	  ['${list.get(4).title}', ${list.get(4).count}], ['${list.get(5).title}', ${list.get(5).count}]
+        ]);
+        
+        var options = {
+                title: '차종별 보유 수',
+                pieHole: 0.4,
+        };
+        
+        var chart = new google.visualization.PieChart(document.getElementById('chart'));
+        chart.draw(data, options);
+    }
+    
+	});
 </script>
 </body>
 </html>
