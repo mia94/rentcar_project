@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.yi.rentcar_project.model.AUTH;
 import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.mvc.CommandHandler;
 import com.yi.rentcar_project.service.CustomerService;
@@ -15,10 +16,10 @@ public class ModifyHandler implements CommandHandler {
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		if (req.getMethod().equalsIgnoreCase("get")) {
-			String id = (String) req.getSession().getAttribute("AUTH");
+			AUTH auth = (AUTH) req.getSession().getAttribute("AUTH");
 			CustomerService service = CustomerService.getInstance();
 			Customer customer = new Customer();
-			customer.setId(id);
+			customer.setId(auth.getId());
 			Customer customId = service.selectCustomerById(customer);
 			
 			System.out.println(customId);
@@ -28,7 +29,7 @@ public class ModifyHandler implements CommandHandler {
 			return "/WEB-INF/view/management/customerModify.jsp";
 		} else if (req.getMethod().equalsIgnoreCase("post")) {
 			String name = req.getParameter("name");
-			String id = (String) req.getSession().getAttribute("AUTH");
+			AUTH auth = (AUTH) req.getSession().getAttribute("AUTH");
 			String dob = req.getParameter("dob");
 			String phone = req.getParameter("phone");
 			String phone2 = req.getParameter("phone2");
@@ -52,13 +53,13 @@ public class ModifyHandler implements CommandHandler {
 				/*Employee employee = new Employee();
 				Grade grade = new Grade();*/
 				Customer custome = new Customer();
-				custome.setId(id);
+				custome.setId(auth.getId());
 				
 				Customer customer = service.selectCustomerById(custome);
 				/*Grade grade = new Grade();
 				Employee employee = new Employee();*/
 				/*service.selectCustomerById(customer);*/
-				customer.setId(id);
+				customer.setId(auth.getId());
 				customer.setName(name);
 				
 		
