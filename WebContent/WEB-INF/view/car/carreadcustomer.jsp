@@ -40,7 +40,7 @@
 <body>
 	<div id="container">
 		<header>
-			<jsp:include page="../header.jsp"></jsp:include>
+			<jsp:include page="../guest.jsp"></jsp:include>
 		</header>
 		
 		<section>

@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/caroption.css?b" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/caroption.css?a" rel="stylesheet"  type="text/css">
 <style>
 	.brandImg{
 		padding-top: 9px;
@@ -29,7 +29,7 @@ $(function(){
 <body>
 	<div id="container">
 		<header>
-			<jsp:include page="../header.jsp"></jsp:include>
+			<jsp:include page="../admin.jsp"></jsp:include>
 		</header>
 		
 		<section>

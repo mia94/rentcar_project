@@ -13,14 +13,22 @@
 		margin: 0 auto;
 		overflow:hidden;
 	}
+	#list_wrap h1{
+		margin: 5px;
+		padding-bottom: 10px;
+	}
 	#list_wrap ul{
 		height: 60px;
 		list-style: none;
 	}
 	#list_wrap ul li{
 		float:left;
-		border:0.5px solid #bbbbbb; 
+		border-left:0.5px solid #bbbbbb; 
+		border-top:0.5px solid #bbbbbb;
 		text-align: center;
+	}
+	#list_wrap ul li:LAST-CHILD{
+		border-right:0.5px solid #bbbbbb; 
 	}
 	#list_wrap ul li a{
 		text-decoration: none;
@@ -99,6 +107,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(function(){
+	<c:forEach var="item" items="${list}" varStatus="status">
+		var isRent = $(".info_wrap .isRent").eq(${status.index}).text().trim();
+		if(isRent=="true"){
+			$(".info_wrap .isRent").eq(${status.index}).html("렌트 중");
+			$(".info_wrap").eq(${status.index}).parent("article").css("background-color","#FFEFEF");
+			$(".info_wrap .isRent").eq(${status.index}).css("color","#AA1212");
+		}else{
+			$(".info_wrap .isRent").eq(${status.index}).html("");
+		}
+	</c:forEach>
 	
 })
 </script>
@@ -106,12 +124,12 @@ $(function(){
 <body>
 <div id="container">
 		<header>
-			<jsp:include page="../header.jsp"></jsp:include>
+			<jsp:include page="../guest.jsp"></jsp:include>
 		</header>
 		
 		<section>
 			<div id="list_wrap">
-			<h1>차량 목록</h1>
+			<h1>차량 조회</h1>
 				<ul>
 					<li><a href="carlist.do" id="total">전체</a></li>
 					<li>

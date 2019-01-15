@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css?aa" rel="stylesheet"  type="text/css">
 <style>
 	#wrap{
 		width:720px;
@@ -41,7 +41,6 @@
 	#wrap .menu img:hover{
 		transform:scale(1.1);
 	}
-	#wrap #type img,#wrap #brand img,#wrap #fuel img,#wrap #option img
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -53,7 +52,7 @@ $(function(){
 <body>
 	<div id="container">
 		<header>
-			<jsp:include page="../header.jsp"></jsp:include>
+			<jsp:include page="../admin.jsp"></jsp:include>
 		</header>
 		
 		<section>

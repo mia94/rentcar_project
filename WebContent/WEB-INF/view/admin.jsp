@@ -30,14 +30,16 @@ $(function() {
 </head>
 <body>
 <a id="bbb"></a><a href="login.do" id="aaa">로그인</a>
-<a href="customerList.do">고객관리</a>
-<a href="carlist.do">차량관리</a>
-<a href="totaloptionlist.do">차량옵션관리</a>
-<a href="employeeList.do">직원관리</a>
-<a href="gradeList.do">등급관리</a>
-<a href="eventList.do">이벤트관리</a>
-<a href="reservation.do">대여관리</a>
-<a href="carmainchart.do">차량통계</a>
-	
+
+<div id="menu">
+	<a href="customerList.do">고객관리</a>
+	<a href="carlist.do">차량관리</a>
+	<a href="totaloptionlist.do">차량옵션관리</a>
+	<a href="employeeList.do">직원관리</a>
+	<a href="gradeList.do">등급관리</a>
+	<a href="eventList.do">이벤트관리</a>
+	<a href="reservation.do">대여관리</a>
+	<a href="carmainchart.do">차량통계</a>
+</div>	
 </body>
 </html>
