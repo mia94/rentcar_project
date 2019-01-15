@@ -51,7 +51,6 @@ public class CustomerModifyHandler implements CommandHandler {
 			// String events = req.getParameter("events");
 
 			int rentCnt = Integer.parseInt(rentCnts);
-			System.out.println(rentCnt);
 
 			CustomerService service = CustomerService.getInstance();
 			/* req.setAttribute("name", name); */
