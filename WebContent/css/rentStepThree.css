@@ -6,10 +6,78 @@
 		font-family: 'Noto Sans KR', sans-serif;
 	}
 	
+	ul{
+		list-style: none;
+	}
+	
 	div#rentStepThree_container{
 		width: 1000px;
 		margin: 30px auto;
 		padding: 10px;
 		border: 1px solid #ccc;
 		overflow: hidden;
+	}
+	
+	div#leftWrap{
+		width: 350px;
+		height: 600px;
+		float: left;
+		margin: 10px 40px 5px 5px;
+		display: inline-block;
+	}
+	
+	div#rightWrap{
+		display: inline-block;
+		width: 590px;
+		height: 600px;
+		margin: 10px 5px 5px 5px;
+		border-bottom: 1px solid #ccc;
+	}
+	
+	div#dateInfo{
+		border-top: 1px solid #efefef;
+		border-left: 1px solid #efefef;
+		border-right: 1px solid #efefef;
+		padding: 5px;
+		background-color: #efefef;
+		text-align: center;
+	}
+	
+	span#rentDate, span#returnDate{
+		font-size: 15px;
+		color: #5d5d5d;
+		font-weight: bold;
+	}
+	
+	span#and{
+		color: #A6A6A6;
+		font-size: 12px;
+		font-weight: bold;
+	}
+	
+	div#carInfo{
+		border-left: 1px solid #efefef;
+		border-right: 1px solid #efefef;
+		border-bottom: 1px solid #efefef;
+		padding: 5px;
+	}
+	
+	div#carInfo > h3{
+		color: #353535;
+		padding: 5px 0 0 10px;
+	}
+	
+	img.carImg{
+		height: 100px;
+		width: 200px;
+	}
+	
+	div#carImg{
+		padding: 15px 0 5px 70px;
+	}
+	
+	p.notice{
+		font-size: 13px;
+		color: #8C8C8C;
+		margin: 5px 0 0 0;
 	}

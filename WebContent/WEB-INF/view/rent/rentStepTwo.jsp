@@ -9,14 +9,14 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css?bds" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentStepTwo.css?abc" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentStepTwo.css?dc" rel="stylesheet"  type="text/css">
 </head>
 <body>
 
 	<div id="container">
 		<!-- header -->
 	    <header>
-			<jsp:include page="../header.jsp"></jsp:include>
+			<jsp:include page="../guest.jsp"></jsp:include>
 		</header>
 		
 		<!-- section -->
@@ -163,12 +163,9 @@
 			<input type="hidden" name="eMin" id="eMin" value="${eMin }">
 			<input type="hidden" name="cName" id="cName" value="${carName }">
 			<input type="hidden" name="cCode" id="cCode" value="${carCode }">	
-			<input type="hidden" name="insurance" id="insurance">
-			<input type="hidden" name="carOpt" id="carOpt">
-			<input type="hidden" name="evtDiscount" id="evtDiscount">
 			<input type="hidden" name="basicPrice" id="basicPrice">
-			<input type="hidden" name="discountPrice" id="discountPrice">	
-			<input type="hidden" name="insPrice" id="insPrice">	
+			<input type="hidden" name="dPrice" id="dPrice">	
+			<input type="hidden" name="iPrice" id="iPrice">	
 			<input type="hidden" name="carOptPrice" id="carOptPrice">	
 			<input type="hidden" name="totalRentPrice" id="totalRentPrice">		
 		</form>
@@ -181,7 +178,7 @@
 	</footer>
 
 	<!-- 스크립트 부분(위에 스크립트 있으면 datepicker 실행이 안됨) -->
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="${pageContext.request.contextPath }/js/rentStep.js?sdad"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js?a"></script>
+	<script src="${pageContext.request.contextPath }/js/rentStep.js?a"></script>
 </body>
 </html>

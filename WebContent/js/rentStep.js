@@ -17,10 +17,21 @@ $(function(){
 	
 	//rentStepTwo.jsp에 있는 다음 버튼
 	$("#btnNext").click(function(){
+		var price = $(".price").text().trim();
+		price = parseInt(price.replace(",", "").replace(",", ""));
+		var discount = $("#discountPrice").text();
+		var ins = $("#insurancePrice").text();
+		var opt = $("#optionPrice").text();
+		var total = $("#totalPrice").text();
+		
+		$("#basicPrice").val(price);
+		$("#dPrice").val(discount);
+		$("#iPrice").val(ins);
+		$("#carOptPrice").val(opt);
+		$("#totalRentPrice").val(total);
 		
 		$("#stepTwo").submit();
 	})
-	
 	
 	//숫자에 , 붙이기
 	function numWithCommas(num){

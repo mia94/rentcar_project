@@ -225,15 +225,18 @@
 		padding-left: 620px;
 	}
 	
-	div#nextWrap{
+	#btnNext{
 		background-color: #f04040;
-	}
-	
-	div#nextWrap{
 		width: 100px;
 		height: 35px;
 		line-height: 35px;
 		text-align: center;
-		margin-left: 10px;
+		margin-left: 10px; 
+		color: white;
+		border: none;
+	}
+	
+	div#nextWrap{
+		
 		display: inline-block;
 	}
