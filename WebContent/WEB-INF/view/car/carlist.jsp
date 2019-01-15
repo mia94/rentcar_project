@@ -131,7 +131,7 @@
 <body>
 	<div id="container">
 		<header>
-			<jsp:include page="../header.jsp"></jsp:include>
+			<jsp:include page="../admin.jsp"></jsp:include>
 		</header>
 		
 		<section>
@@ -193,8 +193,8 @@
 							<p>10시간 이하 : ${item.hour10 }</p>
 							<p>12시간 이하 : ${item.hour12 }</p>
 							<p>12시간 이상 : ${item.hourElse }</p>
-							<p>isRent : ${item.rent } </p>
-							<p>rentCnt : ${item.rentCnt }</p>
+							<p>렌트 중 : ${item.rent } </p>
+							<p>렌트 수 : ${item.rentCnt }</p>
 						</div>
 					</article>
 				</a>

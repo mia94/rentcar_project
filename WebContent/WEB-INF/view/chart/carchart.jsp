@@ -15,13 +15,13 @@
 		position: relative;
 	}
 	#chart{
-		width:900px;
+		width:800px;
 		height: 400px;
 		margin: 100px auto 50px;
 	}
 	#info{
 		position: absolute;
-		bottom: 20px;
+		bottom: 80px;
 		left: 500px;
 	}
 </style>
@@ -29,7 +29,7 @@
 <body>
 	<div id="container">
 		<header>
-			<jsp:include page="../header.jsp"></jsp:include>
+			<jsp:include page="../admin.jsp"></jsp:include>
 		</header>
 		
 		<section>
