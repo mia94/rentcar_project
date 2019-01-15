@@ -19,15 +19,24 @@
 	header #menu{
 		width:1000px;
 		position: absolute;
-		bottom: 20px;
+		bottom: 0px;
 		left: 110px;
 	}
 	header #menu a{
 		text-decoration: none;
 		color:white;
 		width:125px;
+		height:50px;
+		line-height:50px;
+		text-align:center;
 		float: left;
 	}
+	/* header #menu a:hover{
+		color:#48CAE1;
+		border-bottom: 3px solid #48CAE1;
+		height:45px;
+		line-height:45px;
+	} */
 	section{
 		width:1178px;
 		border:1px solid #cccccc;

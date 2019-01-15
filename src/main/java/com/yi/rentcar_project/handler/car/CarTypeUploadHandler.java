@@ -39,11 +39,8 @@ public class CarTypeUploadHandler implements CommandHandler {
 			}
 			
 			try {
-				MultipartRequest multi = new MultipartRequest(req,
-															uploadPath,//서버측 업로드
-															1024*1024*10,//10M
-															new DefaultFileRenamePolicy()
-															);
+			
+				MultipartRequest multi = new MultipartRequest(req, uploadPath, 1024*1024*10, "utf-8",new DefaultFileRenamePolicy());
 				
 				String file = multi.getFilesystemName("icon");//file1의 키의 파일의 이름을 받아옴
 				
@@ -52,6 +49,7 @@ public class CarTypeUploadHandler implements CommandHandler {
 				String code = multi.getParameter("code");
 				String type = multi.getParameter("type");
 				
+				System.out.println(type);
 				CarType cartype = new CarType();
 				cartype.setCode(code);
 				cartype.setType(type);

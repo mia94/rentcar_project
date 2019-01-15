@@ -55,13 +55,10 @@ public class CarUploadHandler implements CommandHandler {
 			}
 			
 			try {
-				MultipartRequest multi = new MultipartRequest(req,
-															uploadPath,//서버측 업로드
-															1024*1024*10,//10M
-															new DefaultFileRenamePolicy()
-															);
 				
-				String file = multi.getFilesystemName("carImg");//file1의 키의 파일의 이름을 받아옴
+				MultipartRequest multi = new MultipartRequest(req, uploadPath, 1024*1024*10, "utf-8",new DefaultFileRenamePolicy());
+				
+				String file = multi.getFilesystemName("carImg");
 				req.setAttribute("carImg", file);
 				
 				String car_code = multi.getParameter("car_code");
@@ -71,11 +68,12 @@ public class CarUploadHandler implements CommandHandler {
 				String fuelCode = multi.getParameter("fuel_code");
 				String color = multi.getParameter("color");
 				String gear = multi.getParameter("gear");
-				String basic = multi.getParameter("basic_charge").trim();
-				String h6 = multi.getParameter("hour6").trim();
-				String h10 = multi.getParameter("hour10").trim();
-				String h12 = multi.getParameter("hour12").trim();
-				String helse = multi.getParameter("hour_else").trim();
+				String basic = multi.getParameter("basic_charge");
+				String h6 = multi.getParameter("hour6");
+				String h10 = multi.getParameter("hour10");
+				System.out.println(h10);
+				String h12 = multi.getParameter("hour12");
+				String helse = multi.getParameter("hour_else");
 				
 				//가격 int로 변환하기
 				int basic_charge = Integer.parseInt(basic);

@@ -193,7 +193,7 @@
 					</p>
 					<p>
 						<label>10시간 이하</label>
-						<input type="text" name="hour6"  class="textfield">
+						<input type="text" name="hour10"  class="textfield">
 					</p>
 					<p>
 						<label>12시간 이하</label>
