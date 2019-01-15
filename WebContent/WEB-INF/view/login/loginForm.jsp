@@ -17,22 +17,58 @@ $(function() {
 </script>
 </head>
 <style type="text/css">
-	fieldset {
-	width: 500px;
-}
-label {
-	width: 80px;
-	float: left;
-	clear: both;
-}
-p:LAST-CHILD {
-	text-align: center;
-}
-p:LAST-CHILD input {
-	width: 100px;
-	height: 30px;
-}
 
+	#login h1{
+		text-align: center;
+		font-weight: lighter;
+	}
+
+	#login h5{
+		color: #aaa;
+		font-weight: lighter;
+		margin: 10px;	
+		text-align: center;
+	}
+	
+	fieldset {
+	width:587px;
+	margin: 0 auto;
+	}
+
+
+	label {
+		width:100px;
+		position:absolute;
+		left:550px;
+		margin: 0 auto;
+		padding-left :10px;
+		float: left;
+		text-align: center;
+	}
+	
+	p {	
+		overflow: hidden;
+		margin: 10px;	
+		text-align: center; 	
+	}
+	
+	#btnLogin{
+	padding: 5px;
+	margin: 5px;
+	text-align: center;
+	}
+	
+	 #href{
+	text-align: center;
+	} 
+	
+	#href a{
+		padding:10px;
+		text-decoration: none;
+		color: black;
+		text-align: center;
+		
+	}
 </style>
 </head>
 <body>
@@ -45,23 +81,29 @@ p:LAST-CHILD input {
 		<section>
 	<div id="login">
 		<h1>Login 로그인</h1>
-		로그인 하시면 더욱 다양한 서비스를 즐길수 있습니다
-	</div>
-	<form action="login.do" method="post">
+		<h5>로그인을 하시면 더욱 다양한 서비스를 즐길 수 있습니다.</h5>
+	
+	<form action="login.do" method="post" id="form">
 		<fieldset>
+			
 			<p>
 				<label>아이디</label> 
 				<input type="text" name="id">
-					<input type="submit" value="로그인">
-				
+	
 			</p>
 			<p>
 				<label>비밀번호</label> 
 				<input type="password" name="password">
-			<input type="checkbox" value="관리자 모드" name="checkManager" id="checkManager">관리자 모드
+			
 			</p>
+			
+			 <p>
+			 <input type="checkbox" value="관리자 모드" name="checkManager" id="checkManager">관리자 모드
+			  <input type="submit" value="로그인" id="btnLogin">
+			 </p>
 			 
-			<p>
+			<p id="href">
+			
 				<a href="join.do">회원가입</a>
 				<a href="searchId.do">ID찾기</a>
 				<a href="searchPw.do">PW찾기</a>
@@ -70,6 +112,7 @@ p:LAST-CHILD input {
 			</p>
 		</fieldset>
 	</form>
+	</div>
 	
 	<c:if test="${error!=null }">
 		<script type="text/javascript">
