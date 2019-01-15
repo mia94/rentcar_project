@@ -211,11 +211,6 @@
 		text-decoration: none;
 	}
 	
-	a#btnPrev, a#btnNext{
-		color: white;
-		font-size: 14px;
-	}
-	
 	div#btnWrap{
 		margin-top: 10px;
 		margin-bottom: 20px;
@@ -236,7 +231,3 @@
 		border: none;
 	}
 	
-	div#nextWrap{
-		
-		display: inline-block;
-	}

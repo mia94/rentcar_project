@@ -6,14 +6,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link href="${pageContext.request.contextPath }/css/common.css?absd" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/reservation.css?abcds" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css?asdsd" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/reservation.css?absdcds" rel="stylesheet"  type="text/css">
 </head>
 <body>
 	<div id="container">
 		<!-- header -->
 	    <header>
-			<jsp:include page="../header.jsp"></jsp:include>
+			<jsp:include page="../guest.jsp"></jsp:include>
 		</header>
 		
 		<!-- section -->

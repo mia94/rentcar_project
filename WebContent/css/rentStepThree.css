@@ -81,3 +81,127 @@
 		color: #8C8C8C;
 		margin: 5px 0 0 0;
 	}
+	
+	div#priceInfo{
+		margin-top: 15px;
+		padding: 10px;
+		height: 280px;
+		background-color: #313131;
+		color: white;
+		font-size: 17px;
+	}
+	
+	span.price{
+		font-size: 25px;
+		font-weight: bold;
+	}
+	
+	span#optionPrice, span#insurancePrice, span#discountPrice{
+		font-size: 25px;      
+		font-weight: bold;
+	}
+	
+	span.won{
+		font-size: 17px;
+	}
+	
+	div.resPrice{
+		display: inline;
+		float: right;
+		padding-right: 10px;
+	}
+	
+	div#priceInfo ul li{
+		height: 40px;
+		line-height: 40px;
+		margin-bottom: 15px;
+	}
+	
+	span.tit{
+		padding-left: 10px;
+	}
+	
+	span#totalPrice{
+		color: #f04040;
+		font-weight: bold;
+		font-size: 30px;
+	}
+	
+	span#totalWon{
+		font-size: 17px;
+		color: #f04040;
+	}
+	
+	div#tResult{
+		float: right;
+		display: inline;
+		padding-right: 10px;
+	}
+	
+	div#temp{
+		border-top: 2px solid #949494;
+		padding-top: 10px;
+	}
+	
+	span#totalTit{
+		padding-left: 20px;
+	}
+	
+	div#rightWrap h3{
+		color: #353535;
+		padding-bottom: 5px;
+		border-bottom: 1px solid gray;
+	}
+	
+	div#customerInfo ul{
+		padding: 15px 0;
+	}
+	
+	div#customerInfo ul li{
+		margin: 5px 0;
+	}
+	
+	div#btnWrap{
+		margin-top: 10px;
+		margin-bottom: 20px;
+		overflow: hidden;
+		display: inline-block;
+		width: 590px;
+		padding-left: 620px;
+	}
+	
+	#btnBook{
+		background-color: #f04040;
+		width: 100px;
+		height: 35px;
+		line-height: 35px;
+		text-align: center;
+		margin-left: 10px; 
+		color: white;
+		border: none;
+	}
+
+	/* 이용 약관 */
+	div#tosChk{
+		margin-top: 10px;
+		font-size: 15px;
+		font-weight: bold;
+		color: #535353;
+	}
+	
+	div#tos{
+		margin-top: 10px;
+		border: 1px solid #ccc;
+		font-size: 14px;
+		color: #353535;
+		padding: 10px;
+		height: 220px;
+		overflow: auto;
+	}
+	
+	div#tosContent1, div#tosContent2, div#tosContent3{
+		width: 540px;
+		padding-left: 10px;
+		margin-bottom: 10px;
+		display: inline-block;
+	}

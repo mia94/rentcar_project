@@ -8,14 +8,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link href="${pageContext.request.contextPath }/css/common.css?bds" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css?abcd" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/rentStepOne.css?cdas" rel="stylesheet"  type="text/css">
 </head>
 <body>
 	<div id="container">
 		<!-- header -->
 	    <header>
-			<jsp:include page="../header.jsp"></jsp:include>
+			<jsp:include page="../guest.jsp"></jsp:include>
 		</header>
 		
 		<!-- section -->
