@@ -24,6 +24,17 @@ $(function(){
 		var opt = $("#optionPrice").text();
 		var total = $("#totalPrice").text();
 		
+		//=== 테스트
+		var e = $("#selEvt").val();
+		if(e == 3){
+			$("#eCode").val('EVT1');
+		}
+		if(e == 5){
+			$("#eCode").val('EVT2');
+		}
+		
+		//====
+		
 		$("#basicPrice").val(price);
 		$("#dPrice").val(discount);
 		$("#iPrice").val(ins);

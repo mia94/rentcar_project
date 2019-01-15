@@ -99,7 +99,7 @@
 										<c:forEach var="customer" items="${list }">
 											<c:forEach var="events" items="${customer.events }">
 												<c:forEach var="event" items="${events.events }">
-													<option value="${event.rate }">${event.name} (${event.rate}% 할인)</option>
+													<option value="${event.rate }" >${event.name} (${event.rate}% 할인)</option>
 												</c:forEach>												
 											</c:forEach>
 											
@@ -167,7 +167,10 @@
 			<input type="hidden" name="dPrice" id="dPrice">	
 			<input type="hidden" name="iPrice" id="iPrice">	
 			<input type="hidden" name="carOptPrice" id="carOptPrice">	
-			<input type="hidden" name="totalRentPrice" id="totalRentPrice">		
+			<input type="hidden" name="totalRentPrice" id="totalRentPrice">
+			<input type="hidden" name="carBasicPrice" id="carBasicPrice" value="${basicPrice }">
+			<input type="hidden" name="insuranceInfo" id="insuranceInfo" value="${i.code }">
+			<input type="hidden" name="eCode" id="eCode" >
 		</form>
 				
 	</div>

@@ -36,6 +36,10 @@ public class RentStepThreeHandler implements CommandHandler {
 			String carOptPrice = req.getParameter("carOptPrice");
 			String totalRentPrice = req.getParameter("totalRentPrice");
 			
+			String carBasicPrice = req.getParameter("carBasicPrice");
+			String insuranceInfo = req.getParameter("insuranceInfo");
+			String eCode = req.getParameter("eCode");
+			
 			//아이디
 			AUTH auth = (AUTH) req.getSession().getAttribute("AUTH");
 			
@@ -52,6 +56,11 @@ public class RentStepThreeHandler implements CommandHandler {
 			
 			req.setAttribute("cName", cName);
 			req.setAttribute("cCode", cCode);
+			
+			//대여에 필요한 정보
+			req.setAttribute("carBasicPrice", carBasicPrice);	//차량 기본 금액
+			req.setAttribute("insuranceInfo", insuranceInfo);	//보험코드
+			req.setAttribute("eCode", eCode);
 			
 			req.setAttribute("basicPrice", basicPrice);
 			req.setAttribute("dPrice", dPrice);

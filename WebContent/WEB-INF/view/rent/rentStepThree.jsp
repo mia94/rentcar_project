@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css?abc" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentStepThree.css?accb" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentStepThree.css?accbd" rel="stylesheet"  type="text/css">
 </head>
 	<div id="container">
 		<!-- header -->
@@ -152,6 +152,23 @@
 					<button type="button" id="btnBook">예약</button>
 				</div>	
 			</div>
+			
+			<%-- 
+				${carBasicPrice } : 차량 기본 금액 
+				${insuranceInfo } : 보험코드
+			--%>
+			
+			<h4>테스트</h4>
+			<p>차량 기본 금액 : ${carBasicPrice }</p>
+			<p>보험코드 : ${insuranceInfo }</p>
+			<p>대여일 : ${sDate }</p>
+			<p>대여시간 : ${fn:substring(sHour, 0, 2) }:${fn:substring(sMin, 0, 2) }:00</p>
+			<p>반납일 : ${eDate }</p>
+			<p>반납시간 : ${fn:substring(eHour, 0, 2) }:${fn:substring(eMin, 0, 2) }:00</p>
+			<p>옵션비용 : ${carOptPrice }</p>
+			<p>이벤트코드 : ${eCode }</p>
+			<p>고객코드 : ${list[0].code }</p>
+			<p>차량코드: ${cCode }</p>
 		</section>
 			
 	</div>
@@ -163,5 +180,5 @@
 
 	<!-- 스크립트 부분(위에 스크립트 있으면 datepicker 실행이 안됨) -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="${pageContext.request.contextPath }/js/rentStep.js?b"></script>
+	<script src="${pageContext.request.contextPath }/js/rentStep.js?dssdb"></script>
 </html>
