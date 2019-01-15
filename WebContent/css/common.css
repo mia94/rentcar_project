@@ -15,6 +15,7 @@
 		background-color: #3a3a3a;
 		position: relative;
 	}
+	/*관리자용 메뉴*/
 	header #menu{
 		width:1000px;
 		position: absolute;
@@ -28,8 +29,8 @@
 		float: left;
 	}
 	section{
-		width:1180px;
-		border:1px black solid;
+		width:1178px;
+		border:1px solid #cccccc;
 		padding:10px;
 		overflow: hidden;
 	}
