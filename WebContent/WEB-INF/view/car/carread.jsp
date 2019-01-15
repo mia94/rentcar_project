@@ -16,10 +16,16 @@
 		bottom:10px;
 	}
 	#btn_wrap a{
-		background-color: #eeeeee;
+		border:2px solid #aaaaaa;
+		color:gray;
+		border-radius:5px;
 		padding: 5px;
 		text-decoration: none;
 		margin: 5px;
+	}
+	#btn_wrap a:hover{
+		color:white;
+		background-color: #747474;
 	}
 	
 </style>
