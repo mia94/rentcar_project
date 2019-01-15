@@ -96,20 +96,33 @@
 	#info_wrap table{
 		border-collapse: collapse;
 		width:320px;
-	}
-	#info_wrap table tr td{
-		border:1px solid black;
-		padding: 5px;
+		background-color: #3A3A3A;
+		color:white;
 	}
 	#info_wrap table tr td:FIRST-CHILD{
-		text-align: center;
+		padding:5px;
+		padding-left: 20px; 
+		
+	}
+	#info_wrap table tr td:LAST-CHILD{
+		padding:5px;
+		padding-right: 20px;
+	}
+	#info_wrap table tr:FIRST-CHILD td:FIRST-CHILD #title{
+		font-size: 18px;
+		font-weight: bold;
+		padding-top: 20px;
+		margin-left:15px;
+		border-bottom:1px solid white;
 	}
 	#info_wrap table tr .charge{
 		text-align: right;
 	}
-	#info_wrap table #title_charge,#info_wrap table #title{
-		background-color: gray;
-		text-align: center;
+	#info_wrap table #last_td,#info_wrap table #last{
+		padding-bottom: 20px;
+		color:#CE3636;
+		font-size: 16px;
+		font-weight: bold;
 	}
 	a#back img, a#next img{
 		width:10px;

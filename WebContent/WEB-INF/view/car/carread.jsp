@@ -13,7 +13,7 @@
 		text-align: center;
 		position:absolute;
 		left:320px;
-		bottom:60px;
+		bottom:10px;
 	}
 	#btn_wrap a{
 		background-color: #eeeeee;
@@ -67,7 +67,7 @@
 				<div id="info_wrap">
 					<table>
 						<tr>
-							<td colspan="4" id="title">차량 정보</td>
+							<td colspan="4"><p id="title">차량 정보</p></td>
 						</tr>
 						<tr>
 							<td>차종</td>
@@ -81,13 +81,9 @@
 							<td>변속기</td>
 							<td>${carmodel.gear }</td>
 						</tr>
-						<tr>
+						<!-- <tr>
 							<td colspan="4" id="title_charge">요금표</td>
-						</tr>
-						<tr>
-							<td colspan="3">기본요금</td>
-							<td class="charge">${carmodel.basicCharge }</td>
-						</tr>
+						</tr> -->
 						<tr>
 							<td colspan="3">6시간 이하 연체요금</td>
 							<td class="charge">${carmodel.hour6 }</td>
@@ -103,6 +99,10 @@
 						<tr>
 							<td colspan="3">12시간 초과 연체요금</td>
 							<td class="charge">${carmodel.hourElse }</td>
+						</tr>
+						<tr>
+							<td colspan="3" id="last_td">기본요금</td>
+							<td class="charge" id="last">${carmodel.basicCharge }</td>
 						</tr>
 					</table>
 				</div>
