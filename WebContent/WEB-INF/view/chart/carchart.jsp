@@ -18,6 +18,7 @@
 		height: 400px;
 		margin: 50px auto;
 	}
+	
 </style>
 </head>
 <body>
@@ -27,6 +28,7 @@
 		</header>
 		
 		<section>
+			<jsp:include page="chartmenu.jsp"></jsp:include>
 			<div id="chart_wrap">
 				<h1>차트</h1>
 				<span id="info">차량 별 렌트 수</span>

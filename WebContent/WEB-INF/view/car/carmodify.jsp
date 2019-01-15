@@ -71,7 +71,7 @@
 		height: 50px;
 		line-height: 50px;
 	}
-	input[type=radio]{
+	p input[type=radio]{
 		margin-left: 10px;
 		margin-top: 19px;
 	}
@@ -134,9 +134,9 @@
 		</header>
 		
 		<section>
-		<h1>차량 수정</h1>
+		
 			<div id="modify_wrap">
-
+			<h1>차량 수정</h1>
 				<form action="carmodify.do" enctype="multipart/form-data" method="post"><!--   enctype="multipart/form-data"  -->
 					<div id="img_wrap">
 						<label>PHOTH</label>

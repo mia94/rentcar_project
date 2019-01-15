@@ -27,6 +27,7 @@
 		</header>
 		
 		<section>
+		<jsp:include page="chartmenu.jsp"></jsp:include>
 			<div id="chart_wrap">
 				<h1>차트</h1>
 				<span id="info">브랜드별 보유 수</span>
