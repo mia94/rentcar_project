@@ -13,7 +13,7 @@
   <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
   
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <style>
@@ -27,7 +27,6 @@
       display:none;      
    }
 </style>
-
 
  <script>
     $(function(){
@@ -125,6 +124,12 @@
 		    $( "#datepicker" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
 		  
 		  } );
+      
+ /*      $(function() {
+		$("#email2").change(function() {
+			$("#domain").attr("input", "")
+		})
+	}) */
 		 
       
    })
@@ -190,7 +195,12 @@
 </script>
 </head>
 <body>
-
+<div id="container">
+		<header>
+			<jsp:include page="../header.jsp"></jsp:include>
+		</header>
+		
+		<section>
 		
    <form action="join.do" method="post" id="f1">
       <p>
@@ -240,8 +250,9 @@
       </p>
        <p>
          <label>이메일</label>
-         <input type="text" name="email1"> @
-        <select name="email2">
+         <input type="text" name="email1"> @ 
+       <!--   <input type="text" value="" id="domain"> -->
+        <select name="email2" id="email2">
         	<!-- <option value="a">선택하세요</option> -->
         	<option value="naver.com">naver.com</option>
         	<option value="gmail.com">gmail.com</option>
@@ -283,7 +294,13 @@
       </p>
    </form>
 
+		</section>
+	</div>
 	
+	<footer>
+		<jsp:include page="../footer.jsp"></jsp:include>
+	</footer>	
+	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
 </html>
 
