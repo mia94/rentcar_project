@@ -29,7 +29,7 @@ $(function() {
 </script>
 </head>
 <body>
-	<a id="bbb"></a><a href="login.do" id="aaa">로그인</a>
+	<a href="login.do" id="aaa">로그인</a><a id="bbb"></a>
 	<div id="menu">
 		<a href="carlistcustomer.do">차량조회</a>
 		<a href="reservation.do">차량대여</a>

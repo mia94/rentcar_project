@@ -18,7 +18,7 @@ $(function() {
 			
 			$("#aaa").attr("href","logout.do");
 			$("#aaa").text("로그아웃");
-			$("#bbb").text(" ${AUTH.id }님 환영합니다");
+			$("#bbb").text(" ${AUTH.id }님 환영합니다 ");
 			
 			<%
 		}else{
@@ -34,13 +34,14 @@ $(function(){
 	
 })
 </script>
+
 </head>
 <body>
 <div id="main">
-<a id="bbb"></a><a href="login.do" id="aaa">로그인</a>
-<a href="join.do">회원가입</a>
-<a href="searchId.do">아이디</a>
 <a href="searchPw.do">비밀번호 찾기</a>
+<a href="searchId.do">아이디 찾기</a>
+<a href="join.do">회원가입</a>
+<a href="login.do" id="aaa">로그인</a><a id="bbb"></a>
 </div>	
 </body>
 </html>

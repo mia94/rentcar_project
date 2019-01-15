@@ -29,8 +29,9 @@ $(function() {
 </script>
 </head>
 <body>
-<a id="bbb"></a><a href="login.do" id="aaa">로그인</a>
-
+<div id="main">
+<a href="login.do" id="aaa">로그인</a><a id="bbb"></a>
+</div>
 <div id="menu">
 	<a href="customerList.do">고객관리</a>
 	<a href="carlist.do">차량관리</a>
