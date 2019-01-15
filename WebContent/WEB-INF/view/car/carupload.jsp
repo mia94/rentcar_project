@@ -42,7 +42,6 @@
 	}
 	#wrap_1, #wrap_2{
 		width:250px;
-		border:1px solid black;
 	}
 	#wrap_1{
 		position: absolute;
@@ -154,6 +153,8 @@
 								<option value="B2">기아</option>
 								<option value="B3">BMW</option>
 								<option value="B4">FORD</option>
+								<option value="B5">쉐보레</option>
+								<option value="B6">르노삼성</option>
 							</select>
 						</p>
 						<p>
