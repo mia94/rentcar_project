@@ -26,10 +26,25 @@ $(function() {
 		}
 	%>	
 	//submenu
+	$("#option_sub").hide();
 	$("#option_menu").hover(function () {
 		  $("#option_sub").show();
 	}, function () {
 		  $("#option_sub").hide();
+	});
+	
+	$("#car_sub").hide();
+	$("#car_menu").hover(function () {
+		  $("#car_sub").show();
+	}, function () {
+		  $("#car_sub").hide();
+	});
+	
+	$("#chart_sub").hide();
+	$("#chart_menu").hover(function () {
+		  $("#chart_sub").show();
+	}, function () {
+		  $("#chart_sub").hide();
 	});
 })
 </script>
@@ -41,7 +56,13 @@ $(function() {
 <div id="menu">
 	<ul>
 		<li><a href="customerList.do">고객관리</a></li>
-		<li><a href="carlist.do">차량관리</a></li>
+		<li id="car_menu">
+			<a href="carlist.do">차량관리</a>
+			<ul id="car_sub">
+				<li><a href="#">조회</a></li>
+				<li><a href="#">추가</a></li>
+			</ul>
+		</li>
 		<li id="option_menu">
 			<a href="totaloptionlist.do">차량옵션관리</a>
 			<ul id="option_sub">
@@ -55,7 +76,15 @@ $(function() {
 		<li><a href="gradeList.do">등급관리</a></li>
 		<li><a href="eventList.do">이벤트관리</a></li>
 		<li><a href="reservation.do">대여관리</a></li>
-		<li><a href="carmainchart.do">차량통계</a></li>
+		<li id="chart_menu">
+			<a href="carmainchart.do">차량통계</a>
+			<ul id="chart_sub">
+				<li><a href="carchart.do">차량별</a></li>
+				<li><a href="cartypechart.do">차종별</a></li>
+				<li><a href="brandchart.do">브랜드별</a></li>
+				<li><a href="monthbrandchart.do">월별 브랜드별</a></li>
+			</ul>
+		</li>
 	</ul>
 </div>	
 </body>
