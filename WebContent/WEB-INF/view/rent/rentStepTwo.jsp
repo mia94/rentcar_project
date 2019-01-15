@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css?bds" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentStepTwo.css?asd" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentStepTwo.css?dsd" rel="stylesheet"  type="text/css">
 </head>
 <body>
 
@@ -51,7 +51,7 @@
 							<li>
 								<span class='tit'>·&nbsp;할인금액</span>
 								<div class="resPrice">
-									<span id='discountPrice'></span>
+									<span id='discountPrice'>0</span>
 									<span class='won'>원</span>
 								</div>
 							</li>
@@ -99,7 +99,7 @@
 										<c:forEach var="customer" items="${list }">
 											<c:forEach var="events" items="${customer.events }">
 												<c:forEach var="event" items="${events.events }">
-													<option>${event.name} (${event.rate}% 할인)</option>
+													<option value="${event.rate }">${event.name} (${event.rate}% 할인)</option>
 												</c:forEach>												
 											</c:forEach>
 											
@@ -117,7 +117,7 @@
 						<h3 id="cdw">자차손해 면책 제도(CDW)</h3>
 						<ul>
 							<li>
-								<input type="radio" name="rdIns" checked="checked" value="0">
+								<input type="radio" name="rdIns" value="0">
 								<label class='titList'>보험 미적용 (0원)</label>
 							</li>
 							<li>
@@ -164,6 +164,6 @@
 
 	<!-- 스크립트 부분(위에 스크립트 있으면 datepicker 실행이 안됨) -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="${pageContext.request.contextPath }/js/rentStep.js?cdsfdd"></script>
+	<script src="${pageContext.request.contextPath }/js/rentStep.js?sdaa"></script>
 </body>
 </html>
