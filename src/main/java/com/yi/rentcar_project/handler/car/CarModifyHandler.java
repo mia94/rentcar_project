@@ -1,5 +1,7 @@
 package com.yi.rentcar_project.handler.car;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -27,6 +29,19 @@ public class CarModifyHandler implements CommandHandler {
 			carmodel =  service.selectCarModelByNo(carmodel);
 			
 			req.setAttribute("carmodel", carmodel);
+			//브랜드 자동 추가
+			BrandService brandService = BrandService.getInstance();
+			List<Brand> brandList = brandService.selectBrandByAll();
+			req.setAttribute("brandList", brandList);
+			//차종 자동추가
+			CarTypeService typeService = CarTypeService.getInstance();
+			List<CarType> typeList = typeService.selectCarTypeByAll();
+			req.setAttribute("typeList", typeList);
+			//연료 자동추가
+			FuelService fuelService = FuelService.getInstance();
+			List<Fuel> fuelList = fuelService.selectFuelByAll();
+			req.setAttribute("fuelList", fuelList);
+			
 			return "/WEB-INF/view/car/carmodify.jsp";
 		}else if(req.getMethod().equalsIgnoreCase("post")){
 			String code = req.getParameter("car_code");

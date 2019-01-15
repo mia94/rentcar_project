@@ -2,12 +2,16 @@ package com.yi.rentcar_project.handler.management;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yi.rentcar_project.model.AUTH;
+import com.yi.rentcar_project.model.CustomEvent;
 import com.yi.rentcar_project.model.Customer;
+import com.yi.rentcar_project.model.Employee;
+import com.yi.rentcar_project.model.Event;
 import com.yi.rentcar_project.mvc.CommandHandler;
 import com.yi.rentcar_project.service.CustomerService;
 
@@ -16,59 +20,67 @@ public class CustomerModifyHandler implements CommandHandler {
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		if (req.getMethod().equalsIgnoreCase("get")) {
-			AUTH auth = (AUTH) req.getSession().getAttribute("AUTH");
-			CustomerService service = CustomerService.getInstance();
+			String code = req.getParameter("code");
+
 			Customer customer = new Customer();
-			customer.setId(auth.getId());
-			Customer customId = service.selectCustomerById(customer);
+			customer.setCode(code);
 
-			req.setAttribute("custom", customId);
+			CustomerService service = CustomerService.getInstance();
+			customer = service.selectCustomerByCode(customer);
 
+			req.setAttribute("customer", customer);
 			return "/WEB-INF/view/management/customerUpdate.jsp";
 		} else if (req.getMethod().equalsIgnoreCase("post")) {
+			String code = req.getParameter("code");
 			String name = req.getParameter("name");
-			Object id = req.getSession().getAttribute("AUTH");
+			String id = req.getParameter("id");
 			String dob = req.getParameter("dob");
 			String phone = req.getParameter("phone");
 			String phone2 = req.getParameter("phone2");
 			String phone3 = req.getParameter("phone3");
 			String email1 = req.getParameter("email1");
 			String email2 = req.getParameter("email2");
-			String license = req.getParameter("license");
 			String zipcode = req.getParameter("zipcode");
 			String address = req.getParameter("address");
 			String detailAddr = req.getParameter("detailAddr");
-			String password = req.getParameter("password");
-			String confirmPassword = req.getParameter("confirmPassword");
+			String empCode = req.getParameter("empCode");
+			String license = req.getParameter("license");
+			String gradeCode = req.getParameter("gradeCode");
+			String rentCnts = req.getParameter("rentCnt");
+			
+			// String events = req.getParameter("events");
 
-			req.setAttribute("name", name);
+			int rentCnt = Integer.parseInt(rentCnts);
+			System.out.println(rentCnt);
 
-			if (password.equals(confirmPassword) == true) {
-				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-				Date dobs = sdf.parse(dob);
-				CustomerService service = CustomerService.getInstance();
+			CustomerService service = CustomerService.getInstance();
+			/* req.setAttribute("name", name); */
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			Date dobs = sdf.parse(dob);
+			Customer customer = new Customer();
+			customer.setCode(code);
+			customer = service.selectCustomerByCode(customer);
+			customer.setCode(code);
+			customer.setName(name);
+			customer.setId(id);
+			customer.setDob(dobs);
+			customer.setPhone((phone + "-" + phone2 + "-" + phone3));
+			customer.setEmail((email1 + "@" + email2));
+			customer.setZipCode(zipcode);
+			customer.setAddress(address + " " + detailAddr);
+			customer.getEmpCode().setCode(empCode);
+			customer.setLicense(license);
+			customer.getGradeCode().setCode(gradeCode);
+			customer.setRentCnt(rentCnt);
+			
+			/*
+			 * List<CustomEvent> list = customer.getEvents();
+			 * customer.setEvents(events);
+			 */
 
-				Customer custome = new Customer();
-				custome.setId((String) id);
+			service.updateCustomerInfo(customer);
 
-				Customer customer = service.selectCustomerById(custome);
-
-				customer.setId((String) id);
-				customer.setName(name);
-
-				customer.setDob(dobs);
-				customer.setPhone((phone + "-" + phone2 + "-" + phone3));
-				customer.setEmail((email1 + "@" + email2));
-				customer.setLicense(license);
-				customer.setZipCode(zipcode);
-				customer.setAddress(address + " " + detailAddr);
-				customer.setPasswd(password);
-
-				service.updateCustomer(customer);
-
-			}
 			return "customerList.do";
-
 		}
 
 		return null;

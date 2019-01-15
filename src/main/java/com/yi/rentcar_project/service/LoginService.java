@@ -49,7 +49,7 @@ private static final LoginService instance = new LoginService();
 		return resEmp;
 	}
 	
-	public List<Customer> selectCustomerByCode(Customer customer) {
+	public Customer selectCustomerByCode(Customer customer) {
 		return cusDao.selectCustomerByCode(customer);
 	}
 	

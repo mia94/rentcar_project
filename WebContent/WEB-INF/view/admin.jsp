@@ -30,7 +30,7 @@ $(function() {
 </head>
 <body>
 <a id="bbb"></a><a href="login.do" id="aaa">로그인</a>
-<a href="">고객관리</a>
+<a href="customerList.do">고객관리</a>
 <a href="carlist.do">차량관리</a>
 <a href="totaloptionlist.do">차량옵션관리</a>
 <a href="employeeList.do">직원관리</a>

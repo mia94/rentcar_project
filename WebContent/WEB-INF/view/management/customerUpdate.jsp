@@ -102,7 +102,7 @@
 	
 	 $( function() {
 		 	var defaultDate = new Date();
-		 	defaultDate.setTime(${custom.dob.time});
+		 	defaultDate.setTime(${customer.dob.time});
 		 
 		    $( "#datepicker" ).datepicker({
 		      showOn: "button",
@@ -184,14 +184,18 @@
 </script>
 </head>
 <body>
-		<form action="modify.do" id="f1" method="post">
+		<form action="customerModify.do" id="f1" method="post">
+			<p>
+	         <label>코드</label>
+	         <input type="text" name="code" value="${customer.code }" readonly="readonly"> 
+	      </p>
 	      <p>
 	         <label>이름</label>
-	         <input type="text" name="name" value="${custom.name }"> 
+	         <input type="text" name="name" value="${customer.name }"> 
 	      </p>
 	      <p>
 	         <label>아이디</label>
-	         <input type="text" name="id" value="${custom.id }" readonly="readonly"> 
+	         <input type="text" name="id" value="${customer.id }" readonly="readonly"> 
 	      </p>
 	       <p>
 	         <label>생년월일</label>
@@ -200,7 +204,7 @@
       
   		<p>
          <label>전화번호</label>
-          <c:set var='phone1' value="${fn:substring(custom.phone,0, 3) }"></c:set>
+          <c:set var='phone1' value="${fn:substring(customer.phone,0, 3) }"></c:set>
 	        <select name="phone">
 	        	<!-- <option value="opt">선택하세요</option> -->
 	        	
@@ -208,14 +212,14 @@
 	        	<option value="011" ${phone1=='011'?'selected':''}>011</option>
 	        	<option value="017" ${phone1=='017'?'selected':''}>017</option>
 	        </select>
-	      - <input type="text" name="phone2" value="${fn:substring(custom.phone,4,4+fn:indexOf(fn:substringAfter(custom.phone,'-'),'-')) }"> - <input type="text" name="phone3" value="${fn:substring(custom.phone,9,13) }">
+	      - <input type="text" name="phone2" value="${fn:substring(customer.phone,4,4+fn:indexOf(fn:substringAfter(customer.phone,'-'),'-')) }"> - <input type="text" name="phone3" value="${fn:substring(customer.phone,9,13) }">
      	 </p>
      	 
        <p>
          <label>이메일</label>
-         <input type="text" name="email1" value="${fn:substring(custom.email,0, fn:indexOf(custom.email,'@')) }"> @
-         <c:set var="index" value="${fn:indexOf(custom.email,'@') }" ></c:set>
-         <c:set var="domain" value="${fn:substring(custom.email,index+1,-1)}"></c:set>
+         <input type="text" name="email1" value="${fn:substring(customer.email,0, fn:indexOf(customer.email,'@')) }"> @
+         <c:set var="index" value="${fn:indexOf(customer.email,'@') }" ></c:set>
+         <c:set var="domain" value="${fn:substring(customer.email,index+1,-1)}"></c:set>
          <select name="email2"> 		    
         	<!-- <option value="a">선택하세요</option> -->
         	<option value="naver.com" ${domain=='naver.com'?'selected':'' }>naver.com</option>
@@ -227,13 +231,13 @@
       
          <p>
        <label>우편번호</label>
-      <input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode" value="${custom.zipCode }">
+      <input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode" value="${customer.zipCode }">
      <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" ><br>
       </p>
       
       <p>
        <label>주소</label>   
-      	<input type="text" id="sample6_address" placeholder="주소" name="address" value="${custom.address }"><br>
+      	<input type="text" id="sample6_address" placeholder="주소" name="address" value="${customer.address }"><br>
       </p>
       
       <p>
@@ -241,7 +245,10 @@
       <input type="text" id="sample6_detailAddress" placeholder="상세주소" name="detailAddr" value="${detailAddr }">
        	<input type="text" id="sample6_extraAddress" placeholder="참고항목"><br>
       </p>
-      
+      <p>
+	         <label>직원코드</label>
+	         <input type="text" name="empCode" value="${customer.empCode.code }"> 
+	      </p>
       
 	 <p>
 	  <label>면허종류</label>
@@ -251,16 +258,14 @@
 	 		<option value="2종보통">2종보통</option>
 		</select>
 		 
-      <p>
-         <label>새비밀번호</label>
-         <input type="password" name="password"> 
-       
-      </p>
-      <p>
-         <label>비밀번호 확인</label>
-         <input type="password" name="confirmPassword"> 
-         
-      </p>
+     <p>
+	         <label>등급명</label>
+	         <input type="text" name=gradeCode value="${customer.gradeCode.name }" readonly="readonly"> 
+	      </p>
+     <p>
+	         <label>대여횟수</label>
+	         <input type="text" name="rentCnt" value="${customer.rentCnt }" readonly="readonly"> 
+	      </p>
         <p>  
          <input type="submit" value="개인정보수정"> 
       </p>

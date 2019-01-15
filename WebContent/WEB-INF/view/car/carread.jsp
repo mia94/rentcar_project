@@ -6,29 +6,26 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/carread.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/carread.css?a" rel="stylesheet"  type="text/css">
 <style>
-	#btn_wrap, #next_wrap{
+	#btn_wrap{
 		clear: both;
 		text-align: center;
-	}
-	#btn_wrap{ 	
 		position:absolute;
 		left:320px;
-		bottom:60px;
-	}
-	#next_wrap{
-		position:absolute;
-		left:340px;
-		bottom:30px;
-	}
-	#btn_wrap a, #next_wrap a{
-		margin: 5px;
+		bottom:10px;
 	}
 	#btn_wrap a{
-		background-color: #eeeeee;
+		border:2px solid #aaaaaa;
+		color:gray;
+		border-radius:5px;
 		padding: 5px;
 		text-decoration: none;
+		margin: 5px;
+	}
+	#btn_wrap a:hover{
+		color:white;
+		background-color: #747474;
 	}
 	
 </style>
@@ -76,7 +73,7 @@
 				<div id="info_wrap">
 					<table>
 						<tr>
-							<td colspan="4" id="title">차량 정보</td>
+							<td colspan="4"><p id="title">차량 정보</p></td>
 						</tr>
 						<tr>
 							<td>차종</td>
@@ -90,13 +87,9 @@
 							<td>변속기</td>
 							<td>${carmodel.gear }</td>
 						</tr>
-						<tr>
+						<!-- <tr>
 							<td colspan="4" id="title_charge">요금표</td>
-						</tr>
-						<tr>
-							<td colspan="3">기본요금</td>
-							<td class="charge">${carmodel.basicCharge }</td>
-						</tr>
+						</tr> -->
 						<tr>
 							<td colspan="3">6시간 이하 연체요금</td>
 							<td class="charge">${carmodel.hour6 }</td>
@@ -113,6 +106,10 @@
 							<td colspan="3">12시간 초과 연체요금</td>
 							<td class="charge">${carmodel.hourElse }</td>
 						</tr>
+						<tr>
+							<td colspan="3" id="last_td">기본요금</td>
+							<td class="charge" id="last">${carmodel.basicCharge }</td>
+						</tr>
 					</table>
 				</div>
 				<div id="btn_wrap">
@@ -120,10 +117,14 @@
 					<a href="cardelete.do?carCode=${carmodel.carCode }" id="delBtn">삭제</a>
 					<a href="carlist.do">목록</a>
 				</div>
-				<div id="next_wrap">
-					<a href="carbeforeforemp.do?carCode=${carmodel.carCode }">BACK</a><!-- 이전차량 보이기 -->
-					<a href="carafterforemp.do?carCode=${carmodel.carCode }">NEXT</a><!-- 이후차량 보이기 -->
-				</div>
+
+				<a href="carbeforeforemp.do?carCode=${carmodel.carCode }" id="back">
+					<img src="${pageContext.request.contextPath }/upload/back.png" alt="back">
+				</a>
+				<a href="carafterforemp.do?carCode=${carmodel.carCode }" id="next">
+					<img src="${pageContext.request.contextPath }/upload/next.png" alt="next">
+				</a>
+
 			</div>
 		</section>
 	</div>
