@@ -15,6 +15,13 @@ $(function(){
 		
 	})
 	
+	//rentStepTwo.jsp에 있는 다음 버튼
+	$("#btnNext").click(function(){
+		
+		$("#stepTwo").submit();
+	})
+	
+	
 	//숫자에 , 붙이기
 	function numWithCommas(num){
 		return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -105,11 +112,11 @@ $(function(){
 		var value = $("input:radio[name='discount']").val();
 		
 		if(value == '이벤트'){
-			$("select[name='selEvt']").prop('disabled', false);	//select 박스 선택X
 			resultPrice();
 		} else{
+			$("select[name='selEvt']").find('option:first').prop("selected", true);
 			$("select[name='selEvt']").prop('disabled', true);	//select 박스 선택X
-			$("select[name='selEvt']").find('option:first').attr("selected", "selected");
+			
 			resultPrice();
 		}
 	})

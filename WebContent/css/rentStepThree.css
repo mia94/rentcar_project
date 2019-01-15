@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+	
+	*{
+		font-family: 'Noto Sans KR', sans-serif;
+	}
+	
+	div#rentStepThree_container{
+		width: 1000px;
+		margin: 30px auto;
+		padding: 10px;
+		border: 1px solid #ccc;
+		overflow: hidden;
+	}

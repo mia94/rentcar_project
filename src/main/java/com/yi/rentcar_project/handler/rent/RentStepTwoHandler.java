@@ -57,6 +57,7 @@ public class RentStepTwoHandler implements CommandHandler {
 			req.setAttribute("id", auth.getId());
 			req.setAttribute("list", list);
 			req.setAttribute("i", i);
+			req.setAttribute("selectCarType", selectCarType);
 			
 			return "/WEB-INF/view/rent/rentStepTwo.jsp";
 		}
