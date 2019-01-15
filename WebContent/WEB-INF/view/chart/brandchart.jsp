@@ -12,6 +12,7 @@
 		width:1000px;
 		margin: 50px auto; 
 		height: 600px;
+		position: relative;
 	}
 	#chart{
 		width:600px;
@@ -27,9 +28,8 @@
 		</header>
 		
 		<section>
+		<jsp:include page="chartmenu.jsp"></jsp:include>
 			<div id="chart_wrap">
-				<h1>차트</h1>
-				<span id="info">브랜드별 보유 수</span>
 				<div id="chart"></div>
 			</div>
 		</section>
@@ -49,9 +49,9 @@ $(document).ready(function(){
 		function drawChart() {
 			 var data = google.visualization.arrayToDataTable([
 				 	['브랜드','보유 수'],
-				    ['${list.get(0).title}', ${list.get(0).count}],['${list.get(1).title}', ${list.get(1).count}], 
-				    ['${list.get(2).title}', ${list.get(2).count}], ['${list.get(3).title}', ${list.get(3).count}],
-				    ['${list.get(4).title}', ${list.get(4).count}], ['${list.get(5).title}', ${list.get(5).count}]
+				 	['${blist.get(0).name}', ${list.get(0).count}],['${blist.get(1).name}', ${list.get(1).count}], 
+			  	    ['${blist.get(2).name}', ${list.get(2).count}], ['${blist.get(3).name}', ${list.get(3).count}],
+			  	   	['${blist.get(4).name}', ${list.get(4).count}], ['${blist.get(5).name}', ${list.get(5).count}]
 				  ]);
 			 
 			 var options = {
@@ -63,6 +63,8 @@ $(document).ready(function(){
 		     chart.draw(data, options);
 		}
 	});
+	
+
 </script>
 </body>
 </html>

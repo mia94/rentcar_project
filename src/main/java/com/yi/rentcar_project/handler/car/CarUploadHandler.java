@@ -1,6 +1,7 @@
 package com.yi.rentcar_project.handler.car;
 
 import java.io.File;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,14 +23,26 @@ public class CarUploadHandler implements CommandHandler {
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		if(req.getMethod().equalsIgnoreCase("get")){
-			
-			CarModelService service = CarModelService.getInstance();
-			String maxCode = service.nextCarCode();
+			//다음번호 자동 추가
+			CarModelService modelService = CarModelService.getInstance();
+			String maxCode = modelService.nextCarCode();
 			String sCode = maxCode.substring(1);
 			int num = Integer.parseInt(sCode) + 1;//숫자로 출력 앞에 0 사라짐
 			String nextCode = String.format("V%03d", num);
 			
 			req.setAttribute("nextCode", nextCode);
+			//브랜드 자동 추가
+			BrandService brandService = BrandService.getInstance();
+			List<Brand> brandList = brandService.selectBrandByAll();
+			req.setAttribute("brandList", brandList);
+			//차종 자동추가
+			CarTypeService typeService = CarTypeService.getInstance();
+			List<CarType> typeList = typeService.selectCarTypeByAll();
+			req.setAttribute("typeList", typeList);
+			//연료 자동추가
+			FuelService fuelService = FuelService.getInstance();
+			List<Fuel> fuelList = fuelService.selectFuelByAll();
+			req.setAttribute("fuelList", fuelList);
 			
 			return "/WEB-INF/view/car/carupload.jsp";
 		}else if(req.getMethod().equalsIgnoreCase("post")){
