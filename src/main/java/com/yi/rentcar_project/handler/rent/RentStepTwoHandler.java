@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.yi.rentcar_project.model.AUTH;
 import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.model.Insurance;
 import com.yi.rentcar_project.mvc.CommandHandler;
@@ -31,10 +32,10 @@ public class RentStepTwoHandler implements CommandHandler {
 			String basicPrice = req.getParameter("basicPrice");
 			
 			//아이디
-			String id = (String) req.getSession().getAttribute("AUTH");
+			AUTH auth = (AUTH) req.getSession().getAttribute("AUTH");
 			
 			RentService service = RentService.getInstance();
-			List<Customer> list = service.selectById(id);
+			List<Customer> list = service.selectById(auth.getId());
 			
 			//보험
 			String selectCarType = req.getParameter("selectCarType");
@@ -53,7 +54,7 @@ public class RentStepTwoHandler implements CommandHandler {
 			req.setAttribute("carCode", carCode);
 			req.setAttribute("basicPrice", basicPrice);
 			
-			req.setAttribute("id", id);
+			req.setAttribute("id", auth.getId());
 			req.setAttribute("list", list);
 			req.setAttribute("i", i);
 			

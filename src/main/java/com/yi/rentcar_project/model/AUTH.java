@@ -15,7 +15,12 @@ public class AUTH {
 	   
 	   
 
-	   public AUTH(String id, boolean admin) {
+	   public AUTH(String id) {
+		super();
+		this.id = id;
+	}
+
+	public AUTH(String id, boolean admin) {
 		super();
 		this.id = id;
 		this.admin = admin;
