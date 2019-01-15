@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/common.css?aaa" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css?b" rel="stylesheet"  type="text/css">
 <style>
 	#list_wrap{
 		width:1100px;
@@ -123,9 +123,18 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 	$(function(){
-		
-			
-	})
+	<c:forEach var="item" items="${list}" varStatus="status">
+		var isRent = $(".info_wrap .isRent").eq(${status.index}).text().trim();
+		if(isRent=="true"){
+			$(".info_wrap .isRent").eq(${status.index}).html("렌트 중");
+			$(".info_wrap").eq(${status.index}).parent("article").css("background-color","#FFEFEF");
+			$(".info_wrap .isRent").eq(${status.index}).css("color","#AA1212");
+		}else{
+			$(".info_wrap .isRent").eq(${status.index}).html("");
+		}
+	</c:forEach>
+	
+})
 </script>
 </head>
 <body>
@@ -193,8 +202,8 @@
 							<p>10시간 이하 : ${item.hour10 }</p>
 							<p>12시간 이하 : ${item.hour12 }</p>
 							<p>12시간 이상 : ${item.hourElse }</p>
-							<p>렌트 중 : ${item.rent } </p>
 							<p>렌트 수 : ${item.rentCnt }</p>
+							<p class="isRent">${item.rent } </p>
 						</div>
 					</article>
 				</a>

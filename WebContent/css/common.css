@@ -20,11 +20,28 @@
 	}
 	footer{
 		width:100%;
-		background-color: gray;
-		height: 120px;
+		background-color: #3A3A3A; 
+		height: 250px;
 		clear:both;
 	}
-	
+	#footer_wrap{
+		width:1200px;
+		margin: 0 auto;
+		color:white;
+		font-size: 14px;
+	}
+	#footer_wrap #copyright{
+		height: 110px;
+		border-bottom: 1px solid white;
+	}
+	#footer_wrap #footer_img_wrap{
+		text-align: center;
+		padding: 10px;
+	}
+	#footer_img_wrap img{
+		width:25px;
+		margin: 3px;
+	}
 	/* 스크롤바 */
 	html {
 		scrollbar-3dLight-Color: #efefef;

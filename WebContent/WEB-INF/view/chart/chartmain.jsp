@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css?a" rel="stylesheet"  type="text/css">
 <style>
 	#wrap{
 		width:550px;
@@ -14,7 +14,7 @@
 		margin: 50px auto;
 	}
 	#wrap h1{
-		padding-bottom: 30px;
+		padding-bottom: 80px;
 	}
 	#wrap a{
 		width:550px;
@@ -24,10 +24,16 @@
 		text-decoration: none;
 		color:white;
 		position: relative;
+		overflow: hidden;
 	}
 	#wrap a img{
 		width:550px;
 		height: 90px;
+		transform-origin:center;
+		transition:all 1s;
+	}
+	#wrap a img:hover{
+		transform:scale(1.1);
 	}
 	#wrap a h3{
 		position: absolute;

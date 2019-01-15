@@ -111,7 +111,8 @@ $(function(){
 		var isRent = $(".info_wrap .isRent").eq(${status.index}).text().trim();
 		if(isRent=="true"){
 			$(".info_wrap .isRent").eq(${status.index}).html("렌트 중");
-			$(".info_wrap").eq(${status.index}).parent("article").css("background-color","#FFEAEA");
+			$(".info_wrap").eq(${status.index}).parent("article").css("background-color","#FFEFEF");
+			$(".info_wrap .isRent").eq(${status.index}).css("color","#AA1212");
 		}else{
 			$(".info_wrap .isRent").eq(${status.index}).html("");
 		}
