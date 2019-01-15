@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +10,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css?abc" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentStepThree.css?ab" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentStepThree.css?accb" rel="stylesheet"  type="text/css">
 </head>
 	<div id="container">
 		<!-- header -->
@@ -91,7 +93,7 @@
 						<ul>
 							<li>
 								<span class='infoTit'>·&nbsp;고객등급</span>
-								<input type="text" readonly="readonly" value="${list[0].gradeCode.name }" disabled="disabled">
+								<input type="text" readonly="readonly" value="${list[0].gradeCode.name }" disabled="disabled" title="고객등급">
 							</li>
 							<li>
 								<span class='infoTit'>·&nbsp;면허 종류</span>
@@ -103,11 +105,11 @@
 							</li>
 							<li>
 								<span class='infoTit'>·&nbsp;연락처</span>
-								<input type="text" title="휴대폰 첫번째 자리" maxlength="3">
+								<input type="text" title="휴대폰 첫번째 자리" maxlength="3" name="phoneFirst" id="phoneFirst" value="${fn:substring(list[0].phone, 0, 3) }">
 								<span class='hyphen'>-</span>
-								<input type="text" title="휴대폰 두번째 자리" maxlength="4">
+								<input type="text" title="휴대폰 두번째 자리" maxlength="4" name="phoneSecond" id="phoneSecond" value="${fn:substring(list[0].phone, 4, 8) }" >
 								<span class='hyphen'>-</span>
-								<input type="text" title="휴대폰 마지막 자리" maxlength="4">
+								<input type="text" title="휴대폰 마지막 자리" maxlength="4" name="phoneThird" id="phoneThird" value="${fn:substring(list[0].phone, 9, 13) }">
 							</li>
 							<li>
 								<span class='infoTit'>·&nbsp;이메일</span>
@@ -120,7 +122,7 @@
 					<div id="tosWrap">
 						<h3>이용약관</h3>
 						<div id="tosChk">
-							<input type="checkbox" value="agree">
+							<input type="checkbox" value="agree" id="agree">
 							<label>이용약관에 동의합니다. (필수)</label>
 						</div>
 						<div id="tos">
@@ -151,8 +153,7 @@
 				</div>	
 			</div>
 		</section>
-	
-				
+			
 	</div>
 	
 	<!-- footer -->
@@ -162,5 +163,5 @@
 
 	<!-- 스크립트 부분(위에 스크립트 있으면 datepicker 실행이 안됨) -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="${pageContext.request.contextPath }/js/rentStep.js?abcd"></script>
+	<script src="${pageContext.request.contextPath }/js/rentStep.js?b"></script>
 </html>

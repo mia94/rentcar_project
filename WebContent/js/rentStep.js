@@ -33,6 +33,16 @@ $(function(){
 		$("#stepTwo").submit();
 	})
 	
+	//rentStepThree.jsp에 있는 예약 버튼
+	$("#btnBook").click(function(){
+		//체크 박스 체크 해야 다음 페이지로 넘어가게 한다.
+		if( $("#agree").prop('checked') == true ){
+			alert("체크했습니다.");
+		} else{
+			alert("이용약관 동의에 체크해주세요.");
+		}
+	})
+	
 	//숫자에 , 붙이기
 	function numWithCommas(num){
 		return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

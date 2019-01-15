@@ -158,7 +158,7 @@
 	}
 	
 	div#customerInfo ul li{
-		margin: 5px 0;
+		margin: 10px 0;
 	}
 	
 	div#btnWrap{
@@ -204,4 +204,14 @@
 		padding-left: 10px;
 		margin-bottom: 10px;
 		display: inline-block;
+	}
+	
+	/* 개인 정보 */
+	span.infoTit{
+		float: left;
+		width: 120px;
+	}
+	
+	input#phoneFirst, input#phoneSecond, input#phoneThird{
+		width: 47px;
 	}
