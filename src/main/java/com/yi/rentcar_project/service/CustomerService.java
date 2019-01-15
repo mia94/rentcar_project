@@ -96,9 +96,9 @@ public class CustomerService implements CustomerDao {
 	}
 
 	@Override
-	public List<Customer> selectCustomerByCode(Customer customer) {
+	public Customer selectCustomerByCode(Customer customer) {
 		try (SqlSession sqlSession = MySqlSessionFactory.openSession();) {
-			return sqlSession.selectList(namespace + ".selectCustomerByCode", customer);
+			return sqlSession.selectOne(namespace + ".selectCustomerByCode", customer);
 		}
 	}
 
@@ -141,7 +141,7 @@ public class CustomerService implements CustomerDao {
 	@Override
 	public int updateCustomerRentCnt(Customer customer) {
 		try (SqlSession sqlSession = MySqlSessionFactory.openSession();) {
-			int res = sqlSession.delete(namespace + ".updateCustomerRentCnt", customer);
+			int res = sqlSession.update(namespace + ".updateCustomerRentCnt", customer);
 			sqlSession.commit();
 			return res;
 		}
@@ -157,7 +157,7 @@ public class CustomerService implements CustomerDao {
 	@Override
 	public int updateCustomerGrade(Customer customer) {
 		try (SqlSession sqlSession = MySqlSessionFactory.openSession();) {
-			int res = sqlSession.delete(namespace + ".updateCustomerGrade", customer);
+			int res = sqlSession.update(namespace + ".updateCustomerGrade", customer);
 			sqlSession.commit();
 			return res;
 		}
@@ -196,7 +196,7 @@ public class CustomerService implements CustomerDao {
 	@Override
 	public int updateCustomerInfo(Customer customer) {
 		try (SqlSession sqlSession = MySqlSessionFactory.openSession();) {
-			int res = sqlSession.delete(namespace + ".updateCustomerInfo", customer);
+			int res = sqlSession.update(namespace + ".updateCustomerInfo", customer);
 			sqlSession.commit();
 			return res;
 		}
