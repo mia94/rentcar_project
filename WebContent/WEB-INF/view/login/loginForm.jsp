@@ -7,6 +7,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#checkManager").click(function() {
+		
+	})
+})
+</script>
 </head>
 <style type="text/css">
 	fieldset {
@@ -50,7 +58,7 @@ p:LAST-CHILD input {
 			<p>
 				<label>비밀번호</label> 
 				<input type="password" name="password">
-			<input type="checkbox" value="관리자 모드" name="checkManager">관리자 모드
+			<input type="checkbox" value="관리자 모드" name="checkManager" id="checkManager">관리자 모드
 			</p>
 			 
 			<p>

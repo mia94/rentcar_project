@@ -3,6 +3,7 @@ package com.yi.rentcar_project.handler.login;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.yi.rentcar_project.model.AUTH;
 import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.model.Employee;
 import com.yi.rentcar_project.model.Grade;
@@ -38,7 +39,8 @@ public class LoginHandler implements CommandHandler {
 				try {
 					service.selectCustomerByPw(customer);
 
-					req.getSession().setAttribute("AUTH", id);
+					AUTH AUTH = new AUTH(id, false);
+					req.getSession().setAttribute("AUTH", AUTH);
 					return "home.do";
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,8 +52,9 @@ public class LoginHandler implements CommandHandler {
 				Employee employee = new Employee(id, null, null, passwd); // id=code
 				try {
 					service.selectEmployeeByPw(employee);
-
-					req.getSession().setAttribute("AUTH", id);
+					
+					AUTH AUTH = new AUTH(id, true);
+					req.getSession().setAttribute("AUTH", AUTH);  
 					return "home.do";
 				} catch (Exception e) {
 					e.printStackTrace();

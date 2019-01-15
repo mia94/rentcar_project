@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.yi.rentcar_project.model.AUTH;
 import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.mvc.CommandHandler;
 import com.yi.rentcar_project.service.CustomerService;
@@ -15,20 +16,18 @@ public class CustomerModifyHandler implements CommandHandler {
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		if (req.getMethod().equalsIgnoreCase("get")) {
-			String id = (String) req.getSession().getAttribute("AUTH");
+			AUTH auth = (AUTH) req.getSession().getAttribute("AUTH");
 			CustomerService service = CustomerService.getInstance();
 			Customer customer = new Customer();
-			customer.setId(id);
+			customer.setId(auth.getId());
 			Customer customId = service.selectCustomerById(customer);
-
-			System.out.println(customId);
 
 			req.setAttribute("custom", customId);
 
-			return "/WEB-INF/view/management/customerModify.jsp";
+			return "/WEB-INF/view/management/customerUpdate.jsp";
 		} else if (req.getMethod().equalsIgnoreCase("post")) {
 			String name = req.getParameter("name");
-			String id = (String) req.getSession().getAttribute("AUTH");
+			Object id = req.getSession().getAttribute("AUTH");
 			String dob = req.getParameter("dob");
 			String phone = req.getParameter("phone");
 			String phone2 = req.getParameter("phone2");
@@ -50,11 +49,11 @@ public class CustomerModifyHandler implements CommandHandler {
 				CustomerService service = CustomerService.getInstance();
 
 				Customer custome = new Customer();
-				custome.setId(id);
+				custome.setId((String) id);
 
 				Customer customer = service.selectCustomerById(custome);
 
-				customer.setId(id);
+				customer.setId((String) id);
 				customer.setName(name);
 
 				customer.setDob(dobs);
