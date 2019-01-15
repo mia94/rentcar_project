@@ -29,8 +29,10 @@ $(function() {
 </script>
 </head>
 <body>
-<a id="bbb"></a><a href="login.do" id="aaa">로그인</a>
-<a href="carlistcustomer.do">차량관리(고객용)</a>
-<a href="password.do">개인정보관리</a>
+<div id="menu">
+	<a id="bbb"></a><a href="login.do" id="aaa">로그인</a>
+	<a href="carlistcustomer.do">차량관리(고객용)</a>
+	<a href="password.do">개인정보관리</a>
+</div>
 </body>
 </html>
