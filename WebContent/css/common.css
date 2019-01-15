@@ -15,12 +15,14 @@
 		background-color: #3a3a3a;
 		position: relative;
 	}
-	/*관리자용 메뉴*/
 	header #menu{
 		width:1000px;
 		position: absolute;
 		bottom: 0px;
 		left: 110px;
+	}
+	header #menu ul{
+		list-style: none;
 	}
 	header #menu a{
 		text-decoration: none;

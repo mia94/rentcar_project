@@ -6,7 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/carread.css?a" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/carread.css" rel="stylesheet"  type="text/css">
 <style>
 	#btn_wrap{
 		clear: both;
