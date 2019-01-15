@@ -111,8 +111,16 @@
 		background-color: gray;
 		text-align: center;
 	}
-	#next_wrap a{
-		font-style: italic;
-		font-weight: bold;
-		color: black;	
+	a#back img, a#next img{
+		width:10px;
+	}
+	a#back{
+		position: absolute;
+		left: -40px;
+		top:90px;
+	}
+	a#next{
+		position: absolute;
+		right: 20px;
+		top:90px;
 	}

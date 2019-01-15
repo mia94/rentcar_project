@@ -90,10 +90,12 @@
 						</tr>
 					</table>
 				</div>
-				<div id="next_wrap">
-					<a href="carbefore.do?carCode=${carmodel.carCode }">BACK</a><!-- 이전차량 보이기 -->
-					<a href="carafter.do?carCode=${carmodel.carCode }">NEXT</a><!-- 이후차량 보이기 -->
-				</div>
+					<a href="carbeforeforemp.do?carCode=${carmodel.carCode }" id="back">
+						<img src="${pageContext.request.contextPath }/upload/back.png" alt="back">
+					</a>
+					<a href="carafterforemp.do?carCode=${carmodel.carCode }" id="next">
+						<img src="${pageContext.request.contextPath }/upload/next.png" alt="next">
+					</a>
 			</div>
 		</section>
 	</div>
