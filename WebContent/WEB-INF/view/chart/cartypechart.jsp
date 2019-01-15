@@ -18,13 +18,8 @@
 	#chart{
 		width:650px;
 		height: 500px;
-		margin: 0 auto;
+		margin: 40px auto;
 		padding-left: 50px;
-	}
-	#info{
-		position: absolute;
-		bottom: 100px;
-		left: 400px;
 	}
 </style>
 </head>
@@ -38,7 +33,6 @@
 		<jsp:include page="chartmenu.jsp"></jsp:include>
 			<div id="chart_wrap">
 				<div id="chart"></div>
-				<span id="info">차종별 보유 수</span>
 			</div>
 		</section>
 	</div>
@@ -55,9 +49,9 @@ $(document).ready(function(){
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['제목', 'total'],
-          ['${list.get(0).title}', ${list.get(0).count}],['${list.get(1).title}', ${list.get(1).count}], 
-  	      ['${list.get(2).title}', ${list.get(2).count}], ['${list.get(3).title}', ${list.get(3).count}],
-  	   	  ['${list.get(4).title}', ${list.get(4).count}], ['${list.get(5).title}', ${list.get(5).count}]
+          ['${tlist.get(0).type}', ${list.get(0).count}],['${tlist.get(1).type}', ${list.get(1).count}], 
+  	      ['${tlist.get(2).type}', ${list.get(2).count}], ['${tlist.get(3).type}', ${list.get(3).count}],
+  	   	  ['${tlist.get(4).type}', ${list.get(4).count}], ['${tlist.get(5).type}', ${list.get(5).count}]
         ]);
         
         var options = {
