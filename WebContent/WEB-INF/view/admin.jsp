@@ -26,7 +26,11 @@ $(function() {
 		}
 	%>	
 	//submenu
-	
+	$("#option_menu").hover(function () {
+		  $("#option_sub").show();
+	}, function () {
+		  $("#option_sub").hide();
+	});
 })
 </script>
 </head>
@@ -38,7 +42,15 @@ $(function() {
 	<ul>
 		<li><a href="customerList.do">고객관리</a></li>
 		<li><a href="carlist.do">차량관리</a></li>
-		<li><a href="totaloptionlist.do">차량옵션관리</a></li>
+		<li id="option_menu">
+			<a href="totaloptionlist.do">차량옵션관리</a>
+			<ul id="option_sub">
+				<li><a href="cartypelist.do">CARTYPE</a></li>
+				<li><a href="brandlist.do">BRAND</a></li>
+				<li><a href="fuellist.do">FUEL</a></li>
+				<li><a href="caroptionlist.do">OPTION</a></li>
+			</ul>
+		</li>
 		<li><a href="employeeList.do">직원관리</a></li>
 		<li><a href="gradeList.do">등급관리</a></li>
 		<li><a href="eventList.do">이벤트관리</a></li>
