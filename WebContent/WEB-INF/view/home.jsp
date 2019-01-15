@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css?aaaaa" rel="stylesheet"  type="text/css">
 <style>
 
 </style>
@@ -31,7 +31,6 @@
 		 <h1>session</h1>
 		</section>
 	</div>
-	
 	<footer>
 		<jsp:include page="footer.jsp"></jsp:include>
 	</footer>

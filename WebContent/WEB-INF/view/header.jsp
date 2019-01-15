@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script type="text/javascript">
 $(function() {	
 	 <%
@@ -35,11 +36,12 @@ $(function(){
 </script>
 </head>
 <body>
+<div id="main">
 <a id="bbb"></a><a href="login.do" id="aaa">로그인</a>
 <a href="join.do">회원가입</a>
 <a href="searchId.do">아이디</a>
 <a href="searchPw.do">비밀번호 찾기</a>
-	
+</div>	
 </body>
 </html>
 

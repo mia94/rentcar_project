@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/common.css?aaa" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css?aaaa" rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 

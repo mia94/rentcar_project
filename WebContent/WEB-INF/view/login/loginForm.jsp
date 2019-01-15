@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css?aaaaa" rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(function() {
@@ -62,8 +62,10 @@ p:LAST-CHILD input {
 			</p>
 			 
 			<p>
-				<input type="button" value="회원가입" name="join">
-				<input type="button" value="ID/PW찾기" name="search">
+				<a href="join.do">회원가입</a>
+				<a href="searchId.do">ID찾기</a>
+				<a href="searchPw.do">PW찾기</a>
+				
 				
 			</p>
 		</fieldset>
