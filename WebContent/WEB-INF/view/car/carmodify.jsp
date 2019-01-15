@@ -155,33 +155,25 @@
 						<p>
 							<label>브랜드</label>
 							<select name="brand" id="brandSelect">
-								<option value="B1">현대</option>
-								<option value="B2">기아</option>
-								<option value="B3">BMW</option>
-								<option value="B4">FORD</option>
-								<option value="B5">쉐보레</option>
-								<option value="B6">르노삼성</option>
+								<c:forEach var="item" items="${brandList }">
+									<option value="${item.no }">${item.name }</option>
+								</c:forEach>
 							</select>
 						</p>
 						<p>
 							<label>차종</label>
 							<select name="cartype" id="cartypeSelect">
-								<option value="S1">경형</option>
-								<option value="S2">소형</option>
-								<option value="S3">중형</option>
-								<option value="S4">대형</option>
-								<option value="S5">승합</option>
-								<option value="S6">SUV</option>
+								<c:forEach var="item" items="${typeList }">
+									<option value="${item.code }">${item.type }</option>
+								</c:forEach>
 							</select>
 						</p>
 						<p>
 							<label>연료</label>
 							<select name="fuel_code" id="fuelSelect">
-								<option value="gasolin">가솔린</option>
-								<option value="diesel">디젤</option>
-								<option value="lpg">LPG</option>
-								<option value="hybrid">하이브리드</option>
-								<option value="electric">전기차</option>
+								<c:forEach var="item" items="${fuelList }">
+									<option value="${item.code }">${item.code }</option>
+								</c:forEach>
 							</select>
 						</p>
 						<p>

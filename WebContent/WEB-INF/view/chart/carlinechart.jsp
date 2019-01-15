@@ -12,11 +12,17 @@
 		width:1000px;
 		margin: 50px auto; 
 		height: 600px;
+		position: relative;
 	}
 	#chart{
 		width:600px;
 		height: 400px;
 		margin: 0 auto;
+	}
+	#info{
+		position: absolute;
+		bottom: 20px;
+		left: 500px;
 	}
 </style>
 </head>
@@ -29,9 +35,8 @@
 		<section>
 		<jsp:include page="chartmenu.jsp"></jsp:include>
 			<div id="chart_wrap">
-				<h1>차트</h1>
-				<span id="info">브랜드별 보유 수</span>
 				<div id="chart"></div>
+				<span id="info">월별 렌트 수</span>
 			</div>
 		</section>
 	</div>

@@ -13,12 +13,18 @@
 		width:1000px;
 		margin: 50px auto; 
 		height: 600px;
+		position: relative;
 	}
 	#chart{
 		width:650px;
 		height: 500px;
 		margin: 0 auto;
 		padding-left: 50px;
+	}
+	#info{
+		position: absolute;
+		bottom: 100px;
+		left: 400px;
 	}
 </style>
 </head>
@@ -31,9 +37,8 @@
 		<section>
 		<jsp:include page="chartmenu.jsp"></jsp:include>
 			<div id="chart_wrap">
-				<h1>차트</h1>
-				<span id="info">차종별 보유 수</span>
 				<div id="chart"></div>
+				<span id="info">차종별 보유 수</span>
 			</div>
 		</section>
 	</div>

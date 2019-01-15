@@ -12,13 +12,18 @@
 		width:1000px;
 		margin: 50px auto; 
 		height: 600px;
+		position: relative;
 	}
 	#chart{
 		width:900px;
 		height: 400px;
-		margin: 50px auto;
+		margin: 100px auto 50px;
 	}
-	
+	#info{
+		position: absolute;
+		bottom: 20px;
+		left: 500px;
+	}
 </style>
 </head>
 <body>
@@ -30,9 +35,8 @@
 		<section>
 			<jsp:include page="chartmenu.jsp"></jsp:include>
 			<div id="chart_wrap">
-				<h1>차트</h1>
-				<span id="info">차량 별 렌트 수</span>
 				<div id="chart"></div>
+				<span id="info">차량 별 렌트 수</span>
 			</div>
 		</section>
 	</div>
