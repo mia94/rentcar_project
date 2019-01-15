@@ -106,7 +106,9 @@
 		$("#cartypeSelect").val("${carmodel.carType.code}").prop("selected",true);
 		$("#fuelSelect").val("${carmodel.fuel.code}").prop("selected",true);
 		$("#colorSelect").val("${carmodel.color}").prop("selected",true);
-		$("input:radio[name=gear]").val("${carmodel.gear}").prop("selected",true);//제대로 작동하지 않음ㅠㅠ모두 수동에 체크됨
+		$("input:radio[name=gear]").val("${carmodel.gear}").attr("checked",true);
+		$("input:radio[name=gear]").val("${carmodel.rent}").attr("checked",true);//얘는 작동안되는 중
+
 	})
 	
 	$(function(){
