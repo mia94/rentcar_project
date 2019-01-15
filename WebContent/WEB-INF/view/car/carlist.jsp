@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/common.css?b" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css?aa" rel="stylesheet"  type="text/css">
 <style>
 	#list_wrap{
 		width:1100px;
@@ -75,7 +75,7 @@
 		color:#6799FF;
 		font-weight: bold;
 	}
-	article{
+	#container article{
 		width:520px;
 		padding:10px;
 		height:170px;
@@ -83,39 +83,39 @@
 		float: left;
 		position: relative;
 	}
-	article:hover{
+	#container article:hover{
 		background-color:#F6F6F6; 
 	}
-	article h3{
+	#container article h3{
 		color:gray;
 	}
-	article .car_img{
+	#container article .car_img{
 		width:200px;
 		height: 120px;
 		margin-left: 40px; 
 	}
-	article .fuel_img{
+	#container article .fuel_img{
 		width:35px;
 		position: absolute;
 		left: 270px;
 		bottom: 55px;
 	}
-	article .brand_img{
+	#container article .brand_img{
 		width:50px;
 		position: absolute;
 		left: 260px;
 		top: 30px;
 	}
-	article .info_wrap{
+	#container article .info_wrap{
 		position:absolute;
 		right:10px;
 		top:10px;
 		width:180px;
 	}
-	article .info_wrap h3{
+	#container article .info_wrap h3{
 		color:black;
 	}
-	article .info_wrap p{
+	#container article .info_wrap p{
 		color:gray;
 		font-size: 12px;
 	}

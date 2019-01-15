@@ -3,7 +3,12 @@
 
 <div id="footer_wrap">
 	<div id="copyright">
-	
+		<article>
+			<a href="#">ABOUT US</a>
+			<a href="#">CONTACT US</a>
+			<a href="#">RESOURCES</a>
+			<a href="#">SUPPORT</a>
+		</article>
 	</div>
 	<div id="footer_img_wrap">
 	    <img src="${pageContext.request.contextPath }/upload/logo_w.png" alt="logo1">

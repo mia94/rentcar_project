@@ -106,8 +106,25 @@
 		font-size: 14px;
 	}
 	#footer_wrap #copyright{
-		height: 110px;
+		height: 150px;
 		border-bottom: 1px solid white;
+		position: relative;
+	}
+	#footer_wrap #copyright article{
+		width:100px;
+		position: absolute;
+		right: 100px;
+		bottom: 20px;
+	}
+	#footer_wrap #copyright article a{
+		width:100px;
+		text-align:right;
+		float:left;
+		height: 25px;
+		line-height: 25px;
+		color:white;
+		font-size: 12px;
+		text-decoration: none;
 	}
 	#footer_wrap #footer_img_wrap{
 		text-align: center;

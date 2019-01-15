@@ -21,7 +21,7 @@
 		height: 200px;
 		margin:2px;
 		float: left;
-		border:1px solid gray;
+ 		border:1px solid #bbbbbb;
 		color:white;
 		text-decoration: none;
 		overflow: hidden;
