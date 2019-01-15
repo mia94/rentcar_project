@@ -3,22 +3,14 @@ package com.yi.rentcar_project.dao;
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.swing.JOptionPane;
-
-import org.apache.ibatis.session.SqlSession;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import com.yi.rentcar_project.model.CarModel;
 import com.yi.rentcar_project.model.CarType;
-import com.yi.rentcar_project.model.CustomEvent;
-import com.yi.rentcar_project.model.Customer;
-import com.yi.rentcar_project.model.Event;
 import com.yi.rentcar_project.model.Insurance;
 import com.yi.rentcar_project.model.StateCar;
-import com.yi.rentcar_project.mvc.MySqlSessionFactory;
 import com.yi.rentcar_project.service.RentService;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)

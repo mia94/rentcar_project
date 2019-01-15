@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css?bds" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentStepTwo.css?asd" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentStepTwo.css?abc" rel="stylesheet"  type="text/css">
 </head>
 <body>
 
@@ -51,7 +51,7 @@
 							<li>
 								<span class='tit'>·&nbsp;할인금액</span>
 								<div class="resPrice">
-									<span id='discountPrice'></span>
+									<span id='discountPrice'>0</span>
 									<span class='won'>원</span>
 								</div>
 							</li>
@@ -94,12 +94,12 @@
 								<input type="radio" name="discount" value="이벤트">
 								<label class='discountList'>이벤트</label>
 								<span id='selected'>
-									<select id='selEvt' name='selEvt'>
+									<select id='selEvt' name='selEvt' disabled="disabled">
 										<option value="선택">선택</option>
 										<c:forEach var="customer" items="${list }">
 											<c:forEach var="events" items="${customer.events }">
 												<c:forEach var="event" items="${events.events }">
-													<option>${event.name} (${event.rate}% 할인)</option>
+													<option value="${event.rate }">${event.name} (${event.rate}% 할인)</option>
 												</c:forEach>												
 											</c:forEach>
 											
@@ -117,7 +117,7 @@
 						<h3 id="cdw">자차손해 면책 제도(CDW)</h3>
 						<ul>
 							<li>
-								<input type="radio" name="rdIns" checked="checked" value="0">
+								<input type="radio" name="rdIns" value="0">
 								<label class='titList'>보험 미적용 (0원)</label>
 							</li>
 							<li>
@@ -147,13 +147,31 @@
 				</div>
 				
 				<div id="btnWrap">
-					<div id="prevWrap"><a href="#" id="btnPrev">이전</a></div>
-					<div id="nextWrap"><a href="#" id="btnNext">다음</a></div>
+					<button type="button" id="btnNext">다음</button>
 				</div>				
 				
 			</div>
 		</section>
 		
+		<!-- 다음 페이지 -->
+		<form id="stepTwo" action="${pageContext.request.contextPath }/rentStepThree.do" method="post">
+			<input type="hidden" name="sDate" id="sDate" value="${sDate }">
+			<input type="hidden" name="sHour" id="sHour" value="${sHour }">
+			<input type="hidden" name="sMin" id="sMin" value="${sMin }">
+			<input type="hidden" name="eDate" id="eDate" value="${eDate }">
+			<input type="hidden" name="eHour" id="eHour" value="${eHour }">
+			<input type="hidden" name="eMin" id="eMin" value="${eMin }">
+			<input type="hidden" name="cName" id="cName" value="${carName }">
+			<input type="hidden" name="cCode" id="cCode" value="${carCode }">	
+			<input type="hidden" name="insurance" id="insurance">
+			<input type="hidden" name="carOpt" id="carOpt">
+			<input type="hidden" name="evtDiscount" id="evtDiscount">
+			<input type="hidden" name="basicPrice" id="basicPrice">
+			<input type="hidden" name="discountPrice" id="discountPrice">	
+			<input type="hidden" name="insPrice" id="insPrice">	
+			<input type="hidden" name="carOptPrice" id="carOptPrice">	
+			<input type="hidden" name="totalRentPrice" id="totalRentPrice">		
+		</form>
 				
 	</div>
 	
@@ -164,6 +182,6 @@
 
 	<!-- 스크립트 부분(위에 스크립트 있으면 datepicker 실행이 안됨) -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="${pageContext.request.contextPath }/js/rentStep.js?cdsfdd"></script>
+	<script src="${pageContext.request.contextPath }/js/rentStep.js?sdad"></script>
 </body>
 </html>

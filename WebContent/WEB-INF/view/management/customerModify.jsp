@@ -15,12 +15,22 @@
   <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 
   
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <style type="text/css">
 
+   label{
+      width:120px;
+      float:left;
+   }
+   .error, .error2{
+      color:red;
+      font-size: 12px;
+      display:none;      
+   }
 </style>
+
  <script>
     $(function(){
       $("#f1").submit(function(){
@@ -185,6 +195,12 @@
 </script>
 </head>
 <body>
+<div id="container">
+		<header>
+			<jsp:include page="../guest.jsp"></jsp:include>
+		</header>
+		
+		<section>
 		<form action="modify.do" id="f1" method="post">
 	      <p>
 	         <label>이름</label>
@@ -214,8 +230,9 @@
      	 
        <p>
          <label>이메일</label>
-         <input type="text" name="email1" value="${fn:substring(custom.email,0, fn:indexOf(custom.email,'@')) }"> @
+         <input type="text" name="email1" value="${fn:substring(custom.email,0, fn:indexOf(custom.email,'@')) }"> @ 
          <c:set var="index" value="${fn:indexOf(custom.email,'@') }" ></c:set>
+     <%--     <input type="text" name="email2" value="${fn:substring(custom.email,index+1,-1) }">   --%>
          <c:set var="domain" value="${fn:substring(custom.email,index+1,-1)}"></c:set>
          <select name="email2"> 		    
         	<!-- <option value="a">선택하세요</option> -->
@@ -266,6 +283,12 @@
          <input type="submit" value="개인정보수정"> 
       </p>
    </form>
-		
+			</section>
+	</div>
+	
+	<footer>
+		<jsp:include page="../footer.jsp"></jsp:include>
+	</footer>	
+	 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
 </html>

@@ -22,8 +22,6 @@ public class ModifyHandler implements CommandHandler {
 			customer.setId(auth.getId());
 			Customer customId = service.selectCustomerById(customer);
 			
-			System.out.println(customId);
-		
 			req.setAttribute("custom", customId);
 
 			return "/WEB-INF/view/management/customerModify.jsp";
@@ -70,10 +68,7 @@ public class ModifyHandler implements CommandHandler {
 				customer.setZipCode(zipcode);
 				customer.setAddress(address + " " + detailAddr);
 				customer.setPasswd(password);
-				
-
-				System.out.println("==========>"+customer);
-
+			
 				service.updateCustomer(customer);
 
 			}

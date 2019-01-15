@@ -38,12 +38,11 @@ public class SearchPwHandler implements CommandHandler {
 
 				Customer customer = new Customer();
 				customer.setName(name);
-				System.out.println();
+
 				customer.setId(id);
 				customer.setEmail(email1 + "@" + email2);
 				Customer custome = service.selectCustomerByIdEmail(customer);
 
-				System.out.println(custome);
 				if (custome.getName().equals(name) || custome.getEmail().equals(email1 + "@" + email2)) {
 
 					String newPwd = searchService.getRandPw();
@@ -59,7 +58,6 @@ public class SearchPwHandler implements CommandHandler {
 					String[] to = { customer.getEmail() }; // 보낼 메일 목록
 					String subject = "○○렌터카입니다 비밀번호를 개인정보관리에서 변경해주세요"; // 메일 제목
 					String body = "고객님의 임시 비밀번호는 " + customer.getPasswd() + " 입니다 로그인하여 개인정보관리에서 비밀번호를 변경해주세요 "; // 메일
-																													// 내용
 
 					sendFromGMail(from, passwd, to, subject, body);
 

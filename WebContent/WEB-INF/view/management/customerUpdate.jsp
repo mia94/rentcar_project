@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -14,12 +14,22 @@
   <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
   
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <style type="text/css">
 
+   label{
+      width:120px;
+      float:left;
+   }
+   .error, .error2{
+      color:red;
+      font-size: 12px;
+      display:none;      
+   }
 </style>
+
  <script>
     $(function(){
       $("#f1").submit(function(){
@@ -184,6 +194,12 @@
 </script>
 </head>
 <body>
+<div id="container">
+		<header>
+			<jsp:include page="../admin.jsp"></jsp:include>
+		</header>
+		
+		<section>
 		<form action="customerModify.do" id="f1" method="post">
 			<p>
 	         <label>코드</label>
@@ -217,8 +233,10 @@
      	 
        <p>
          <label>이메일</label>
-         <input type="text" name="email1" value="${fn:substring(customer.email,0, fn:indexOf(customer.email,'@')) }"> @
-         <c:set var="index" value="${fn:indexOf(customer.email,'@') }" ></c:set>
+         <input type="text" name="email1" value="${fn:substring(customer.email,0, fn:indexOf(customer.email,'@')) }"> @ 
+          <c:set var="index" value="${fn:indexOf(customer.email,'@') }" ></c:set>
+        <%--  <input type="text" name="email2" value="${fn:substring(customer.email,index+1,-1) }"> --%>
+        
          <c:set var="domain" value="${fn:substring(customer.email,index+1,-1)}"></c:set>
          <select name="email2"> 		    
         	<!-- <option value="a">선택하세요</option> -->
@@ -271,5 +289,12 @@
       </p>
    </form>
 		
+			</section>
+	</div>
+	
+	<footer>
+		<jsp:include page="../footer.jsp"></jsp:include>
+	</footer>	
+		  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
 </html>

@@ -28,7 +28,7 @@ $(function(){
 <body>
 <div id="container">
 		<header>
-			<jsp:include page="../header.jsp"></jsp:include>
+			<jsp:include page="../admin.jsp"></jsp:include>
 		</header>
 		
 		<section>
@@ -72,7 +72,7 @@ $(function(){
 							</span>
 						</p>
 				</c:forEach>
-				<p><a href="employeeUpload.do" class="btnAdd">[ 추가  ]</a></p>
+				<p><a href="customerUpload.do" class="btnAdd">[ 추가  ]</a></p>
 			</div>
 			</div>
 		</section>
