@@ -7,6 +7,7 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/form.css?aaaa" rel="stylesheet"  type="text/css">
 </head>
 <body>
 <div id="container">
@@ -15,11 +16,13 @@
 		</header>
 		
 		<section>
-			<div id="upload_wrap">
-			<h1>이벤트 추가 창</h1>
+			<div id="form">
+			<h1>이벤트 추가</h1>
+			<h5>추가 할 정보를 입력해 주세요.</h5>
 			<div id="input_wrap">
-					<div id="img_wrap">img</div>
+					
 					<form action="eventUpload.do" method="post">
+					<fieldset id="event">
 						<p>
 							<label>이벤트 코드</label>
 							<input type="text" name="code" class="textfield" value="${nextCode }" readonly>
@@ -29,14 +32,15 @@
 							<input type="text" name="name" class="textfield">
 						</p>
 						<p>
-							<label>이벤트별 할인율</label>
+							<label>이벤트 별 할인율</label>
 							<input type="text" name="rate" class="textfield">
 						</p>
 	
-						<div id="btn_wrap">
+						 <p id="send"> 
 							<input type="submit" value="저장">
 							<input type="reset" value="취소">
-						</div>
+						 </p> 
+						 </fieldset>
 					</form>	
 				</div>
 			</div>
