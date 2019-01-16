@@ -59,8 +59,8 @@ $(function() {
 		<li id="car_menu">
 			<a href="carlist.do">차량관리</a>
 			<ul id="car_sub">
-				<li><a href="#">조회</a></li>
-				<li><a href="#">추가</a></li>
+				<li><a href="carlist.do">조회</a></li>
+				<li><a href="uploadcar.do">추가</a></li>
 			</ul>
 		</li>
 		<li id="option_menu">

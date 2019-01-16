@@ -35,6 +35,7 @@ $(function() {
 	<div id="menu">
 		<a href="carlistcustomer.do">차량조회</a>
 		<a href="reservation.do">차량대여</a>
+		<a href="#">대여내역</a>
 		<a href="password.do">개인정보관리</a>
 	</div>
 </body>

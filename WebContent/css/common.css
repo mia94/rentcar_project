@@ -67,6 +67,7 @@
 	header #menu #car_menu #car_sub,header #menu #option_menu #option_sub,header #menu #chart_menu #chart_sub{
 		width:125px;
 		height:200px;
+		z-index: 100;
 	}
 	/*서브메뉴 개별 부분 - car */
 	header #menu #car_menu #car_sub{
@@ -89,10 +90,53 @@
 	/* section */
 	section{
 		width:1178px;
-		border:1px solid #cccccc;
+		border-left:1px solid #3a3a3a;
+		border-right:1px solid #3a3a3a;
 		padding:10px;
 		overflow: hidden;
 	}
+	section #session_home{
+		width:1178px;
+		height:680px;
+		position: relative;
+	}
+	section #session_home #main_img{
+		width:1200px;
+		position: absolute;
+		left: -11px;
+		top: -10px;
+	}
+	section #session_home h1{
+		color:white;
+		z-index: 50;
+		position: absolute;
+		right: 20px;
+		bottom: 240px;
+		font-size: 36px;
+	}
+	section #session_home #procedure{
+		width:550px;
+		position: absolute;
+		left: -11px;
+		top:443px;
+		z-index: -10;
+	}
+	section #session_home #jeju_img{
+		width:380px;
+		height:242px;
+		position: absolute;
+		left:533px;
+		top:448px;
+		z-index: -10;
+	}
+	section #session_home #info_img{
+		width:262px;
+		position: absolute;
+		right:-3px;
+		top:455px;
+		z-index: -10;
+	}
+	/* footer*/
 	footer{
 		width:100%;
 		background-color: #3A3A3A; 
@@ -111,9 +155,18 @@
 		position: relative;
 	}
 	#footer_wrap #copyright article{
-		width:100px;
+		width:150px;
+		float: left;
+		text-align: right;
+	}
+	#footer_wrap #copyright article:FIRST-CHILD{
 		position: absolute;
-		right: 100px;
+		right: 50px;
+		bottom: 20px;
+	}
+	#footer_wrap #copyright article:LAST-CHILD{
+		position: absolute;
+		right: 200px;
 		bottom: 20px;
 	}
 	#footer_wrap #copyright article a{

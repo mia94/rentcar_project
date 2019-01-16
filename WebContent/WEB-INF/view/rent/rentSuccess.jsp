@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css?a" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentSuccess.css?b" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentSuccess.css?sbb" rel="stylesheet"  type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -18,13 +18,16 @@
 		<!-- section -->
 		<section>
 			<div id="rentSuccess_container">
-				<img src='images/1.png'>
-				<span id="tit">차량 예약을 완료했습니다.</span>
-				<img src='images/2.png'>
-				
-				<br>
-				<button id="backHome">홈으로</button>
-				<button id="rentInfo">예약내역 확인하기</button>
+				<div id="temp">
+					<div id="titWrap">
+						<span id="tit">차량 예약을 완료했습니다.</span>
+					</div>
+					
+					<div id="btnWrap">
+						<div id="backHome"><a href="${pageContext.request.contextPath }/home.do">홈으로</a></div>
+						<div id="rentInfo"><a href="#">예약내역 확인하기</a></div>
+					</div>
+				</div>
 			</div>
 		</section>
 		

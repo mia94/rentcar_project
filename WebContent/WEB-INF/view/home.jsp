@@ -28,7 +28,13 @@
 		</header>
 		
 		<section>
-		 <h1>session</h1>
+		 <div id="session_home">
+		 	<h1>RENT SYSTEM</h1>
+		 	<img src="${pageContext.request.contextPath }/upload/main.png" alt="main" id="main_img">
+		 	<img src="${pageContext.request.contextPath }/upload/procedure.jpg" alt="procedure" id="procedure">
+		 	<img src="${pageContext.request.contextPath }/upload/info.jpg" alt="info" id="info_img">
+		 	<img src="${pageContext.request.contextPath }/upload/jeju.jpg" alt="jeju" id="jeju_img">
+		 </div>
 		</section>
 	</div>
 	<footer>

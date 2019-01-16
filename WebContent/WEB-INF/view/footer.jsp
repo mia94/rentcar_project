@@ -6,8 +6,12 @@
 		<article>
 			<a href="#">ABOUT US</a>
 			<a href="#">CONTACT US</a>
-			<a href="#">RESOURCES</a>
 			<a href="#">SUPPORT</a>
+		</article>
+		<article>
+			<a href="#">AFFILIATES</a>
+			<a href="#">SERVICE</a>
+			<a href="#">RESOURCES</a>
 		</article>
 	</div>
 	<div id="footer_img_wrap">

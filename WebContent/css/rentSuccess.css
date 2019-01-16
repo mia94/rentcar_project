@@ -7,21 +7,65 @@ div#rentSuccess_container{
 		padding: 10px;
 		border: 1px solid #ccc;
 		overflow: hidden;
+		text-align: center;
 	}
 	
+a{
+	text-decoration: none;
+	color: white;
+	font-size: 14px;
+}	
 	
 span#tit{
-	font-size: 30px;
+	font-size: 32px;
 	color: #5D5D5D;
-	
 }
 
-#backHome{
+div#btnWrap{
+	padding-top: 20px;
+}
+
+div#temp{
+	margin-top: 80px;
+}
+
+div#titWrap{
+	display: inline-block;
+}
+
+div#backHome{
 	border: none;
+	background-color: #5D5D5D;
+	height: 40px;
+	line-height: 40px;
+	margin-right: 10px;
+	width: 100px;
+	display: inline-block;
+}
+
+div#backHome a{
 	width: 100px;
 	height: 40px;
+	line-height: 40px;
+	float: left;
+}
+
+div#rentInfo{
+	border: none;
+	background-color: #f04040;
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	display: inline-block;
+}
+
+div#rentInfo a{
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	float: left;
 }
 
 img{
-	width: 25px
+	width: 25px;
 }
