@@ -41,4 +41,7 @@ public interface RentDao {
 	//rent테이블에 있는 코드 검색해서 렌트 정보 가져오기
 	public Rent getRentInfoByRentCode(String code) throws SQLException;
 	
+	//기간 검색
+	public List<Rent> getRentList(String start, String end) throws SQLException;
+	
 }

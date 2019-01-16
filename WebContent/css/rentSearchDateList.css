@@ -1,86 +1,11 @@
 @CHARSET "UTF-8";
 
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
-	
-	*{
-		font-family: 'Noto Sans KR', sans-serif;
-	}
-	
-	ol, ul{
-		list-style: none;
-	}
-	
-	table.searchBox{
-		border: none;
-	}
-	
-	table.searchBox th{
-		padding: 20px 10px 20px 35px;
-		font-size: 14px;
-		font-weight: bold;
-		text-align: left;
-		vertical-align: middle;
-		border: none;
-		background: #e6e6e6;
-	}
-	
-	table.searchBox td{
-		padding: 12px 10px 12px 25px;
-		border: none;
-		background-color: #efefef;
-	}
-	
-	ul.searchDate{
-		overflow: hidden;
-		margin-bottom: 10px;
-	}
-	
-	ul.searchDate:after{
-		display: block;
-		clear: both;
-		content: '';
-	}
-	
-	ul.searchDate li span.chkBox{
-		display: block;
-		text-align: center;
-	}
-	
-	ul.searchDate li span.chkBox input{
-		position: absolute;
-		z-index: -1;
-	}
-	
-	ul.searchDate li span.chkBox label{
-		display: block;
-		width: 72px;
-		height: 26px;
-		font-size: 14px;
-		font-weight: bold;
-		color: #fff;
-		text-align: center;
-		line-height: 26px;
-		text-decoration: none;
-		cursor: pointer;
-		background-color: #a5b0b6;
-	}
-	
-	span.demi{
-		display: inline-block;
-		margin: 0 1px;
-		vertical-align: middle;
-	}
-	
-	.datePicker{
-		padding-left: 6px;
-		height: 24px;
-		line-height: 24px;
-		border: 1px solid #dbdbdb;
-	}
-	
-	
-	a{
-		text-decoration: none;
-	}
-	
-	
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+ul{
+	list-style: none;
+}

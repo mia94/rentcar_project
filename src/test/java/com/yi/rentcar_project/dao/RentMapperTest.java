@@ -102,10 +102,20 @@ public class RentMapperTest {
 		Assert.assertNotNull(c);
 	}*/
 	
-	@Test
+	/*@Test
 	public void test12getRentInfoByRentCode() throws SQLException{
 		Rent r = dao.getRentInfoByRentCode("R022");
 		System.out.println(r);
 		Assert.assertNotNull(r);
+	}*/
+	
+	@Test
+	public void test13getRentList() throws SQLException{
+		List<Rent> list = dao.getRentList("2018-03-01", "2018-03-31");
+		
+		for(Rent r : list){
+			System.out.println(r);
+		}
+		Assert.assertNotNull(list);
 	}
 }

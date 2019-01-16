@@ -9,7 +9,6 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.yi.rentcar_project.dao.RentDao;
 import com.yi.rentcar_project.model.CarModel;
-import com.yi.rentcar_project.model.CarType;
 import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.model.Insurance;
 import com.yi.rentcar_project.model.Rent;
@@ -174,6 +173,28 @@ public class RentService implements RentDao{
 			map.put("rent", rent);
 			
 			return map;
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return null;
+	}
+
+	@Override
+	public List<Rent> getRentList(String start, String end) throws SQLException {
+		// TODO Auto-generated method stub
+		SqlSession session = null;
+		
+		try {
+			session = MySqlSessionFactory.openSession();
+			RentDao dao = session.getMapper(RentDao.class);
+			
+			List<Rent> list = dao.getRentList(start, end);
+			
+			return list;
 			
 		} catch (Exception e) {
 			// TODO: handle exception
