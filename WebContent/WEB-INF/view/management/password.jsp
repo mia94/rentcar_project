@@ -17,7 +17,14 @@
 }) --%>
 
 </script>
-
+<style type="text/css">
+	input {
+	margin: 10px;
+}
+#pass {
+	text-align: center;
+}
+</style>
 </head>
 <body>
 	<div id="container">
@@ -26,10 +33,12 @@
 		</header>
 		
 		<section>
+		<div id="pass">
 		<form action="password.do" method="post">
 		현재 비밀번호<input type="password" name="password">
 		<input type="submit" value="회원정보 수정">
 		</form>
+		</div>
 			</section>
 	</div>
 	

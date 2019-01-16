@@ -17,17 +17,9 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
  
   
-<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/form.css?aaaa" rel="stylesheet"  type="text/css">
 <style type="text/css">
 
-   label{
-      width:120px;
-      float:left;
-   }
-   .error, .error2{
-      color:red;
-      font-size: 12px;
-      display:none;      
    }
 </style>
 
@@ -201,7 +193,11 @@
 		</header>
 		
 		<section>
+		<div id="form">
+		<h1>개인정보수정</h1>
+		<h5>수정 할 정보를 입력해 주세요.</h5>
 		<form action="modify.do" id="f1" method="post">
+		<fieldset>
 	      <p>
 	         <label>이름</label>
 	         <input type="text" name="name" value="${custom.name }"> 
@@ -232,7 +228,7 @@
          <label>이메일</label>
          <input type="text" name="email1" value="${fn:substring(custom.email,0, fn:indexOf(custom.email,'@')) }"> @ 
          <c:set var="index" value="${fn:indexOf(custom.email,'@') }" ></c:set>
-     <%--     <input type="text" name="email2" value="${fn:substring(custom.email,index+1,-1) }">   --%>
+    <input type="text" name="email2" value="${fn:substring(custom.email,index+1,-1) }"> 
          <c:set var="domain" value="${fn:substring(custom.email,index+1,-1)}"></c:set>
          <select name="email2"> 		    
         	<!-- <option value="a">선택하세요</option> -->
@@ -279,10 +275,13 @@
          <input type="password" name="confirmPassword"> 
          
       </p>
-        <p>  
+        <p id="send">  
          <input type="submit" value="개인정보수정"> 
+          <input type="reset" value="초기화"> 
       </p>
+       </fieldset>
    </form>
+   </div>
 			</section>
 	</div>
 	
