@@ -35,6 +35,9 @@ public interface RentDao {
 	//추가
 	public int insert(Rent rent) throws SQLException;
 	
+	//
+	public List<Rent> selectRentByAll() throws SQLException;
+	
 	//고객코드별 대여내역 조회
 	public List<Rent> selectRentAllByCustomerCode(String customerCode) throws SQLException;
 	

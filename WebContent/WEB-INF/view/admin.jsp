@@ -90,7 +90,7 @@ $(function() {
 		<li><a href="employeeList.do">직원관리</a></li>
 		<li><a href="gradeList.do">등급관리</a></li>
 		<li><a href="eventList.do">이벤트관리</a></li>
-		<li><a href="reservation.do">대여관리</a></li>
+		<li><a href="rentList.do">대여관리</a></li>
 		<li id="chart_menu">
 			<a href="carmainchart.do">차량통계</a>
 			<ul id="chart_sub">

@@ -205,4 +205,14 @@ public class RentService implements RentDao{
 		return null;
 	}
 
+	@Override
+	public List<Rent> selectRentByAll() {
+		try(SqlSession sqlSession = MySqlSessionFactory.openSession()){
+			return sqlSession.selectList(namespace + ".selectRentByAll");
+		}
+	}
+
+	
+
+
 }

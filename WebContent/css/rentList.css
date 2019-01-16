@@ -1,0 +1,60 @@
+@CHARSET "EUC-KR";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+div#rentList_container {
+	width: 1000px;
+	margin: 30px auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	overflow: hidden;
+}
+
+table {
+	border: 1px solid #CACACA;
+	border-collapse: collapse;
+	width: 800px;
+	margin-top: 20px;
+	margin-left: 100px;
+}
+
+th, td {
+	border: 1px solid #efefef;
+	color: #5D5D5D;
+	text-align: center;
+}
+
+td {
+	height: 45px;
+}
+
+tr:FIRST-CHILD {
+	font-weight: bold;
+}
+
+tr:FIRST-CHILD td {
+	background-color: #efefef;
+}
+
+a {
+	text-decoration: none;
+	color: #5D5D5D;
+}
+
+a:hover {
+	color: #f04040;
+	text-decoration: underline;
+}
+
+td#false{
+	color: #F15F5F;
+	
+}
+
+td#true{
+	color: #6798FD;
+}

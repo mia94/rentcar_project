@@ -115,4 +115,25 @@
 		from rent 
 		where start_date >= TO_DATE(#{start_date}, 'YYYY-MM-DD') and end_date &lt;= TO_DATE(#{end_date}, 'YYYY-MM-DD'); 
 	</select>
+	
+	<!-- 모든 대여 -->
+	<resultMap type="Rent" id="resultRentAll">
+		<id column="code" property="code" />
+		<result column="start_date" property="start_date"/>
+		<result column="start_time" property="start_time"/>
+		<result column="end_date" property="end_date"/>
+		<result column="end_time" property="end_time"/>
+		<result column="is_return" property="is_return" javaType="java.lang.Boolean"/>
+		<result column="basic_price" property="basic_price"/>
+		<result column="car_code" property="car_code.car_code"/> 
+		<result column="customer_code" property="customer_code.code"/>
+		<result column="insurance_code" property="insurance_code.code"/>
+		<result column="e_code" property="e_code"/>
+		<result column="opt_price" property="opt_price"/>
+	</resultMap>
+	
+	<select id="selectRentByAll" resultMap="resultRentAll">
+		select code, start_date, start_time, end_date, end_time, is_return, basic_price, car_code, customer_code, insurance_code, e_code, opt_price
+		from rent;
+	</select>
 </mapper>
