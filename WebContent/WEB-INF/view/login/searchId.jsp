@@ -6,11 +6,20 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<link href="${pageContext.request.contextPath }/css/common.css?aaaaa" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/search.css?aa" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-
+$(function() {
+	if("${msg}"=="1"){
+		alert("잘못 입력");
+	}
+	$("#domain").change(function() {
+		
+		$("#email2").val($("#domain").val());
+	})
+})
 </script>
 <style type="text/css">
  	
@@ -35,8 +44,8 @@
 	</p>
 	 <p>
          <label>이메일</label>
-         <input type="text" name="email1"> @ <input type="text">
-        <select name="email2">
+         <input type="text" name="email1"> @ <input type="text" name="email2"  id="email2">
+        <select name="email2" id="domain">
         	<!-- <option value="a">선택하세요</option> -->
         	<option value="naver.com">naver.com</option>
         	<option value="gmail.com">gmail.com</option>
