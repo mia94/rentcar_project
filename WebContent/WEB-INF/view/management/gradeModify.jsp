@@ -6,6 +6,8 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/form.css?aaaa" rel="stylesheet"  type="text/css">
 </head>
 <body>
 <div id="container">
@@ -14,11 +16,13 @@
 		</header>
 		
 		<section>
-			<div id="modify_wrap">
-			<h1>등급 수정 창</h1>
+			<div id="form">
+			<h1>등급 수정</h1>
+			<h5>수정 할 정보를 입력해 주세요.</h5>
 				<div id="input_wrap">
-					<div id="img_wrap">img</div>
+					
 					<form action="gradeModify.do" method="post">
+					<fieldset id="grade">
 						<p>
 							<label>등급 코드</label>
 							<input type="text" name="code" class="textfield" readonly value="${grade.code }">
@@ -41,10 +45,11 @@
 							<input type="text" name="rate" class="textfield" value="${grade.rate }">
 						</p>
 	
-						<div id="btn_wrap">
+						<p id="send">  
 							<input type="submit" value="저장">
 							<input type="reset" value="취소">
-						</div>
+						</p>
+						</fieldset>
 					</form>	
 				</div>
 			</div>

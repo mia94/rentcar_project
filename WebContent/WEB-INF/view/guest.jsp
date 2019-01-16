@@ -29,6 +29,7 @@ $(function() {
 </script>
 </head>
 <body>
+<h1 id="logo"><a href="home.do">L O G O</a></h1>
 <div id="main">
 	<a href="login.do" id="aaa">로그인</a><a id="bbb"></a>
 </div>

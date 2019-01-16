@@ -21,7 +21,7 @@ public class EventModifyHandler implements CommandHandler {
 			event = service.selectEventByNo(event);
 			
 			req.setAttribute("event", event);
-			return "/WEB-INF/view/car/eventModify.jsp";
+			return "/WEB-INF/view/management/eventModify.jsp";
 		}else if(req.getMethod().equalsIgnoreCase("post")){
 		
 			String code = req.getParameter("code");

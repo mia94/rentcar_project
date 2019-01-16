@@ -8,6 +8,9 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/form.css?aaaa" rel="stylesheet"  type="text/css">
+
 </head>
 <body>
 <div id="container">
@@ -16,11 +19,13 @@
 		</header>
 		
 		<section>
-			<div id="modify_wrap">
-			<h1>직원 수정 창</h1>
+			<div id="form">
+			<h1>직원 수정</h1>
+			<h5>수정 할 정보를 입력해 주세요.</h5>
 				<div id="input_wrap">
-					<div id="img_wrap">img</div>
+					
 					<form action="employeeModify.do" method="post">
+					<fieldset id="emp">
 						<p>
 							<label>직원 코드</label>
 							<input type="text" name="code" class="textfield" readonly value="${employee.code }">
@@ -48,10 +53,12 @@
 							<input type="password" name="password" class="textfield" value="${employee.passwd }">
 						</p>
 	
-						<div id="btn_wrap">
+							<p id="send">
 							<input type="submit" value="저장">
-							<input type="reset" value="취소">
-						</div>
+							<input type="reset" value="초기화">
+							
+						</p>
+						</fieldset>
 					</form>	
 				</div>
 			</div>

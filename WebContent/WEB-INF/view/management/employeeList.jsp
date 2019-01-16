@@ -6,7 +6,10 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/emp.css?aaaa" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -31,10 +34,10 @@ $(function(){
 		
 		<section>
 			<div id="wrap_wrap">
-			<a href="employeeList.do">직원</a>
-			<a href="eventList.do">이벤트</a>
-			<a href="gradeList.do">등급</a>
-			
+			<a href="customerList.do">고객관리</a>
+			<a href="employeeList.do">직원관리</a>
+			<a href="eventList.do">이벤트관리</a>
+			<a href="gradeList.do">등급관리</a>
 			
 			<h1>EMPLOYEE</h1>
 			<div class="wrap">

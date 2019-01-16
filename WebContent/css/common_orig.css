@@ -2,8 +2,8 @@
 
 
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto');
-/*큰 화면 용*/
-@media all and (min-width:768px){
+/*작은 화면 용 : 아직 내용은 common.css와 동일*/
+@media all and (max-width:767px){
 	*{
 		margin:0;
 		padding: 0;
