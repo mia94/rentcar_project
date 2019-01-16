@@ -6,7 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/common.css?aaaaa" rel="stylesheet"  type="text/css">
+
+<link href="${pageContext.request.contextPath }/css/common.css?x" rel="stylesheet"  type="text/css">
+
 <style>
 
 </style>
@@ -29,11 +31,12 @@
 		
 		<section>
 		 <div id="session_home">
-		 	<h1>RENT SYSTEM</h1>
+		 	<h1>RENT MANAGEMENT</h1>
 		 	<img src="${pageContext.request.contextPath }/upload/main.png" alt="main" id="main_img">
 		 	<img src="${pageContext.request.contextPath }/upload/procedure.jpg" alt="procedure" id="procedure">
 		 	<img src="${pageContext.request.contextPath }/upload/info.jpg" alt="info" id="info_img">
 		 	<img src="${pageContext.request.contextPath }/upload/jeju.jpg" alt="jeju" id="jeju_img">
+		 	<img src="${pageContext.request.contextPath }/upload/car_main2.png" alt="car" id="car_main">
 		 </div>
 		</section>
 	</div>

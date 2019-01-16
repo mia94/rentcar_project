@@ -56,11 +56,8 @@ public class CarModifyHandler implements CommandHandler {
 			}
 			
 			try {
-				MultipartRequest multi = new MultipartRequest(req,
-															uploadPath,//서버측 업로드
-															1024*1024*10,//10M
-															new DefaultFileRenamePolicy()
-															);
+			MultipartRequest multi = new MultipartRequest(req, uploadPath, 1024*1024*10, "utf-8",new DefaultFileRenamePolicy());
+			
 			String file = multi.getFilesystemName("carImg");//file1의 키의 파일의 이름을 받아옴
 			req.setAttribute("carImg", file);
 			
