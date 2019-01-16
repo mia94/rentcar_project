@@ -9,9 +9,8 @@
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/management.css?aaaa" rel="stylesheet"  type="text/css">
-</head>
-<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
+</head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
@@ -44,20 +43,20 @@ $(function(){
 			<a href="gradeList.do">등급관리</a>
 			
 			
-			<h1>CUSTOMER</h1>
+			<h1>CUSTOMER</h1> <p><a href="customerUpload.do" class="btnAdd">[ 고객 추가  ]</a></p>
 			<div class="wrap">
 				
 						<table>
 						<tr>
-							<td>고객 코드</td>
-							<td>고객 아이디</td>
-							<td>고객 이름</td>
-							<td>연락처</td>
-							<td>면허종류</td>
-							<td>등급</td>
-							<td>대여횟수</td>	
-							<td>이벤트</td>
-							<td>수정 & 삭제</td>
+							<th>고객 코드</th>
+							<th>고객 아이디</th>
+							<th>고객 이름</th>
+							<th>연락처</th>
+							<th>면허종류</th>
+							<th>등급</th>
+							<th>대여횟수</th>	
+							<th>이벤트</th>
+							<th>수정 & 삭제</th>
 						</tr>
 						<c:forEach var="item" items="${customerList }">
 							<tr>
@@ -87,8 +86,6 @@ $(function(){
 							</tr>
 							</c:forEach>
 						</table>
-				
-				<p><a href="customerUpload.do" class="btnAdd">[ 추가  ]</a></p>
 			</div>
 			</div>
 		</section>

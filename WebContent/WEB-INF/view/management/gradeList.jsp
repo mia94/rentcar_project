@@ -41,19 +41,19 @@ $(function(){
 			<a href="employeeList.do">직원관리</a>
 			<a href="eventList.do">이벤트관리</a>
 			<a href="gradeList.do">등급관리</a>
-			<h1>GRADE</h1>
+			<h1>GRADE</h1><p><a href="gradeUpload.do" class="btnAdd">[ 등급추가 ]</a></p>
 			<div class="wrap">
 				
 				
 						<table>
 						<tr>
 							
-							<td>등급 코드</td>
-							<td>등급 이름</td>
-							<td>최소</td>
-							<td>최대</td>
-							<td>할인율</td>
-							<td>수정 & 삭제</td>
+							<th>등급 코드</th>
+							<th>등급 이름</th>
+							<th>최소</th>
+							<th>최대</th>
+							<th>할인율</th>
+							<th>수정 & 삭제</th>
 						</tr>
 						<c:forEach var="item" items="${gradeList }">
 							<tr>
@@ -71,7 +71,7 @@ $(function(){
 							</c:forEach>
 						</table>
 				
-				<p><a href="gradeUpload.do" class="btnAdd">[ 추가 ]</a></p>
+				
 			</div>
 			</div>
 		</section>
