@@ -12,7 +12,6 @@
 		width:1000px; 
 		height: 600px;
 		margin:30px 80px;
-		border:1px solid black;
 	}
 	#modify_wrap label{
 		width:150px;
@@ -32,8 +31,11 @@
 	#img_wrap{
 		width:445px;
 		height: 200px;
-		border:1px solid black;
 		margin-top: 80px;
+	}
+	#img_wrap img{
+		width:445px;
+		height: 200px;
 	}
 	#input_wrap{
 		width:500px;
@@ -56,7 +58,9 @@
 			<div id="modify_wrap">
 			<h1>차 옵션 수정 창</h1>
 			<div id="input_wrap">
-					<div id="img_wrap">img</div>
+					<div id="img_wrap">
+						<img src="${pageContext.request.contextPath }/upload/car4.jpg" alt="option">
+					</div>
 					<form action="optionmodify.do" method="post">
 						<p>
 							<label>옵션 코드</label>
