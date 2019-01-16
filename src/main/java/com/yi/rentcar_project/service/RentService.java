@@ -10,6 +10,7 @@ import com.yi.rentcar_project.model.CarModel;
 import com.yi.rentcar_project.model.CarType;
 import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.model.Insurance;
+import com.yi.rentcar_project.model.Rent;
 import com.yi.rentcar_project.model.StateCar;
 import com.yi.rentcar_project.mvc.MySqlSessionFactory;
 
@@ -100,6 +101,40 @@ public class RentService implements RentDao{
 		try(SqlSession sqlSession = MySqlSessionFactory.openSession()){
 			return sqlSession.selectList(namespace+".selectCountRentByMonthWithBrand", brand);
 		}
+	}
+
+	//대여코드
+	@Override
+	public String getNextRentNo() {
+		try (SqlSession sqlSession = MySqlSessionFactory.openSession()) {
+			return sqlSession.selectOne(namespace + ".getNextRentNo");
+		}
+	}
+
+	//추가(0:성공, -1: 실패)
+	@Override
+	public int insert(Rent rent) throws SQLException {
+		// TODO Auto-generated method stub
+		SqlSession session = null;
+		
+		try {
+			session = MySqlSessionFactory.openSession();
+			RentDao dao = session.getMapper(RentDao.class);
+			
+			rent.setCode(getNextRentNo());
+			dao.insert(rent);
+			
+			session.commit();
+			return 0;
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		
+		return -1;
 	}
 	
 }

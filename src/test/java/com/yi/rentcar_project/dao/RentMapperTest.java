@@ -8,8 +8,11 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import com.yi.rentcar_project.model.CarModel;
 import com.yi.rentcar_project.model.CarType;
+import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.model.Insurance;
+import com.yi.rentcar_project.model.Rent;
 import com.yi.rentcar_project.model.StateCar;
 import com.yi.rentcar_project.service.RentService;
 
@@ -56,5 +59,29 @@ public class RentMapperTest {
 		
 		List<StateCar> list = dao.selectCountRentByMonthWithBrand("kia");
 		Assert.assertNotNull(list);
+	}
+	
+	@Test
+	public void test09insertRent() throws SQLException{
+		Rent r = new Rent();
+	
+		r.setStart_date("2019-01-16");
+		r.setStart_time("09:00:00");
+		r.setEnd_date("2019-01-27");
+		r.setEnd_time("09:00:00");
+		r.setIs_return(false);
+		r.setBasic_price(74000);
+		r.setCar_code(new CarModel("V001"));
+		
+		Customer c = new Customer();
+		c.setCode("C001");
+		r.setCustomer_code(c);
+		r.setInsurance_code(new Insurance("I001"));
+		r.setE_code("EVT1");
+		r.setOpt_price(5000);
+		
+		int res = dao.insert(r);
+		
+		Assert.assertEquals(1, res);
 	}
 }

@@ -1,7 +1,7 @@
 package com.yi.rentcar_project.model;
 
 public class Rent {
-	private int code;	//대여코드(R001, R002, ..)
+	private String code;	//대여코드(R001, R002, ..)
 	private String start_date;	//대여일 2019-01-07
 	private String start_time;	//대여시간 12:00:00
 	private String end_date;	//반납일
@@ -18,7 +18,7 @@ public class Rent {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Rent(int code, String start_date, String start_time, String end_date, String end_time, boolean is_return,
+	public Rent(String code, String start_date, String start_time, String end_date, String end_time, boolean is_return,
 			int basic_price, CarModel car_code, Customer customer_code, Insurance insurance_code, String e_code,
 			int opt_price) {
 		this.code = code;
@@ -35,11 +35,11 @@ public class Rent {
 		this.opt_price = opt_price;
 	}
 
-	public int getCode() {
+	public String getCode() {
 		return code;
 	}
 
-	public void setCode(int code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 
@@ -138,5 +138,7 @@ public class Rent {
 				code, start_date, start_time, end_date, end_time, is_return, basic_price, car_code, customer_code,
 				insurance_code, e_code, opt_price);
 	}
+
+	
 	
 }
