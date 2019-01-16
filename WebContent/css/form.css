@@ -41,6 +41,9 @@
 		margin: 0 auto;
 		border:1px solid #aaa;
 	}
+	#event label{
+		width: 120px;
+	}
 	p{
 		margin: 10px;
 	}

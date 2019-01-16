@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css?aaa" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/event.css?aaaaa" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/management.css?aaaa" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -41,18 +41,20 @@ $(function(){
 			<h1>EVENT</h1>
 			<div class="wrap">
 				<c:forEach var="item" items="${eventList }">
-						<p class="list_p">
+						<table>
+							<tr>
+								<td>${item.code }</td>
+								<td id="EventName">${item.name }</td>
+								<td id="rate">${item.rate }</td>
+								<td>
+									<a href="eventModify.do?code=${item.code }">수정</a>
+									<a href="eventDelete.do?code=${item.code }" class="eventDel">삭제</a>
+								</td>
+							</tr>
 							
-							<span>${item.code }</span>
-							<span>${item.name }</span>
-							<span>${item.rate }</span>
-							<span class="btn_span">
-								<a href="eventModify.do?code=${item.code }">수정</a>
-								<a href="eventDelete.do?code=${item.code }" class="eventDel">삭제</a>
-							</span>
-						</p>
+						</table>
 				</c:forEach>
-				<p><a href="eventUpload.do" class="btnAdd">[ 추가  ]</a></p>
+				<p><a href="eventUpload.do" class="btnAdd">[ 추가 ]</a></p>
 			</div>
 			</div>
 		</section>

@@ -6,7 +6,9 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/form.css?aaaa" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
+
 </head>
 <body>
 <div id="container">
@@ -15,11 +17,13 @@
 		</header>
 		
 		<section>
-			<div id="upload_wrap">
-			<h1>직원 추가 창</h1>
+			<div id="form">
+			<h1>직원 추가</h1>
+			<h5>추가 할 정보를 입력해 주세요.</h5>
 			<div id="input_wrap">
-					<div id="img_wrap">img</div>
+				
 					<form action="employeeUpload.do" method="post">
+					<fieldset id="emp">
 						<p>
 							<label>직원 코드</label>
 							<input type="text" name="code" class="textfield" value="${nextCode }" readonly>
@@ -43,10 +47,11 @@
 							<input type="password" name="password" class="textfield">
 						</p>
 	
-						<div id="btn_wrap">
-							<input type="submit" value="저장">
-							<input type="reset" value="취소">
-						</div>
+						<p id="send"> 
+							<input type="submit" value="직원추가"> 
+							 <input type="reset" value="초기화">
+						</p>
+						 </fieldset> 
 					</form>	
 				</div>
 			</div>

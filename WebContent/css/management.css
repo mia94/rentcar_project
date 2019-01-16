@@ -1,0 +1,106 @@
+@CHARSET "UTF-8";
+
+@import
+	url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto');
+
+#wrap_wrap {
+	margin: 10px auto;
+	/* text-align: center; */
+}
+
+#wrap_wrap a {
+	text-decoration: none;
+	color: black;
+	padding: 5px;
+}
+
+#wrap_wrap a:HOVER {
+	color: #4C4C4C;
+	font-weight: bold;
+}
+
+h1 {
+	font-weight: lighter;
+	margin: 10px;
+}
+
+td img {
+	width: 20px;
+}
+
+table {
+	border-collapse: collapse;
+	text-align: center;
+}
+
+td {
+	border-bottom: 1px solid #aaa;
+	margin: 5px;
+	padding:3px; 
+}
+
+#id {
+	width: 130px;
+}
+
+#CusName {
+	width: 60px;
+}
+
+#zipCode {
+	width: 55px;
+}
+
+#addr {
+	width: 250px;
+}
+
+#tel {
+	width: 115px;
+}
+#dob{
+	width: 90px;
+}
+#email{
+	width: 225px;
+}
+#license{
+	width: 60px;
+}
+#CusGrade{
+	width: 80px;
+}
+#rentCnt{
+	width: 25px;
+}
+#CusEvent{
+	width: 130px;
+}
+#gLosal {
+	width: 25px;
+}
+
+#gHisal {
+	width: 50px;
+}
+
+#rate {
+	width: 25px;
+}
+
+#GradeName {
+	width: 75px;
+}
+
+#EventName {
+	width: 90px;
+}
+
+#EmpName {
+	width: 75px;
+}
+
+/* test */
+tr td {
+	border: 1px solid red;
+}
