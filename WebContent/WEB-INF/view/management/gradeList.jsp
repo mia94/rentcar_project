@@ -6,6 +6,7 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/grade.css?aaaaaa" rel="stylesheet"  type="text/css">
 <style type="text/css">
 	

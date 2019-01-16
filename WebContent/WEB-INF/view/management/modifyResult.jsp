@@ -5,7 +5,8 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/common.css?aaa" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/result.css?aaaaaa" rel="stylesheet"  type="text/css">
 </head>
 
 <body>
@@ -15,8 +16,12 @@
 		</header>
 		
 		<section>
-	회원님의 정보가 수정 되었습니다.
+		<div id="result">
+	<h3>회원님의 정보가 수정 되었습니다.</h3>
+	<p>
 	<a href="home.do">홈화면으로</a>
+	<p>
+	</div>
 	</section>
 	</div>
 	

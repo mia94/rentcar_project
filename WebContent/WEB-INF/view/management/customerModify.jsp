@@ -16,7 +16,7 @@
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
  
-  
+  <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/form.css?aaaa" rel="stylesheet"  type="text/css">
 <style type="text/css">
 
