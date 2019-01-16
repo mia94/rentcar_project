@@ -48,7 +48,11 @@ $(function(){
 	$("#btnBook").click(function(){
 		//체크 박스 체크 해야 다음 페이지로 넘어가게 한다.
 		if( $("#agree").prop('checked') == true ){
-			alert("체크했습니다.");
+			var isReturn = $("#btnBook").attr("data-isReturn");
+			$("#isReturn").val(isReturn);
+			
+			$("#reserve").submit();
+			
 		} else{
 			alert("이용약관 동의에 체크해주세요.");
 		}

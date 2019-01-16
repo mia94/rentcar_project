@@ -15,6 +15,10 @@ public class Insurance {
 		this.price = price;
 	}
 
+	public Insurance(String code) {
+		this.code = code;
+	}
+
 	public String getCode() {
 		return code;
 	}

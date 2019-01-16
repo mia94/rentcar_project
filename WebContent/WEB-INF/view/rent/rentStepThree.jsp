@@ -149,27 +149,26 @@
 				
 				<!-- 버튼 -->
 				<div id="btnWrap">
-					<button type="button" id="btnBook">예약</button>
+					<button type="button" id="btnBook" data-isReturn="0">예약</button>
 				</div>	
 			</div>
-			
-			<%-- 
-				${carBasicPrice } : 차량 기본 금액 
-				${insuranceInfo } : 보험코드
-			--%>
-			
-			<h4>테스트</h4>
-			<p>차량 기본 금액 : ${carBasicPrice }</p>
-			<p>보험코드 : ${insuranceInfo }</p>
-			<p>대여일 : ${sDate }</p>
-			<p>대여시간 : ${fn:substring(sHour, 0, 2) }:${fn:substring(sMin, 0, 2) }:00</p>
-			<p>반납일 : ${eDate }</p>
-			<p>반납시간 : ${fn:substring(eHour, 0, 2) }:${fn:substring(eMin, 0, 2) }:00</p>
-			<p>옵션비용 : ${carOptPrice }</p>
-			<p>이벤트코드 : ${eCode }</p>
-			<p>고객코드 : ${list[0].code }</p>
-			<p>차량코드: ${cCode }</p>
+		
 		</section>
+		
+		<!-- insert form -->
+		<form id="reserve" action="${pageContext.request.contextPath }/rentInsert.do" method="post">
+			<input type="hidden" name="startDate" id="startDate" value="${sDate }">
+			<input type="hidden" name="startTime" id="startTime" value="${fn:substring(sHour, 0, 2) }:${fn:substring(sMin, 0, 2) }:00">
+			<input type="hidden" name="endDate" id="endDate" value="${eDate }">
+			<input type="hidden" name="endTime" id="endTime" value="${fn:substring(eHour, 0, 2) }:${fn:substring(eMin, 0, 2) }:00">
+			<input type="hidden" name="isReturn" id="isReturn">
+			<input type="hidden" name="basicPrice" id="basicPrice" value="${carBasicPrice }">
+			<input type="hidden" name="cCode" id="cCode" value="${cCode }">
+			<input type="hidden" name="cstmCode" id="cstmCode" value="${list[0].code }">
+			<input type="hidden" name="iCode" id="iCode" value="${insuranceInfo }">
+			<input type="hidden" name="eCode" id="eCode" value="${eCode }">
+			<input type="hidden" name="optionPrice" id="optionPrice" value="${fn:replace(carOptPrice, ',' , '') }">
+		</form>
 			
 	</div>
 	

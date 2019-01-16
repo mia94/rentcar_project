@@ -59,4 +59,9 @@
 		from insurance i join car_type ct on i.car_type = ct.code
 		where ct.type = #{carType};
 	</select>
+	
+	<!-- rent -->
+	<insert id="insert">
+		insert into rent values (#{code}, #{start_date}, #{start_time}, #{end_date}, #{end_time}, #{is_return}, #{basic_price}, #{car_code.car_code}, #{customer_code.code}, #{insurance_code.code}, #{e_code}, #{opt_price})
+	</insert>
 </mapper>
