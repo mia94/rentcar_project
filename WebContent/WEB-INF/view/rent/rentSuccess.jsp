@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css?a" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/rentSuccess.css?sbb" rel="stylesheet"  type="text/css">
 </head>
 <body>

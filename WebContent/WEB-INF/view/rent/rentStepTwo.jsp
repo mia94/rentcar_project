@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css?asdfa" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/rentStepTwo.css?bcd" rel="stylesheet"  type="text/css">
 </head>
 <body>

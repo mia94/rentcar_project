@@ -8,88 +8,9 @@
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css?xx" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_min.css?aa" rel="stylesheet"  type="text/css">
 <style>
-@media all and (max-width:767px){
-	/* 반응형 모바일 */
-	#container{
-		width:100%;
-	}
-	header{
-		width:100%;
-		height: 50px;
-		background-color: #3a3a3a;
-	}
-	header #logo{
-		position: absolute;
-		top:5px;
-		left: 50px;
-		font-size: 25px;
-	}
-	/* 반응형 모바일 메뉴 */
-	header #menu_img{
-		display:block;
-		width:30px;
-		height: 30px;
-		position: absolute;
-		top:10px;
-		left:10px;
-		z-index: 20;
-	}
-	header div#main{
-		width:100%;
-		height: 100%;
-		position: absolute;
-		top:50px;
-		left:0;
-		background-color: rgba(0,0,0,0.7);
-		z-index: 10;
-	}
-	header #main a{
-		width:100%;
-		line-height: 40px;
-		border-bottom: 1px solid white;
-		text-align: center;
-		color:white;
-		line-height: 40px;
-		text-decoration: none;
-		background-color: rgba(0,0,0,0.7);
-	}
-	/* 반응형 모바일 센터 */
-	section{
-		width:100%;
-		height:350px;
-		text-align: center;
-		background-color: #3a3a3a;
-	}
-	section #session_home{
-		width:100%;
-		text-align: center;
-	}
-	section #car_main, #info_img{
-		display: none;
-	}
-	section #session_home #main_img{
-		width:100%;
-	}
-	section #session_home #procedure{
-		width:100%;
-	}
-	section #session_home h1{
-		font-size: 20px;
-		margin-top: 125px;
-	}
-	/* 반응형 footer */
-	section img{
-		float: left;
-	}
-	footer{
-		width:100%;
-	}
-	#footer_wrap{
-		width:90%;
-	}
-	
-}
+
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
