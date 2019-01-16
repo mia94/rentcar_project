@@ -25,19 +25,34 @@ $(function() {
 			<%
 		}
 	%>	
+	if($(window).width()<769){
+		$("#menu").css("margin-left","-100%").css("opacity",1);
+		$("#menu_img").click(function(){
+			var opacity = $("#menu").css("opacity");
+			if(opacity == 0){
+				$("#menu").css("width","100%").css("opacity",1);
+				$("#menu").animate({"margin-left":"0", "opacity":1});
+			}else{
+				$("#menu").animate({"margin-left":"-100%", "opacity":0});
+			}
+		})
+	}
 })
 </script>
 </head>
 <body>
+<img src="${pageContext.request.contextPath }/upload/menu.png" alt="menu" id="menu_img">
 <h1 id="logo"><a href="home.do">L O G O</a></h1>
 <div id="main">
 	<a href="login.do" id="aaa">로그인</a><a id="bbb"></a>
 </div>
 	<div id="menu">
-		<a href="carlistcustomer.do">차량조회</a>
-		<a href="reservation.do">차량대여</a>
-		<a href="rentChkList.do">대여내역</a>
-		<a href="password.do">개인정보관리</a>
-	</div>
+	<ul>
+		<li><a href="carlistcustomer.do">차량조회</a></li>
+		<li><a href="reservation.do">차량대여</a></li>
+		<li><a href="rentChkList.do">대여내역</a></li>
+		<li><a href="password.do">개인정보관리</a></li>
+	</ul>
+	</div>	
 </body>
 </html>
