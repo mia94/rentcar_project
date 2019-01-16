@@ -44,23 +44,33 @@ $(function(){
 			<h1>GRADE</h1>
 			<div class="wrap">
 				
-				<c:forEach var="item" items="${gradeList }">
+				
 						<table>
+						<tr>
+							
+							<td>등급 코드</td>
+							<td>등급 이름</td>
+							<td>최소</td>
+							<td>최대</td>
+							<td>할인율</td>
+							<td>수정 & 삭제</td>
+						</tr>
+						<c:forEach var="item" items="${gradeList }">
 							<tr>
-								<td><img src="${pageContext.request.contextPath }/upload/${item.code }.png"></td>
+								<%-- <td><img src="${pageContext.request.contextPath }/upload/${item.code }.png"></td> --%>
 								<td>${item.code }</td>
 								<td id="GradeName">${item.name }</td>
 								<td id="gLosal">${item.gLosal }</td>
 								<td id="gHisal">${item.gHisal }</td>
-								<td id="rate">${item.rate }</td>
+								<td id="rate">${item.rate } %</td>
 								<td>
 									<a href="gradeModify.do?code=${item.code }">수정</a>
 									<a href="gradeDelete.do?code=${item.code }" class="gradeDel">삭제</a>
 								</td>
 							</tr>
-							
+							</c:forEach>
 						</table>
-				</c:forEach>
+				
 				<p><a href="gradeUpload.do" class="btnAdd">[ 추가 ]</a></p>
 			</div>
 			</div>

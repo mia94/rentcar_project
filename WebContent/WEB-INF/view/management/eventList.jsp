@@ -40,20 +40,28 @@ $(function(){
 			
 			<h1>EVENT</h1>
 			<div class="wrap">
-				<c:forEach var="item" items="${eventList }">
-						<table>
+			<table>
+				
+						
+							<tr>
+							<td>이벤트 코드</td>
+							<td>이벤트 이름</td>
+							<td>할인율</td>
+							<td>수정 & 삭제</td>
+							
+							</tr>
+							<c:forEach var="item" items="${eventList }">
 							<tr>
 								<td>${item.code }</td>
 								<td id="EventName">${item.name }</td>
-								<td id="rate">${item.rate }</td>
+								<td id="rate">${item.rate } %</td>
 								<td>
 									<a href="eventModify.do?code=${item.code }">수정</a>
 									<a href="eventDelete.do?code=${item.code }" class="eventDel">삭제</a>
 								</td>
-							</tr>
-							
-						</table>
+							</tr>					
 				</c:forEach>
+				</table>
 				<p><a href="eventUpload.do" class="btnAdd">[ 추가 ]</a></p>
 			</div>
 			</div>

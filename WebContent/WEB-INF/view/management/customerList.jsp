@@ -46,36 +46,48 @@ $(function(){
 			
 			<h1>CUSTOMER</h1>
 			<div class="wrap">
-				<c:forEach var="item" items="${customerList }">
+				
 						<table>
+						<tr>
+							<td>고객 코드</td>
+							<td>고객 아이디</td>
+							<td>고객 이름</td>
+							<td>연락처</td>
+							<td>면허종류</td>
+							<td>등급</td>
+							<td>대여횟수</td>	
+							<td>이벤트</td>
+							<td>수정 & 삭제</td>
+						</tr>
+						<c:forEach var="item" items="${customerList }">
 							<tr>
 								<td>${item.code }</td>
 								<td id="id">${item.id }</td>
 								<td id="CusName">${item.name }</td>
-								<td id="zipCode">${item.zipCode }</td>
-								<td id="addr">${item.address }</td>
+								<%-- <td id="zipCode">${item.zipCode }</td> --%>
+								<%-- <td id="addr">${item.address }</td> --%>
 								<td id="tel">${item.phone }</td>
-								<td id="dob"><fmt:formatDate value="${item.dob }" pattern="yyyy-MM-dd"/></td>
-								<td id="email">${item.email }</td>
-								<%-- <td id="license">${item.license }</td> --%>
+								<%-- <td id="dob"><fmt:formatDate value="${item.dob }" pattern="yyyy-MM-dd"/></td> --%>
+								<%-- <td id="email">${item.email }</td> --%>
+								<td id="license">${item.license }</td> 
 								<td id="CusGrade">${item.gradeCode.name }</td>
-								<%-- <td id="rentCnt">${item.rentCnt }</td> --%>
-								<%-- <td id="CusEvent">
+								<td id="rentCnt">${item.rentCnt }</td>
+								 <td id="CusEvent">
 								<c:forEach var="events" items="${item.events }">
 								<c:forEach var="event" items="${events.events }">
 									<span>${event.name}</span>
 								</c:forEach>												
 
 								</c:forEach>
-								</td> --%>
+								</td>
 								<td>
 									<a href="customerModify.do?code=${item.code }">수정</a>
 									<a href="customerDelete.do?code=${item.code }" class="customerDel">삭제</a>
 								</td>
 							</tr>
-
+							</c:forEach>
 						</table>
-				</c:forEach>
+				
 				<p><a href="customerUpload.do" class="btnAdd">[ 추가  ]</a></p>
 			</div>
 			</div>

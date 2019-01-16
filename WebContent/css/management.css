@@ -36,7 +36,8 @@ table {
 td {
 	border-bottom: 1px solid #aaa;
 	margin: 5px;
-	padding:3px; 
+	font-size: 14px;
+	padding:5px; 
 }
 
 #id {
@@ -52,7 +53,7 @@ td {
 }
 
 #addr {
-	width: 250px;
+	width: 300px;
 }
 
 #tel {
@@ -71,13 +72,13 @@ td {
 	width: 80px;
 }
 #rentCnt{
-	width: 25px;
+	width: 70px;
 }
 #CusEvent{
 	width: 130px;
 }
 #gLosal {
-	width: 25px;
+	width: 50px;
 }
 
 #gHisal {
@@ -85,8 +86,9 @@ td {
 }
 
 #rate {
-	width: 25px;
+	width: 45px;
 }
+
 
 #GradeName {
 	width: 75px;
@@ -101,6 +103,6 @@ td {
 }
 
 /* test */
-tr td {
+/* tr td {
 	border: 1px solid red;
-}
+} */
