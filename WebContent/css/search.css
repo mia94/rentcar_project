@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto');
-	*{
+*{
 		margin:0;
 		padding: 0;
 		font-family: 'Noto Sans KR','Roboto', sans-serif;
@@ -68,30 +68,54 @@
 		width:125px;
 		height:200px;
 	}
-	/*서브메뉴 개별 부분 - car */
-	header #menu #car_menu #car_sub{
-		position: absolute;
-		left: 125px;
-		top:50px;
-	}
-	/*서브메뉴 개별  부분 - option */
-	header #menu #option_menu #option_sub{
-		position: absolute;
-		left: 250px;
-		top:50px;
-	}
-	/*서브메뉴 개별  부분 - chart */
-	header #menu #chart_menu #chart_sub{
-		position: absolute;
-		left: 875px;
-		top:50px;
-	}
+	
 	/* section */
 	section{
 		width:1178px;
 		border:1px solid #cccccc;
 		padding:10px;
 		overflow: hidden;
+	}
+	
+	#form h1{
+		text-align: center;
+		font-weight: lighter;
+	}
+
+	#form h5{
+		color: #aaa;
+		font-weight: lighter;
+		margin: 10px;	
+		text-align: center;
+	}
+	fieldset {
+		width:650px;
+		margin: 0 auto;
+		border:1px solid #aaa;
+	}
+
+	label {
+		float: left;
+		text-align: center;
+		width: 100px;
+		margin: 0 auto;
+	}
+	p{
+		margin: 10px;
+	}
+	input{
+		margin: 5px;
+	}
+	 #href{
+	text-align: center;
+	} 
+	
+	#href a{
+		padding:10px;
+		text-decoration: none;
+		color: black;
+		text-align: center;
+		
 	}
 	footer{
 		width:100%;
