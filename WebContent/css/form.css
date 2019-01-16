@@ -76,6 +76,9 @@
 		padding:10px;
 		overflow: hidden;
 	}
+	#form{
+		overflow: hidden;
+	}
 	#form h1{
 		text-align: center;
 		font-weight: lighter;
@@ -102,10 +105,13 @@
 		text-align: center;
 	}
 	 label{
-     float: left;
+    	float: left;
 		text-align: center;
 		width: 100px;
 		margin: 0 auto;
+   }
+   select{
+   	margin: 5px;
    }
    .error, .error2{
       color:red;
