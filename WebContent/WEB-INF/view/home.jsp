@@ -10,6 +10,10 @@
 <link href="${pageContext.request.contextPath }/css/common.css?x" rel="stylesheet"  type="text/css">
 <style>
 @media all and (max-width:767px){
+	/* 반응형 모바일 */
+	#container{
+		width:100%;
+	}
 	header{
 		width:100%;
 		height: 50px;
@@ -21,6 +25,7 @@
 		left: 50px;
 		font-size: 25px;
 	}
+	/* 반응형 모바일 메뉴 */
 	header #menu_img{
 		display:block;
 		width:30px;
@@ -30,13 +35,14 @@
 		left:10px;
 		z-index: 20;
 	}
-	header #main{
+	header div#main{
 		width:100%;
-		height:100%;
+		height: 100%;
 		position: absolute;
 		top:50px;
+		left:0;
 		background-color: rgba(0,0,0,0.7);
-		z-index: 100;
+		z-index: 10;
 	}
 	header #main a{
 		width:100%;
@@ -48,19 +54,23 @@
 		text-decoration: none;
 		background-color: rgba(0,0,0,0.7);
 	}
+	/* 반응형 모바일 센터 */
+	section #session_home h1{
+		display: none;
+	}
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(function(){
-	$("#main").css("margin-left","-100%").css("opacity",1); //0에서 1로 변경
+	$("#main").css("margin-left","-100%").css("opacity",0); //0에서 1로 변경
 	$("#menu_img").click(function(){
 		var opacity = $("#main").css("opacity");
 		if(opacity == 0){
 			/* $("#main").css("width","100%").css("opacity",1); */
 			$("#main").animate({"margin-left":"0", "opacity":1});
 		}else{
-			$("#main").animate({"margin-left":"-100%", "opacity":0});
+			$("#main").animate({"margin-left":"100%", "opacity":0});
 		}
 	})
 })
