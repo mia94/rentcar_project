@@ -46,10 +46,21 @@ $(function() {
 	}, function () {
 		  $("#chart_sub").hide();
 	});
+	
+	$("#main").css("margin-left","-100%").css("opacity",1); //0에서 1로 변경
+	$("#menu_img").click(function(){
+		var opacity = $("#main").css("opacity");
+		if(opacity == 0){
+			$("#main").animate({"margin-left":"0", "opacity":1});
+		}else{
+			$("#main").animate({"margin-left":"-100%", "opacity":0});
+		}
+	})
 })
 </script>
 </head>
 <body>
+<img src="${pageContext.request.contextPath }/upload/menu.png" alt="menu" id="menu_img">
 <h1 id="logo"><a href="home.do">L O G O</a></h1>
 <div id="main">
 <a href="login.do" id="aaa">로그인</a><a id="bbb"></a>
