@@ -10,6 +10,8 @@
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/management.css?aaaa" rel="stylesheet"  type="text/css">
 </head>
+<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>

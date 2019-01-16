@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css?aaaaa" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/search.css?aa" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function() {

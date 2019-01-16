@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/js/jquery.jqplot.css" />
+<link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
 <style>
 	#chart_wrap{
 		width:1000px;

@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css?aaaaa" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/result.css?aaaaaa" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
 </head>
 <body>
 <div id="container">

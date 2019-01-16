@@ -5,13 +5,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <title>Insert title here</title>
-
-<link href="${pageContext.request.contextPath }/css/common.css?x" rel="stylesheet"  type="text/css">
-
+<link href="${pageContext.request.contextPath }/css/common.css?xx" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_min.css?aa" rel="stylesheet"  type="text/css">
 <style>
 
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(function(){
+	$("#main").css("margin-left","-100%").css("opacity",1); //0에서 1로 변경
+	$("#menu_img").click(function(){
+		var opacity = $("#main").css("opacity");
+		if(opacity == 0){
+			$("#main").animate({"margin-left":"0", "opacity":1});
+		}else{
+			$("#main").animate({"margin-left":"-100%", "opacity":0});
+		}
+	})
+})
+</script>
 </head>
 <body>
 	<div id="container">

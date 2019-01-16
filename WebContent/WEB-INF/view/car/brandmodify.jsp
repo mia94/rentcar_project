@@ -7,12 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
 <style>
 	#modify_wrap{
 		width:1000px; 
 		height: 600px;
 		margin:30px 80px;
-		border:1px solid black;
 	}
 	#modify_wrap label{
 		width:150px;
@@ -32,8 +32,11 @@
 	#img_wrap{
 		width:445px;
 		height: 200px;
-		border:1px solid black;
 		margin-top: 80px;
+	}
+	#img_wrap img{
+		width:445px;
+		height: 200px;
 	}
 	#input_wrap{
 		width:500px;
@@ -57,7 +60,9 @@
 			<div id="modify_wrap">
 			<h1>브랜드 수정 창</h1>
 				<div id="input_wrap">
-					<div id="img_wrap">img</div>
+					<div id="img_wrap">
+						<img src="${pageContext.request.contextPath }/upload/car2.jpg" alt="brand">
+					</div>
 				<form action="brandmodify.do" method="post">
 					<p>
 						<label>브랜드 코드</label>
