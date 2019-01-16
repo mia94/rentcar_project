@@ -280,7 +280,7 @@
 	 	</select>
 	 </p>
       
-      <p>  
+      <p id="send">  
          <input type="submit" value="회원가입"> 
          <input type="reset" value="초기화"> 
       </p>

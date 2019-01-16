@@ -92,7 +92,15 @@
 		margin: 0 auto;
 		border:1px solid #aaa;
 	}
-	
+	p{
+		margin: 10px;
+	}
+	input{
+		margin: 5px;
+	}
+	#send{
+		text-align: center;
+	}
 	 label{
      float: left;
 		text-align: center;
