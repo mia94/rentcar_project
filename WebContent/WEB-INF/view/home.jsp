@@ -29,7 +29,6 @@
 		
 		<section>
 		 <div id="session_home">
-		 	<h2>Igewojo</h2>
 		 	<h1>RENT SYSTEM</h1>
 		 	<img src="${pageContext.request.contextPath }/upload/main.png" alt="main" id="main_img">
 		 	<img src="${pageContext.request.contextPath }/upload/procedure.jpg" alt="procedure" id="procedure">
