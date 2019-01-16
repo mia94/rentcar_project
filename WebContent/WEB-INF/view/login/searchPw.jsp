@@ -13,6 +13,10 @@
 		if("${msg}"=="1"){
 			alert("잘못 입력");
 		}
+		$("#domain").change(function() {
+			
+			$("#email2").val($("#domain").val());
+		})
 	})
 </script>
 </head>
@@ -38,8 +42,8 @@
 	</p>
 	 <p>
          <label>이메일</label>
-         <input type="text" name="email1"> @ <input type="text">
-        <select name="email2">
+         <input type="text" name="email1"> @ <input type="text" name="email2"  id="email2">
+        <select name="email2" id="domain">
         	<!-- <option value="a">선택하세요</option> -->
         	<option value="naver.com">naver.com</option>
         	<option value="gmail.com">gmail.com</option>

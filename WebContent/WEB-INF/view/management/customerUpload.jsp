@@ -14,9 +14,10 @@
   <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
   
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/form.css?aaaa" rel="stylesheet"  type="text/css">
 <style type="text/css">
 
 </style>
@@ -168,6 +169,7 @@
     }
 </script>
 <script>
+$(function() {
 	 $(document).on('click','#submit',function(){
 		 $(opener.document).find('#zipcode').val($('#sample6_postcode').val());
 		$(opener.document).find('#address').val($('#sample6_address').val());
@@ -175,10 +177,27 @@
 		
 		window.close();
 	})
+	
+	$("#domain").change(function() {
+		
+		$("#email2").val($("#domain").val());
+	})
+})
+	
 </script>
 </head>
 <body>
+<div id="container">
+		<header>
+			<jsp:include page="../admin.jsp"></jsp:include>
+		</header>
+		
+		<section>
+		<div id="form">
+		<h1>고객 추가</h1>
+		<h5>추가 할 정보를 입력해 주세요.</h5>
 		<form action="customerUpload.do" id="f1" method="post">
+		<fieldset>
 			<p>
 	         <label>코드</label>
 	         <input type="text" name="code" value="${nextCode }" readonly="readonly"> 
@@ -251,11 +270,21 @@
 	 		<option value="1종보통">1종보통</option>
 	 		<option value="2종보통">2종보통</option>
 		</select><br>
-		 
- 
-         <input type="submit" value="개인정보수정"> 
-      </p>
+	</p> 
+    <p id="send"> 
+         <input type="submit" value="고객추가"> 
+          <input type="reset" value="초기화">
+        </p> 
+       </fieldset>
    </form>
-		
+			</div>	
+			</section>
+	</div>
+	
+	<footer>
+		<jsp:include page="../footer.jsp"></jsp:include>
+	</footer>	
+		  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		    
 </body>
 </html>
