@@ -29,23 +29,43 @@ td img {
 }
 
 table {
+	border: 1px solid #CACACA;
 	border-collapse: collapse;
 	text-align: center;
+	margin-top: 20px;
+	margin-left: 50px;
 }
 
+th, td{
+		border: 1px solid #efefef;
+		color: #5D5D5D;
+		text-align: center;
+		padding:5px;
+	}
+	
+
 td {
-	border-bottom: 1px solid #aaa;
+	
+	/* border-bottom: 1px solid #aaa;*/
 	margin: 5px;
 	font-size: 14px;
-	padding:5px; 
+	padding:5px;  
 }
+
+tr:FIRST-CHILD {
+		font-weight: bold;
+	}
+
+tr:FIRST-CHILD th{
+		background-color: #efefef;
+	}
 
 #id {
 	width: 130px;
 }
 
 #CusName {
-	width: 60px;
+	width: 65px;
 }
 
 #zipCode {
@@ -103,6 +123,6 @@ td {
 }
 
 /* test */
-/* tr td {
+/*  tr td {
 	border: 1px solid red;
-} */
+}  */

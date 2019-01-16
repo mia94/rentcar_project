@@ -38,16 +38,14 @@ $(function(){
 			<a href="eventList.do">이벤트관리</a>
 			<a href="gradeList.do">등급관리</a>
 			
-			<h1>EVENT</h1>
+			<h1>EVENT</h1><p><a href="eventUpload.do" class="btnAdd">[ 이벤트 추가 ]</a></p>
 			<div class="wrap">
 			<table>
-				
-						
 							<tr>
-							<td>이벤트 코드</td>
-							<td>이벤트 이름</td>
-							<td>할인율</td>
-							<td>수정 & 삭제</td>
+							<th>이벤트 코드</th>
+							<th>이벤트 이름</th>
+							<th>할인율</th>
+							<th>수정 & 삭제</th>
 							
 							</tr>
 							<c:forEach var="item" items="${eventList }">
@@ -62,7 +60,7 @@ $(function(){
 							</tr>					
 				</c:forEach>
 				</table>
-				<p><a href="eventUpload.do" class="btnAdd">[ 추가 ]</a></p>
+				
 			</div>
 			</div>
 		</section>
