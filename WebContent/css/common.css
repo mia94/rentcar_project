@@ -25,6 +25,11 @@
 		color:white;
 		text-decoration: none;
 	}
+	/*모바일형 메뉴 이미지 안보이게 처리*/
+	header #menu_img{
+		display: none;
+	}
+	/* 메뉴 */
 	header #menu{
 		width:1000px;
 		position: absolute;
