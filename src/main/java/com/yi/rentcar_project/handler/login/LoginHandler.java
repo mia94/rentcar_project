@@ -37,9 +37,11 @@ public class LoginHandler implements CommandHandler {
 			if (checkManager == null) {
 				Customer customer = new Customer(id, passwd);
 				try {
-					service.selectCustomerByPw(customer);
+					customer = service.selectCustomerByPw(customer);
 
-					AUTH AUTH = new AUTH(id, false);
+					
+					
+					AUTH AUTH = new AUTH(id,customer.getName(), false);
 					req.getSession().setAttribute("AUTH", AUTH);
 					return "home.do";
 				} catch (Exception e) {
@@ -51,9 +53,9 @@ public class LoginHandler implements CommandHandler {
 			} else {
 				Employee employee = new Employee(id, null, null, passwd); // id=code
 				try {
-					service.selectEmployeeByPw(employee);
+					employee = service.selectEmployeeByPw(employee);
 					
-					AUTH AUTH = new AUTH(id, true);
+					AUTH AUTH = new AUTH(id, employee.getName(), true);
 					req.getSession().setAttribute("AUTH", AUTH);  
 					return "home.do";
 				} catch (Exception e) {

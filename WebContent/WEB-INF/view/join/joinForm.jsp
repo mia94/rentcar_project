@@ -174,6 +174,7 @@
     }
 </script>
 <script>
+$(function() {
 	 $(document).on('click','#submit',function(){
 		 $(opener.document).find('#zipcode').val($('#sample6_postcode').val());
 		$(opener.document).find('#address').val($('#sample6_address').val());
@@ -181,6 +182,13 @@
 		
 		window.close();
 	})
+	
+	$("#domain").change(function() {
+		
+		$("#email2").val($("#domain").val());
+	})
+})
+	
 </script>
 </head>
 <body>
@@ -243,8 +251,10 @@
        <p>
          <label>이메일</label>
          <input type="text" name="email1"> @ 
-         <input type="text" value="" id="domain"> 
-        <select name="email2" id="email2">
+          <input type="text" name="email2"  id="email2">
+        
+        <select name="email2" id="domain">
+        
         	<!-- <option value="a">선택하세요</option> -->
         	<option value="naver.com">naver.com</option>
         	<option value="gmail.com">gmail.com</option>
