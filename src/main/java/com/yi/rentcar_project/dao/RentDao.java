@@ -18,6 +18,9 @@ public interface RentDao {
 	//고객 id 검색해서 고객정보 들고오기
 	public List<Customer> selectById(String id) throws SQLException;
 	
+	//고객 id 검색해서 고객 코드 들고오기
+	public Customer getCustomercodeById(String id) throws SQLException;
+	
 	//보험
 	public Insurance selectInsuranceByCarType(String carType) throws SQLException;
 	
@@ -31,4 +34,11 @@ public interface RentDao {
 	
 	//추가
 	public int insert(Rent rent) throws SQLException;
+	
+	//고객코드별 대여내역 조회
+	public List<Rent> selectRentAllByCustomerCode(String customerCode) throws SQLException;
+	
+	//rent테이블에 있는 코드 검색해서 렌트 정보 가져오기
+	public Rent getRentInfoByRentCode(String code) throws SQLException;
+	
 }

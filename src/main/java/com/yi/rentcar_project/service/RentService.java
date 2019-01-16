@@ -1,7 +1,9 @@
 package com.yi.rentcar_project.service;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -136,5 +138,50 @@ public class RentService implements RentDao{
 		
 		return -1;
 	}
-	
+
+	@Override
+	public List<Rent> selectRentAllByCustomerCode(String customerCode) throws SQLException {
+		try(SqlSession sqlSession = MySqlSessionFactory.openSession()){
+			return sqlSession.selectList(namespace + ".selectRentAllByCustomerCode", customerCode);
+		}
+	}
+
+	@Override
+	public Customer getCustomercodeById(String id) throws SQLException {
+		try (SqlSession sqlSession = MySqlSessionFactory.openSession()) {
+			return sqlSession.selectOne(namespace + ".getCustomercodeById", id);
+		}
+	}
+
+	@Override
+	public Rent getRentInfoByRentCode(String code) throws SQLException {
+		try (SqlSession sqlSession = MySqlSessionFactory.openSession()) {
+			return sqlSession.selectOne(namespace + ".getRentInfoByRentCode", code);
+		}
+	}
+
+	//상세정보
+	public Map<String, Object> readRentInfo(String rentCode){
+		SqlSession session = null;
+		
+		try {
+			session = MySqlSessionFactory.openSession();
+			
+			RentDao dao = session.getMapper(RentDao.class);
+			Rent rent = dao.getRentInfoByRentCode(rentCode);
+			
+			Map<String, Object> map = new HashMap<>();
+			map.put("rent", rent);
+			
+			return map;
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return null;
+	}
+
 }
