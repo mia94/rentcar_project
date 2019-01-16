@@ -62,6 +62,12 @@ public class CarUploadHandler implements CommandHandler {
 				req.setAttribute("carImg", file);
 				
 				String car_code = multi.getParameter("car_code");
+				//받아온 carcode로 이미지 파일명 변경
+				String newfileName = car_code+".png";
+				File oldFile = new File(uploadPath+"\\"+file);
+				File newFile = new File(uploadPath+"\\"+newfileName);
+				oldFile.renameTo(newFile);//결과물 : 폴더이름이 바뀜ㅠㅠ
+
 				String name = multi.getParameter("name");
 				String brandCode = multi.getParameter("brand");
 				String cartypeCode = multi.getParameter("cartype");
@@ -71,7 +77,6 @@ public class CarUploadHandler implements CommandHandler {
 				String basic = multi.getParameter("basic_charge");
 				String h6 = multi.getParameter("hour6");
 				String h10 = multi.getParameter("hour10");
-				System.out.println(h10);
 				String h12 = multi.getParameter("hour12");
 				String helse = multi.getParameter("hour_else");
 				
@@ -114,5 +119,14 @@ public class CarUploadHandler implements CommandHandler {
 		}
 		return null;
 	}
+	
+	/*public static String nullOrEmptyToReplaceString(String str, String replaceStr) {
+		if (str == null || "".equals(str)) {
+			System.out.println("nullOrEmptyToReplaceString if문 안에 들어옴");
+			return replaceStr;
+		}
+		System.out.println("nullOrEmptyToReplaceString 실패");
+		return null;
+		}*/
 
 }
