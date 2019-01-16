@@ -1,0 +1,117 @@
+@CHARSET "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+	
+	*{
+		font-family: 'Noto Sans KR', sans-serif;
+	}
+	
+	div#rentChkListRead_container{
+		width: 1000px;
+		margin: 30px auto;
+		padding: 10px;
+		border: 1px solid #ccc;
+		overflow: hidden;
+	}
+	
+	div#leftWrap{
+		width: 330px;
+		height: 300px;
+		float: left;
+		margin: 10px 40px 5px 5px;
+		display: inline-block;
+	}
+	
+	div#rightWrap{
+		display: inline-block;
+		width: 590px;
+		height: 237px;
+		margin: 10px 5px 5px 5px;
+		border-bottom: 1px solid #ccc;
+	}
+	
+	div#rightWrap > h3{
+		padding: 5px 5px 5px 10px;
+		border-left: 10px solid #ccc;
+		border-bottom: 1px solid #ccc;
+	}
+	
+	div#carInfo{
+		border: 1px solid #efefef;
+		padding: 5px;
+		text-align: center;
+	}
+	
+	div#carInfo > h3{
+		color: #353535;
+		padding: 5px 0 0 10px;
+		text-align: left;
+	}
+	
+	img.carImg{
+		width: 320px;
+	}
+	
+	a{
+		text-decoration: none;
+		color: white;
+		font-size: 14px;
+	}
+	
+	div#btnWrap{
+		padding-top: 30px;
+	}
+	
+	div#backHome{
+		border: none;
+		background-color: #5D5D5D;
+		height: 40px;
+		line-height: 40px;
+		margin-right: 10px;
+		width: 100px;
+		display: inline-block;
+		text-align: center;
+	}
+	
+	div#backHome a{
+		width: 100px;
+		height: 40px;
+		line-height: 40px;
+		float: left;
+	}
+	
+	div#backList{
+		border: none;
+		background-color: #f04040;
+		width: 150px;
+		height: 40px;
+		line-height: 40px;
+		display: inline-block;
+		text-align: center;
+	}
+	
+	div#backList a{
+		width: 150px;
+		height: 40px;
+		line-height: 40px;
+		float: left;
+	}
+	
+	table{
+		border-left: 1px solid #efefef;
+		border-right: 1px solid #efefef;
+		border-bottom: 1px solid #efefef;
+		border-collapse: collapse;
+		width: 590px;
+		height: 180px;
+	}
+	
+	tr, td{
+		border-left: 1px solid #efefef;
+		border-right: 1px solid #efefef;
+		border-bottom: 1px solid #efefef;
+		color: #5D5D5D;
+		padding-left: 20px;
+	}
+	
+	

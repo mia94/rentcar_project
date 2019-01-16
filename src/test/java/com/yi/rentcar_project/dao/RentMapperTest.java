@@ -43,7 +43,7 @@ public class RentMapperTest {
 	}
 */
 
-	@Test
+/*	@Test
 	public void test03selectInsuranceByCarType() throws SQLException{
 		CarType ct = new CarType();
 		ct.setCode("S1");
@@ -59,9 +59,9 @@ public class RentMapperTest {
 		
 		List<StateCar> list = dao.selectCountRentByMonthWithBrand("kia");
 		Assert.assertNotNull(list);
-	}
+	}*/
 	
-	@Test
+/*	@Test
 	public void test09insertRent() throws SQLException{
 		Rent r = new Rent();
 	
@@ -83,5 +83,29 @@ public class RentMapperTest {
 		int res = dao.insert(r);
 		
 		Assert.assertEquals(1, res);
+	}*/
+/*	
+	@Test
+	public void test10selectRentAllByCustomerCode() throws SQLException{
+		List<Rent> list = dao.selectRentAllByCustomerCode("C002");
+		
+		for(Rent r : list){
+			System.out.println(r);
+		}
+		Assert.assertNotNull(list);
+	}
+	
+	@Test
+	public void test11getCustomercodeById() throws SQLException{
+		Customer c = dao.getCustomercodeById("asd132");
+		System.out.println(c);
+		Assert.assertNotNull(c);
+	}*/
+	
+	@Test
+	public void test12getRentInfoByRentCode() throws SQLException{
+		Rent r = dao.getRentInfoByRentCode("R022");
+		System.out.println(r);
+		Assert.assertNotNull(r);
 	}
 }
