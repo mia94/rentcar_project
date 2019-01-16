@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css?csd" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/rentChkList.css?absss" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentSearchDateList.css?bcd" rel="stylesheet"  type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -26,6 +27,73 @@
 				
 				<div id="search">
 					날짜 검색하는 곳!
+					<form>
+						<table class="searchBox">
+							<tr>
+								<th>조회기간</th>
+								<td>
+									<ul class="searchDate">
+										<li>
+											<span class='chkBox'>
+												<input type="radio" name="dateType" id="dateType1">
+												<label for="dateType1">당일</label>
+											</span>
+										</li>
+										
+										<li>
+											<span class='chkBox'>
+												<input type="radio" name="dateType" id="dateType2">
+												<label for="dateType2">3일</label>
+											</span>
+										</li>
+										
+										<li>
+											<span class='chkBox'>
+												<input type="radio" name="dateType" id="dateType3">
+												<label for="dateType3">1주</label>
+											</span>
+										</li>
+										
+										<li>
+											<span class='chkBox'>
+												<input type="radio" name="dateType" id="dateType4">
+												<label for="dateType4">2주</label>
+											</span>
+										</li>
+										
+										<li>
+											<span class='chkBox'>
+												<input type="radio" name="dateType" id="dateType5">
+												<label for="dateType5">1개월</label>
+											</span>
+										</li>
+										
+										<li>
+											<span class='chkBox'>
+												<input type="radio" name="dateType" id="dateType6">
+												<label for="dateType6">3개월</label>
+											</span>
+										</li>
+									</ul>
+									
+									<!-- 날짜 직접 선택하여 검색 -->
+									<div class='dateChoose'>
+										<!-- 시작일 -->
+										<span class="dset">
+											<input type="text" class="datePicker" name="searchStartDate" id="searchStartDate">
+											<a href="#" class='btncalendar dateclick'>달력</a>
+										</span>
+										<span class='demi'>~</span>
+										<!-- 종료일 -->
+										<span class="dset">
+											<input type="text" class="datePicker" name="searchEndDate" id="searchEndDate">
+											<a href="#" class='btncalendar dateclick'>달력</a>
+										</span>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</form>
 				</div>
 					<table>
 						<tr>
