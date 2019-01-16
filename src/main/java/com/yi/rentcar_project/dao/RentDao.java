@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import com.yi.rentcar_project.model.CarModel;
 import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.model.Insurance;
+import com.yi.rentcar_project.model.Rent;
 import com.yi.rentcar_project.model.StateCar;
 
 public interface RentDao {
@@ -23,4 +24,11 @@ public interface RentDao {
 	//브랜드별 카운트 select
 	@Select("SELECT DATE_FORMAT(start_date,'%Y-%m') as title, b.name as brand, COUNT(*) as count FROM rent r join car_model cm on r.car_code = cm.car_code join brand b on cm.brand = b.no GROUP BY title, brand having b.name = #{brand}")
 	List<StateCar> selectCountRentByMonthWithBrand(String brand);
+	
+	//대여코드
+	@Select("select concat('R', lpad((round(substring(max(code), 2,3)) + 1), 3, '0')) from rent")
+	String getNextRentNo();
+	
+	//추가
+	public int insert(Rent rent) throws SQLException;
 }

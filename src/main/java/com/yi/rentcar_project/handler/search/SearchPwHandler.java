@@ -68,7 +68,9 @@ public class SearchPwHandler implements CommandHandler {
 				req.setAttribute("msg", msg);
 				return "/WEB-INF/view/login/searchPw.jsp";
 			}
-			return "/WEB-INF/view/login/resultPw.jsp";
+			
+			res.sendRedirect("searchRestultPw.do");
+			return null;
 		}
 
 		return null;

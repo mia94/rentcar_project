@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+div#rentSuccess_container{
+		width: 1000px;
+		height: 300px;
+		margin: 30px auto;
+		padding: 10px;
+		border: 1px solid #ccc;
+		overflow: hidden;
+	}
+	
+	
+span#tit{
+	font-size: 30px;
+	color: #5D5D5D;
+	
+}
+
+#backHome{
+	border: none;
+	width: 100px;
+	height: 40px;
+}
+
+img{
+	width: 25px
+}

@@ -15,17 +15,9 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
   
-<link href="${pageContext.request.contextPath }/css/common.css?aaaa" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/form.css?aaaa" rel="stylesheet"  type="text/css">
 <style>
-   label{
-      width:120px;
-      float:left;
-   }
-   .error, .error2{
-      color:red;
-      font-size: 12px;
-      display:none;      
-   }
+  
 </style>
 
  <script>
@@ -77,9 +69,6 @@
             $("input[name='confirmPassword']").nextAll(".error2").css("display","inline");
             return false;
          }
-         
-         
-         
          
          return true;
       });
@@ -201,8 +190,11 @@
 		</header>
 		
 		<section>
-		
+		<div id="form">
+		<h1>회원가입</h1>
+		<h5>정보를 입력해 주세요.</h5>
    <form action="join.do" method="post" id="f1">
+   <fieldset>
       <p>
          <label>이름</label>
          <input type="text" name="name"> 
@@ -251,7 +243,7 @@
        <p>
          <label>이메일</label>
          <input type="text" name="email1"> @ 
-       <!--   <input type="text" value="" id="domain"> -->
+         <input type="text" value="" id="domain"> 
         <select name="email2" id="email2">
         	<!-- <option value="a">선택하세요</option> -->
         	<option value="naver.com">naver.com</option>
@@ -292,8 +284,9 @@
          <input type="submit" value="회원가입"> 
          <input type="reset" value="초기화"> 
       </p>
+      </fieldset>
    </form>
-
+</div>
 		</section>
 	</div>
 	

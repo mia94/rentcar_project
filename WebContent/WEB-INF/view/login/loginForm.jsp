@@ -31,15 +31,14 @@ $(function() {
 	}
 	
 	fieldset {
-	width:587px;
+	width:400px;
 	margin: 0 auto;
+	border:1px solid #aaa;
 	}
 
 
 	label {
-		width:100px;
-		position:absolute;
-		left:550px;
+		width:100px;	
 		margin: 0 auto;
 		padding-left :10px;
 		float: left;
@@ -49,13 +48,11 @@ $(function() {
 	p {	
 		overflow: hidden;
 		margin: 10px;	
-		text-align: center; 	
+		text-align: center;
+		 	
 	}
-	
-	#btnLogin{
-	padding: 5px;
-	margin: 5px;
-	text-align: center;
+	input{
+		margin: 5px;
 	}
 	
 	 #href{
@@ -98,17 +95,15 @@ $(function() {
 			</p>
 			
 			 <p>
-			 <input type="checkbox" value="관리자 모드" name="checkManager" id="checkManager">관리자 모드
-			  <input type="submit" value="로그인" id="btnLogin">
+			 <input type="submit" value="로그인"> 
+			 <input type="checkbox" value="관리자 모드" name="checkManager" id="checkManager">관리자 모드			  
 			 </p>
 			 
 			<p id="href">
-			
+				
 				<a href="join.do">회원가입</a>
 				<a href="searchId.do">ID찾기</a>
-				<a href="searchPw.do">PW찾기</a>
-				
-				
+				<a href="searchPw.do">PW찾기</a>			
 			</p>
 		</fieldset>
 	</form>
