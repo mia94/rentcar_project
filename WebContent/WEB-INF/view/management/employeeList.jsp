@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/emp.css?aaaa" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/management.css?aaaaaaa" rel="stylesheet"  type="text/css">
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -40,19 +40,20 @@ $(function(){
 			<h1>EMPLOYEE</h1>
 			<div class="wrap">
 				<c:forEach var="item" items="${employeeList }">
-						<p class="list_p">
-							
-							<span>${item.code }</span>
-							<span>${item.name }</span>
-							<span>${item.phone }</span>	
-							
-							<span class="btn_span">
+						<table>
+						<tr>
+							<td>${item.code }</td>
+							<td id="EmpName">${item.name }</td>
+							<td>${item.phone }</td>
+							<td>
 								<a href="employeeModify.do?code=${item.code }">수정</a>
 								<a href="employeeDelete.do?code=${item.code }" class="employeeDel">삭제</a>
-							</span>
-						</p>
+							</td>
+						</tr>
+						</table>
+				
 				</c:forEach>
-				<p><a href="employeeUpload.do" class="btnAdd">[ 추가  ]</a></p>
+				<p><a href="employeeUpload.do" class="btnAdd">[ 추가 ]</a></p>
 			</div>
 			</div>
 		</section>

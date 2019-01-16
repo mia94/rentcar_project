@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/grade.css?aaaaaa" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/management.css?aaaa" rel="stylesheet"  type="text/css">
 <style type="text/css">
 	
 </style>
@@ -41,23 +41,25 @@ $(function(){
 			<a href="gradeList.do">등급관리</a>
 			<h1>GRADE</h1>
 			<div class="wrap">
+				
 				<c:forEach var="item" items="${gradeList }">
-						<p class="list_p">
-							<span>
-								<img src="${pageContext.request.contextPath }/upload/${item.code }.png">
-							</span>
-							<span>${item.code }</span>
-							<span>${item.name }</span>
-							<span>${item.gLosal }</span>	
-							<span>${item.gHisal }</span>
-							<span>${item.rate }</span>
-							<span class="btn_span">
-								<a href="gradeModify.do?code=${item.code }">수정</a>
-								<a href="gradeDelete.do?code=${item.code }" class="gradeDel">삭제</a>
-							</span>
-						</p>
+						<table>
+							<tr>
+								<td><img src="${pageContext.request.contextPath }/upload/${item.code }.png"></td>
+								<td>${item.code }</td>
+								<td id="GradeName">${item.name }</td>
+								<td id="gLosal">${item.gLosal }</td>
+								<td id="gHisal">${item.gHisal }</td>
+								<td id="rate">${item.rate }</td>
+								<td>
+									<a href="gradeModify.do?code=${item.code }">수정</a>
+									<a href="gradeDelete.do?code=${item.code }" class="gradeDel">삭제</a>
+								</td>
+							</tr>
+							
+						</table>
 				</c:forEach>
-				<p><a href="gradeUpload.do" class="btnAdd">[ 추가  ]</a></p>
+				<p><a href="gradeUpload.do" class="btnAdd">[ 추가 ]</a></p>
 			</div>
 			</div>
 		</section>

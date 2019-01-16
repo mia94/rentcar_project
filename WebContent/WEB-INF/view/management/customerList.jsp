@@ -8,8 +8,10 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/management.css?aaaa" rel="stylesheet"  type="text/css">
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script>
 $(function(){
 
@@ -43,35 +45,34 @@ $(function(){
 			<h1>CUSTOMER</h1>
 			<div class="wrap">
 				<c:forEach var="item" items="${customerList }">
-						<p class="list_p">
-							
-							<span>${item.code }</span>
-							<span>${item.id }</span>
-							<span>${item.name }</span>
-							<span>${item.zipCode }</span>
-							<span>${item.address }</span>
-							<span>${item.phone }</span>
-							<span id="dob">
-							<fmt:formatDate value="${item.dob }" pattern="yyyy-MM-dd"/>
-							
-							</span>
-							<span>${item.email }</span>
-							<span>${item.license }</span>
-							<span>${item.gradeCode.name }</span>
-							<span>${item.rentCnt }</span>
-
-							<c:forEach var="events" items="${item.events }">
+						<table>
+							<tr>
+								<td>${item.code }</td>
+								<td id="id">${item.id }</td>
+								<td id="CusName">${item.name }</td>
+								<td id="zipCode">${item.zipCode }</td>
+								<td id="addr">${item.address }</td>
+								<td id="tel">${item.phone }</td>
+								<td id="dob"><fmt:formatDate value="${item.dob }" pattern="yyyy-MM-dd"/></td>
+								<td id="email">${item.email }</td>
+								<%-- <td id="license">${item.license }</td> --%>
+								<td id="CusGrade">${item.gradeCode.name }</td>
+								<%-- <td id="rentCnt">${item.rentCnt }</td> --%>
+								<%-- <td id="CusEvent">
+								<c:forEach var="events" items="${item.events }">
 								<c:forEach var="event" items="${events.events }">
 									<span>${event.name}</span>
 								</c:forEach>												
 
-							</c:forEach>
-							
-							<span class="btn_span">
-								<a href="customerModify.do?code=${item.code }">수정</a>
-								<a href="customerDelete.do?code=${item.code }" class="customerDel">삭제</a>
-							</span>
-						</p>
+								</c:forEach>
+								</td> --%>
+								<td>
+									<a href="customerModify.do?code=${item.code }">수정</a>
+									<a href="customerDelete.do?code=${item.code }" class="customerDel">삭제</a>
+								</td>
+							</tr>
+
+						</table>
 				</c:forEach>
 				<p><a href="customerUpload.do" class="btnAdd">[ 추가  ]</a></p>
 			</div>
