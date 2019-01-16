@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/common.css?x" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css?xx" rel="stylesheet"  type="text/css">
 <style>
 @media all and (max-width:767px){
 	/* 반응형 모바일 */
@@ -55,22 +55,52 @@
 		background-color: rgba(0,0,0,0.7);
 	}
 	/* 반응형 모바일 센터 */
-	section #session_home h1{
+	section{
+		width:100%;
+		height:350px;
+		text-align: center;
+		background-color: #3a3a3a;
+	}
+	section #session_home{
+		width:100%;
+		text-align: center;
+	}
+	section #car_main, #info_img{
 		display: none;
 	}
+	section #session_home #main_img{
+		width:100%;
+	}
+	section #session_home #procedure{
+		width:100%;
+	}
+	section #session_home h1{
+		font-size: 20px;
+		margin-top: 125px;
+	}
+	/* 반응형 footer */
+	section img{
+		float: left;
+	}
+	footer{
+		width:100%;
+	}
+	#footer_wrap{
+		width:90%;
+	}
+	
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(function(){
-	$("#main").css("margin-left","-100%").css("opacity",0); //0에서 1로 변경
+	$("#main").css("margin-left","-100%").css("opacity",1); //0에서 1로 변경
 	$("#menu_img").click(function(){
 		var opacity = $("#main").css("opacity");
 		if(opacity == 0){
-			/* $("#main").css("width","100%").css("opacity",1); */
 			$("#main").animate({"margin-left":"0", "opacity":1});
 		}else{
-			$("#main").animate({"margin-left":"100%", "opacity":0});
+			$("#main").animate({"margin-left":"-100%", "opacity":0});
 		}
 	})
 })
