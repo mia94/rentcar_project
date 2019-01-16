@@ -27,16 +27,6 @@ $(function() {
 			<%
 		}
 	%>	
-	
-	/* $("#main").css("margin-left","-100%").css("opacity",1); //0에서 1로 변경
-	$("#menu_img").click(function(){
-		var opacity = $("#main").css("opacity");
-		if(opacity == 0){
-			$("#main").animate({"margin-left":"0", "opacity":1});
-		}else{
-			$("#main").animate({"margin-left":"-100%", "opacity":0});
-		}
-	}) */
 })
 </script>
 </head>
