@@ -15,6 +15,16 @@
 		background-color: #3a3a3a;
 		position: relative;
 	}
+	/* 로고 */
+	header #logo{
+		position: absolute;
+		top:20px;
+		left: 30px;
+	}
+	header #logo a{
+		color:white;
+		text-decoration: none;
+	}
 	header #menu{
 		width:1000px;
 		position: absolute;
@@ -107,12 +117,13 @@
 		top: -10px;
 	}
 	section #session_home h1{
-		color:white;
 		z-index: 50;
 		position: absolute;
-		right: 20px;
-		bottom: 240px;
-		font-size: 36px;
+		left:100px;
+		top:-20px;
+		font-size: 60px;
+		color:white;
+		text-shadow: 1px 1px 3px black; 
 	}
 	section #session_home #procedure{
 		width:550px;
@@ -128,6 +139,13 @@
 		left:533px;
 		top:448px;
 		z-index: -10;
+	}
+	section #session_home #car_main{ 
+		width:350px;
+		position: absolute;
+		right:30px;
+		top:230px;
+		z-index: 10;
 	}
 	section #session_home #info_img{
 		width:262px;
