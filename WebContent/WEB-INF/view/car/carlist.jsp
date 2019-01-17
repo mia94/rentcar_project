@@ -6,9 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/common.css?aa" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css?xx" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_min.css?xx" rel="stylesheet"  type="text/css">
 <style>
+@media all and (min-width:768px){
 	#list_wrap{
 		width:1100px;
 		margin: 30px auto;
@@ -120,6 +121,99 @@
 		color:gray;
 		font-size: 12px;
 	}
+}
+@media all and (max-width:767px){
+	#list_wrap{
+		width:100%;
+	}
+	#list_wrap h1{
+		margin-top: 20px;
+	}
+	#list_wrap > a{
+		text-decoration: none;
+		color:gray;
+	}
+	#list_wrap ul{
+		display: none;
+	}
+	#list_wrap ul li{
+		
+	}
+	#list_wrap ul li a{
+		
+	}
+	#list_wrap ul li #total{
+		
+	}
+	#list_wrap ul li a img{
+
+	}
+	#list_wrap ul li a span{
+		
+	}
+	#btn_wrap{
+		width:1050px;
+		height:40px;
+		display: block;
+		margin: 5px;
+		text-align: right;
+	}
+	#btn_wrap a{
+		padding: 10px;
+		line-height:40px;
+		text-decoration: none;
+		font-size: 14px;
+		color:#4C4C4C;
+		font-weight: bold;
+	}
+	#btn_wrap a:hover{
+		color:#6799FF;
+		font-weight: bold;
+	}
+	#container article{
+		width:100%;
+		float:left;
+		height:170px;
+		border:0.5px solid #EAEAEA;
+		position: relative;
+	}
+	#container article:hover{
+		background-color:#F6F6F6; 
+	}
+	#container article h3{
+		color:gray;
+	}
+	#container article .car_img{
+		width:150px;
+		height: 120px;
+		margin-left: 40px; 
+	}
+	#container article .fuel_img{
+		width:30px;
+		position: absolute;
+		left: 220px;
+		bottom: 40px;
+	}
+	#container article .brand_img{
+		width:40px;
+		position: absolute;
+		left: 215px;
+		top: 50px;
+	}
+	#container article .info_wrap{
+		position:absolute;
+		right:10px;
+		top:10px;
+		width:180px;
+	}
+	#container article .info_wrap h3{
+		color:black;
+	}
+	#container article .info_wrap p{
+		color:gray;
+		font-size: 12px;
+	}
+}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
