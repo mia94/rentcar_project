@@ -29,7 +29,7 @@ $(function(){
 	var BlackList = $(".CusGrade").eq(${status.index}).text().trim();
 	if(BlackList=="블랙리스트"){
 		$(".CusGrade").eq(${status.index}).html("블랙리스트");
-		$(".CusGrade").eq(${status.index}).css("background-color","#FFEFEF");
+		$(".CusGrade").eq(${status.index}).parent().css("background-color","#FFEFEF");
 		$(".CusGrade").eq(${status.index}).css("color","#AA1212"); 
 	} 
 	</c:forEach>
