@@ -45,7 +45,8 @@ $(function() {
 </head>
 <body>
 <img src="${pageContext.request.contextPath }/upload/menu.png" alt="menu" id="menu_img">
-<h1 id="logo"><a href="home.do">L O G O</a></h1>
+<span id="logo_sub">RENTCAR</span>
+<h1 id="logo"><a href="home.do">W I T</a></h1>
 <div id="main">
 	<a href="login.do" id="aaa">로그인</a><a id="bbb"></a>
 </div>
