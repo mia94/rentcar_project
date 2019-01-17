@@ -36,6 +36,7 @@ $(function(){
 	
 })
 </script>
+
 <body>
 <div id="container">
 		<header>
@@ -43,6 +44,16 @@ $(function(){
 		</header>
 		
 		<section>
+		
+		
+		<div id="test">
+		
+		</div>
+		<nav id="CusDetail">
+		<div id="inner">
+     		  <%-- <img src="${pageContext.request.contextPath }/images/btnX.png" id="btnx">  --%>
+   			</div>
+		</nav>
 			<div id="wrap_wrap">
 			<a href="customerList.do">고객관리</a>
 			<a href="employeeList.do">직원관리</a>
@@ -66,8 +77,8 @@ $(function(){
 							<th>수정 & 삭제</th>
 						</tr>
 						<c:forEach var="item" items="${customerList }">
-							<tr>
-								<td>${item.code }</td>
+							<tr class="cusInfo">
+								<td >${item.code }</td>
 								<td>${item.id }</td>
 								<td>${item.name }</td>
 								<%-- <td id="zipCode">${item.zipCode }</td> --%>
@@ -101,5 +112,9 @@ $(function(){
 	<footer>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</footer>
+	
+<script src="${pageContext.request.contextPath }/js/customJason.js?cassdfs"></script>
+	
 </body>
+
 </html>
