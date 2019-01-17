@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/common.css?xx" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css?a" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_min.css?aa" rel="stylesheet"  type="text/css">
 <style>
 

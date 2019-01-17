@@ -13,13 +13,13 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/form.css?aaaaaa" rel="stylesheet"  type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
  
-  <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/form.css?aaaa" rel="stylesheet"  type="text/css">
+  
 <style type="text/css">
 
    }
@@ -207,7 +207,7 @@ $(function() {
 		<h1>개인정보수정</h1>
 		<h5>수정 할 정보를 입력해 주세요.</h5>
 		<form action="modify.do" id="f1" method="post">
-		<fieldset>
+		<fieldset id="modify">
 	      <p>
 	         <label>이름</label>
 	         <input type="text" name="name" value="${custom.name }"> 
@@ -286,8 +286,9 @@ $(function() {
          
       </p>
         <p id="send">  
-         <input type="submit" value="개인정보수정"> 
-          <input type="reset" value="초기화"> 
+        <input type="reset" value="초기화" id="reset"> 
+         <input type="submit" value="개인정보수정" id="ok"> 
+          
       </p>
        </fieldset>
    </form>

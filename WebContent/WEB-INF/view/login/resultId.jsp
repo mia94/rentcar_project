@@ -10,7 +10,11 @@
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
 <style type="text/css">
 
+ section{
+ 	height: 640px;
+ }
 </style>
+
 </head>
 <body>
 <div id="container">

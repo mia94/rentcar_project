@@ -293,8 +293,8 @@ $(function() {
 	         <input type="text" name="rentCnt" value="${customer.rentCnt }" readonly="readonly"> 
 	      </p>
         <p id="send">  
-         <input type="submit" value="개인정보수정"> 
-         <input type="reset" value="초기화">
+         <input type="reset" value="초기화" id="reset"> 
+         <input type="submit" value="고객정보수정" id="ok"> 
       </p>
        </fieldset>
    </form>

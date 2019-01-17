@@ -118,6 +118,7 @@
 	/* section */
 	section{
 		width:1178px;
+		min-height:600px;
 		border-left:1px solid #3a3a3a;
 		border-right:1px solid #3a3a3a;
 		padding:10px;

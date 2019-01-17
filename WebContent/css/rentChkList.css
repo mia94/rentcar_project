@@ -5,7 +5,6 @@
 	*{
 		font-family: 'Noto Sans KR', sans-serif;
 		color: #353535;
-		font-size: 15px;
 	}
 
 	div#rentChkList_container{
@@ -45,6 +44,7 @@
 		border: 1px solid #efefef;
 		color: #5D5D5D;
 		text-align: center;
+		font-size: 15px;
 	}
 	
 	td{
@@ -55,7 +55,7 @@
 		font-weight: bold;
 	}
 	
-	tr:FIRST-CHILD td{
+	tr#title td{
 		background-color: #efefef;
 	}
 	
@@ -72,7 +72,108 @@
 	/* 검색 */
 	div#search{
 		padding: 10px;
-		border: 1px solid red;
 		margin-top: 20px;
+		position: relative;
+	}
+	
+	#searchForm{
+		width: 798px;
+		border: 1px solid #cacaca;
+		margin-left: 90px;
+	}
+	
+	.searchBox{
+		margin: 0;
+		padding: 0;
+		width: 798px;
+	}
+	
+	.searchBox th{
+		width: 140px;
+	}
+	
+	ul.searchDate li{
+		display: inline-block;
+		margin-top: 10px;
+		margin-bottom: 5px;
+	}
+	
+	input[type=radio]{
+		display: none;
+		margin: 10px;
+	}
+	
+	input[type=radio] + label{
+		display: inline-block;
+		border: #ddd;
+		border-radius: 5px;
+		background-color: #e7e7e7;
+		font-size: 14px;
+		width: 50px;
+		height: 20px;
+		line-height: 20px;
+		padding: 3px;
+		margin-left: 10px;
+		text-align: center;
+		text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+		vertical-align: middle;
+		cursor: pointer;
+		background-color: #f5f5f5;
+		background-image: -moz-linear-gradient(top,#fff,#e6e6e6);
+		background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));
+		background-image: -webkit-linear-gradient(top,#fff,#e6e6e6);
+		background-image: -o-linear-gradient(top,#fff,#e6e6e6);
+		background-image: linear-gradient(to bottom,#fff,#e6e6e6);
+		background-repeat: repeat-x;
+		border: 1px solid #ccc;
+		border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+		border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+		border-bottom-color: #b3b3b3;
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#ffe6e6e6',GradientType=0);
+		filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+		-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+		-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+		box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+	}
+	
+	input[type=radio]:checked + label { 
+	   	background-image: none;
+	    background-color: #d0d0d0;
+	    outline: 0;
+		-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+		-moz-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+		box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+	}
+	
+	div#btnSearchWrap, div.clearfix{
+		display: inline-block;
+		margin: 5px;
+	}
+		
+	input#searchStartDate, input#searchEndDate{
+		width: 85px;
+		height: 25px;
+		line-height: 25px;
+		color: #353535;
+		font-size: 14px;
+		font-weight: bold;
+		padding-left: 10px;
+	}
+	
+	#btnSearch{
+		width: 80px;
+		height: 29px;
+		margin-left: 40px;
+	}
+
+	img.imgCal{
+		width: 25px;
+		position: absolute;
+		top: 67px;
+	}
+	
+	span.demi{
+		padding-left: 30px;
+		padding-right: 5px;
 	}
 	

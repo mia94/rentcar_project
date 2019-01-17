@@ -66,6 +66,6 @@
 	
 	<!-- 스크립트 부분(위에 스크립트 있으면 datepicker 실행이 안됨) -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="${pageContext.request.contextPath }/js/rentSearchDateList.js?a"></script>
+	<script src="${pageContext.request.contextPath }/js/rentSearchDateList.js?asdsdd"></script>
 </body>
 </html>

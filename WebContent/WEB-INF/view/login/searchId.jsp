@@ -23,6 +23,10 @@ $(function() {
 </script>
 <style type="text/css">
  	
+ section{
+ 	height: 640px;
+ }
+
 </style>
 </head>
 <body>
