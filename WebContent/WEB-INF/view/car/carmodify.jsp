@@ -72,9 +72,20 @@
 		height: 50px;
 		line-height: 50px;
 	}
-	p input[type=radio]{
+	.radio_wrap{
+		width:122px;
+		margin-left:126px;
+		height:48px;
+		border:1px solid #aaaaaa;
+		position: relative;
+	}
+	.radio{
+		width:50px;
+		display: inline-block;
+	}
+	.radio_wrap div:FIRST-CHILD{
 		margin-left: 10px;
-		margin-top: 19px;
+		margin-top: 10px; 
 	}
 	#charge {
 		width:450px;
@@ -108,7 +119,7 @@
 		$("#fuelSelect").val("${carmodel.fuel.code}").prop("selected",true);
 		$("#colorSelect").val("${carmodel.color}").prop("selected",true);
 		$("input:radio[name=gear]").val("${carmodel.gear}").attr("checked",true);
-		$("input:radio[name=gear]").val("${carmodel.rent}").attr("checked",true);//얘는 작동안되는 중
+		$("input:radio[name=isRent]").val("${carmodel.rent}").attr("checked",true);
 
 	})
 	
@@ -218,13 +229,17 @@
 						</p>
 						<p>
 							<label>변속기</label>
-							<input type="radio" name="gear" value="auto">자동
-							<input type="radio" name="gear" value="stick">수동
+							<div class="radio_wrap">
+								<div class="radio"><input type="radio" name="gear" value="auto"><span>자동</span></div>
+								<div class="radio"><input type="radio" name="gear" value="stick"><span>수동</span></div>
+							</div>
 						</p>
 						<p>
 							<label>렌트 중</label>
-							<input type="radio" name="isRent" value="true"> Y
-							<input type="radio" name="isRent" value="false"> N
+							<div class="radio_wrap">
+								<div class="radio"><input type="radio" name="isRent" value="true"> <span>Y</span></div>
+								<div class="radio"><input type="radio" name="isRent" value="false"> <span>N</span></div>
+							</div>
 						</p>
 						
 					</div>
