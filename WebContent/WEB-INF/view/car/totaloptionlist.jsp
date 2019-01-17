@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css?aa" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/common_min.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_min.css?x" rel="stylesheet"  type="text/css">
 <style>
 @media all and (min-width:768px){
 	#wrap{
@@ -46,7 +46,8 @@
 }
 @media all and (max-width:767px){
 	#wrap{
-		width:100%;
+		width:350px;
+		margin:0 auto;
 		height: 700px;
 	}
 	#wrap a{
@@ -65,7 +66,7 @@
 		color:white;
 	}
 	#wrap .menu img{
-		width:100%;
+		width:350px;
 		height:200px;
 	}
 }
