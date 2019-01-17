@@ -88,6 +88,7 @@
 		text-align:center;
 		background-color: #3a3a3a;
 		font-size: 12px;
+		z-index: 500; 
 	}
 	header #menu #car_menu #car_sub li a:hover, header #menu #option_menu #option_sub li a:hover,header #menu #chart_menu #chart_sub li a:hover{
 		background-color: #999999;
@@ -95,7 +96,6 @@
 	header #menu #car_menu #car_sub,header #menu #option_menu #option_sub,header #menu #chart_menu #chart_sub{
 		width:125px;
 		height:200px;
-		z-index: 100;
 	}
 	/*서브메뉴 개별 부분 - car */
 	header #menu #car_menu #car_sub{
@@ -118,6 +118,7 @@
 	/* section */
 	section{
 		width:1178px;
+		min-height:600px;
 		border-left:1px solid #3a3a3a;
 		border-right:1px solid #3a3a3a;
 		padding:10px;
@@ -150,7 +151,6 @@
 		position: absolute;
 		left: -11px;
 		top:443px;
-		z-index: -10;
 	}
 	section #session_home #jeju_img{
 		width:380px;
@@ -158,21 +158,18 @@
 		position: absolute;
 		left:533px;
 		top:448px;
-		z-index: -10;
 	}
 	section #session_home #car_main{ 
 		width:350px;
 		position: absolute;
 		right:30px;
 		top:230px;
-		z-index: 10;
 	}
 	section #session_home #info_img{
 		width:262px;
 		position: absolute;
 		right:-3px;
 		top:455px;
-		z-index: -10;
 	}
 	/* footer*/
 	footer{

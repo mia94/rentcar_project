@@ -7,8 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css?aa" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_min.css" rel="stylesheet"  type="text/css">
 <style>
+@media all and (min-width:768px){
 	#wrap{
 		width:720px;
 		height:400px; 
@@ -42,6 +43,32 @@
 	#wrap .menu img:hover{
 		transform:scale(1.1);
 	}
+}
+@media all and (max-width:767px){
+	#wrap{
+		width:100%;
+		height: 700px;
+	}
+	#wrap a{
+		width:90%;
+		margin-left:5%;
+		float:left;
+		height: 150px;
+		color:white;
+		text-decoration: none;
+		position: relative;
+	}
+	#wrap a h3{
+		position: absolute;
+		top:10px;
+		left: 10px;
+		color:white;
+	}
+	#wrap .menu img{
+		width:100%;
+		height:200px;
+	}
+}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
