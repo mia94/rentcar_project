@@ -71,6 +71,13 @@
 			case 're': $("#color").html('RED');
 			break;
 		}
+		//true = stick, false = auto
+		var gear = $("#gear").text().trim();
+		if(gear=='true'){
+			$("#gear").html("수동");
+		}else{
+			$("#gear").html("자동");
+		}
 		
 		
 		$("#delBtn").click(function(){
@@ -109,7 +116,7 @@
 							<td>색상</td>
 							<td id="color"> ${carmodel.color }</td>
 							<td>변속기</td>
-							<td>${carmodel.gear }</td>
+							<td id="gear">${carmodel.gear }</td>
 						</tr>
 						<!-- <tr>
 							<td colspan="4" id="title_charge">요금표</td>

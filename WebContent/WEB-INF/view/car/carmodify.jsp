@@ -108,7 +108,7 @@
 		$("#fuelSelect").val("${carmodel.fuel.code}").prop("selected",true);
 		$("#colorSelect").val("${carmodel.color}").prop("selected",true);
 		$("input:radio[name=gear]").val("${carmodel.gear}").attr("checked",true);
-		$("input:radio[name=gear]").val("${carmodel.rent}").attr("checked",true);//얘는 작동안되는 중
+		$("input:radio[name=isRent]").val("${carmodel.rent}").attr("checked",true);
 
 	})
 	

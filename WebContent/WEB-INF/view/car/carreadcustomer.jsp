@@ -47,6 +47,13 @@
 			case 're': $("#color").html('RED');
 			break;
 		}
+		
+		var gear = $("#gear").text().trim();
+		if(gear=='true'){
+			$("#gear").html("수동");
+		}else{
+			$("#gear").html("자동");
+		}
 	})
 </script>
 </head>
