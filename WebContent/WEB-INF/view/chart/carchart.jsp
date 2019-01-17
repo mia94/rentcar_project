@@ -12,12 +12,12 @@
 	#chart_wrap{
 		width:1000px;
 		margin: 50px auto; 
-		height: 600px;
+		height: 800px;
 		position: relative;
 	}
 	#chart{
 		width:800px;
-		height: 400px;
+		height: 700px;
 		margin: 100px auto 50px;
 	}
 	#info{
@@ -45,50 +45,40 @@
 	<footer>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</footer>
-<script class="include" type="text/javascript" src="${pageContext.request.contextPath }/js/jquery.jqplot.min.js"></script>
-<script class="include" language="javascript" type="text/javascript" src="${pageContext.request.contextPath }/js/jqplot.barRenderer.min.js"></script>
-<script class="include" language="javascript" type="text/javascript" src="${pageContext.request.contextPath }/js/jqplot.categoryAxisRenderer.min.js"></script>
-<script class="include" language="javascript" type="text/javascript" src="${pageContext.request.contextPath }/js/jqplot.pointLabels.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
-	$(function(){
-
-		var line = new Array();
-
-		<c:forEach var="item" items="${list}" varStatus="status">
-			line[${status.index}] = ${list.get(status.index).rentCnt};
+	google.charts.load('current', {'packages':['bar']});
+	google.charts.setOnLoadCallback(drawStuff);
+	
+	function drawStuff() {
+	  var data = new google.visualization.arrayToDataTable([
+	    ['차량코드', '차량'],
+	    <c:forEach var="item" items="${list}" varStatus="status">
+			['${list.get(status.index).carCode}', ${list.get(status.index).rentCnt}],
 		</c:forEach>
-		
-		  plot = $.jqplot('chart', [line], {
-		    stackSeries: true,
-		    captureRightClick: true,
-		    seriesDefaults:{
-		      renderer:$.jqplot.BarRenderer,
-		      rendererOptions: {
-		          barMargin: 30,
-		          highlightMouseDown: true    
-		      },
-		      pointLabels: {show: true}
-		    },
-		    axes: {
-		      xaxis: {
-		          renderer: $.jqplot.CategoryAxisRenderer
-		      },
-		      yaxis: {
-		        padMin: 0
-		      }
-		    },
-		    legend: {
-		      show: true,
-		      location: 'e',
-		      placement: 'outside'
-		    }      
-		  });
-		  $('#chart').bind('jqplotDataClick', 
-		    function (ev, seriesIndex, pointIndex, data) {
-		     // $('#info').html('series: '+seriesIndex+', point: '+pointIndex+', data: '+data);
-		    }
-		  ); 
-	})
+	  ]);
+	
+	  var options = {
+	    width: 800,
+	    chart: {
+	      title: '차량별 렌트',
+	    },
+	    bars: 'horizontal', // Required for Material Bar Charts.
+	    series: {
+	      0: { axis: 'distance' }, // Bind series 0 to an axis named 'distance'.
+	      1: { axis: 'brightness' } // Bind series 1 to an axis named 'brightness'.
+	    },
+	    axes: {
+	      x: {
+	        distance: {label: 'rent count'}, // Bottom x-axis.
+	        brightness: {side: 'top', label: 'rent count'} // Top x-axis.
+	      }
+	    }
+	  };
+	
+	var chart = new google.charts.Bar(document.getElementById('chart'));
+	chart.draw(data, options);
+	};
 </script>
 </body>
 </html>
