@@ -26,9 +26,6 @@ $(function() {
 		}
 	%>	
 	//submenu
-	 $("#option_sub").hide();
-	 $("#car_sub").hide();
-	 $("#chart_sub").hide();
 	if($(window).width()>768){
 		$("#option_sub").hide();
 		$("#option_menu").hover(function () {

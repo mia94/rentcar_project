@@ -80,6 +80,7 @@
 		text-align:center;
 		background-color: #3a3a3a;
 		font-size: 12px;
+		z-index: 50; 
 	}
 	header #menu #car_menu #car_sub li a:hover, header #menu #option_menu #option_sub li a:hover,header #menu #chart_menu #chart_sub li a:hover{
 		background-color: #999999;
