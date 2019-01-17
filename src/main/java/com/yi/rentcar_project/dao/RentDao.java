@@ -2,12 +2,15 @@ package com.yi.rentcar_project.dao;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.yi.rentcar_project.model.CarModel;
 import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.model.RentDate;
+import com.yi.rentcar_project.model.RentHour;
 import com.yi.rentcar_project.model.Insurance;
 import com.yi.rentcar_project.model.Rent;
 import com.yi.rentcar_project.model.StateCar;
@@ -56,4 +59,11 @@ public interface RentDao {
 	
 	//상세정보2
 	public Rent selectInfoRentByAll(String code) throws SQLException;
+	
+	//초과비용 계산하기
+	public RentHour selectRentHours(Map<String, String> map);
+	
+	//반납 처리하기
+	@Update("update rent set is_return = true where code = #{code}")
+	int changeisReturn(String code);
 }

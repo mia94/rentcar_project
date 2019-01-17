@@ -171,3 +171,16 @@ span#overdue {
 	font-weight: bold;
 	color: #f04040;
 }
+
+#btnOverdueCal{
+	background-color: #535353;
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 1px 2px;
+	margin-left: 5px;
+	color: white;
+}
+
+#btnOverdueCal:hover{
+	color: #FFE400;
+}

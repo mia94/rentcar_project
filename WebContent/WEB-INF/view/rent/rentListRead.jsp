@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css?ab" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentListRead.css?ab" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentListRead.css?abs" rel="stylesheet"  type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -111,18 +111,27 @@
 							</c:choose>
 						</tr>
 						<tr>
-							<td colspan="3" style='color: #212121'><b>초과 요금</b></td>
-							<td colspan="3" style='color: #212121'><span id='overdue'>0</span>원</td>
+							<td colspan="3" style='color: #212121'><b>초과 요금</b><button type="button" id="btnOverdueCal" data-cCode="${map.rentInfo.car_code.carCode }" data-rCode="${map.rentInfo.code }">계산</button></td>
+							<td colspan="3" style='color: #212121'>
+								<span id='overdue'>0</span>원
+							</td>
 						</tr>
 					</table>
+					<h4>${overdue }</h4>
 				</div>
 				
 				<!-- 리스트로 이동하기 -->
 				<div id="btnWrap">
-					<div id="btnReturn"><a href="${pageContext.request.contextPath }/home.do">반납</a></div>
+					<div id="btnReturn"><a href="rentReturn.do?code=${map.rentInfo.code }" id='returnConfirm'>반납</a></div>
 					<div id="backList"><a href="${pageContext.request.contextPath }/rentList.do">대여내역 보기</a></div>
 				</div>	
 			</div>
+						
+			<!-- 필요한 데이터 보내기 -->
+			<form id="calOverdue" action="${pageContext.request.contextPath }/rentHour.do" method="post">
+				<input type="hidden" name="carCode" id="carCode">
+				<input type="hidden" name="rCode" id="rCode">
+			</form>
 					
 		</section>
 
@@ -135,5 +144,20 @@
 	
 	<!-- 스크립트 부분(위에 스크립트 있으면 datepicker 실행이 안됨) -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="${pageContext.request.contextPath }/js/rentListRead.js?abf"></script>
+	<script>
+		$(function(){
+			$("#returnConfirm").click(function(){
+				var returnConfirm = confirm("반납처리 하시겠습니까?");
+				
+				if(returnConfirm == true){
+					location.href = "rentReturn.do?code=${map.rentInfo.code }";
+				} else{
+					
+				}
+				return false;
+			})	
+		})
+	</script>
 </body>
 </html>

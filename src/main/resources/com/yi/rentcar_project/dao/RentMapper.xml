@@ -186,4 +186,11 @@
 		from rent
 		where start_date &gt;= #{chk_start_date} and  end_date &lt;= #{chk_end_date} order by start_date;
 	</select>
+	
+	<!-- 초과금액 계산 -->
+	<select id="selectRentHours" resultType="RentHour" parameterType="map">
+		select hour6, hour10, hour12, hour_else, basic_charge, timestampdiff(hour, concat(end_date, ' ', end_time), now()) as overHour
+		from rent r join car_model cm on r.car_code = cm.car_code 
+		where cm.car_code = #{carCode} and r.code = #{rCode};
+	</select>
 </mapper>

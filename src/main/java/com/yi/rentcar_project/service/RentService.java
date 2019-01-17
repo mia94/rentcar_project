@@ -12,6 +12,7 @@ import com.yi.rentcar_project.model.CarModel;
 import com.yi.rentcar_project.model.Customer;
 import com.yi.rentcar_project.model.Grade;
 import com.yi.rentcar_project.model.RentDate;
+import com.yi.rentcar_project.model.RentHour;
 import com.yi.rentcar_project.model.Insurance;
 import com.yi.rentcar_project.model.Rent;
 import com.yi.rentcar_project.model.StateCar;
@@ -291,9 +292,22 @@ public class RentService implements RentDao{
 		}
 	}
 
-	
+	//초과비용
+	@Override
+	public RentHour selectRentHours(Map<String, String> map) {
+		try(SqlSession sqlSession = MySqlSessionFactory.openSession()){
+			return sqlSession.selectOne(namespace + ".selectRentHours", map);
+		}
+	}
 
-	
-
+	//반납
+	@Override
+	public int changeisReturn(String code) {
+		try(SqlSession sqlSession = MySqlSessionFactory.openSession()){
+			int res = sqlSession.update(namespace + ".changeisReturn", code);
+			sqlSession.commit();
+			return res;
+		}
+	}
 
 }
