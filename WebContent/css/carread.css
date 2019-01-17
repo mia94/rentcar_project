@@ -76,7 +76,7 @@
 }
 @media all and (max-width:767px){
 	#read_wrap{
-		width:90%;
+		width:320;
 		margin:0 auto;
 		height:680px;
 		position: relative;
@@ -88,17 +88,16 @@
 		color:gray;
 	}
 	#read_wrap img{
-		width:70%;
-		margin-left:5%;
+		width:280px;
 		position: absolute;
-		left: 20px;
+		left: 10%;
 		top:100px;
 	}
 	#info_wrap{
 		width:70%;
+		margin-left:10%;
 		height: 260px;
 		position:absolute;
-		margin-left:5%;
 		top:280px;
 		font-size: 14px;
 	}
@@ -138,12 +137,12 @@
 	}
 	a#back{
 		position: absolute;
-		left: -30px;
+		left: 10px;
 		top:130px;
 	}
 	a#next{
 		position: absolute;
-		right: 30px;
+		right: 50px;
 		top:130px;
 	}
 }	
