@@ -152,15 +152,10 @@
 		
 	}
 	#btn_wrap{
-		width:1050px;
-		height:40px;
-		display: block;
-		margin: 5px;
+		width:100%;
 		text-align: right;
 	}
 	#btn_wrap a{
-		padding: 10px;
-		line-height:40px;
 		text-decoration: none;
 		font-size: 14px;
 		color:#4C4C4C;
