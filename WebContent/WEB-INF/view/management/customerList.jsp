@@ -78,7 +78,7 @@ $(function(){
 						</tr>
 						<c:forEach var="item" items="${customerList }">
 							<tr class="cusInfo">
-								<td >${item.code }</td>
+								<td ><a href="testRead.do?code=${item.code }">${item.code }</a></td>
 								<td>${item.id }</td>
 								<td>${item.name }</td>
 								<%-- <td id="zipCode">${item.zipCode }</td> --%>

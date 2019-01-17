@@ -1,6 +1,8 @@
 package com.yi.rentcar_project.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -225,7 +227,32 @@ public class CustomerService implements CustomerDao {
 	}
 
 	
-	
+	//
+	public Map<String, Object> readCustomerInfo(String code){
+		SqlSession session = null;
+		
+		try {
+			session = MySqlSessionFactory.openSession();
+			
+			CustomerDao dao = session.getMapper(CustomerDao.class);
+			Customer c = new Customer();
+			c.setCode(code);
+			
+			Customer cstm = dao.selectCustomerByCode(c);
+			
+			Map<String, Object> map = new HashMap<>();
+			
+			map.put("cstm", cstm);
+			
+			return map;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return null;
+	}
 
 
 }
