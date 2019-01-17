@@ -78,6 +78,7 @@
 	/*서브메뉴 공통부분*/
 	header #menu #car_menu, header #menu #option_menu, header #menu #chart_menu{
 		position: relative;
+		z-index: 500; 
 	}
 	header #menu #car_menu #car_sub li a, header #menu #option_menu #option_sub li a,header #menu #chart_menu #chart_sub li a{
 		text-decoration: none;
