@@ -87,6 +87,28 @@ $("#btnSearch").click(function(){
 	if( $("#searchStartDate").val() == "" && $("#searchEndDate").val() == ""){
 		alert("조회하고 싶은 기간을 선택해주세요.");
 	} else{
-		$("#searchForm").submit();
+		/*$("#searchForm").submit();
+		*/
+		$.ajax({
+			url: "rentSearchDate.do",
+			type: "post",
+			data:{"searchStartDate": $("#searchStartDate").val(), "searchEndDate": $("#searchEndDate").val()},
+			dataType: "json",
+			success: function(json){
+				console.log(json);
+				$("#title").nextAll().remove();
+				
+				$(json).each(function(index, obj){
+					$("#title").after("<tr id='insert'></tr>");
+					$("#insert").append("<td><a href='rentChkListRead.do?code=" + obj.code + "&name=" + obj.car_code.name + "'>" + obj.code + "</td>");
+					$("#insert").append("<td>" + obj.start_date + "</td>");
+					$("#insert").append("<td>" + obj.end_date + "</td>");
+					$("#insert").append("<td><img src='"+pathContext+"/upload/" + obj.car_code.brand.name + ".png'></td>");
+					$("#insert").append("<td>" + obj.car_code.carType.type + "</td>");
+					$("#insert").append("<td>" + obj.car_code.name + "</td>");
+				})
+			}
+			
+		})
 	}
 })

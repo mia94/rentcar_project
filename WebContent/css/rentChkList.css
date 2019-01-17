@@ -5,7 +5,6 @@
 	*{
 		font-family: 'Noto Sans KR', sans-serif;
 		color: #353535;
-		font-size: 15px;
 	}
 
 	div#rentChkList_container{
@@ -45,6 +44,7 @@
 		border: 1px solid #efefef;
 		color: #5D5D5D;
 		text-align: center;
+		font-size: 15px;
 	}
 	
 	td{

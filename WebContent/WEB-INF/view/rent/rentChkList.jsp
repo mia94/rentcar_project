@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css?csd" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentChkList.css?absss" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentChkList.css?abc" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/rentSearchDateList.css?c" rel="stylesheet"  type="text/css">
 </head>
 <body>
@@ -91,7 +91,7 @@
 			                                <a href="#none" class="btncalendar dateclick">달력</a>
 			                            </span>
 			                            <div id="btnSearchWrap">
-			                            	<button id="btnSearch">조회</button>
+			                            	<button type="button" id="btnSearch">조회</button>
 			                            </div>
 			                        </div>    
 			                    </td>
@@ -104,7 +104,7 @@
 				
 					<!-- 리스트 -->
 					<table>
-						<tr>
+						<tr id="title">
 							<td>대여코드</td>
 							<td>대여일자</td>
 							<td>반납일자</td>
@@ -137,6 +137,9 @@
 	<!-- 스크립트 부분(위에 스크립트 있으면 datepicker 실행이 안됨) -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/datepicker-ko.js"></script>
+	<script>
+		var pathContext = '${pageContext.request.contextPath }';
+	</script>
 	<script src="${pageContext.request.contextPath }/js/rentSearchDateList.js?a"></script>
 
 </body>

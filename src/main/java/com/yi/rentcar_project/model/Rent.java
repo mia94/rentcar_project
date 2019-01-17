@@ -13,6 +13,7 @@ public class Rent {
 	private Insurance insurance_code;	//보험코드(I001, I002, ..)
 	private String e_code;		//이벤트코드(EVT1, EVT2, ..)
 	private int opt_price;		//옵션비용
+	private RentDate rentDate;
 	
 	public Rent() {
 		// TODO Auto-generated constructor stub
@@ -20,7 +21,7 @@ public class Rent {
 
 	public Rent(String code, String start_date, String start_time, String end_date, String end_time, boolean is_return,
 			int basic_price, CarModel car_code, Customer customer_code, Insurance insurance_code, String e_code,
-			int opt_price) {
+			int opt_price, RentDate rentDate) {
 		this.code = code;
 		this.start_date = start_date;
 		this.start_time = start_time;
@@ -33,6 +34,7 @@ public class Rent {
 		this.insurance_code = insurance_code;
 		this.e_code = e_code;
 		this.opt_price = opt_price;
+		this.rentDate = rentDate;
 	}
 
 	public String getCode() {
@@ -131,14 +133,23 @@ public class Rent {
 		this.opt_price = opt_price;
 	}
 
+	public RentDate getRentDate() {
+		return rentDate;
+	}
+
+	public void setRentDate(RentDate rentDate) {
+		this.rentDate = rentDate;
+	}
+
 	@Override
 	public String toString() {
 		return String.format(
-				"Rent [code=%s, start_date=%s, start_time=%s, end_date=%s, end_time=%s, is_return=%s, basic_price=%s, car_code=%s, customer_code=%s, insurance_code=%s, e_code=%s, opt_price=%s]",
+				"Rent [code=%s, start_date=%s, start_time=%s, end_date=%s, end_time=%s, is_return=%s, basic_price=%s, car_code=%s, customer_code=%s, insurance_code=%s, e_code=%s, opt_price=%s, rentDate=%s]",
 				code, start_date, start_time, end_date, end_time, is_return, basic_price, car_code, customer_code,
-				insurance_code, e_code, opt_price);
+				insurance_code, e_code, opt_price, rentDate);
 	}
 
+	
 	
 	
 }

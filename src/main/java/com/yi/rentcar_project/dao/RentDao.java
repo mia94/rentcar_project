@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Select;
 
 import com.yi.rentcar_project.model.CarModel;
 import com.yi.rentcar_project.model.Customer;
+import com.yi.rentcar_project.model.RentDate;
 import com.yi.rentcar_project.model.Insurance;
 import com.yi.rentcar_project.model.Rent;
 import com.yi.rentcar_project.model.StateCar;
@@ -45,6 +46,6 @@ public interface RentDao {
 	public Rent getRentInfoByRentCode(String code) throws SQLException;
 	
 	//기간 검색
-	public List<Rent> getRentList(String start, String end) throws SQLException;
+	public List<Rent> getRentList(RentDate date) throws SQLException;
 	
 }
