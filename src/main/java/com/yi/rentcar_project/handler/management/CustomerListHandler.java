@@ -16,6 +16,7 @@ public class CustomerListHandler implements CommandHandler {
 		// TODO Auto-generated method stub
 		CustomerService customerService = CustomerService.getInstance();
 		List<Customer> customerList = customerService.selectCustomerByAll();
+		
 		req.setAttribute("customerList", customerList);
 
 		return "/WEB-INF/view/management/customerList.jsp";

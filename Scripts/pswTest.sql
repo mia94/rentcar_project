@@ -72,3 +72,11 @@ select * from grade;
 
 select * from employee;
 
+select * from custom_event;
+
+select c.code, Id, passwd, c.Name, zip_code ,address, phone,dob, email, emp_code, license,  rent_cnt, event_code,
+				custom_code, is_use, e.name as eName, e.rate as eRate, e.code as eCode, g.rate as gRate , grade_code, g.name gName
+		from customer c left join custom_event ce on c.code = ce.custom_code left join event e on ce.event_code = e.code left join grade g on c.grade_code = g.code
+		where c.code !='C000' 
+		order by c.code, e.code;
+

@@ -8,8 +8,8 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/management.css?aaaa" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/management.css?a" rel="stylesheet"  type="text/css">
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -25,7 +25,14 @@ $(function(){
 		return false;
 	})
 	
-	
+	<c:forEach var="item" items="${customerList}" varStatus="status">
+	var BlackList = $(".CusGrade").eq(${status.index}).text().trim();
+	if(BlackList=="블랙리스트"){
+		$(".CusGrade").eq(${status.index}).html("블랙리스트");
+		$(".CusGrade").eq(${status.index}).css("background-color","#FFEFEF");
+		$(".CusGrade").eq(${status.index}).css("color","#AA1212"); 
+	} 
+	</c:forEach>
 	
 })
 </script>
@@ -43,7 +50,7 @@ $(function(){
 			<a href="gradeList.do">등급관리</a>
 			
 			
-			<h1>CUSTOMER</h1> <p><a href="customerUpload.do" class="btnAdd">[ 고객 추가  ]</a></p>
+			<h1 id="title">CUSTOMER</h1> <p><a href="customerUpload.do" class="btnAdd">[ 고객 추가  ]</a></p>
 			<div class="wrap">
 				
 						<table>
@@ -61,17 +68,17 @@ $(function(){
 						<c:forEach var="item" items="${customerList }">
 							<tr>
 								<td>${item.code }</td>
-								<td id="id">${item.id }</td>
-								<td id="CusName">${item.name }</td>
+								<td>${item.id }</td>
+								<td>${item.name }</td>
 								<%-- <td id="zipCode">${item.zipCode }</td> --%>
 								<%-- <td id="addr">${item.address }</td> --%>
-								<td id="tel">${item.phone }</td>
+								<td>${item.phone }</td>
 								<%-- <td id="dob"><fmt:formatDate value="${item.dob }" pattern="yyyy-MM-dd"/></td> --%>
 								<%-- <td id="email">${item.email }</td> --%>
-								<td id="license">${item.license }</td> 
-								<td id="CusGrade">${item.gradeCode.name }</td>
-								<td id="rentCnt">${item.rentCnt }</td>
-								 <td id="CusEvent">
+								<td>${item.license }</td> 
+								<td class="CusGrade">${item.gradeCode.name }</td>
+								<td>${item.rentCnt }</td>
+								 <td>
 								<c:forEach var="events" items="${item.events }">
 								<c:forEach var="event" items="${events.events }">
 									<span>${event.name}</span>
