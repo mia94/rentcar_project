@@ -29,6 +29,14 @@
 		color:white;
 		text-decoration: none;
 	}
+	header #logo_sub{
+		position: absolute;
+		top:13px;
+		left: 30px;
+		font-size: 12px;
+		color:white;
+		letter-spacing: 3px;
+	}
 	/*모바일형 메뉴 이미지 안보이게 처리*/
 	header #menu_img{
 		display: none;
@@ -80,6 +88,7 @@
 		text-align:center;
 		background-color: #3a3a3a;
 		font-size: 12px;
+		z-index: 50; 
 	}
 	header #menu #car_menu #car_sub li a:hover, header #menu #option_menu #option_sub li a:hover,header #menu #chart_menu #chart_sub li a:hover{
 		background-color: #999999;
@@ -124,6 +133,7 @@
 		position: absolute;
 		left: -11px;
 		top: -10px;
+		z-index: 3;
 	}
 	section #session_home h1{
 		display:block;

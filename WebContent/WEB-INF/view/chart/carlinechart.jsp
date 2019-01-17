@@ -16,9 +16,10 @@
 		position: relative;
 	}
 	#chart{
-		width:800px;
-		height: 500px;
-		margin: 0 auto;
+		width:700px;
+		position: absolute;
+		top:50px;
+		left: 150px;
 	}
 </style>
 </head>

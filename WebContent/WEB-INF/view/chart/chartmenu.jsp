@@ -1,24 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <style>
-	#menu{
-		width:800px;
-		margin: 0 auto;
+	#chartpage_menu{
+		width:500px;
+		margin: 40px auto;
 		text-align: center;
 	}
-	#menu a{
+	#chartpage_menu a{
 		float:left;
-		width:25%;
-		height: 45px;
-		line-height:45px;
-		color:white;
+		width:120px;
+		height: 40px;
+		line-height:40px;
+		color:gray;
+		border:2px solid #eeeeee;
+		border-radius:10px;
 		text-decoration: none;
-		background-color: #4C4C4C;
 		font-size: 14px;
+	}
+	#chartpage_menu a:hover{
+		background-color: #aaaaaa;
+		color: white;
 	}
 </style>
 
-	<div id="menu">
+	<div id="chartpage_menu">
 		<a href="carchart.do">차량별 렌트</a>
 		<a href="cartypechart.do">차종</a>
 		<a href="brandchart.do">브랜드</a>

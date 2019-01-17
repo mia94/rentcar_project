@@ -29,6 +29,14 @@
 		color:white;
 		text-decoration: none;
 	}
+	header #logo_sub{
+		position: absolute;
+		top:13px;
+		left: 30px;
+		font-size: 12px;
+		color:white;
+		letter-spacing: 3px;
+	}
 	/*모바일형 메뉴 이미지 안보이게 처리*/
 	header #menu_img{
 		display: none;
@@ -125,6 +133,7 @@
 		position: absolute;
 		left: -11px;
 		top: -10px;
+		z-index: 3;
 	}
 	section #session_home h1{
 		display:block;
