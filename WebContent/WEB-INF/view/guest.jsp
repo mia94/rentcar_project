@@ -25,15 +25,18 @@ $(function() {
 			<%
 		}
 	%>	
+	$("#menu").removeClass("openMenu");
 	if($(window).width()<769){
-		$("#menu").css("margin-left","-100%").css("opacity",1);
+		$("#menu").css("margin-left","-100%");//.css("opacity",0);
 		$("#menu_img").click(function(){
-			var opacity = $("#menu").css("opacity");
-			if(opacity == 0){
-				$("#menu").css("width","100%").css("opacity",1);
-				$("#menu").animate({"margin-left":"0", "opacity":1});
+			var openMenuClass = $("#menu").hasClass("openMenu");//클래스가 있고 없고로 상태를 구분
+			if(openMenuClass == false){
+				//$("#menu").css("width","100%").css("opacity",1);
+				$("#menu").animate({"margin-left":"0"/* , "opacity":1*/} );
+				$("#menu").addClass("openMenu");
 			}else{
-				$("#menu").animate({"margin-left":"-100%", "opacity":0});
+				$("#menu").animate({"margin-left":"-100%"/* , "opacity":0 */});
+				$("#menu").removeClass("openMenu");
 			}
 		})
 	}
