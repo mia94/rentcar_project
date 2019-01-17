@@ -8,9 +8,9 @@
 
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css?aaaaa" rel="stylesheet"  type="text/css">
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/form.css?aaaaaaa" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/form.css?aaaaaaaa" rel="stylesheet"  type="text/css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -108,7 +108,7 @@
 	 $( function() {
 		    $( "#datepicker" ).datepicker({
 		      showOn: "button",
-		      buttonImage: "images/calendar.gif",
+		      buttonImage: "images/btn_calendar.gif",
 		      buttonImageOnly: true,
 		      buttonText: "Select date",
 		      changeMonth: true,
@@ -272,7 +272,7 @@ $(function() {
       <p>
        <label>우편번호</label>
       <input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode">
-     <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+     <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" id="btnSearchPost"><br>
       </p>
       
       <p>
@@ -296,8 +296,9 @@ $(function() {
 	 </p>
       
       <p id="send">  
-         <input type="submit" value="회원가입"> 
-         <input type="reset" value="초기화"> 
+        
+         <input type="reset" value="초기화" id="reset"> 
+          <input type="submit" value="회원가입" id="ok"> 
       </p>
       </fieldset>
    </form>

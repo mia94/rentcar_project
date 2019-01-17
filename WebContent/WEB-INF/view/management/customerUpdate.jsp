@@ -111,7 +111,7 @@
 		 
 		    $( "#datepicker" ).datepicker({
 		      showOn: "button",
-		      buttonImage: "images/calendar.gif",
+		      buttonImage: "images/btn_calendar.gif",
 		      buttonImageOnly: true,
 		      buttonText: "Select date",
 		      changeMonth: true,
