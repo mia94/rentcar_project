@@ -1,5 +1,6 @@
 package com.yi.rentcar_project.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
@@ -8,6 +9,7 @@ import org.apache.ibatis.annotations.Update;
 
 import com.yi.rentcar_project.model.CustomEvent;
 import com.yi.rentcar_project.model.Customer;
+import com.yi.rentcar_project.model.Rent;
 import com.yi.rentcar_project.model.StateCar;
 
 public interface CustomerDao {
@@ -77,5 +79,7 @@ public interface CustomerDao {
 
 	@Select("select code, Id, password(#{passwd}), Name, zip_code ,address, phone, dob, email, emp_code, license, grade_code, rent_cnt from customer where Id = #{id} and email = #{email}")
 	Customer selectCustomerByIdEmail(Customer customer);
+	
+	
 
 }

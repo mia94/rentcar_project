@@ -7,8 +7,8 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css?aaa" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/management.css?aaaa" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/management.css?aa" rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(function(){
@@ -38,7 +38,7 @@ $(function(){
 			<a href="eventList.do">이벤트관리</a>
 			<a href="gradeList.do">등급관리</a>
 			
-			<h1>EVENT</h1><p><a href="eventUpload.do" class="btnAdd">[ 이벤트 추가 ]</a></p>
+			<h1 id="title">EVENT</h1><p><a href="eventUpload.do" class="btnAdd">[ 이벤트 추가 ]</a></p>
 			<div class="wrap">
 			<table>
 							<tr>

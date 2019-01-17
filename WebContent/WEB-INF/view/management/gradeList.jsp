@@ -7,8 +7,8 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/management.css?aaaa" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/management.css?aaa" rel="stylesheet"  type="text/css">
 
 <style type="text/css">
 	
@@ -41,7 +41,7 @@ $(function(){
 			<a href="employeeList.do">직원관리</a>
 			<a href="eventList.do">이벤트관리</a>
 			<a href="gradeList.do">등급관리</a>
-			<h1>GRADE</h1><p><a href="gradeUpload.do" class="btnAdd">[ 등급추가 ]</a></p>
+			<h1 id="title">GRADE</h1><p><a href="gradeUpload.do" class="btnAdd">[ 등급추가 ]</a></p>
 			<div class="wrap">
 				
 				

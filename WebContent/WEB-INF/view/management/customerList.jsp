@@ -8,8 +8,8 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/management.css?aaaa" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/management.css?a" rel="stylesheet"  type="text/css">
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -25,10 +25,18 @@ $(function(){
 		return false;
 	})
 	
-	
+	<c:forEach var="item" items="${customerList}" varStatus="status">
+	var BlackList = $(".CusGrade").eq(${status.index}).text().trim();
+	if(BlackList=="블랙리스트"){
+		$(".CusGrade").eq(${status.index}).html("블랙리스트");
+		$(".CusGrade").eq(${status.index}).parent().css("background-color","#FFEFEF");
+		$(".CusGrade").eq(${status.index}).css("color","#AA1212"); 
+	} 
+	</c:forEach>
 	
 })
 </script>
+
 <body>
 <div id="container">
 		<header>
@@ -36,6 +44,16 @@ $(function(){
 		</header>
 		
 		<section>
+		
+		
+		<div id="test">
+		
+		</div>
+		<nav id="CusDetail">
+		<div id="inner">
+     		  <%-- <img src="${pageContext.request.contextPath }/images/btnX.png" id="btnx">  --%>
+   			</div>
+		</nav>
 			<div id="wrap_wrap">
 			<a href="customerList.do">고객관리</a>
 			<a href="employeeList.do">직원관리</a>
@@ -43,7 +61,7 @@ $(function(){
 			<a href="gradeList.do">등급관리</a>
 			
 			
-			<h1>CUSTOMER</h1> <p><a href="customerUpload.do" class="btnAdd">[ 고객 추가  ]</a></p>
+			<h1 id="title">CUSTOMER</h1> <p><a href="customerUpload.do" class="btnAdd">[ 고객 추가  ]</a></p>
 			<div class="wrap">
 				
 						<table>
@@ -59,19 +77,19 @@ $(function(){
 							<th>수정 & 삭제</th>
 						</tr>
 						<c:forEach var="item" items="${customerList }">
-							<tr>
-								<td>${item.code }</td>
-								<td id="id">${item.id }</td>
-								<td id="CusName">${item.name }</td>
+							<tr class="cusInfo">
+								<td >${item.code }</td>
+								<td>${item.id }</td>
+								<td>${item.name }</td>
 								<%-- <td id="zipCode">${item.zipCode }</td> --%>
 								<%-- <td id="addr">${item.address }</td> --%>
-								<td id="tel">${item.phone }</td>
+								<td>${item.phone }</td>
 								<%-- <td id="dob"><fmt:formatDate value="${item.dob }" pattern="yyyy-MM-dd"/></td> --%>
 								<%-- <td id="email">${item.email }</td> --%>
-								<td id="license">${item.license }</td> 
-								<td id="CusGrade">${item.gradeCode.name }</td>
-								<td id="rentCnt">${item.rentCnt }</td>
-								 <td id="CusEvent">
+								<td>${item.license }</td> 
+								<td class="CusGrade">${item.gradeCode.name }</td>
+								<td>${item.rentCnt }</td>
+								 <td>
 								<c:forEach var="events" items="${item.events }">
 								<c:forEach var="event" items="${events.events }">
 									<span>${event.name}</span>
@@ -94,5 +112,9 @@ $(function(){
 	<footer>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</footer>
+	
+<script src="${pageContext.request.contextPath }/js/customJason.js?cassdfs"></script>
+	
 </body>
+
 </html>

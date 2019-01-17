@@ -7,9 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/carread.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_min.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/carread.css?x" rel="stylesheet"  type="text/css">
 <style>
+@media all and (min-width:768px){
 	#btn_wrap{
 		clear: both;
 		text-align: center;
@@ -29,7 +30,28 @@
 		color:white;
 		background-color: #747474;
 	}
-	
+}
+@media all and (max-width:767px){
+	#btn_wrap{
+		clear: both;
+		text-align: center;
+		position:absolute;
+		left:27%;
+		bottom:50px;
+	}
+	#btn_wrap a{
+		border:2px solid #aaaaaa;
+		color:gray;
+		border-radius:5px;
+		padding: 5px;
+		text-decoration: none;
+		margin: 5px;
+	}
+	#btn_wrap a:hover{
+		color:white;
+		background-color: #747474;
+	}
+}	
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>

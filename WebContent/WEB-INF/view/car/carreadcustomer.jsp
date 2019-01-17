@@ -6,10 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/carread.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common.css?x" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_min.css?x" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/carread.css?x" rel="stylesheet"  type="text/css">
 <style>
+@media all and (min-width:768px){
 	#next_wrap{ 
 		clear: both;
 		position:absolute;
@@ -17,6 +18,16 @@
 		bottom:30px;
 		text-align: center;
 	}
+}
+@media all and (max-width:767px){
+	#next_wrap{ 
+		clear: both;
+		position:absolute;
+		left:330px;
+		bottom:30px;
+		text-align: center;
+	}
+}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
