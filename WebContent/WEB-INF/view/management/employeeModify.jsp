@@ -54,8 +54,9 @@
 						</p>
 	
 							<p id="send">
-							<input type="submit" value="저장">
-							<input type="reset" value="초기화">
+							
+							<input type="reset" value="초기화" id="reset">
+							<input type="submit" value="직원수정" id="ok">
 							
 						</p>
 						</fieldset>

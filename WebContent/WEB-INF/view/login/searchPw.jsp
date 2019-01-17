@@ -20,6 +20,11 @@
 		})
 	})
 </script>
+<style>
+ section{
+ 	height: 640px;
+ }
+</style>
 </head>
 <body>
 <div id="container">

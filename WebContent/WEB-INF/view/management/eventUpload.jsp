@@ -41,8 +41,9 @@
 						</p>
 	
 						 <p id="send"> 
-							<input type="submit" value="저장">
-							<input type="reset" value="취소">
+							
+							<input type="reset" value="초기화" id="reset">
+							<input type="submit" value="이벤트 추가" id="ok">
 						 </p> 
 						 </fieldset>
 					</form>	

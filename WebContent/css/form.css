@@ -16,31 +16,55 @@
 	}
 
 	#form h5{
-		color: #aaa;
+		color: #555;
 		font-weight: lighter;
 		margin: 10px;	
 		text-align: center;
 	}
 	#grade{
+	padding:10px;
 		width:330px;
 		margin: 0 auto;
 		border:1px solid #aaa;
+		border-right:none;
+		border-left: none;
+		border-bottom: none; 
 	}
 	#event{
-		width:330px;
+	padding:10px;
+		width:400px;
 		margin: 0 auto;
 		border:1px solid #aaa;
+		border-right:none;
+		border-left: none;
+		border-bottom: none; 
 	}
 	#emp{
+		padding:10px;
 		width:600px;
 		margin: 0 auto;
 		border:1px solid #aaa;
+		
+	}
+	
+	#Join label{
+		font-size: 14px;
 	}
 	fieldset {
-		width:650px;
+		width:650px;  
 		margin: 0 auto;
 		border:1px solid #aaa;
+		border-right:none;
+		border-left: none;
+		border-bottom: none; 
+		padding: 10px;
+		background-color: #f8f8f8;
 	}
+	#modify label{
+		font-size: 14px;
+		margin: 5px;
+	}
+	
 	#event label{
 		width: 120px;
 	}
@@ -49,15 +73,17 @@
 	}
 	input{
 		margin: 5px;
+		
 	}
 	#send{
-		text-align: center;
+	 text-align: center; 
 	}
 	 label{
     	float: left;
 		text-align: center;
 		width: 100px;
 		margin: 0 auto;
+		margin: 5px;
    }
    select{
    	margin: 5px;
@@ -67,4 +93,31 @@
       font-size: 12px;
       display:none;      
    }
+   
+   #reset{
+	padding: 5px;
+	padding-left:25px;
+	padding-right:25px;
+	background-color: #fff;
+	border: 1px solid #333;
+	border-radius:3px; 
+}	
+
+#ok{
+	border: 1px solid #333;
+	padding: 5px;
+	padding-left:25px;
+	padding-right:25px;
+	background-color: #333;
+	color: white;
+	border-radius:3px; 
+}
+
+
+
+#ok:HOVER {
+	background-color: black;
+	
+	
+}
 

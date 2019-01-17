@@ -1,0 +1,85 @@
+@CHARSET "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto');
+input {
+	margin: 10px;
+	padding: 5px;
+}
+#pass {
+	text-align: center;
+}
+#pass h1{
+	font-weight: lighter;
+	
+	margin: 15px;
+}
+#pass h3{
+	font-weight: lighter;
+	margin: 15px;
+	
+	
+}
+#pass h4{
+	font-weight: lighter;
+	color: #555;
+	font-size: 14px;
+	
+}
+#pass span{
+		color: #555;
+		font-style:Arial, nbgr, '나눔바른고딕', '돋음';
+		margin: 10px;	
+		text-align: center;
+		font-size: 16px;
+		
+	}
+fieldset{
+	margin: 15px;
+	padding: 15px;
+	border-top: 1px solid #555;
+	border-bottom: none;
+	border-left:none;
+	border-right: none;  
+	background-color: #f8f8f8;
+}	
+	
+	
+#reset{
+	padding: 5px;
+	padding-left:25px;
+	padding-right:25px;
+	background-color: #fff;
+	border: 1px solid #333;
+	border-radius:3px; 
+}	
+
+#pass label{
+	margin: 10px;
+	
+}
+#pass input{
+	margin: 10px;
+}
+
+#reset:HOVER{
+	background-color: white;
+}
+
+
+#ok{
+	border: 1px solid #333;
+	padding: 5px;
+	padding-left:25px;
+	padding-right:25px;
+	background-color: #333;
+	color: white;
+
+	border-radius:3px; 
+}
+
+
+
+#ok:HOVER {
+	background-color: black;
+	
+	
+}
