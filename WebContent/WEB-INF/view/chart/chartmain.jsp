@@ -178,7 +178,7 @@
 	  ]);
 	
 	  var options = {
-	    width: 400,
+	    width: 800,
 	    chart: {
 	      title: '차량별 렌트',
 	    },
@@ -229,7 +229,7 @@
 	        chart: {
 	          title: '월별 브랜드별 렌트 수',
 	        },
-	        width: 350,
+	        width: 400,
 	        height: 350,
 	        axes: {
 	          x: {
