@@ -107,7 +107,7 @@
 			
 			<!-- 리스트 -->
 			<table>
-				<tr>
+				<tr id="title1">
 					<td>대여코드</td>
 					<td>고객코드</td>
 					<td>대여일자</td>
@@ -149,10 +149,10 @@
 	
 	<!-- 스크립트 부분(위에 스크립트 있으면 datepicker 실행이 안됨) -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="${pageContext.request.contextPath }/js/rentSearchDateList.js?asdsdd"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/datepicker-ko.js"></script>
 	<script>
 		var pathContext = '${pageContext.request.contextPath }';
 	</script>
-	<script src="${pageContext.request.contextPath }/js/rentManageSearchDateList.js?a"></script>
+	<script src="${pageContext.request.contextPath }/js/rentManageSearchDateList.js?bcd"></script>
 </body>
 </html>

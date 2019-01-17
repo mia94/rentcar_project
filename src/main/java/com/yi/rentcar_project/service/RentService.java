@@ -218,11 +218,35 @@ public class RentService implements RentDao{
 	}
 
 	@Override
+	public List<Rent> selectRentByAllWithDate(RentDate date) throws SQLException {
+		// TODO Auto-generated method stub
+		SqlSession session = null;
+		
+		try {
+			session = MySqlSessionFactory.openSession();
+			RentDao dao = session.getMapper(RentDao.class);
+			
+			List<Rent> list = dao.selectRentByAllWithDate(date);
+			
+			return list;
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return null;
+	}
+	
+	@Override
 	public List<Rent> selectRentByAll() {
 		try(SqlSession sqlSession = MySqlSessionFactory.openSession()){
 			return sqlSession.selectList(namespace + ".selectRentByAll");
 		}
 	}
+
+	
 
 	
 

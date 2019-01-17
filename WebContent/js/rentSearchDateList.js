@@ -91,7 +91,7 @@ $("#btnSearch").click(function(){
 	if( $("#searchStartDate").val() == "" && $("#searchEndDate").val() == ""){
 		alert("조회하고 싶은 기간을 선택해주세요.");
 	} else{
-		/*$("#searchForm").submit();
+		/*$("#searchForm").submit(); submit 쓰면 안되고 조회버튼의 버튼 타입을 button으로 바꿔야 함.
 		*/
 		$.ajax({
 			url: "rentSearchDate.do",

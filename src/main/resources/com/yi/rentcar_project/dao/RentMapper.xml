@@ -151,4 +151,10 @@
 		select code, start_date, start_time, end_date, end_time, is_return, basic_price, car_code, customer_code, insurance_code, e_code, opt_price
 		from rent;
 	</select>
+	
+	<select id="selectRentByAllWithDate" resultMap="resultRentAll">
+		select code, start_date, start_time, end_date, end_time, is_return, basic_price, car_code, customer_code, insurance_code, e_code, opt_price
+		from rent
+		where start_date &gt;= #{chk_start_date} and  end_date &lt;= #{chk_end_date} order by start_date;
+	</select>
 </mapper>

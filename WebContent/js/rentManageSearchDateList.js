@@ -82,3 +82,44 @@ function setSearchDate(start) {
 
 }
 
+//초기화버튼
+$("#btnReset1").click(function(){
+	location.href = 'rentList.do';
+})
+
+//조회버튼
+$("#btnSearch1").click(function(){
+	if( $("#searchStartDate1").val() == "" && $("#searchEndDate1").val() == ""){
+		alert("조회하고 싶은 기간을 선택해주세요.");
+	} else{
+			$.ajax({
+			url: "manageRentList.do",
+			type: "post",
+			data:{"searchStartDate1": $("#searchStartDate1").val(), "searchEndDate1": $("#searchEndDate1").val()},
+			dataType: "json",
+			success: function(json){
+				console.log(json);
+				$("#title1").nextAll().remove();
+				
+				$(json).each(function(index, obj){
+					$("#title1").after("<tr id='insert'></tr>");
+					$("#insert").append("<td style='width:136px'>" + obj.code + "</td>");
+					$("#insert").append("<td style='width:136px'>" + obj.customer_code.code + "</td>");
+					$("#insert").append("<td style='width:192px'>" + obj.start_date + "</td>");
+					$("#insert").append("<td style='width:192px'>" + obj.end_date + "</td>");
+					$("#insert").append("<td style='width:138px' id='isReturn'>" + obj.is_return  + "</td>");
+					var ir = $("#isReturn").text();
+					if(ir == 'false'){
+						$("#isReturn").html("N");
+						$("#isReturn").css("color", "#F15F5F");
+					} else{
+						$("#isReturn").html("Y");
+						$("#isReturn").css("color", "#6798FD");
+					}
+				})
+			}
+			
+		})
+	}
+})
+
