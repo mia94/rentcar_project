@@ -16,6 +16,6 @@ public interface CustomEventDao {
 
 	// Rent 등록에 따라 고객이 가지고 있는 이벤트 사용을 1로 수정
 
-	@Update("update custom_event set is_use = 1 where custom_code = #{customerCode.code} and event_code = #{eCode}")
+	@Update("update custom_event set is_use = 1 where custom_code = #{customer_code.code} and event_code = #{e_code}")
 	int updateSetUse(Rent rent);
 }

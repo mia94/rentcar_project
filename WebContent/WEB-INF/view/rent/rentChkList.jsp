@@ -31,7 +31,7 @@
 			        <table class="searchBox">
 			            <tbody>
 			                <tr>
-			                    <th>조회기간</th>
+			                    <th>대여내역 조회</th>
 			                    <td>
 			                        <ul class="searchDate">
 			                            <li>
@@ -82,13 +82,13 @@
 			                            <!-- 시작일 -->
 			                            <span class="dset">
 			                                <input type="text" class="datepicker inpType" name="searchStartDate" id="searchStartDate" >
-			                                <a href="#none" class="btncalendar dateclick">달력</a>
+			                                <a href="#none" class="btncalendar dateclick"><img src='images/btn_calendar.gif' class='imgCal'></a>
 			                            </span>
 			                            <span class="demi">~</span>
 			                            <!-- 종료일 -->
 			                            <span class="dset">
 			                                <input type="text" class="datepicker inpType" name="searchEndDate" id="searchEndDate" >
-			                                <a href="#none" class="btncalendar dateclick">달력</a>
+			                                <a href="#none" class="btncalendar dateclick"><img src='images/btn_calendar.gif' class='imgCal'></a>
 			                            </span>
 			                            <div id="btnSearchWrap">
 			                            	<button type="button" id="btnSearch">조회</button>
