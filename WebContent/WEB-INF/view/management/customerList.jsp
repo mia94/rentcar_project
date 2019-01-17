@@ -113,7 +113,7 @@ $(function(){
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</footer>
 	
-<script src="${pageContext.request.contextPath }/js/customJason.js?cassdfs"></script>
+<%-- <script src="${pageContext.request.contextPath }/js/customJason.js?cassdfs"></script> --%>
 	
 </body>
 
