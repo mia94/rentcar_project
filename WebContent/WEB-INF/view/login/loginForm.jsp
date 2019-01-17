@@ -19,13 +19,19 @@ $(function() {
 </head>
 <style type="text/css">
 
+ section{
+ 	height: 500px;
+ }
+
 	#login h1{
 		text-align: center;
 		font-weight: lighter;
+		margin: 10px;
+
 	}
 
 	#login h5{
-		color: #aaa;
+		color: #555;
 		font-weight: lighter;
 		margin: 10px;	
 		text-align: center;
@@ -34,13 +40,19 @@ $(function() {
 	fieldset {
 	width:400px;
 	margin: 0 auto;
+	padding: 15px;
 	border:1px solid #aaa;
+	border-right:none;
+		border-left: none;
+		border-bottom: none; 
+ background-color: #f8f8f8; 
 	}
 
 
 	label {
 		width:100px;	
 		margin: 0 auto;
+		margin:5px;
 		padding-left :10px;
 		float: left;
 		text-align: center;
@@ -65,7 +77,16 @@ $(function() {
 		text-decoration: none;
 		color: black;
 		text-align: center;
+		font-size: 14px;
 		
+	}
+	#loginOK{
+	padding: 5px;
+	padding-left:25px;
+	padding-right:25px;
+	background-color: #fff;
+	border: 1px solid #333;
+	border-radius:3px; 
 	}
 </style>
 </head>
@@ -80,6 +101,7 @@ $(function() {
 	<div id="login">
 		<h1>Login 로그인</h1>
 		<h5>로그인을 하시면 더욱 다양한 서비스를 즐길 수 있습니다.</h5>
+		<h5>아이디 비밀번호를 입력하신 후, 로그인 버튼을 클릭해 주세요.</h5>
 	
 	<form action="login.do" method="post" id="form">
 		<fieldset>
@@ -96,7 +118,7 @@ $(function() {
 			</p>
 			
 			 <p>
-			 <input type="submit" value="로그인"> 
+			 <input type="submit" value="로그인" id="loginOK"> 
 			 <input type="checkbox" value="관리자 모드" name="checkManager" id="checkManager">관리자 모드			  
 			 </p>
 			 

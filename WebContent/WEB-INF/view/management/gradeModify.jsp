@@ -46,8 +46,9 @@
 						</p>
 	
 						<p id="send">  
-							<input type="submit" value="저장">
-							<input type="reset" value="취소">
+							<input type="reset" value="초기화" id="reset">
+							<input type="submit" value="등급수정" id="ok">
+							
 						</p>
 						</fieldset>
 					</form>	

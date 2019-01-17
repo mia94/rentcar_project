@@ -10,6 +10,7 @@
 <link href="${pageContext.request.contextPath }/css/common.css?aaaaa" rel="stylesheet"  type="text/css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/form.css?aaaaaaa" rel="stylesheet"  type="text/css">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -17,9 +18,11 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
   
-<link href="${pageContext.request.contextPath }/css/form.css?aaaa" rel="stylesheet"  type="text/css">
+
 <style>
-  
+ section{
+ 	height: 640px;
+ }
 </style>
 
  <script>
@@ -204,7 +207,7 @@ $(function() {
 		<h1>회원가입</h1>
 		<h5>정보를 입력해 주세요.</h5>
    <form action="join.do" method="post" id="f1">
-   <fieldset>
+   <fieldset id="Join">
       <p>
          <label>이름</label>
          <input type="text" name="name"> 
