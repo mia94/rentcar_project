@@ -15,7 +15,7 @@
 }
 
 #wrap_wrap a:HOVER {
-	color: #4C4C4C;
+	color: #555;
 	font-weight: bold;
 }
 
@@ -60,43 +60,7 @@ tr:FIRST-CHILD th{
 		background-color: #efefef;
 	}
 
-#id {
-	width: 130px;
-}
 
-#CusName {
-	width: 65px;
-}
-
-#zipCode {
-	width: 55px;
-}
-
-#addr {
-	width: 300px;
-}
-
-#tel {
-	width: 115px;
-}
-#dob{
-	width: 90px;
-}
-#email{
-	width: 225px;
-}
-#license{
-	width: 60px;
-}
-#CusGrade{
-	width: 80px;
-}
-#rentCnt{
-	width: 70px;
-}
-#CusEvent{
-	width: 130px;
-}
 #gLosal {
 	width: 50px;
 }
@@ -106,7 +70,7 @@ tr:FIRST-CHILD th{
 }
 
 #rate {
-	width: 45px;
+	width: 50px;
 }
 
 
