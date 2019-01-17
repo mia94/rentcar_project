@@ -21,7 +21,7 @@ public class CustomerListHandler implements CommandHandler {
 		CustomerService customerService = CustomerService.getInstance();
 		List<Customer> customerList = customerService.selectCustomerByAll();
 		
-		ObjectMapper om = new ObjectMapper();
+/*		ObjectMapper om = new ObjectMapper();
 		String json = om.writeValueAsString(customerList);
 		System.out.println(json);
 		
@@ -29,7 +29,7 @@ public class CustomerListHandler implements CommandHandler {
 		PrintWriter pw = res.getWriter();
 		pw.println(json);
 		pw.flush();//고객에게 데이터를 보냄
-		
+*/		
 		req.setAttribute("customerList", customerList);
 		return "/WEB-INF/view/management/customerList.jsp";
 	}
