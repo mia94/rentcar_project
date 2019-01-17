@@ -50,4 +50,8 @@ public interface RentDao {
 	
 	public List<Rent> selectRentByAllWithDate(RentDate date) throws SQLException;
 	
+	//반납
+	public List<Rent> getIsReturnFalse() throws SQLException;
+	public List<Rent> getIsReturnTrue() throws SQLException;
+	
 }

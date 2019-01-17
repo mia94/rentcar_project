@@ -246,6 +246,20 @@ public class RentService implements RentDao{
 		}
 	}
 
+	@Override
+	public List<Rent> getIsReturnFalse() throws SQLException {
+		try(SqlSession sqlSession = MySqlSessionFactory.openSession()){
+			return sqlSession.selectList(namespace + ".getIsReturnFalse");
+		}
+	}
+
+	@Override
+	public List<Rent> getIsReturnTrue() throws SQLException {
+		try(SqlSession sqlSession = MySqlSessionFactory.openSession()){
+			return sqlSession.selectList(namespace + ".getIsReturnTrue");
+		}
+	}
+
 	
 
 	

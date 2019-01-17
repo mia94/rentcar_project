@@ -24,7 +24,7 @@
 			
 			<div id="search1">
 					<!-- search -->
-					<form id="searchForm1" method="post" action="${pageContext.request.contextPath }">
+					<form id="searchForm1" method="post" action="${pageContext.request.contextPath }/manageRentList.do">
 			        <table class="searchBox1">
 			            <tbody>
 			                <tr>
@@ -101,8 +101,8 @@
 			
 			<!-- 반납여부 -->
 			<div id="isReturnWrap">
-				<div id="isReturnYes"><a href="#" class='isReturnATag'>반납된 차량 보기</a></div>
-				<div id="isReturnNo"><a href="#" class='isReturnATag'>반납되지 않은 차량 보기</a></div>
+				<div id="isReturnYes"><a href="${pageContext.request.contextPath }/rentIsReturnTrue.do" class='isReturnATag'>반납된 차량 보기</a></div>
+				<div id="isReturnNo"><a href="${pageContext.request.contextPath }/rentIsReturnFalse.do" class='isReturnATag'>반납되지 않은 차량 보기</a></div>
 			</div>
 			
 			<!-- 리스트 -->
