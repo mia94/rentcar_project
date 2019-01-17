@@ -288,10 +288,10 @@
 						<div class="info_wrap">
 							<h3>1일 대여비 : ${item.basicCharge } </h3>
 							<p>차종 : ${item.carType.type }</p>
-							<p>6시간 이하 : ${item.hour6 }</p>
-							<p>10시간 이하 : ${item.hour10 }</p>
-							<p>12시간 이하 : ${item.hour12 }</p>
-							<p>12시간 이상 : ${item.hourElse }</p>
+							<p>6시간 이하 : ${item.hour6 }원</p>
+							<p>10시간 이하 : ${item.hour10 }원</p>
+							<p>12시간 이하 : ${item.hour12 }원</p>
+							<p>12시간 이상 : ${item.hourElse }원</p>
 							<p>렌트 수 : ${item.rentCnt }</p>
 							<p class="isRent">${item.rent } </p>
 						</div>

@@ -7,8 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css?a" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/common_min.css" rel="stylesheet"  type="text/css">
 <style>
+@media all and (min-width:768px){
 	#wrap{
 		width:800px;
 		height:900px;
@@ -54,6 +55,32 @@
 		top:400px;
 		left: 20px;
 	}
+}
+@media all and (max-width:767px){
+	#wrap{
+		width:90%;
+		height:900px;
+		margin: 20px auto;
+		position: relative;
+	}
+	#gray_p{
+		color: #999999;
+		font-size: 14px;
+	}
+	/*차트 디스플레이*/
+	#brand_chart, #type_chart,#line_chart{
+		z-index: 0;
+	}
+	#brand_chart, #type_chart{
+		width:90%;
+		margin-left:10%;
+		float: left;
+	}
+	#line_chart,#car_chart{
+		width:90%;
+		float: left;
+	}
+}
 </style>
 </head>
 <body>
@@ -65,9 +92,6 @@
 		<section>
 		<p id="gray_p">그래프를 클릭하면 해당 페이지로 이동합니다</p>
 			<div id="wrap">
-				<a href="carchart.do" class="menu">
-					<div id="car_chart"></div>
-				</a>
 				<a href="cartypechart.do" class="menu">
 					<div id="type_chart"></div>
 				</a>
@@ -76,6 +100,9 @@
 				</a>
 				<a href="monthbrandchart.do" class="menu">
 					<div id="line_chart"></div>
+				</a>
+				<a href="carchart.do" class="menu">
+					<div id="car_chart"></div>
 				</a>
 			</div>
 		</section>
@@ -202,7 +229,7 @@
 	        chart: {
 	          title: '월별 브랜드별 렌트 수',
 	        },
-	        width: 490,
+	        width: 400,
 	        height: 350,
 	        axes: {
 	          x: {

@@ -48,4 +48,12 @@ public interface RentDao {
 	//기간 검색
 	public List<Rent> getRentList(RentDate date) throws SQLException;
 	
+	public List<Rent> selectRentByAllWithDate(RentDate date) throws SQLException;
+	
+	//반납
+	public List<Rent> getIsReturnFalse() throws SQLException;
+	public List<Rent> getIsReturnTrue() throws SQLException;
+	
+	//상세정보2
+	public Rent selectInfoRentByAll(String code) throws SQLException;
 }

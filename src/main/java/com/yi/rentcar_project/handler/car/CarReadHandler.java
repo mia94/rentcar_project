@@ -18,7 +18,6 @@ public class CarReadHandler implements CommandHandler {
 			carmodel.setCarCode(code);
 			CarModelService service = CarModelService.getInstance();
 			carmodel = service.selectCarModelByNo(carmodel);
-			
 			req.setAttribute("carmodel", carmodel);
 			return "/WEB-INF/view/car/carread.jsp";
 	}

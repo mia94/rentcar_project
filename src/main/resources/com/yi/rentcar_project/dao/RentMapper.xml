@@ -143,12 +143,46 @@
 		<result column="car_code" property="car_code.car_code"/> 
 		<result column="customer_code" property="customer_code.code"/>
 		<result column="insurance_code" property="insurance_code.code"/>
-		<result column="e_code" property="e_code"/>
-		<result column="opt_price" property="opt_price"/>
+		<result column="e_code" property="e_code" />
+		<result column="opt_price" property="opt_price" />
+		<result column="customer_name" property="customer_code.name" />
+		<result column="car_name" property="car_code.name" />
+		<result column="car_type" property="car_code.cartype.type" />
 	</resultMap>
+	
+	<!-- 반납되지 않은 차량 -->
+	<select id="getIsReturnFalse" resultMap="resultRentAll">
+		<include refid="selectSql" />
+		where r.is_return = false;
+	</select>
+	
+	<!-- 반납된 차량 -->
+	<select id="getIsReturnTrue" resultMap="resultRentAll">
+		<include refid="selectSql" />
+		where r.is_return = true;
+	</select>
 	
 	<select id="selectRentByAll" resultMap="resultRentAll">
 		select code, start_date, start_time, end_date, end_time, is_return, basic_price, car_code, customer_code, insurance_code, e_code, opt_price
 		from rent;
+	</select>
+	
+	<!-- 대여관리 상세정보 -->
+	<sql id="selectSql">
+		select r.code, start_date, start_time, end_date, end_time, is_return, basic_price, r.car_code, customer_code, insurance_code, e_code, opt_price, cm.name, c.name, ct.type
+		from rent r join car_model cm on r.car_code = cm.car_code join customer c on r.customer_code = c.code join car_type ct on cm.cartype = ct.code
+	</sql>
+	
+	<select id="selectInfoRentByAll"  resultMap="resultRentAll">
+		select r.code, start_date, start_time, end_date, end_time, is_return, basic_price, r.car_code, customer_code, insurance_code, e_code, opt_price, cm.name, c.name as customer_name, ct.type
+		from rent r join car_model cm on r.car_code = cm.car_code join customer c on r.customer_code = c.code join car_type ct on cm.cartype = ct.code
+		where r.code = #{code};
+	</select>
+	<!-- 끝 -->
+	
+	<select id="selectRentByAllWithDate" resultMap="resultRentAll">
+		select code, start_date, start_time, end_date, end_time, is_return, basic_price, car_code, customer_code, insurance_code, e_code, opt_price
+		from rent
+		where start_date &gt;= #{chk_start_date} and  end_date &lt;= #{chk_end_date} order by start_date;
 	</select>
 </mapper>

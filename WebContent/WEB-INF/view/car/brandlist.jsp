@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_min.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/caroption.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/caroption.css?a" rel="stylesheet"  type="text/css">
 <style>
 	.brandImg{
 		padding-top: 9px;

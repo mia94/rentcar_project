@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css?csd" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentList.css?a" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentList.css?z" rel="stylesheet"  type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -24,7 +24,7 @@
 			
 			<div id="search1">
 					<!-- search -->
-					<form id="searchForm1" method="post" action="${pageContext.request.contextPath }">
+					<form id="searchForm1" method="post" action="${pageContext.request.contextPath }/manageRentList.do">
 			        <table class="searchBox1">
 			            <tbody>
 			                <tr>
@@ -101,13 +101,13 @@
 			
 			<!-- 반납여부 -->
 			<div id="isReturnWrap">
-				<div id="isReturnYes"><a href="#" class='isReturnATag'>반납된 차량 보기</a></div>
-				<div id="isReturnNo"><a href="#" class='isReturnATag'>반납되지 않은 차량 보기</a></div>
+				<div id="isReturnYes"><a href="${pageContext.request.contextPath }/rentIsReturnTrue.do" class='isReturnATag'>반납된 차량 보기</a></div>
+				<div id="isReturnNo"><a href="${pageContext.request.contextPath }/rentIsReturnFalse.do" class='isReturnATag'>반납되지 않은 차량 보기</a></div>
 			</div>
 			
 			<!-- 리스트 -->
 			<table>
-				<tr>
+				<tr id="title1">
 					<td>대여코드</td>
 					<td>고객코드</td>
 					<td>대여일자</td>
@@ -117,7 +117,7 @@
 				
 				<c:forEach var="rent" items="${list }">
 					<tr>
-						<td><a href="#">${rent.code }</a></td>
+						<td><a href="rentListRead.do?code=${rent.code }">${rent.code }</a></td>
 						<td>${rent.customer_code.code }</td>
 						<td>${rent.start_date }</td>
 						<td>${rent.end_date }</td>
@@ -149,10 +149,10 @@
 	
 	<!-- 스크립트 부분(위에 스크립트 있으면 datepicker 실행이 안됨) -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="${pageContext.request.contextPath }/js/rentSearchDateList.js?asdsdd"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/datepicker-ko.js"></script>
 	<script>
 		var pathContext = '${pageContext.request.contextPath }';
 	</script>
-	<script src="${pageContext.request.contextPath }/js/rentManageSearchDateList.js?a"></script>
+	<script src="${pageContext.request.contextPath }/js/rentManageSearchDateList.js?bcd"></script>
 </body>
 </html>
