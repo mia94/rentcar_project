@@ -125,10 +125,15 @@ public class CustomerService implements CustomerDao {
 	@Override
 	public void deleteCustomerEvent(Customer customer, CustomEvent customEvent) {
 		SqlSession sqlSession = MySqlSessionFactory.openSession();
+		int res = 0;
 		try {
-			sqlSession.delete("com.yi.rentcar_project.dao.CustomEventDao.deleteCustomEvent", customEvent);
-			sqlSession.delete(namespace + ".deleteCustomer", customer);
-			sqlSession.commit();
+			res += sqlSession.delete("com.yi.rentcar_project.dao.CustomEventDao.deleteCustomEvent", customEvent);
+			res += sqlSession.delete(namespace + ".deleteCustomer", customer);
+			if (res == 2){
+				sqlSession.commit();
+			}else{
+				throw new Exception();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			sqlSession.rollback();

@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+@import
+	url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto');
+
+#detail table{
+	border-collapse:collapse; 
+}
+tr td{
+	
+	border: 1px solid black;
+}

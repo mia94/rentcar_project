@@ -18,7 +18,11 @@
 	color: #555;
 	font-weight: bold;
 }
-
+#desc{
+	
+	color: #555;
+	
+}
 #title{
 	font-weight: lighter;
 	margin: 10px;
@@ -27,6 +31,11 @@
 #wrap_wrap td img {
 	width: 20px;
 }
+.btnAdd{
+	margin: 15px;
+	word-spacing: 5px;
+		
+}
 
 #wrap_wrap table {
 	border: 1px solid #CACACA;
@@ -34,22 +43,29 @@
 	text-align: center;
 	margin-top: 20px;
 	margin-left: 50px;
+	
+}
+
+#center table{
+	width:1000px;
+	margin: 20px auto;
+	text-align: center;
+	
 }
 
 #wrap_wrap th, td{
 		border: 1px solid #efefef;
 		color: #5D5D5D;
 		text-align: center;
-		padding:5px;
+		padding:10px;
 	}
 	
 
 td {
 	
 	/* border-bottom: 1px solid #aaa;*/
-	margin: 5px;
 	font-size: 14px;
-	padding:5px;  
+	
 }
 
 tr:FIRST-CHILD {
@@ -61,30 +77,6 @@ tr:FIRST-CHILD th{
 	}
 
 
-#gLosal {
-	width: 50px;
-}
-
-#gHisal {
-	width: 50px;
-}
-
-#rate {
-	width: 50px;
-}
-
-
-#GradeName {
-	width: 75px;
-}
-
-#EventName {
-	width: 90px;
-}
-
-#EmpName {
-	width: 75px;
-}
 
 /* test */
 /*  tr td {

@@ -79,4 +79,21 @@ select c.code, Id, passwd, c.Name, zip_code ,address, phone,dob, email, emp_code
 		from customer c left join custom_event ce on c.code = ce.custom_code left join event e on ce.event_code = e.code left join grade g on c.grade_code = g.code
 		where c.code !='C000' 
 		order by c.code, e.code;
+	
+	
+drop trigger if exists tri_customer_delete;
+
+delimiter $
+create trigger tri_customer_delete
+before delete on customer 
+for each row
+begin
+	update rent
+	set costomer_code = 'C000'
+	where costomer_code = old.code;
+
+	delete from custom_event
+	where custom_code = old.code;
+end
+delimiter ;
 

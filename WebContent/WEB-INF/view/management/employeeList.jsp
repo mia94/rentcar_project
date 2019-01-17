@@ -34,14 +34,14 @@ $(function(){
 		
 		<section>
 			<div id="wrap_wrap">
-			<a href="customerList.do">고객관리</a>
+			<!-- <a href="customerList.do">고객관리</a>
 			<a href="employeeList.do">직원관리</a>
 			<a href="eventList.do">이벤트관리</a>
-			<a href="gradeList.do">등급관리</a>
+			<a href="gradeList.do">등급관리</a> -->
 			
 			<h1 id="title">EMPLOYEE</h1><p><a href="employeeUpload.do" class="btnAdd">[ 직원 추가 ]</a></p>
 			<div class="wrap">
-				
+				<div id="center">
 						<table>
 						<tr>
 							<th>직원 코드</th>
@@ -52,7 +52,7 @@ $(function(){
 						<c:forEach var="item" items="${employeeList }">
 						<tr>
 							<td>${item.code }</td>
-							<td id="EmpName">${item.name }</td>
+							<td >${item.name }</td>
 							<td>${item.phone }</td>
 							<td>
 								<a href="employeeModify.do?code=${item.code }">수정</a>
@@ -61,7 +61,7 @@ $(function(){
 						</tr>
 							</c:forEach>
 						</table>
-				
+				</div>
 			
 				
 			</div>
