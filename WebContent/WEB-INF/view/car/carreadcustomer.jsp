@@ -18,6 +18,25 @@
 		bottom:30px;
 		text-align: center;
 	}
+	#btn_wrap{
+		clear: both;
+		text-align: center;
+		position:absolute;
+		left:320px;
+		bottom:10px;
+	}
+	#btn_wrap a{
+		border:2px solid #aaaaaa;
+		color:gray;
+		border-radius:5px;
+		padding: 5px;
+		text-decoration: none;
+		margin: 5px;
+	}
+	#btn_wrap a:hover{
+		color:white;
+		background-color: #747474;
+	}
 }
 @media all and (max-width:767px){
 	#next_wrap{ 
@@ -26,6 +45,25 @@
 		left:330px;
 		bottom:30px;
 		text-align: center;
+	}
+	#btn_wrap{
+		clear: both;
+		text-align: center;
+		position:absolute;
+		left:27%;
+		bottom:50px;
+	}
+	#btn_wrap a{
+		border:2px solid #aaaaaa;
+		color:gray;
+		border-radius:5px;
+		padding: 5px;
+		text-decoration: none;
+		margin: 5px;
+	}
+	#btn_wrap a:hover{
+		color:white;
+		background-color: #747474;
 	}
 }
 </style>
@@ -83,7 +121,7 @@
 							<td>색상</td>
 							<td id="color"> ${carmodel.color }</td>
 							<td>변속기</td>
-							<td>${carmodel.gear }</td>
+							<td id="gear">${carmodel.gear }</td>
 						</tr>
 						<!-- <tr>
 							<td colspan="4" id="title_charge">요금표</td>
@@ -109,6 +147,9 @@
 							<td class="charge" id="last">${carmodel.basicCharge }</td>
 						</tr>
 					</table>
+				</div>
+				<div id="btn_wrap">
+					<a href="carlistcustomer.do">목록</a>
 				</div>
 					<a href="carbefore.do?carCode=${carmodel.carCode }" id="back">
 						<img src="${pageContext.request.contextPath }/upload/back.png" alt="back">
