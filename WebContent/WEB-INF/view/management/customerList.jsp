@@ -8,8 +8,8 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/management.css?aaaa" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/management.css?a" rel="stylesheet"  type="text/css">
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -43,7 +43,7 @@ $(function(){
 			<a href="gradeList.do">등급관리</a>
 			
 			
-			<h1>CUSTOMER</h1> <p><a href="customerUpload.do" class="btnAdd">[ 고객 추가  ]</a></p>
+			<h1 id="title">CUSTOMER</h1> <p><a href="customerUpload.do" class="btnAdd">[ 고객 추가  ]</a></p>
 			<div class="wrap">
 				
 						<table>

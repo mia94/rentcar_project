@@ -19,16 +19,16 @@
 	font-weight: bold;
 }
 
-h1 {
+#title{
 	font-weight: lighter;
 	margin: 10px;
 }
 
-td img {
+#wrap_wrap td img {
 	width: 20px;
 }
 
-table {
+#wrap_wrap table {
 	border: 1px solid #CACACA;
 	border-collapse: collapse;
 	text-align: center;
@@ -36,7 +36,7 @@ table {
 	margin-left: 50px;
 }
 
-th, td{
+#wrap_wrap th, td{
 		border: 1px solid #efefef;
 		color: #5D5D5D;
 		text-align: center;
