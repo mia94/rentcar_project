@@ -160,10 +160,18 @@
 		padding-left: 10px;
 	}
 	
+	/* 조회 버튼 */
 	#btnSearch{
-		width: 80px;
+		width: 65px;
 		height: 29px;
-		margin-left: 40px;
+		margin-left: 45px;
+	}
+	
+	/* 초기화 버튼 */
+	#btnReset{
+		width: 65px;
+		height: 29px;
+		margin-left: 5px; 
 	}
 
 	img.imgCal{

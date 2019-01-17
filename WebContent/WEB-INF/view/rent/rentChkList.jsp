@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css?csd" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentChkList.css?abc" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentSearchDateList.css?c" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentChkList.css?dd" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentSearchDateList.css?cs" rel="stylesheet"  type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -37,7 +37,7 @@
 			                            <li>
 			                                <span class="chkbox2">
 			                                    <input type="radio" name="dateType" id="dateType1" onclick="setSearchDate('0d')"/>
-			                                    <label for="dateType1">오늘</label>
+			                                    <label for="dateType1">당일</label>
 			                                </span>
 			                            </li>
 			                            <li>
@@ -92,6 +92,7 @@
 			                            </span>
 			                            <div id="btnSearchWrap">
 			                            	<button type="button" id="btnSearch">조회</button>
+			                            	<button type="button" id="btnReset">초기화</button>
 			                            </div>
 			                        </div>    
 			                    </td>
@@ -140,7 +141,7 @@
 	<script>
 		var pathContext = '${pageContext.request.contextPath }';
 	</script>
-	<script src="${pageContext.request.contextPath }/js/rentSearchDateList.js?a"></script>
+	<script src="${pageContext.request.contextPath }/js/rentSearchDateList.js?bcd"></script>
 
 </body>
 </html>

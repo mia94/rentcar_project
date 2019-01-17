@@ -26,7 +26,7 @@
 					
 					<div id="btnWrap">
 						<div id="backHome"><a href="${pageContext.request.contextPath }/home.do">홈으로</a></div>
-						<div id="rentInfo"><a href="#">예약내역 확인하기</a></div>
+						<div id="rentInfo"><a href="${pageContext.request.contextPath }/rentChkList.do">예약내역 확인하기</a></div>
 					</div>
 				</div>
 			</div>

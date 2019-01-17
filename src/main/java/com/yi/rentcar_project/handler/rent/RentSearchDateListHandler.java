@@ -21,7 +21,6 @@ public class RentSearchDateListHandler implements CommandHandler {
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		// TODO Auto-generated method stub
 		if(req.getMethod().equalsIgnoreCase("post")){
-			System.out.println("테스트");
 			String searchStartDate = req.getParameter("searchStartDate");
 			String searchEndDate = req.getParameter("searchEndDate");
 			

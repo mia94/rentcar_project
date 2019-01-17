@@ -82,6 +82,10 @@ function setSearchDate(start) {
 
 }
 
+$("#btnReset").click(function(){
+	location.href = 'rentChkList.do';
+})
+
 //조회버튼
 $("#btnSearch").click(function(){
 	if( $("#searchStartDate").val() == "" && $("#searchEndDate").val() == ""){
@@ -100,12 +104,12 @@ $("#btnSearch").click(function(){
 				
 				$(json).each(function(index, obj){
 					$("#title").after("<tr id='insert'></tr>");
-					$("#insert").append("<td><a href='rentChkListRead.do?code=" + obj.code + "&name=" + obj.car_code.name + "'>" + obj.code + "</td>");
-					$("#insert").append("<td>" + obj.start_date + "</td>");
-					$("#insert").append("<td>" + obj.end_date + "</td>");
-					$("#insert").append("<td><img src='"+pathContext+"/upload/" + obj.car_code.brand.name + ".png'></td>");
-					$("#insert").append("<td>" + obj.car_code.carType.type + "</td>");
-					$("#insert").append("<td>" + obj.car_code.name + "</td>");
+					$("#insert").append("<td style='width:124px'><a href='rentChkListRead.do?code=" + obj.code + "&name=" + obj.car_code.name + "'>" + obj.code + "</td>");
+					$("#insert").append("<td style='width:172px'>" + obj.start_date + "</td>");
+					$("#insert").append("<td style='width:172px'>" + obj.end_date + "</td>");
+					$("#insert").append("<td style='width:93px'><img src='"+pathContext+"/upload/" + obj.car_code.brand.name + ".png'></td>");
+					$("#insert").append("<td style='width:63px'>" + obj.car_code.carType.type + "</td>");
+					$("#insert").append("<td style='width:169px'>" + obj.car_code.name + "</td>");
 				})
 			}
 			
