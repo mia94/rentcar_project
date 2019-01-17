@@ -117,7 +117,7 @@
 				
 				<c:forEach var="rent" items="${list }">
 					<tr>
-						<td><a href="#">${rent.code }</a></td>
+						<td><a href="rentListRead.do?code=${rent.code }">${rent.code }</a></td>
 						<td>${rent.customer_code.code }</td>
 						<td>${rent.start_date }</td>
 						<td>${rent.end_date }</td>

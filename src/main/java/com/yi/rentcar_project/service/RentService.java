@@ -195,6 +195,30 @@ public class RentService implements RentDao{
 		return null;
 	}
 
+	//대여관리 상세정보
+	public Map<String, Object> readRentInfoManage(String rentCode){
+		SqlSession session = null;
+		
+		try {
+			session = MySqlSessionFactory.openSession();
+			
+			RentDao dao = session.getMapper(RentDao.class);
+			Rent rentInfo = dao.selectInfoRentByAll(rentCode);
+			
+			Map<String, Object> maps = new HashMap<>();
+			maps.put("rentInfo", rentInfo);
+			
+			return maps;
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return null;
+	}
+	
 	@Override
 	public List<Rent> getRentList(RentDate date) throws SQLException {
 		// TODO Auto-generated method stub
@@ -257,6 +281,13 @@ public class RentService implements RentDao{
 	public List<Rent> getIsReturnTrue() throws SQLException {
 		try(SqlSession sqlSession = MySqlSessionFactory.openSession()){
 			return sqlSession.selectList(namespace + ".getIsReturnTrue");
+		}
+	}
+
+	@Override
+	public Rent selectInfoRentByAll(String code) throws SQLException {
+		try(SqlSession sqlSession = MySqlSessionFactory.openSession()){
+			return sqlSession.selectOne(namespace + ".selectInfoRentByAll", code);
 		}
 	}
 

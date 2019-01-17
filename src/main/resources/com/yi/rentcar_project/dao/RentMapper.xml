@@ -172,6 +172,12 @@
 		select r.code, start_date, start_time, end_date, end_time, is_return, basic_price, r.car_code, customer_code, insurance_code, e_code, opt_price, cm.name, c.name, ct.type
 		from rent r join car_model cm on r.car_code = cm.car_code join customer c on r.customer_code = c.code join car_type ct on cm.cartype = ct.code
 	</sql>
+	
+	<select id="selectInfoRentByAll"  resultMap="resultRentAll">
+		select r.code, start_date, start_time, end_date, end_time, is_return, basic_price, r.car_code, customer_code, insurance_code, e_code, opt_price, cm.name, c.name as customer_name, ct.type
+		from rent r join car_model cm on r.car_code = cm.car_code join customer c on r.customer_code = c.code join car_type ct on cm.cartype = ct.code
+		where r.code = #{code};
+	</select>
 	<!-- 끝 -->
 	
 	<select id="selectRentByAllWithDate" resultMap="resultRentAll">

@@ -54,4 +54,6 @@ public interface RentDao {
 	public List<Rent> getIsReturnFalse() throws SQLException;
 	public List<Rent> getIsReturnTrue() throws SQLException;
 	
+	//상세정보2
+	public Rent selectInfoRentByAll(String code) throws SQLException;
 }
