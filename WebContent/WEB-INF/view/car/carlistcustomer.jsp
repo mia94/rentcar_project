@@ -132,7 +132,7 @@ $(function(){
 			<div id="list_wrap">
 			<h1>차량 조회</h1>
 				<ul>
-					<li><a href="carlist.do" id="total">전체</a></li>
+					<li><a href="carlistcustomer.do" id="total">전체</a></li>
 					<li>
 						<a href="selectcustomer.do?cartype=S1">
 							<img src="${pageContext.request.contextPath }/images/경형b.png">
