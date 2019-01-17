@@ -141,7 +141,7 @@
 	<script>
 		var pathContext = '${pageContext.request.contextPath }';
 	</script>
-	<script src="${pageContext.request.contextPath }/js/rentSearchDateList.js?bcd"></script>
+	<script src="${pageContext.request.contextPath }/js/rentSearchDateList.js?abs"></script>
 
 </body>
 </html>

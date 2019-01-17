@@ -153,6 +153,6 @@
 	<script>
 		var pathContext = '${pageContext.request.contextPath }';
 	</script>
-	<script src="${pageContext.request.contextPath }/js/rentManageSearchDateList.js?bcd"></script>
+	<script src="${pageContext.request.contextPath }/js/rentManageSearchDateList.js?a"></script>
 </body>
 </html>

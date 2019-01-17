@@ -1,0 +1,173 @@
+@CHARSET "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+div#rentListRead_container {
+	width: 1000px;
+	margin: 30px auto;
+	padding: 10px;
+	border: 1px solid #ccc;
+	overflow: hidden;
+}
+
+div#leftWrap {
+	width: 330px;
+	height: 340px;
+	float: left;
+	margin: 10px 40px 5px 5px;
+	display: inline-block;
+}
+
+div#rightWrap {
+	display: inline-block;
+	width: 590px;
+	height: 320px;
+	margin: 10px 5px 5px 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+div#rightWrap>h3 {
+	padding: 5px 5px 5px 10px;
+	border-left: 10px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+div#carInfo {
+	border: 1px solid #efefef;
+	padding: 0;
+	height: 304px;
+	position: relative;
+}
+
+div#carImg > h3 {
+	color: #353535;
+	padding: 5px 0 0 10px;
+	text-align: left;
+}
+
+div#priceInfo {
+	background-color: #353535;
+	width: 328px;
+	height: 40px;
+	line-height: 40px;
+	position: absolute;
+	bottom: 0;
+	color: #efefef;
+	font-size: 17px;
+}
+
+div#rentInfo {
+	background-color: #efefef;
+	width: 328px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+
+span#priceTit {
+	color: #efefef;
+	font-size: 17px;
+	padding: 0 35px;
+}
+
+span#rentInfoTit {
+	font-weight: bold;
+	color: #5D5D5D;
+}
+
+span#priceContent {
+	color: #FFE400;
+	font-weight: bold;
+	font-size: 17px;
+	padding-left: 45px;
+	border-left: 1px solid #747474;
+}
+
+img.carImg {
+	width: 320px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	font-size: 14px;
+}
+
+div#btnWrap {
+	padding-top: 10px;
+	text-align: center;
+	padding-left: 360px;
+}
+
+div#btnReturn {
+	border: none;
+	background-color: #f04040;
+	height: 40px;
+	line-height: 40px;
+	margin-right: 10px;
+	width: 100px;
+	display: inline-block;
+	text-align: center;
+}
+
+div#btnReturn a {
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	float: left;
+}
+
+div#backList {
+	border: none;
+	background-color: #5D5D5D;
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	display: inline-block;
+	text-align: center;
+}
+
+div#backList a {
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	float: left;
+}
+
+table {
+	border-left: 1px solid #efefef;
+	border-right: 1px solid #efefef;
+	border-bottom: 1px solid #efefef;
+	border-collapse: collapse;
+	width: 590px;
+	height: 180px;
+}
+
+tr, td {
+	border-left: 1px solid #efefef;
+	border-right: 1px solid #efefef;
+	border-bottom: 1px solid #efefef;
+	color: #5D5D5D;
+}
+
+td {
+	padding: 5px 0 5px 10px;
+}
+
+td#false {
+	font-weight: bold;
+	color: #F15F5F;
+}
+
+td#true {
+	color: #6798FD;
+}
+
+span#overdue {
+	font-weight: bold;
+	color: #f04040;
+}

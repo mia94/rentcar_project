@@ -148,6 +148,7 @@
 		<result column="customer_name" property="customer_code.name" />
 		<result column="car_name" property="car_code.name" />
 		<result column="car_type" property="car_code.cartype.type" />
+		<result column="gradeName" property="customer_code.gradeCode.name"/>
 	</resultMap>
 	
 	<!-- 반납되지 않은 차량 -->
@@ -174,8 +175,8 @@
 	</sql>
 	
 	<select id="selectInfoRentByAll"  resultMap="resultRentAll">
-		select r.code, start_date, start_time, end_date, end_time, is_return, basic_price, r.car_code, customer_code, insurance_code, e_code, opt_price, cm.name, c.name as customer_name, ct.type
-		from rent r join car_model cm on r.car_code = cm.car_code join customer c on r.customer_code = c.code join car_type ct on cm.cartype = ct.code
+		select r.code, start_date, start_time, end_date, end_time, is_return, basic_price, r.car_code, customer_code, insurance_code, e_code, opt_price, cm.name as car_name, c.name as customer_name, ct.type as car_type, g.name as gradeName
+		from rent r join car_model cm on r.car_code = cm.car_code join customer c on r.customer_code = c.code join car_type ct on cm.cartype = ct.code join grade g on c.grade_code = g.code
 		where r.code = #{code};
 	</select>
 	<!-- 끝 -->

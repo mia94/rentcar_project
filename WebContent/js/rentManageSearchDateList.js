@@ -103,11 +103,11 @@ $("#btnSearch1").click(function(){
 				
 				$(json).each(function(index, obj){
 					$("#title1").after("<tr id='insert'></tr>");
-					$("#insert").append("<td style='width:136px'>" + obj.code + "</td>");
-					$("#insert").append("<td style='width:136px'>" + obj.customer_code.code + "</td>");
-					$("#insert").append("<td style='width:192px'>" + obj.start_date + "</td>");
-					$("#insert").append("<td style='width:192px'>" + obj.end_date + "</td>");
-					$("#insert").append("<td style='width:138px' id='isReturn'>" + obj.is_return  + "</td>");
+					$("#insert").append("<td style='width:138.4px'>" + obj.code + "</td>");
+					$("#insert").append("<td style='width:138.4px'>" + obj.customer_code.code + "</td>");
+					$("#insert").append("<td style='width:191.2px'>" + obj.start_date + "</td>");
+					$("#insert").append("<td style='width:191.2px'>" + obj.end_date + "</td>");
+					$("#insert").append("<td style='width:139.2px' id='isReturn'>" + obj.is_return  + "</td>");
 					var ir = $("#isReturn").text();
 					if(ir == 'false'){
 						$("#isReturn").html("N");
