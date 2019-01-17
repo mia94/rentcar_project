@@ -17,8 +17,9 @@
 	}
 	#chart{
 		width:600px;
-		height: 400px;
-		margin: 0 auto;
+		position: absolute;
+		left: 230px;
+		top:150px;
 	}
 </style>
 </head>
