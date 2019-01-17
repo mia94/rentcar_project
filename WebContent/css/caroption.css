@@ -1,6 +1,7 @@
 @CHARSET "UTF-8";
 
 	/*카옵션 css*/
+@media all and (min-width:768px){
 	#wrap_wrap{
 		width:500px;
 		margin: 130px auto;
@@ -76,3 +77,83 @@
 		color:gray;
 		font-size: 14px;
 	}
+}
+@media all and (max-width:767px){
+	#wrap_wrap{
+		width:100%;
+	}
+	#wrap_wrap > a{
+		width:25%;
+		height: 35px;
+		line-height:35px;
+		text-align:center; 
+		margin-bottom:15px;
+		float: left;
+		text-decoration: none;
+		color:white;
+		font-size: 12px;
+		font-weight: bold; 
+	}
+	#wrap_wrap > a[href*=type]{
+		background: url('../upload/menu1.png') no-repeat;
+		background-size: cover;
+	}
+	#wrap_wrap > a[href*=brand]{
+		background: url('../upload/menu2.png') no-repeat;
+		background-size: cover;
+	}
+	#wrap_wrap > a[href*=fuel]{
+		background: url('../upload/menu3.png') no-repeat;
+		background-size: cover;
+	}
+	#wrap_wrap > a[href*=option]{
+		background: url('../upload/menu4.png') no-repeat;
+		background-size: cover;
+	}
+	#wrap_wrap h1{
+		text-align: center;
+	}
+	.wrap{
+		width:90%;
+		height:350px; 
+		margin:0 auto;
+		position: relative; 
+	}
+	.list_p{
+		height: 40px;
+		width:90%;
+		line-height:40px;
+		overflow: hidden;
+		position: relative;
+		border-bottom: 1px solid black; 
+	}
+	.list_p img{
+		width:25px;
+		position: absolute;
+		bottom: 5px;
+		left: 10px;
+	}
+	.list_p span{
+		float: left;
+		width:80px;
+		text-align: center;
+	}
+	.wrap .btnAdd{
+		text-decoration: none;
+		text-align: right;
+		position: absolute;
+		bottom: 40px;
+		left: 225px;
+	}
+	.wrap .btn_span{
+		width:100px; 
+		position: absolute;
+		right: 0px;
+		top:0;
+	}
+	.wrap .btn_span a{
+		text-decoration: none;
+		color:gray;
+		font-size: 14px;
+	}
+}
