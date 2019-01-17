@@ -133,6 +133,7 @@
 		position: absolute;
 		left: -11px;
 		top: -10px;
+		z-index: 3;
 	}
 	section #session_home h1{
 		display:block;
