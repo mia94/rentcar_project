@@ -11,39 +11,48 @@
 <style>
 	#wrap{
 		width:800px;
-		height:800px;
+		height:900px;
 		margin: 50px auto;
 		position: relative;
 	}
-	#wrap>p{
+	#gray_p{
 		color: #999999;
 		font-size: 14px;
 	}
 	/*차트 디스플레이*/
+	#wrap a{
+		z-index: 0;
+	}
+	#brand_chart, #type_chart,#line_chart{
+		z-index: 0;
+	}
 	#brand_chart, #type_chart{
-		width:300px;
+		width:260px;
+		height: 190px;
 	}
 	#brand_chart{
 		position: absolute;
-		left: 10px;
+		left: 0px;
 		top:10px;	
 	}
 	#type_chart{
 		position: absolute;
-		left: 10px;
+		left: 0px;
 		top:200px;
 	}
 	#line_chart{
 		width:450px;
+		height:380px;
 		position: absolute;
-		left: 310px;
+		right:0;
 		top:10px;
 	}
 	#car_chart{
 		width:800px;
+		height:500px;
 		position: absolute;
 		top:400px;
-		left: 10px;
+		left: 20px;
 	}
 </style>
 </head>
@@ -54,7 +63,7 @@
 		</header>
 		
 		<section>
-		<p>그래프를 클릭하면 해당 페이지로 이동합니다</p>
+		<p id="gray_p">그래프를 클릭하면 해당 페이지로 이동합니다</p>
 			<div id="wrap">
 				<a href="carchart.do" class="menu">
 					<div id="car_chart"></div>
@@ -130,45 +139,38 @@
 		});
 		
 		//차량별
-		$(function(){
-
-		var line = new Array();
-
-		<c:forEach var="item" items="${list}" varStatus="status">
-			line[${status.index}] = ${list.get(status.index).rentCnt};
+		google.charts.load('current', {'packages':['bar']});
+	google.charts.setOnLoadCallback(drawStuff);
+	
+	function drawStuff() {
+	  var data = new google.visualization.arrayToDataTable([
+	    ['차량코드', '차량'],
+	    <c:forEach var="item" items="${list}" varStatus="status">
+			['${list.get(status.index).carCode}', ${list.get(status.index).rentCnt}],
 		</c:forEach>
-		
-		  plot = $.jqplot('car_chart', [line], {
-		    stackSeries: true,
-		    captureRightClick: true,
-		    seriesDefaults:{
-		      renderer:$.jqplot.BarRenderer,
-		      rendererOptions: {
-		          barMargin: 30,
-		          highlightMouseDown: true    
-		      },
-		      pointLabels: {show: true}
-		    },
-		    axes: {
-		      xaxis: {
-		          renderer: $.jqplot.CategoryAxisRenderer
-		      },
-		      yaxis: {
-		        padMin: 0
-		      }
-		    },
-		    legend: {
-		      show: true,
-		      location: 'e',
-		      placement: 'outside'
-		    }      
-		  });
-		  $('#car_chart').bind('jqplotDataClick', 
-		    function (ev, seriesIndex, pointIndex, data) {
-		     // $('#info').html('series: '+seriesIndex+', point: '+pointIndex+', data: '+data);
-		    }
-		  ); 
-		})
+	  ]);
+	
+	  var options = {
+	    width: 800,
+	    chart: {
+	      title: '차량별 렌트',
+	    },
+	    bars: 'horizontal', // Required for Material Bar Charts.
+	    series: {
+	      0: { axis: 'distance' }, // Bind series 0 to an axis named 'distance'.
+	      1: { axis: 'brightness' } // Bind series 1 to an axis named 'brightness'.
+	    },
+	    axes: {
+	      x: {
+	        distance: {label: 'rent count'}, // Bottom x-axis.
+	        brightness: {side: 'top', label: 'rent count'} // Top x-axis.
+	      }
+	    }
+	  };
+	
+	var chart = new google.charts.Bar(document.getElementById('car_chart'));
+	chart.draw(data, options);
+	};
 		
 		//라인그래프
 		google.charts.load('current', {'packages':['line']});

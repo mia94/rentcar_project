@@ -11,7 +11,7 @@
 <style>
 	#chart_wrap{
 		width:1000px;
-		margin: 50px auto; 
+		margin: 100px auto; 
 		height: 600px;
 		position: relative;
 	}
