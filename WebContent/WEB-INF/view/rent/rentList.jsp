@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="${pageContext.request.contextPath }/css/common.css?csd" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/rentList.css?a" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/rentList.css?b" rel="stylesheet"  type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -65,6 +65,6 @@
 	
 	<!-- 스크립트 부분(위에 스크립트 있으면 datepicker 실행이 안됨) -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="${pageContext.request.contextPath }/js/rentSearchDateList.js?a"></script>
+	<script src="${pageContext.request.contextPath }/js/rentSearchDateList.js?asdsdd"></script>
 </body>
 </html>

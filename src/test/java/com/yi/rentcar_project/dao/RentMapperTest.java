@@ -11,6 +11,7 @@ import org.junit.runners.MethodSorters;
 import com.yi.rentcar_project.model.CarModel;
 import com.yi.rentcar_project.model.CarType;
 import com.yi.rentcar_project.model.Customer;
+import com.yi.rentcar_project.model.RentDate;
 import com.yi.rentcar_project.model.Insurance;
 import com.yi.rentcar_project.model.Rent;
 import com.yi.rentcar_project.model.StateCar;
@@ -109,17 +110,22 @@ public class RentMapperTest {
 		Assert.assertNotNull(r);
 	}*/
 	
-/*	@Test
+	@Test
 	public void test13getRentList() throws SQLException{
-		List<Rent> list = dao.getRentList("2018-03-01", "2018-03-31");
+		RentDate d = new RentDate();
+		d.setChk_start_date("2018-12-01");
+		d.setChk_end_date("2018-12-31");
+		d.setChk_id("asd132");
+		
+		List<Rent> list = dao.getRentList(d);
 		
 		for(Rent r : list){
 			System.out.println(r);
 		}
 		Assert.assertNotNull(list);
-	}*/
+	}
 	
-	@Test
+/*	@Test
 	public void test01selectRentByAll() throws SQLException {
 	
 		List<Rent> list = dao.selectRentByAll();
@@ -129,5 +135,5 @@ public class RentMapperTest {
 		}
 		Assert.assertNotNull(list);
 		
-	}
+	}*/
 }

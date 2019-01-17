@@ -10,6 +10,8 @@ import org.apache.ibatis.session.SqlSession;
 import com.yi.rentcar_project.dao.RentDao;
 import com.yi.rentcar_project.model.CarModel;
 import com.yi.rentcar_project.model.Customer;
+import com.yi.rentcar_project.model.Grade;
+import com.yi.rentcar_project.model.RentDate;
 import com.yi.rentcar_project.model.Insurance;
 import com.yi.rentcar_project.model.Rent;
 import com.yi.rentcar_project.model.StateCar;
@@ -122,6 +124,16 @@ public class RentService implements RentDao{
 			session = MySqlSessionFactory.openSession();
 			RentDao dao = session.getMapper(RentDao.class);
 			
+			//
+			String custom_namespace = "com.yi.rentcar_project.dao.CustomerDao";
+			Customer customer = rent.getCustomer_code();
+			session.update(custom_namespace + ".updateCustomerRentCnt", customer);
+			String gradeCode = session.selectOne(custom_namespace+".selectGradeCustomer", customer);
+			customer.setGradeCode(new Grade(gradeCode));
+			session.update(custom_namespace + ".updateCustomerGrade",  customer);
+			session.update("com.yi.rentcar_project.dao.CarModelDao.updateCarModelRent", rent.getCar_code());	
+			session.update("com.yi.rentcar_project.dao.CustomEventDao.updateSetUse", rent);
+			//
 			rent.setCode(getNextRentNo());
 			dao.insert(rent);
 			
@@ -184,7 +196,7 @@ public class RentService implements RentDao{
 	}
 
 	@Override
-	public List<Rent> getRentList(String start, String end) throws SQLException {
+	public List<Rent> getRentList(RentDate date) throws SQLException {
 		// TODO Auto-generated method stub
 		SqlSession session = null;
 		
@@ -192,7 +204,7 @@ public class RentService implements RentDao{
 			session = MySqlSessionFactory.openSession();
 			RentDao dao = session.getMapper(RentDao.class);
 			
-			List<Rent> list = dao.getRentList(start, end);
+			List<Rent> list = dao.getRentList(date);
 			
 			return list;
 			
