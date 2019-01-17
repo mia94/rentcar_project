@@ -37,14 +37,14 @@ $(function(){
 		
 		<section>
 			<div id="wrap_wrap">
-			<a href="customerList.do">고객관리</a>
+			<!-- <a href="customerList.do">고객관리</a>
 			<a href="employeeList.do">직원관리</a>
 			<a href="eventList.do">이벤트관리</a>
-			<a href="gradeList.do">등급관리</a>
+			<a href="gradeList.do">등급관리</a> -->
 			<h1 id="title">GRADE</h1><p><a href="gradeUpload.do" class="btnAdd">[ 등급추가 ]</a></p>
 			<div class="wrap">
 				
-				
+				<div id="center">
 						<table>
 						<tr>
 							
@@ -59,10 +59,10 @@ $(function(){
 							<tr>
 								<%-- <td><img src="${pageContext.request.contextPath }/upload/${item.code }.png"></td> --%>
 								<td>${item.code }</td>
-								<td id="GradeName">${item.name }</td>
-								<td id="gLosal">${item.gLosal }</td>
-								<td id="gHisal">${item.gHisal }</td>
-								<td id="rate">${item.rate } %</td>
+								<td >${item.name }</td>
+								<td >${item.gLosal }</td>
+								<td >${item.gHisal }</td>
+								<td >${item.rate } %</td>
 								<td>
 									<a href="gradeModify.do?code=${item.code }">수정</a>
 									<a href="gradeDelete.do?code=${item.code }" class="gradeDel">삭제</a>
@@ -70,7 +70,7 @@ $(function(){
 							</tr>
 							</c:forEach>
 						</table>
-				
+				</div>
 				
 			</div>
 			</div>

@@ -8,19 +8,20 @@ import javax.servlet.http.HttpServletResponse;
 import com.yi.rentcar_project.mvc.CommandHandler;
 import com.yi.rentcar_project.service.CustomerService;
 
-public class testReadHandler implements CommandHandler {
+public class CustomertReadHandler implements CommandHandler {
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		// TODO Auto-generated method stub
+		
 		String code = req.getParameter("code");
 		
 		CustomerService service = CustomerService.getInstance();
 		Map<String, Object> map = service.readCustomerInfo(code);
 		
 		req.setAttribute("map", map);
+		return "/WEB-INF/view/management/customerDetail.jsp";
 		
-		return "test.jsp";
 	}
 
 }

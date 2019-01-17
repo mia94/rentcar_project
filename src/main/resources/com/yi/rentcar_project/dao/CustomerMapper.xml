@@ -94,10 +94,10 @@
 
 
 	<!-- delete -->
-<!-- 
-	<delete id="deleteCustomer" parameterType="Customer">
+
+<!-- 	<delete id="deleteCustomer" parameterType="Customer">
 		delete from customer where code=#{code}
-	</delete> -->
+	</delete>  -->
 
 	<resultMap type="Customer" id="Result">
 		<result column="id" property="id" />

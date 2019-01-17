@@ -33,14 +33,16 @@ $(function(){
 		
 		<section>
 			<div id="wrap_wrap">
-			<a href="customerList.do">고객관리</a>
+			<!-- <a href="customerList.do">고객관리</a>
 			<a href="employeeList.do">직원관리</a>
 			<a href="eventList.do">이벤트관리</a>
-			<a href="gradeList.do">등급관리</a>
+			<a href="gradeList.do">등급관리</a> -->
 			
 			<h1 id="title">EVENT</h1><p><a href="eventUpload.do" class="btnAdd">[ 이벤트 추가 ]</a></p>
 			<div class="wrap">
+			<div id="center">
 			<table>
+			
 							<tr>
 							<th>이벤트 코드</th>
 							<th>이벤트 이름</th>
@@ -51,8 +53,8 @@ $(function(){
 							<c:forEach var="item" items="${eventList }">
 							<tr>
 								<td>${item.code }</td>
-								<td id="EventName">${item.name }</td>
-								<td id="rate">${item.rate } %</td>
+								<td>${item.name }</td>
+								<td>${item.rate } %</td>
 								<td>
 									<a href="eventModify.do?code=${item.code }">수정</a>
 									<a href="eventDelete.do?code=${item.code }" class="eventDel">삭제</a>
@@ -60,7 +62,7 @@ $(function(){
 							</tr>					
 				</c:forEach>
 				</table>
-				
+				</div>
 			</div>
 			</div>
 		</section>

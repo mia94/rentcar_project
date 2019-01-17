@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/management.css?a" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/management.css?aazzaa" rel="stylesheet"  type="text/css">
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -23,7 +23,7 @@ $(function(){
 			location.href="${pageContext.request.contextPath }/customerDelete.do?code="+code;
 		}
 		return false;
-	})
+	})   
 	
 	<c:forEach var="item" items="${customerList}" varStatus="status">
 	var BlackList = $(".CusGrade").eq(${status.index}).text().trim();
@@ -46,24 +46,26 @@ $(function(){
 		<section>
 		
 		
-		<div id="test">
-		
-		</div>
-		<nav id="CusDetail">
 		<div id="inner">
      		  <%-- <img src="${pageContext.request.contextPath }/images/btnX.png" id="btnx">  --%>
    			</div>
-		</nav>
+		
 			<div id="wrap_wrap">
-			<a href="customerList.do">고객관리</a>
+			<!-- <a href="customerList.do">고객관리</a>
 			<a href="employeeList.do">직원관리</a>
 			<a href="eventList.do">이벤트관리</a>
-			<a href="gradeList.do">등급관리</a>
+			<a href="gradeList.do">등급관리</a> -->
 			
 			
-			<h1 id="title">CUSTOMER</h1> <p><a href="customerUpload.do" class="btnAdd">[ 고객 추가  ]</a></p>
+			<h1 id="title">CUSTOMER</h1> 
+			<p>
+			<a href="customerUpload.do" class="btnAdd">[ 고객 추가  ]</a>
+			<p id="span">
+			<span id="desc">세부사항은 고객코드를 눌러주세요.</span>
+			<p>
+			</p>
 			<div class="wrap">
-				
+				<div id="center">
 						<table>
 						<tr>
 							<th>고객 코드</th>
@@ -78,7 +80,7 @@ $(function(){
 						</tr>
 						<c:forEach var="item" items="${customerList }">
 							<tr class="cusInfo">
-								<td ><a href="testRead.do?code=${item.code }">${item.code }</a></td>
+								<td ><a href="customerRead.do?code=${item.code }">${item.code }</a></td>
 								<td>${item.id }</td>
 								<td>${item.name }</td>
 								<%-- <td id="zipCode">${item.zipCode }</td> --%>
@@ -104,6 +106,7 @@ $(function(){
 							</tr>
 							</c:forEach>
 						</table>
+						</div>
 			</div>
 			</div>
 		</section>
