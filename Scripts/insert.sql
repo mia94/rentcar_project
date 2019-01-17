@@ -514,8 +514,8 @@ before delete on customer
 for each row
 begin
 	update rent
-	set costomer_code = 'C000'
-	where costomer_code = old.code;
+	set customer_code = 'C000'
+	where customer_code = old.code;
 
 	delete from custom_event
 	where custom_code = old.code;

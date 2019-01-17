@@ -129,7 +129,7 @@ public class CustomerService implements CustomerDao {
 		try {
 			res += sqlSession.delete("com.yi.rentcar_project.dao.CustomEventDao.deleteCustomEvent", customEvent);
 			res += sqlSession.delete(namespace + ".deleteCustomer", customer);
-			if (res == 2){
+			if (res>= 2){
 				sqlSession.commit();
 			}else{
 				throw new Exception();
@@ -137,7 +137,7 @@ public class CustomerService implements CustomerDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 			sqlSession.rollback();
-			System.err.println("sqlSession.rollback()");
+			System.err.println("sqlSession.rollback()"+ res);
 			throw new RuntimeException(e.getCause());
 		} finally {
 			sqlSession.close();
