@@ -8,45 +8,9 @@
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/optionform.css" rel="stylesheet"  type="text/css">
 <style>
-	#modify_wrap{
-		width:1000px; 
-		height: 600px;
-		margin:30px 80px;
-	}
-	#modify_wrap label{
-		width:150px;
-		height: 50px;
-		line-height: 50px;
-		background-color: #4C4C4C;
-		color:#F6F6F6;
-		font-weight: bold;
-		text-align: center;
-		float: left;
-	}
-	#modify_wrap .textfield{
-		width:295px;
-		height: 46px;
-		line-height: 46px;
-	}
-	#img_wrap{
-		width:445px;
-		height: 200px;
-		margin-top: 80px;
-	}
-	#img_wrap img{
-		width:445px;
-		height: 200px;
-	}
-	#input_wrap{
-		width:500px;
-		margin: 0px auto;
-	}
-	#btn_wrap{
-		clear:both;
-		width:450px;
-		text-align: center;
-	}
+
 </style>
 </head>
 <body>

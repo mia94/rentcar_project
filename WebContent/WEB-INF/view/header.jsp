@@ -32,7 +32,8 @@ $(function() {
 </head>
 <body>
 <img src="${pageContext.request.contextPath }/upload/menu.png" alt="menu" id="menu_img">
-<h1 id="logo"><a href="home.do">L O G O</a></h1>
+<span id="logo_sub">RENTCAR</span>
+<h1 id="logo"><a href="home.do">W I T</a></h1>
 <div id="main">
 <a href="searchPw.do">비밀번호 찾기</a>
 <a href="searchId.do">아이디 찾기</a>

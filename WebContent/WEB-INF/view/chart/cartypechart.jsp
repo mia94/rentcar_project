@@ -17,10 +17,10 @@
 		position: relative;
 	}
 	#chart{
-		width:650px;
-		height: 500px;
-		margin: 40px auto;
-		padding-left: 50px;
+		width:600px;
+		position: absolute;
+		left: 230px;
+		top:150px;
 	}
 </style>
 </head>
