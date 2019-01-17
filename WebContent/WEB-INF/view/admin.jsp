@@ -26,26 +26,32 @@ $(function() {
 		}
 	%>	
 	//submenu
-	$("#option_sub").hide();
-	$("#option_menu").hover(function () {
-		  $("#option_sub").show();
-	}, function () {
-		  $("#option_sub").hide();
-	});
+	 $("#option_sub").hide();
+	 $("#car_sub").hide();
+	 $("#chart_sub").hide();
+	if($(window).width()>768){
+		$("#option_sub").hide();
+		$("#option_menu").hover(function () {
+			  $("#option_sub").show();
+		}, function () {
+			  $("#option_sub").hide();
+		});
+		
+		$("#car_sub").hide();
+		$("#car_menu").hover(function () {
+			  $("#car_sub").show();
+		}, function () {
+			  $("#car_sub").hide();
+		});
+		
+		$("#chart_sub").hide();
+		$("#chart_menu").hover(function () {
+			  $("#chart_sub").show();
+		}, function () {
+			  $("#chart_sub").hide();
+		});
 	
-	$("#car_sub").hide();
-	$("#car_menu").hover(function () {
-		  $("#car_sub").show();
-	}, function () {
-		  $("#car_sub").hide();
-	});
-	
-	$("#chart_sub").hide();
-	$("#chart_menu").hover(function () {
-		  $("#chart_sub").show();
-	}, function () {
-		  $("#chart_sub").hide();
-	});
+	}
 	$("#menu").removeClass("openMenu");
 	if($(window).width()<769){
 		$("#menu").css("margin-left","-100%");//.css("opacity",0);
