@@ -252,7 +252,7 @@ $(function() {
          <p>
        <label>우편번호</label>
       <input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode" value="${custom.zipCode }">
-     <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" ><br>
+     <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" id="btnSearchPost" ><br>
       </p>
       
       <p>
