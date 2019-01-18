@@ -14,7 +14,7 @@
 	</resultMap>
 	
 	<select id="selectByCarType" resultMap="resultCarModel">
-		select cm.car_code as carCode, cm.name as carName, cm.fuel_code as fuel, b.name as brandName, cm.basic_charge as basic  
+		select cm.car_code as carCode, cm.name as carName, cm.fuel_code as fuel, b.name as brandName, cm.basic_charge as basic, cm.is_rent 
 		from car_type ct join car_model cm
 		on ct.code = cm.cartype join brand b on cm.brand = b.no
 		where ct.`type` = #{carType};

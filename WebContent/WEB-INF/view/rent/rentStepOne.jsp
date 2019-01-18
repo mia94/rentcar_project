@@ -65,7 +65,10 @@
 										<div id="temp">
 											<img src="${pageContext.request.contextPath }/upload/${car.fuel.code }.png" class='fuel'>
 											<img src="${pageContext.request.contextPath }/upload/${car.brand.name }.png" class='carBrand'>
+											
+											<!-- 예약버튼 -->
 											<button type="button" class="btnRentBook" data-carCode="${car.carCode }" data-basicPrice="${car.basicCharge }" data-carName="${car.name }">예약</button>
+											<!-- 예약버튼 끝 -->
 										</div>
 	
 									</div>
