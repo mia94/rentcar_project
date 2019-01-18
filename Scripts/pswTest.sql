@@ -35,7 +35,7 @@ update customer
 		phone=#{phone}, dob=#{dob},
 		email=#{email}, emp_code=#{empCode.code}, license=#{license},
 		grade_code=#{gradeCode.code},
-		rent_cnt=#{rentCnt}
+		rent_cnt=#{rentCnt},
 		where Id=#{id}
 		
 		
