@@ -24,7 +24,7 @@
 				<div id="leftWrap">
 					<div id="carInfo">
 						<div id='rentInfo'>
-							<span id='rentInfoTit'>대여코드&nbsp;${map.rentInfo.code }</span>
+							<span id='rentInfoTit'>대여코드&nbsp;<span id='rentCodeVal'>${map.rentInfo.code }</span></span>
 						</div>
 						<div id="carImg">
 							<h3>${map.rentInfo.car_code.name }(${map.rentInfo.car_code.carType.type})</h3>
@@ -62,14 +62,10 @@
 							<td colspan="3" style='background-color: #F6F6F6'><b>반납여부</b></td>
 							<c:choose>
 								<c:when test="${map.rentInfo.is_return eq false }">
-									<td colspan="3" id='false' style='background-color: #FFEAEA'>
-										${map.rentInfo.is_return eq false ? "N" : "Y"}
-									</td>
+									<td colspan="3" id='false' style='background-color: #FFEAEA'>${map.rentInfo.is_return eq false ? "N" : "Y"}</td>
 								</c:when>
 								<c:otherwise>
-									<td colspan="3" id="true" style='background-color: #EBF7FF'>
-										${map.rentInfo.is_return eq true ? "Y" : "N"}
-									</td>
+									<td colspan="3" id="true" style='background-color: #EBF7FF'>${map.rentInfo.is_return eq true ? "Y" : "N"}</td>
 								</c:otherwise>
 							</c:choose>
 						</tr>
@@ -112,9 +108,7 @@
 						</tr>
 						<tr>
 							<td colspan="3" style='color: #212121'><b>초과 요금</b><button type="button" id="btnOverdueCal" data-cCode="${map.rentInfo.car_code.carCode }" data-rCode="${map.rentInfo.code }">계산</button></td>
-							<td colspan="3" style='color: #212121'>
-								<span id='overdue'>0</span>원
-							</td>
+							<td colspan="3" style='color: #212121'><span id='overdue'>0</span>원</td>
 						</tr>
 					</table>
 					<h4>${overdue }</h4>
@@ -127,12 +121,7 @@
 				</div>	
 			</div>
 						
-			<!-- 필요한 데이터 보내기 -->
-			<form id="calOverdue" action="${pageContext.request.contextPath }/rentHour.do" method="post">
-				<input type="hidden" name="carCode" id="carCode">
-				<input type="hidden" name="rCode" id="rCode">
-			</form>
-					
+				
 		</section>
 
 	</div>
@@ -144,15 +133,21 @@
 	
 	<!-- 스크립트 부분(위에 스크립트 있으면 datepicker 실행이 안됨) -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="${pageContext.request.contextPath }/js/rentListRead.js?abf"></script>
+	<script src="${pageContext.request.contextPath }/js/rentListRead.js?abbcf"></script>
 	<script>
 		$(function(){
 			$("#returnConfirm").click(function(){
 				var returnConfirm = confirm("반납처리 하시겠습니까?");
 				
 				if(returnConfirm == true){
-					location.href = "rentReturn.do?code=${map.rentInfo.code }";
-				} else{
+					if($("#overdue").text() == 0){
+						alert("초과요금 계산을 해주세요.");
+					} else if($("#true").text() == "Y"){
+						alert("이미 반납된 차량입니다.");
+					} else{
+						location.href = "rentReturn.do?code=${map.rentInfo.code }";
+					}
+					
 					
 				}
 				return false;
