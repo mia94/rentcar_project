@@ -56,10 +56,10 @@ public class SearchPwHandler implements CommandHandler {
 					String from = "psw2701";
 					String passwd = "swan0303";
 					String[] to = { customer.getEmail() }; // 보낼 메일 목록
-					String subject = "○○렌터카입니다 비밀번호를 개인정보관리에서 변경해주세요"; // 메일 제목
+					String subject = "WIT렌터카입니다 비밀번호를 개인정보관리에서 변경해주세요"; // 메일 제목
 					String body = "고객님의 임시 비밀번호는 " + customer.getPasswd() + " 입니다 로그인하여 개인정보관리에서 비밀번호를 변경해주세요 "; // 메일
 
-					sendFromGMail(from, passwd, to, subject, body);
+					sendFromGMail(from, passwd, to, subject, body);    
 
 				}
 			} catch (Exception e) {
