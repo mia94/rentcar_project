@@ -1,5 +1,7 @@
 select * from customer;
 
+select * from employee;
+
 
 select * from custom_event;
 

@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css?aaaaa" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/search.css?aa" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/search.css?aaaaaa" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -58,8 +58,8 @@
         </select>
       </p>
       <p id="href">
-      	<a href="searchId.do">ID찾기</a>
-      	<input type="submit" value="PW찾기"  id="Btn">
+      	<a href="searchId.do" id="btnSearchId">ID찾기</a>
+      	<input type="submit" value="PW찾기"  id="btnSearchPw">
 	
       </p>
       </fieldset>

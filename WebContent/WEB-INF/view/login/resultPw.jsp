@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath }/css/common.css?aaaaa" rel="stylesheet"  type="text/css">
-<link href="${pageContext.request.contextPath }/css/result.css?aaaaaa" rel="stylesheet"  type="text/css">
+<link href="${pageContext.request.contextPath }/css/result.css?aaa" rel="stylesheet"  type="text/css">
 <link href="${pageContext.request.contextPath }/css/common_orig.css" rel="stylesheet"  type="text/css">
 </head>
 <body>
@@ -21,7 +21,7 @@
 		<h3>임시 비밀번호를 고객님의 이메일로 발송했습니다.</h3>
 		<h3>개인정보관리에서 비밀번호를 재설정 하주세요</h3>
 
-	<a href="login.do">로그인하기</a>
+	<a href="login.do" id="btnLogin">로그인하기</a>
 	</div>
 	</section>
 	</div>

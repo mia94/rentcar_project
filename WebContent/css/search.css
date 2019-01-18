@@ -15,7 +15,7 @@
 	}
 
 	#form h5{
-		color: #aaa;
+		color: #555;
 		font-weight: lighter;
 		margin: 10px;	
 		text-align: center;
@@ -30,13 +30,14 @@
 		float: left;
 		text-align: center;
 		width: 100px;
-		margin: 0 auto;
+		margin: 5px auto;
+	
 	}
 	p{
 		margin: 10px;
 	}
 	input{
-		margin: 5px;
+		margin: 5px; 
 	}
 
 	 #href{
@@ -44,9 +45,51 @@
 	} 
 	
 	#href a{
-		padding:10px;
+		
 		text-decoration: none;
-		color: black;
+		
 		text-align: center;
 		
 	}
+	
+	#btnSearchId{
+	padding: 3px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color: #fff;
+	border: 1px solid #333;
+	border-radius:3px; 
+	font-size: 13px;
+	color: #555;
+	}
+	
+	#btnSearchId:HOVER {
+	font-weight: bold;
+}
+
+	#btnSearchPw{
+	padding: 3px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color: #fff;
+	border: 1px solid #333;
+	border-radius:3px; 
+	font-size: 13px;
+	color: #555;
+	
+}
+#btnSearchPw:HOVER {
+	font-weight: bold;
+}
+
+#btnLogin{
+	padding: 3px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color: #fff;
+	border: 1px solid #333;
+	border-radius:3px; 
+	font-size: 13px;
+	color: #555;
+	
+}

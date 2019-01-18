@@ -12,19 +12,42 @@
 		text-align: center;
 	}
 	
-	h3{
+	#result h3{
 	font-weight: lighter;
 	margin: 10px;
 }
-	span {
+	#result span {
 	color: red;
 	font-weight: bold;
 }
-a{
-		padding:10px;
-		text-decoration: none;
-		color: black;
-		text-align: center;
+#result a{
+	padding: 3px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color: #fff;
+	border: 1px solid #333;
+	border-radius:3px; 
+	font-size: 13px;
+	text-decoration: none;
+	color: #555;
+	margin: 10px;
 		
 	}
+
+#result a:HOVER {
+	font-weight: bold;
+}	
+
+
+
+#btnHome{
+	padding: 3px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color: #fff;
+	border: 1px solid #333;
+	border-radius:3px; 
+	font-size: 13px;
+	color: #555;
 	
+}
