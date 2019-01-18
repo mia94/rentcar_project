@@ -189,7 +189,7 @@
 	
 	<!-- 초과금액 계산 -->
 	<select id="selectRentHours" resultType="RentHour" parameterType="map">
-		select hour6, hour10, hour12, hour_else, basic_charge, timestampdiff(hour, concat(end_date, ' ', end_time), now()) as overHour
+		select hour6, hour10, hour12, hour_else as hourElse, basic_charge as basicCharge, timestampdiff(hour, concat(end_date, ' ', end_time), now()) as overHour
 		from rent r join car_model cm on r.car_code = cm.car_code 
 		where cm.car_code = #{carCode} and r.code = #{rCode};
 	</select>
