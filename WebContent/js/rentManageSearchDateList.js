@@ -103,7 +103,7 @@ $("#btnSearch1").click(function(){
 				
 				$(json).each(function(index, obj){
 					$("#title1").after("<tr id='insert'></tr>");
-					$("#insert").append("<td style='width:138.4px'>" + obj.code + "</td>");
+					$("#insert").append("<td style='width:138.4px'><a href='rentListRead.do?code=" + obj.code + "'>" + obj.code + "</td>");
 					$("#insert").append("<td style='width:138.4px'>" + obj.customer_code.code + "</td>");
 					$("#insert").append("<td style='width:191.2px'>" + obj.start_date + "</td>");
 					$("#insert").append("<td style='width:191.2px'>" + obj.end_date + "</td>");
